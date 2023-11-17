@@ -1,0 +1,120 @@
+# `astsee`
+
+A suite of tools for pretty printing, diffing, and exploring abstract syntax
+trees. You can use the generic `astsee` tool that accepts mostly arbitrary
+tree-like structures in JSON format, or a variant for a specific AST type.
+Currently, only [Verilator](https://github.com/verilator/verilator) JSON trees
+are supported via `astsee_verilator`.
+
+## Usage
+
+Given two JSON files, `a.json`:
+
+```json
+{
+  "type": "TEST", "addr": "0x55b700efa000", "editNum": 1, "file": "<built-in>:0:0", "name": "$root",
+  "op1": [
+    {
+      "type": "EXTMODULE", "addr": "0x55b700f36620", "editNum": 2362, "file": "test.v:16:8", "name": "__024root",
+      "op3": [
+        { "type": "CELL", "addr": "0x55b700f50280", "editNum": 2364, "file": "test.v:16:8", "name": "t" }
+      ]
+    }
+  ], "op4": [
+      { "type": "CELL", "addr": "0x55b700f50280", "editNum": 2364, "file": "test.v:16:8", "name": "t" },
+      { "type": "CELL", "addr": "0x55b700f50280", "editNum": 2364, "file": "test.v:16:8", "name": "t" },
+      { "type": "CELL", "addr": "0x55b700f50280", "editNum": 2364, "file": "test.v:16:8", "name": "t" },
+      { "type": "CELL", "addr": "0x55b700f50280", "editNum": 2364, "file": "test.v:16:8", "name": "t" }
+  ]
+}
+```
+
+and `b.json`:
+
+```json
+{
+  "type": "TEST", "addr": "0x55b700efa000", "editNum": 1, "file": "<built-in>:0:0", "name": "$root",
+  "op1": [
+    {
+      "type": "EXTMODULE", "addr": "0x55b700f36620", "editNum": 2362, "file": "test.v:16:8", "name": "__024root",
+      "op3": [
+        { "type": "CELL", "addr": "0x55b700f50280", "editNum": 2364, "file": "test.v:16:8", "name": "t" }
+      ]
+    }
+  ], "op4": [
+      { "type": "CELL", "addr": "0x55b700f50280", "editNum": 2364, "file": "test.v:16:8", "name": "t" },
+      { "type": "CELL", "addr": "0x55b700f50280", "editNum": 2364, "file": "test.v:16:8", "name": "t" },
+      { "type": "CELL", "addr": "0x55b700f50280", "editNum": 2364, "file": "test.v:16:8", "name": "t" },
+      { "type": "CELL", "addr": "0x55b700f50280", "editNum": 2364, "file": "test.v:16:8", "name": "t" }
+  ]
+}
+```
+
+Run:
+
+```sh
+astsee a.json 
+```
+
+to pretty print it in a concise format:
+
+```
+ addr:0x55b700efa000, editNum:1, file:<built-in>:0:0, name:$root, type:TEST
+ op1:
+    addr:0x55b700f366c0, editNum:2361, file:test.v:16:8, name:__024root, type:MODULE
+    op2:
+       addr:0x55b700f50280, editNum:2364, file:test.v:16:8, name:t, type:CELL
+ op4:
+    addr:0x55b700f50280, editNum:2364, file:test.v:16:8, name:t, type:CELL
+    addr:0x55b700f50280, editNum:2364, file:test.v:16:8, name:t, type:CELL
+    addr:0x55b700f50280, editNum:2364, file:test.v:16:8, name:t, type:CELL
+    addr:0x55b700f50280, editNum:2364, file:test.v:16:8, name:t, type:CELL
+```
+
+To produce a diff:
+
+```sh
+astsee a.json b.json
+```
+
+![astsee a.json b.json](img/generic_diff_ab.png)
+
+To see all available options:
+
+```sh
+astsee --help
+```
+
+## Installation and usage
+
+To install, run:
+
+```sh
+pipx install git+https://github.com/antmicro/astsee
+```
+
+Or clone the repository, `cd` to it, and run:
+
+```sh
+pipx install .
+```
+
+## Tests
+
+To run tests, invoke:
+
+```sh
+pytest
+```
+
+in project root. To update tests:
+
+```sh
+pytest --golden
+```
+
+## Known limitations/bugs
+
+- Arrays of scalars or arrays of array work only in `--basic` mode
+- Diff doesn't support direct replacement of root node
+- `astsee_verilator --html` tests are unstable due to usage of Python's `set`

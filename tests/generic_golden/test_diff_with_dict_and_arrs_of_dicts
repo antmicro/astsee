@@ -1,0 +1,10 @@
+ [39maddr:0x55b700efa000[39m, [39meditNum:1[39m, [39mfile:<built-in>:0:0[39m, [39mname:$root[39m, [39mtype:TEST
+ [39mop1:
+    [39maddr:[31m0x55b700f366c0[39m->[32m0x55b700f36620[39m, [39meditNum:[31m2361[39m->[32m2362[39m, [39mfile:test.v:16:8[39m, [39mname:__024root[39m, [39mtype:[31mMODULE[39m->[32mEXTMODULE
+    [31mop2:
+       [31maddr:0x55b700f50280[39m, [31meditNum:2364[39m, [31mfile:test.v:16:8[39m, [31mname:t[39m, [31mtype:CELL
+    [32mop3:
+       [32maddr:0x55b700f50280[39m, [32meditNum:2364[39m, [32mfile:test.v:16:8[39m, [32mname:t[39m, [32mtype:CELL
+ [39mop4:
+   [39m... * 4
+[39m

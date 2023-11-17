@@ -1,0 +1,36 @@
+[39m {
+[39m   type: TEST
+[39m   addr: 0x55b700efa000
+[39m   editNum: 1
+[39m   file: <built-in>:0:0
+[39m   name: $root
+[39m   op1: [
+[39m     {
+[33m~[39m      type: [31mMODULE[39m -> [32mEXTMODULE
+[33m~[39m      addr: [31m0x55b700f366c0[39m -> [32m0x55b700f36620
+[33m~[39m      editNum: [31m2361[39m -> [32m2362
+[39m       file: test.v:16:8
+[39m       name: __024root
+[31m-      op2: [
+[31m-        {
+[31m-          type: CELL
+[31m-          addr: 0x55b700f50280
+[31m-          editNum: 2364
+[31m-          file: test.v:16:8
+[31m-          name: t
+[31m-        }
+[31m-      ]
+[32m+      op3: [
+[32m+        {
+[32m+          type: CELL
+[32m+          addr: 0x55b700f50280
+[32m+          editNum: 2364
+[32m+          file: test.v:16:8
+[32m+          name: t
+[32m+        }
+[32m+      ]
+[39m     }
+[39m   ]
+[39m   op4: ... * 4
+[39m }
+[39m

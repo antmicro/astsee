@@ -1,0 +1,55 @@
+ {
+   type: TEST
+   addr: 0x55b700efa000
+   editNum: 1
+   file: <built-in>:0:0
+   name: $root
+   op1: [
+     {
+       type: MODULE
+       addr: 0x55b700f366c0
+       editNum: 2361
+       file: test.v:16:8
+       name: __024root
+       op2: [
+         {
+           type: CELL
+           addr: 0x55b700f50280
+           editNum: 2364
+           file: test.v:16:8
+           name: t
+         }
+       ]
+     }
+   ]
+   op4: [
+     {
+       type: CELL
+       addr: 0x55b700f50280
+       editNum: 2364
+       file: test.v:16:8
+       name: t
+     }
+     {
+       type: CELL
+       addr: 0x55b700f50280
+       editNum: 2364
+       file: test.v:16:8
+       name: t
+     }
+     {
+       type: CELL
+       addr: 0x55b700f50280
+       editNum: 2364
+       file: test.v:16:8
+       name: t
+     }
+     {
+       type: CELL
+       addr: 0x55b700f50280
+       editNum: 2364
+       file: test.v:16:8
+       name: t
+     }
+   ]
+ }

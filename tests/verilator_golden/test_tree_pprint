@@ -1,0 +1,177 @@
+NETLIST "$root" <built-in>:0:0 0x55abff5cfa40 timeprecision:1ps, timeunit:1ps
+ op1:
+   MODULE "serial_adder" tests/verilator_in/test.sv:1:8 0x55abff5f8ba0 level:2, timeunit:1ps
+    op2:
+      VAR "WIDTH" tests/verilator_in/test.sv:1:23 0x55abff603c30 attrClocker:UNKNOWN, ioDirection:NONE, lifetime:NONE, varType:GPARAM
+       op1:
+         BASICDTYPE "LOGIC_IMPLICIT" tests/verilator_in/test.sv:1:23 0x55abff600a40 keyword:LOGIC_IMPLICIT
+      PORT "a" tests/verilator_in/test.sv:2:28 0x55abff604460
+      VAR "a" tests/verilator_in/test.sv:2:28 0x55abff604a50 attrClocker:UNKNOWN, ioDirection:INPUT, lifetime:NONE, varType:PORT
+       op1:
+         BASICDTYPE "logic" tests/verilator_in/test.sv:2:16 0x55abff604050 keyword:logic
+          op1:
+            RANGE "" tests/verilator_in/test.sv:2:16 0x55abff604670
+             op1:
+               SUB "" tests/verilator_in/test.sv:2:22 0x55abff604710
+                op1:
+                  PARSEREF "WIDTH" tests/verilator_in/test.sv:2:17 0x55abff6047c0 expect:TEXT
+                op2:
+                  CONST "?32?sh1" tests/verilator_in/test.sv:2:23 0x55abff604890
+             op2:
+               CONST "?32?sh0" tests/verilator_in/test.sv:2:25 0x55abff604970
+      PORT "b" tests/verilator_in/test.sv:3:28 0x55abff604de0
+      VAR "b" tests/verilator_in/test.sv:3:28 0x55abff6053d0 attrClocker:UNKNOWN, ioDirection:INPUT, lifetime:NONE, varType:PORT
+       op1:
+         BASICDTYPE "logic" tests/verilator_in/test.sv:3:16 0x55abff6045b0 keyword:logic
+          op1:
+            RANGE "" tests/verilator_in/test.sv:3:16 0x55abff604ff0
+             op1:
+               SUB "" tests/verilator_in/test.sv:3:22 0x55abff605090
+                op1:
+                  PARSEREF "WIDTH" tests/verilator_in/test.sv:3:17 0x55abff605140 expect:TEXT
+                op2:
+                  CONST "?32?sh1" tests/verilator_in/test.sv:3:23 0x55abff605210
+             op2:
+               CONST "?32?sh0" tests/verilator_in/test.sv:3:25 0x55abff6052f0
+      PORT "cin" tests/verilator_in/test.sv:4:16 0x55abff603e70
+      VAR "cin" tests/verilator_in/test.sv:4:16 0x55abff6056b0 attrClocker:UNKNOWN, ioDirection:INPUT, lifetime:NONE, varType:PORT
+       op1:
+         BASICDTYPE "LOGIC_IMPLICIT" tests/verilator_in/test.sv:4:16 0x55abff604f30 keyword:LOGIC_IMPLICIT
+      PORT "s" tests/verilator_in/test.sv:5:28 0x55abff605c10
+      VAR "s" tests/verilator_in/test.sv:5:28 0x55abff606250 attrClocker:UNKNOWN, ioDirection:OUTPUT, lifetime:NONE, varType:PORT
+       op1:
+         BASICDTYPE "logic" tests/verilator_in/test.sv:5:16 0x55abff6059f0 keyword:logic
+          op1:
+            RANGE "" tests/verilator_in/test.sv:5:16 0x55abff605e70
+             op1:
+               SUB "" tests/verilator_in/test.sv:5:22 0x55abff605f10
+                op1:
+                  PARSEREF "WIDTH" tests/verilator_in/test.sv:5:17 0x55abff605fc0 expect:TEXT
+                op2:
+                  CONST "?32?sh1" tests/verilator_in/test.sv:5:23 0x55abff606090
+             op2:
+               CONST "?32?sh0" tests/verilator_in/test.sv:5:25 0x55abff606170
+      PORT "cout" tests/verilator_in/test.sv:6:16 0x55abff6058f0
+      VAR "cout" tests/verilator_in/test.sv:6:16 0x55abff606530 attrClocker:UNKNOWN, ioDirection:OUTPUT, lifetime:NONE, varType:PORT
+       op1:
+         BASICDTYPE "LOGIC_IMPLICIT" tests/verilator_in/test.sv:6:16 0x55abff605db0 keyword:LOGIC_IMPLICIT
+      VAR "c" tests/verilator_in/test.sv:8:20 0x55abff606c90 attrClocker:UNKNOWN, ioDirection:NONE, lifetime:NONE, varType:WIRE
+       op1:
+         BASICDTYPE "logic" tests/verilator_in/test.sv:8:10 0x55abff606a60 keyword:logic
+          op1:
+            RANGE "" tests/verilator_in/test.sv:8:10 0x55abff606b20
+             op1:
+               PARSEREF "WIDTH" tests/verilator_in/test.sv:8:11 0x55abff606bc0 expect:TEXT
+             op2:
+               CONST "?32?sh0" tests/verilator_in/test.sv:8:17 0x55abff603f70
+      BEGIN "" tests/verilator_in/test.sv:10:14 0x55abff609600 generate:True, genfor:True, implied:True, unnamed:True
+       op1:
+         GENFOR "" tests/verilator_in/test.sv:10:14 0x55abff6096d0
+          op1:
+            ASSIGN "" tests/verilator_in/test.sv:10:28 0x55abff604330
+             op1:
+               CONST "?32?sh0" tests/verilator_in/test.sv:10:30 0x55abff604220
+             op2:
+               VARREF "i" tests/verilator_in/test.sv:10:26 0x55abff606810 access:WR, pkgp:UNLINKED, varScopep:UNLINKED, varp:0x55abff606ff0
+          op2:
+            LT "" tests/verilator_in/test.sv:10:35 0x55abff604170
+             op1:
+               PARSEREF "i" tests/verilator_in/test.sv:10:33 0x55abff607330 expect:TEXT
+             op2:
+               PARSEREF "WIDTH" tests/verilator_in/test.sv:10:37 0x55abff607490 expect:TEXT
+          op3:
+            ASSIGN "" tests/verilator_in/test.sv:10:45 0x55abff6076c0
+             op1:
+               ADD "" tests/verilator_in/test.sv:10:45 0x55abff607760
+                op1:
+                  PARSEREF "i" tests/verilator_in/test.sv:10:44 0x55abff607810 expect:TEXT
+                op2:
+                  CONST "?32?h1" tests/verilator_in/test.sv:10:45 0x55abff6078e0
+             op2:
+               PARSEREF "i" tests/verilator_in/test.sv:10:44 0x55abff6075f0 expect:TEXT
+          op4:
+            CELL "fa" tests/verilator_in/test.sv:11:20 0x55abff6093e0 modp:0x55abff60bda0
+             op1:
+               PIN "__pinNumber1" tests/verilator_in/test.sv:11:24 0x55abff607ed0 modVarp:UNLINKED
+                op1:
+                  SELBIT "" tests/verilator_in/test.sv:11:24 0x55abff607df0
+                   op1:
+                     PARSEREF "a" tests/verilator_in/test.sv:11:23 0x55abff607bc0 expect:TEXT
+                   op2:
+                     PARSEREF "i" tests/verilator_in/test.sv:11:25 0x55abff607d20 expect:TEXT
+               PIN "__pinNumber2" tests/verilator_in/test.sv:11:30 0x55abff608350 modVarp:UNLINKED
+                op1:
+                  SELBIT "" tests/verilator_in/test.sv:11:30 0x55abff608270
+                   op1:
+                     PARSEREF "b" tests/verilator_in/test.sv:11:29 0x55abff608040 expect:TEXT
+                   op2:
+                     PARSEREF "i" tests/verilator_in/test.sv:11:31 0x55abff6081a0 expect:TEXT
+               PIN "__pinNumber3" tests/verilator_in/test.sv:11:36 0x55abff6087d0 modVarp:UNLINKED
+                op1:
+                  SELBIT "" tests/verilator_in/test.sv:11:36 0x55abff6086f0
+                   op1:
+                     PARSEREF "c" tests/verilator_in/test.sv:11:35 0x55abff6084c0 expect:TEXT
+                   op2:
+                     PARSEREF "i" tests/verilator_in/test.sv:11:37 0x55abff608620 expect:TEXT
+               PIN "__pinNumber4" tests/verilator_in/test.sv:11:42 0x55abff608c50 modVarp:UNLINKED
+                op1:
+                  SELBIT "" tests/verilator_in/test.sv:11:42 0x55abff608b70
+                   op1:
+                     PARSEREF "s" tests/verilator_in/test.sv:11:41 0x55abff608940 expect:TEXT
+                   op2:
+                     PARSEREF "i" tests/verilator_in/test.sv:11:43 0x55abff608aa0 expect:TEXT
+               PIN "__pinNumber5" tests/verilator_in/test.sv:11:48 0x55abff609300 modVarp:UNLINKED
+                op1:
+                  SELBIT "" tests/verilator_in/test.sv:11:48 0x55abff609220
+                   op1:
+                     PARSEREF "c" tests/verilator_in/test.sv:11:47 0x55abff608dc0 expect:TEXT
+                   op2:
+                     ADD "" tests/verilator_in/test.sv:11:50 0x55abff609170
+                      op1:
+                        PARSEREF "i" tests/verilator_in/test.sv:11:49 0x55abff608f20 expect:TEXT
+                      op2:
+                        CONST "?32?sh1" tests/verilator_in/test.sv:11:51 0x55abff609060
+       op2:
+         VAR "i" tests/verilator_in/test.sv:10:26 0x55abff606ff0 attrClocker:UNKNOWN, ioDirection:NONE, lifetime:NONE, varType:GENVAR
+          op1:
+            BASICDTYPE "integer" tests/verilator_in/test.sv:10:26 0x55abff606f30 keyword:integer, range:31:0
+      ASSIGNW "" tests/verilator_in/test.sv:14:17 0x55abff609c20
+       op1:
+         PARSEREF "cin" tests/verilator_in/test.sv:14:19 0x55abff609b50 expect:TEXT
+       op2:
+         SELBIT "" tests/verilator_in/test.sv:14:13 0x55abff6099e0
+          op1:
+            PARSEREF "c" tests/verilator_in/test.sv:14:12 0x55abff609530 expect:TEXT
+          op2:
+            CONST "?32?sh0" tests/verilator_in/test.sv:14:14 0x55abff6098d0
+      ASSIGNW "" tests/verilator_in/test.sv:15:17 0x55abff60a420
+       op1:
+         SELBIT "" tests/verilator_in/test.sv:15:20 0x55abff60a340
+          op1:
+            PARSEREF "c" tests/verilator_in/test.sv:15:19 0x55abff609ee0 expect:TEXT
+          op2:
+            SUB "" tests/verilator_in/test.sv:15:26 0x55abff60a290
+             op1:
+               PARSEREF "WIDTH" tests/verilator_in/test.sv:15:21 0x55abff60a040 expect:TEXT
+             op2:
+               CONST "?32?sh1" tests/verilator_in/test.sv:15:27 0x55abff60a180
+       op2:
+         PARSEREF "cout" tests/verilator_in/test.sv:15:12 0x55abff609d80 expect:TEXT
+   NOTFOUNDMODULE "full_adder" tests/verilator_in/test.sv:11:20 0x55abff60bda0 level:3, timeunit:1ps
+ op3:
+   TYPETABLE "" <built-in>:0:0 0x55abff5d0160
+    op1:
+      BASICDTYPE "integer" 0x55abff5ea540 generic:True, keyword:integer, range:31:0
+      BASICDTYPE "logic" 0x55abff5ecd40 generic:True, keyword:logic, range:31:0
+      BASICDTYPE "logic" 0x55abff5f37f0 generic:True, keyword:logic
+      VOIDDTYPE "" 0x55abff5f43d0
+      BASICDTYPE "logic" 0x55abff5fd0a0 generic:True, keyword:logic, range:31:0
+      BASICDTYPE "logic" 0x55abff5fd750 generic:True, keyword:logic, range:31:0
+      BASICDTYPE "logic" 0x55abff5ff9a0 generic:True, keyword:logic, range:295:0
+      BASICDTYPE "string" 0x55abff5ffbe0 generic:True, keyword:string
+      BASICDTYPE "logic" tests/verilator_in/test.sv:10:45 0x55abff6071b0 generic:True, keyword:logic, range:31:0
+   CONSTPOOL "" <built-in>:0:0 0x55abff5d0320
+    op1:
+      MODULE "@CONST-POOL@" <built-in>:0:0 0x55abff5d0440 level:0, timeunit:NONE
+       op2:
+         SCOPE "@CONST-POOL@" <built-in>:0:0 0x55abff5d0550 abovep:UNLINKED, cellp:UNLINKED, modp:0x55abff5d0440

@@ -1,0 +1,241 @@
+[39mNETLIST [39m"$root" [39m<built-in>:0:0 [39m0x55abff5cfa40 [39mtimeprecision:1ps[39m, [39mtimeunit:1ps
+ [39mop1:
+   [39mMODULE [39m"serial_adder" [39mtests/verilator_in/test.sv:1:8 [39m0x55abff5f8ba0 [39mlevel:2[39m, [39mtimeunit:1ps
+    [39mop2:
+      [39mVAR [39m"WIDTH" [39mtests/verilator_in/test.sv:1:23 [39m0x55abff603c30 [39mattrClocker:UNKNOWN[39m, [39mioDirection:NONE[39m, [39mlifetime:[31mNONE[39m->[32mVSTATIC[39m, [39mvarType:GPARAM
+       [39mop1:
+         [39m... * 1
+      [31mPORT[39m->[32mVAR [39m"a" [39mtests/verilator_in/test.sv:2:28 [31m0x55abff604460[39m->[32m0x55abff604a50 [32mattrClocker:UNKNOWN[39m, [32mioDirection:INPUT[39m, [32mlifetime:NONE[39m, [32mvarType:PORT
+       [32mop1:
+         [32mBASICDTYPE [32m"logic" [32mtests/verilator_in/test.sv:2:16 [32m0x55abff604050 [32mkeyword:logic
+          [32mop1:
+            [32mRANGE [32m"" [32mtests/verilator_in/test.sv:2:16 [32m0x55abff604670
+             [32mop1:
+               [32mSUB [32m"" [32mtests/verilator_in/test.sv:2:22 [32m0x55abff604710
+                [32mop1:
+                  [32mVARREF [32m"WIDTH" [32mtests/verilator_in/test.sv:2:17 [32m0x55abff5f3d30 [32maccess:RD[39m, [32mpkgp:UNLINKED[39m, [32mvarScopep:UNLINKED[39m, [32mvarp:0x55abff603c30
+                [32mop2:
+                  [32mCONST [32m"?32?sh1" [32mtests/verilator_in/test.sv:2:23 [32m0x55abff604890
+             [32mop2:
+               [32mCONST [32m"?32?sh0" [32mtests/verilator_in/test.sv:2:25 [32m0x55abff604970
+      [39mVAR [31m"a"[39m->[32m"b" [31mtests/verilator_in/test.sv:2:28[39m->[32mtests/verilator_in/test.sv:3:28 [31m0x55abff604a50[39m->[32m0x55abff6053d0 [39mattrClocker:UNKNOWN[39m, [39mioDirection:INPUT[39m, [39mlifetime:NONE[39m, [39mvarType:PORT
+       [39mop1:
+         [39mBASICDTYPE [39m"logic" [31mtests/verilator_in/test.sv:2:16[39m->[32mtests/verilator_in/test.sv:3:16 [31m0x55abff604050[39m->[32m0x55abff6045b0 [39mkeyword:logic
+          [39mop1:
+            [39mRANGE [39m"" [31mtests/verilator_in/test.sv:2:16[39m->[32mtests/verilator_in/test.sv:3:16 [31m0x55abff604670[39m->[32m0x55abff604ff0
+             [39mop1:
+               [39mSUB [39m"" [31mtests/verilator_in/test.sv:2:22[39m->[32mtests/verilator_in/test.sv:3:22 [31m0x55abff604710[39m->[32m0x55abff605090
+                [39mop1:
+                  [31mPARSEREF[39m->[32mVARREF [39m"WIDTH" [31mtests/verilator_in/test.sv:2:17[39m->[32mtests/verilator_in/test.sv:3:17 [31m0x55abff6047c0[39m->[32m0x55abff5f40e0 [32maccess:RD[39m, [31mexpect:TEXT[39m, [32mpkgp:UNLINKED[39m, [32mvarScopep:UNLINKED[39m, [32mvarp:0x55abff603c30
+                [39mop2:
+                  [39mCONST [39m"?32?sh1" [31mtests/verilator_in/test.sv:2:23[39m->[32mtests/verilator_in/test.sv:3:23 [31m0x55abff604890[39m->[32m0x55abff605210
+             [39mop2:
+               [39mCONST [39m"?32?sh0" [31mtests/verilator_in/test.sv:2:25[39m->[32mtests/verilator_in/test.sv:3:25 [31m0x55abff604970[39m->[32m0x55abff6052f0
+      [31mPORT[39m->[32mVAR [31m"b"[39m->[32m"cin" [31mtests/verilator_in/test.sv:3:28[39m->[32mtests/verilator_in/test.sv:4:16 [31m0x55abff604de0[39m->[32m0x55abff6056b0 [32mattrClocker:UNKNOWN[39m, [32mioDirection:INPUT[39m, [32mlifetime:NONE[39m, [32mvarType:PORT
+       [32mop1:
+         [32mBASICDTYPE [32m"LOGIC_IMPLICIT" [32mtests/verilator_in/test.sv:4:16 [32m0x55abff604f30 [32mkeyword:LOGIC_IMPLICIT
+      [39mVAR [31m"b"[39m->[32m"s" [31mtests/verilator_in/test.sv:3:28[39m->[32mtests/verilator_in/test.sv:5:28 [31m0x55abff6053d0[39m->[32m0x55abff606250 [39mattrClocker:UNKNOWN[39m, [39mioDirection:[31mINPUT[39m->[32mOUTPUT[39m, [39mlifetime:NONE[39m, [39mvarType:PORT
+       [39mop1:
+         [39mBASICDTYPE [39m"logic" [31mtests/verilator_in/test.sv:3:16[39m->[32mtests/verilator_in/test.sv:5:16 [31m0x55abff6045b0[39m->[32m0x55abff6059f0 [39mkeyword:logic
+          [39mop1:
+            [39mRANGE [39m"" [31mtests/verilator_in/test.sv:3:16[39m->[32mtests/verilator_in/test.sv:5:16 [31m0x55abff604ff0[39m->[32m0x55abff605e70
+             [39mop1:
+               [39mSUB [39m"" [31mtests/verilator_in/test.sv:3:22[39m->[32mtests/verilator_in/test.sv:5:22 [31m0x55abff605090[39m->[32m0x55abff605f10
+                [39mop1:
+                  [31mPARSEREF[39m->[32mVARREF [39m"WIDTH" [31mtests/verilator_in/test.sv:3:17[39m->[32mtests/verilator_in/test.sv:5:17 [31m0x55abff605140[39m->[32m0x55abff5f3f20 [32maccess:RD[39m, [31mexpect:TEXT[39m, [32mpkgp:UNLINKED[39m, [32mvarScopep:UNLINKED[39m, [32mvarp:0x55abff603c30
+                [39mop2:
+                  [39mCONST [39m"?32?sh1" [31mtests/verilator_in/test.sv:3:23[39m->[32mtests/verilator_in/test.sv:5:23 [31m0x55abff605210[39m->[32m0x55abff606090
+             [39mop2:
+               [39mCONST [39m"?32?sh0" [31mtests/verilator_in/test.sv:3:25[39m->[32mtests/verilator_in/test.sv:5:25 [31m0x55abff6052f0[39m->[32m0x55abff606170
+      [31mPORT[39m->[32mVAR [31m"cin"[39m->[32m"cout" [31mtests/verilator_in/test.sv:4:16[39m->[32mtests/verilator_in/test.sv:6:16 [31m0x55abff603e70[39m->[32m0x55abff606530 [32mattrClocker:UNKNOWN[39m, [32mioDirection:OUTPUT[39m, [32mlifetime:NONE[39m, [32mvarType:PORT
+       [32mop1:
+         [32mBASICDTYPE [32m"LOGIC_IMPLICIT" [32mtests/verilator_in/test.sv:6:16 [32m0x55abff605db0 [32mkeyword:LOGIC_IMPLICIT
+      [39mVAR [31m"cin"[39m->[32m"c" [31mtests/verilator_in/test.sv:4:16[39m->[32mtests/verilator_in/test.sv:8:20 [31m0x55abff6056b0[39m->[32m0x55abff606c90 [39mattrClocker:UNKNOWN[39m, [39mioDirection:[31mINPUT[39m->[32mNONE[39m, [39mlifetime:[31mNONE[39m->[32mVSTATIC[39m, [39mvarType:[31mPORT[39m->[32mWIRE
+       [39mop1:
+         [39mBASICDTYPE [31m"LOGIC_IMPLICIT"[39m->[32m"logic" [31mtests/verilator_in/test.sv:4:16[39m->[32mtests/verilator_in/test.sv:8:10 [31m0x55abff604f30[39m->[32m0x55abff606a60 [39mkeyword:[31mLOGIC_IMPLICIT[39m->[32mlogic
+          [32mop1:
+            [32mRANGE [32m"" [32mtests/verilator_in/test.sv:8:10 [32m0x55abff606b20
+             [32mop1:
+               [32mVARREF [32m"WIDTH" [32mtests/verilator_in/test.sv:8:11 [32m0x55abff5f3aa0 [32maccess:RD[39m, [32mpkgp:UNLINKED[39m, [32mvarScopep:UNLINKED[39m, [32mvarp:0x55abff603c30
+             [32mop2:
+               [32mCONST [32m"?32?sh0" [32mtests/verilator_in/test.sv:8:17 [32m0x55abff603f70
+      [31mPORT[39m->[32mBEGIN [31m"s"[39m->[32m"genblk1" [31mtests/verilator_in/test.sv:5:28[39m->[32mtests/verilator_in/test.sv:10:14 [31m0x55abff605c10[39m->[32m0x55abff609600 [32mgenerate:True[39m, [32mgenfor:True[39m, [32mimplied:True[39m, [32munnamed:True
+       [32mop1:
+         [32mGENFOR [32m"" [32mtests/verilator_in/test.sv:10:14 [32m0x55abff6096d0
+          [32mop1:
+            [32mASSIGN [32m"" [32mtests/verilator_in/test.sv:10:28 [32m0x55abff604330
+             [32mop1:
+               [32mCONST [32m"?32?sh0" [32mtests/verilator_in/test.sv:10:30 [32m0x55abff604220
+             [32mop2:
+               [32mVARREF [32m"i" [32mtests/verilator_in/test.sv:10:26 [32m0x55abff606810 [32maccess:WR[39m, [32mpkgp:UNLINKED[39m, [32mvarScopep:UNLINKED[39m, [32mvarp:0x55abff606ff0
+          [32mop2:
+            [32mLT [32m"" [32mtests/verilator_in/test.sv:10:35 [32m0x55abff604170
+             [32mop1:
+               [32mVARREF [32m"i" [32mtests/verilator_in/test.sv:10:33 [32m0x55abff5f25b0 [32maccess:RD[39m, [32mpkgp:UNLINKED[39m, [32mvarScopep:UNLINKED[39m, [32mvarp:0x55abff606ff0
+             [32mop2:
+               [32mVARREF [32m"WIDTH" [32mtests/verilator_in/test.sv:10:37 [32m0x55abff5f1fa0 [32maccess:RD[39m, [32mpkgp:UNLINKED[39m, [32mvarScopep:UNLINKED[39m, [32mvarp:0x55abff603c30
+          [32mop3:
+            [32mASSIGN [32m"" [32mtests/verilator_in/test.sv:10:45 [32m0x55abff6076c0
+             [32mop1:
+               [32mADD [32m"" [32mtests/verilator_in/test.sv:10:45 [32m0x55abff607760
+                [32mop1:
+                  [32mVARREF [32m"i" [32mtests/verilator_in/test.sv:10:44 [32m0x55abff5f20d0 [32maccess:RD[39m, [32mpkgp:UNLINKED[39m, [32mvarScopep:UNLINKED[39m, [32mvarp:0x55abff606ff0
+                [32mop2:
+                  [32mCONST [32m"?32?h1" [32mtests/verilator_in/test.sv:10:45 [32m0x55abff6078e0
+             [32mop2:
+               [32mVARREF [32m"i" [32mtests/verilator_in/test.sv:10:44 [32m0x55abff5f6150 [32maccess:WR[39m, [32mpkgp:UNLINKED[39m, [32mvarScopep:UNLINKED[39m, [32mvarp:0x55abff606ff0
+          [32mop4:
+            [32mCELL [32m"fa" [32mtests/verilator_in/test.sv:11:20 [32m0x55abff6093e0 [32mmodp:0x55abff60bda0
+       [32mop2:
+         [32mVAR [32m"i" [32mtests/verilator_in/test.sv:10:26 [32m0x55abff606ff0 [32mattrClocker:UNKNOWN[39m, [32mioDirection:NONE[39m, [32mlifetime:VSTATIC[39m, [32mvarType:GENVAR
+          [32mop1:
+            [32mBASICDTYPE [32m"integer" [32mtests/verilator_in/test.sv:10:26 [32m0x55abff606f30 [32mkeyword:integer[39m, [32mrange:31:0
+      [31mVAR[39m->[32mASSIGNW [31m"s"[39m->[32m"" [31mtests/verilator_in/test.sv:5:28[39m->[32mtests/verilator_in/test.sv:14:17 [31m0x55abff606250[39m->[32m0x55abff609c20 [31mattrClocker:UNKNOWN[39m, [31mioDirection:OUTPUT[39m, [31mlifetime:NONE[39m, [31mvarType:PORT
+       [39mop1:
+         [31mBASICDTYPE[39m->[32mVARREF [31m"logic"[39m->[32m"cin" [31mtests/verilator_in/test.sv:5:16[39m->[32mtests/verilator_in/test.sv:14:19 [31m0x55abff6059f0[39m->[32m0x55abff5dd1f0 [32maccess:RD[39m, [31mkeyword:logic[39m, [32mpkgp:UNLINKED[39m, [32mvarScopep:UNLINKED[39m, [32mvarp:0x55abff6056b0
+          [31mop1:
+            [31mRANGE [31m"" [31mtests/verilator_in/test.sv:5:16 [31m0x55abff605e70
+             [31mop1:
+               [31mSUB [31m"" [31mtests/verilator_in/test.sv:5:22 [31m0x55abff605f10
+                [31mop1:
+                  [31mPARSEREF [31m"WIDTH" [31mtests/verilator_in/test.sv:5:17 [31m0x55abff605fc0 [31mexpect:TEXT
+                [31mop2:
+                  [31mCONST [31m"?32?sh1" [31mtests/verilator_in/test.sv:5:23 [31m0x55abff606090
+             [31mop2:
+               [31mCONST [31m"?32?sh0" [31mtests/verilator_in/test.sv:5:25 [31m0x55abff606170
+       [32mop2:
+         [32mSELBIT [32m"" [32mtests/verilator_in/test.sv:14:13 [32m0x55abff6099e0
+          [32mop1:
+            [32mVARREF [32m"c" [32mtests/verilator_in/test.sv:14:12 [32m0x55abff602140 [32maccess:WR[39m, [32mpkgp:UNLINKED[39m, [32mvarScopep:UNLINKED[39m, [32mvarp:0x55abff606c90
+          [32mop2:
+            [32mCONST [32m"?32?sh0" [32mtests/verilator_in/test.sv:14:14 [32m0x55abff6098d0
+          [32mop4:
+            [32mATTROF [32m"" [32mtests/verilator_in/test.sv:14:13 [32m0x55abff5f5ce0 [32mattrType:VAR_BASE
+             [32mop1:
+               [32mVARREF [32m"c" [32mtests/verilator_in/test.sv:14:12 [32m0x55abff607330 [32maccess:RD[39m, [32mpkgp:UNLINKED[39m, [32mvarScopep:UNLINKED[39m, [32mvarp:0x55abff606c90
+      [31mPORT[39m->[32mASSIGNW [31m"cout"[39m->[32m"" [31mtests/verilator_in/test.sv:6:16[39m->[32mtests/verilator_in/test.sv:15:17 [31m0x55abff6058f0[39m->[32m0x55abff60a420
+       [32mop1:
+         [32mSELBIT [32m"" [32mtests/verilator_in/test.sv:15:20 [32m0x55abff60a340
+          [32mop1:
+            [32mVARREF [32m"c" [32mtests/verilator_in/test.sv:15:19 [32m0x55abff600da0 [32maccess:RD[39m, [32mpkgp:UNLINKED[39m, [32mvarScopep:UNLINKED[39m, [32mvarp:0x55abff606c90
+          [32mop2:
+            [32mSUB [32m"" [32mtests/verilator_in/test.sv:15:26 [32m0x55abff60a290
+             [32mop1:
+               [32mVARREF [32m"WIDTH" [32mtests/verilator_in/test.sv:15:21 [32m0x55abff5fb670 [32maccess:RD[39m, [32mpkgp:UNLINKED[39m, [32mvarScopep:UNLINKED[39m, [32mvarp:0x55abff603c30
+             [32mop2:
+               [32mCONST [32m"?32?sh1" [32mtests/verilator_in/test.sv:15:27 [32m0x55abff60a180
+          [32mop4:
+            [32mATTROF [32m"" [32mtests/verilator_in/test.sv:15:20 [32m0x55abff5f4900 [32mattrType:VAR_BASE
+             [32mop1:
+               [32mVARREF [32m"c" [32mtests/verilator_in/test.sv:15:19 [32m0x55abff606bc0 [32maccess:RD[39m, [32mpkgp:UNLINKED[39m, [32mvarScopep:UNLINKED[39m, [32mvarp:0x55abff606c90
+       [32mop2:
+         [32mVARREF [32m"cout" [32mtests/verilator_in/test.sv:15:12 [32m0x55abff5fa1c0 [32maccess:WR[39m, [32mpkgp:UNLINKED[39m, [32mvarScopep:UNLINKED[39m, [32mvarp:0x55abff606530
+      [31mVAR [31m"cout" [31mtests/verilator_in/test.sv:6:16 [31m0x55abff606530 [31mattrClocker:UNKNOWN[39m, [31mioDirection:OUTPUT[39m, [31mlifetime:NONE[39m, [31mvarType:PORT
+       [31mop1:
+         [31mBASICDTYPE [31m"LOGIC_IMPLICIT" [31mtests/verilator_in/test.sv:6:16 [31m0x55abff605db0 [31mkeyword:LOGIC_IMPLICIT
+      [31mVAR [31m"c" [31mtests/verilator_in/test.sv:8:20 [31m0x55abff606c90 [31mattrClocker:UNKNOWN[39m, [31mioDirection:NONE[39m, [31mlifetime:NONE[39m, [31mvarType:WIRE
+       [31mop1:
+         [31mBASICDTYPE [31m"logic" [31mtests/verilator_in/test.sv:8:10 [31m0x55abff606a60 [31mkeyword:logic
+          [31mop1:
+            [31mRANGE [31m"" [31mtests/verilator_in/test.sv:8:10 [31m0x55abff606b20
+             [31mop1:
+               [31mPARSEREF [31m"WIDTH" [31mtests/verilator_in/test.sv:8:11 [31m0x55abff606bc0 [31mexpect:TEXT
+             [31mop2:
+               [31mCONST [31m"?32?sh0" [31mtests/verilator_in/test.sv:8:17 [31m0x55abff603f70
+      [31mBEGIN [31m"" [31mtests/verilator_in/test.sv:10:14 [31m0x55abff609600 [31mgenerate:True[39m, [31mgenfor:True[39m, [31mimplied:True[39m, [31munnamed:True
+       [31mop1:
+         [31mGENFOR [31m"" [31mtests/verilator_in/test.sv:10:14 [31m0x55abff6096d0
+          [31mop1:
+            [31mASSIGN [31m"" [31mtests/verilator_in/test.sv:10:28 [31m0x55abff604330
+             [31mop1:
+               [31mCONST [31m"?32?sh0" [31mtests/verilator_in/test.sv:10:30 [31m0x55abff604220
+             [31mop2:
+               [31mVARREF [31m"i" [31mtests/verilator_in/test.sv:10:26 [31m0x55abff606810 [31maccess:WR[39m, [31mpkgp:UNLINKED[39m, [31mvarScopep:UNLINKED[39m, [31mvarp:0x55abff606ff0
+          [31mop2:
+            [31mLT [31m"" [31mtests/verilator_in/test.sv:10:35 [31m0x55abff604170
+             [31mop1:
+               [31mPARSEREF [31m"i" [31mtests/verilator_in/test.sv:10:33 [31m0x55abff607330 [31mexpect:TEXT
+             [31mop2:
+               [31mPARSEREF [31m"WIDTH" [31mtests/verilator_in/test.sv:10:37 [31m0x55abff607490 [31mexpect:TEXT
+          [31mop3:
+            [31mASSIGN [31m"" [31mtests/verilator_in/test.sv:10:45 [31m0x55abff6076c0
+             [31mop1:
+               [31mADD [31m"" [31mtests/verilator_in/test.sv:10:45 [31m0x55abff607760
+                [31mop1:
+                  [31mPARSEREF [31m"i" [31mtests/verilator_in/test.sv:10:44 [31m0x55abff607810 [31mexpect:TEXT
+                [31mop2:
+                  [31mCONST [31m"?32?h1" [31mtests/verilator_in/test.sv:10:45 [31m0x55abff6078e0
+             [31mop2:
+               [31mPARSEREF [31m"i" [31mtests/verilator_in/test.sv:10:44 [31m0x55abff6075f0 [31mexpect:TEXT
+          [31mop4:
+            [31mCELL [31m"fa" [31mtests/verilator_in/test.sv:11:20 [31m0x55abff6093e0 [31mmodp:0x55abff60bda0
+             [31mop1:
+               [31mPIN [31m"__pinNumber1" [31mtests/verilator_in/test.sv:11:24 [31m0x55abff607ed0 [31mmodVarp:UNLINKED
+                [31mop1:
+                  [31mSELBIT [31m"" [31mtests/verilator_in/test.sv:11:24 [31m0x55abff607df0
+                   [31mop1:
+                     [31mPARSEREF [31m"a" [31mtests/verilator_in/test.sv:11:23 [31m0x55abff607bc0 [31mexpect:TEXT
+                   [31mop2:
+                     [31mPARSEREF [31m"i" [31mtests/verilator_in/test.sv:11:25 [31m0x55abff607d20 [31mexpect:TEXT
+               [31mPIN [31m"__pinNumber2" [31mtests/verilator_in/test.sv:11:30 [31m0x55abff608350 [31mmodVarp:UNLINKED
+                [31mop1:
+                  [31mSELBIT [31m"" [31mtests/verilator_in/test.sv:11:30 [31m0x55abff608270
+                   [31mop1:
+                     [31mPARSEREF [31m"b" [31mtests/verilator_in/test.sv:11:29 [31m0x55abff608040 [31mexpect:TEXT
+                   [31mop2:
+                     [31mPARSEREF [31m"i" [31mtests/verilator_in/test.sv:11:31 [31m0x55abff6081a0 [31mexpect:TEXT
+               [31mPIN [31m"__pinNumber3" [31mtests/verilator_in/test.sv:11:36 [31m0x55abff6087d0 [31mmodVarp:UNLINKED
+                [31mop1:
+                  [31mSELBIT [31m"" [31mtests/verilator_in/test.sv:11:36 [31m0x55abff6086f0
+                   [31mop1:
+                     [31mPARSEREF [31m"c" [31mtests/verilator_in/test.sv:11:35 [31m0x55abff6084c0 [31mexpect:TEXT
+                   [31mop2:
+                     [31mPARSEREF [31m"i" [31mtests/verilator_in/test.sv:11:37 [31m0x55abff608620 [31mexpect:TEXT
+               [31mPIN [31m"__pinNumber4" [31mtests/verilator_in/test.sv:11:42 [31m0x55abff608c50 [31mmodVarp:UNLINKED
+                [31mop1:
+                  [31mSELBIT [31m"" [31mtests/verilator_in/test.sv:11:42 [31m0x55abff608b70
+                   [31mop1:
+                     [31mPARSEREF [31m"s" [31mtests/verilator_in/test.sv:11:41 [31m0x55abff608940 [31mexpect:TEXT
+                   [31mop2:
+                     [31mPARSEREF [31m"i" [31mtests/verilator_in/test.sv:11:43 [31m0x55abff608aa0 [31mexpect:TEXT
+               [31mPIN [31m"__pinNumber5" [31mtests/verilator_in/test.sv:11:48 [31m0x55abff609300 [31mmodVarp:UNLINKED
+                [31mop1:
+                  [31mSELBIT [31m"" [31mtests/verilator_in/test.sv:11:48 [31m0x55abff609220
+                   [31mop1:
+                     [31mPARSEREF [31m"c" [31mtests/verilator_in/test.sv:11:47 [31m0x55abff608dc0 [31mexpect:TEXT
+                   [31mop2:
+                     [31mADD [31m"" [31mtests/verilator_in/test.sv:11:50 [31m0x55abff609170
+                      [31mop1:
+                        [31mPARSEREF [31m"i" [31mtests/verilator_in/test.sv:11:49 [31m0x55abff608f20 [31mexpect:TEXT
+                      [31mop2:
+                        [31mCONST [31m"?32?sh1" [31mtests/verilator_in/test.sv:11:51 [31m0x55abff609060
+       [31mop2:
+         [31mVAR [31m"i" [31mtests/verilator_in/test.sv:10:26 [31m0x55abff606ff0 [31mattrClocker:UNKNOWN[39m, [31mioDirection:NONE[39m, [31mlifetime:NONE[39m, [31mvarType:GENVAR
+          [31mop1:
+            [31mBASICDTYPE [31m"integer" [31mtests/verilator_in/test.sv:10:26 [31m0x55abff606f30 [31mkeyword:integer[39m, [31mrange:31:0
+      [31mASSIGNW [31m"" [31mtests/verilator_in/test.sv:14:17 [31m0x55abff609c20
+       [31mop1:
+         [31mPARSEREF [31m"cin" [31mtests/verilator_in/test.sv:14:19 [31m0x55abff609b50 [31mexpect:TEXT
+       [31mop2:
+         [31mSELBIT [31m"" [31mtests/verilator_in/test.sv:14:13 [31m0x55abff6099e0
+          [31mop1:
+            [31mPARSEREF [31m"c" [31mtests/verilator_in/test.sv:14:12 [31m0x55abff609530 [31mexpect:TEXT
+          [31mop2:
+            [31mCONST [31m"?32?sh0" [31mtests/verilator_in/test.sv:14:14 [31m0x55abff6098d0
+      [31mASSIGNW [31m"" [31mtests/verilator_in/test.sv:15:17 [31m0x55abff60a420
+       [31mop1:
+         [31mSELBIT [31m"" [31mtests/verilator_in/test.sv:15:20 [31m0x55abff60a340
+          [31mop1:
+            [31mPARSEREF [31m"c" [31mtests/verilator_in/test.sv:15:19 [31m0x55abff609ee0 [31mexpect:TEXT
+          [31mop2:
+            [31mSUB [31m"" [31mtests/verilator_in/test.sv:15:26 [31m0x55abff60a290
+             [31mop1:
+               [31mPARSEREF [31m"WIDTH" [31mtests/verilator_in/test.sv:15:21 [31m0x55abff60a040 [31mexpect:TEXT
+             [31mop2:
+               [31mCONST [31m"?32?sh1" [31mtests/verilator_in/test.sv:15:27 [31m0x55abff60a180
+       [31mop2:
+         [31mPARSEREF [31m"cout" [31mtests/verilator_in/test.sv:15:12 [31m0x55abff609d80 [31mexpect:TEXT
+   [39m... * 1
+ [39mop3:
+   [39m... * 2
+[39m

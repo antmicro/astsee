@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "astsee"
+version = "0.1.0"
+authors = [{ name="Antmicro", email="contact@antmicro.com" }]
+license = { file = "Apache-2.0" }
+description = "Suite of tools for pretty printing, diffing, and exploring trees"
+readme = "README.md"
+dependencies = ["deepdiff >= 5.5.0"]
+requires-python = ">=3.9"
+
+[project.scripts]
+astsee = "astsee.generic_cli:main"
+astsee_verilator = "astsee.verilator_cli:main"
+
+[tool.setuptools]
+packages = ["astsee"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests/verilator"]
+
+[tool.yapf]
+COLUMN_LIMIT=120
+
+[tool.pylint.'MESSAGES CONTROL']
+max-line-length = 120
