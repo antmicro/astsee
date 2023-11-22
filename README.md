@@ -1,5 +1,7 @@
 # `astsee`
 
+Copyright (c) 2023 [Antmicro](https://www.antmicro.com)
+
 A suite of tools for pretty printing, diffing, and exploring abstract syntax
 trees. You can use the generic `astsee` tool that accepts mostly arbitrary
 tree-like structures in JSON format, or a variant for a specific AST type.
