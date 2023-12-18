@@ -14,7 +14,7 @@ from astsee import make_diff, DictDiffToTerm, DictDiffToHtml, IntactNode, Replac
 def split_ast_fields(ast, omit_false_flags):
     """split and sort ast fields"""
     implicit = [(k, ast.pop(k))
-                for k in ("type", "name", "file", "addr", "editNum")
+                for k in ("type", "name", "loc", "addr", "editNum")
                 if k in ast]
     children = [(k, v) for k,v in ast.items() if is_children(v)]
     for k,v in children: del ast[k]
@@ -153,7 +153,7 @@ class AstDiffToHtml:
             'editNum': (lambda v: html.escape(f'<e{html.escape(str(v))}>')),
             'name': (lambda v: html.escape(f'"{stringify(v, quote_empty=0)}"')),
             "addr": (lambda v: f'<span id="{html.escape(v)}">{html.escape(v)}</span>'),
-            'file': self.file_handler,
+            'loc': self.loc_handler,
         }  # yapf: disable
         val_handlers.update({
             k: (lambda v: f'<a href="#{html.escape(v)}">{html.escape(v)}</a>')
@@ -164,12 +164,14 @@ class AstDiffToHtml:
                                                         split_fields,
                                                         embeddable=True)
 
-    def file_handler(self, val):
-        """print file field as link to relevant line and save filename in self.srcfiles for later processing"""
-        file, linenum, _ = val.split(":")
-        if file == "<built-in>": return html.escape(val)  # not a file
+    def loc_handler(self, val):
+        """print location field as link to relevant line and save filename in self.srcfiles for later processing"""
+        file, loc_begin, _ = val.split(",")
+        linenum, _ = loc_begin.split(":")
         if file in self.meta["files"]: # convert fileid into filename
-            file = self.meta["files"][file]["filename"]
+            file = self.meta["files"][file]["realpath"]
+        if file == "<built-in>" or file == "<command-line>":
+            return html.escape(file)  # not a file. row/col location is also irrevelant
         self.srcfiles.add(file)
         return f'<a href="#{html.escape(file)}:{html.escape(linenum)}" onclick="showtab(\'{html.escape(file)}\')">{html.escape(val)}</a>'
 
