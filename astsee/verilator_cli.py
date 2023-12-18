@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
 # pylint: disable=line-too-long,invalid-name,multiple-statements,missing-function-docstring,missing-class-docstring,missing-module-docstring,no-else-return,too-few-public-methods
 import argparse
+from glob import glob
+import json
 import os
 import sys
 from functools import partial
 import html
 from textwrap import dedent
-from astsee import make_diff, DictDiffToTerm, DictDiffToHtml, IntactNode, ReplaceDiffNode, stringify, load_jsons
+from astsee import make_diff, DictDiffToTerm, DictDiffToHtml, IntactNode, ReplaceDiffNode, stringify, load_jsons, is_children
 
 
 def split_ast_fields(ast, omit_false_flags):
@@ -14,8 +16,8 @@ def split_ast_fields(ast, omit_false_flags):
     implicit = [(k, ast.pop(k))
                 for k in ("type", "name", "file", "addr", "editNum")
                 if k in ast]
-    children = [(k, ast.pop(k)) for k in ("op1", "op2", "op3", "op4")
-                if k in ast]
+    children = [(k, v) for k,v in ast.items() if is_children(v)]
+    for k,v in children: del ast[k]
 
     def should_omit(val):
         if not omit_false_flags: return False
@@ -24,14 +26,6 @@ def split_ast_fields(ast, omit_false_flags):
 
     explicit = sorted([(k, v) for k, v in ast.items() if not should_omit(v)])
     return implicit, explicit, children
-
-
-KNOWN_PTR_FIELDS = [
-    "abovep", "addr", "blockp", "cellp", "classOrPackageNodep", "classp",
-    "cpkgp", "declp", "dtp", "ftaskp", "funcp", "ifacep", "itemp", "labelp",
-    "modp", "modVarp", "packagep", "pkgp", "scopep", "sensesp", "subDTypep",
-    "taskp", "typedefp", "varp", "varScopep"
-]
 
 parser = argparse.ArgumentParser(
     description='pretty print AST json and do optional filtering/diff',
@@ -68,6 +62,10 @@ parser_group.add_argument('--jq',
                           help='preprocess file(s) with given jq query',
                           default="",
                           dest="jq_query")
+parser.add_argument('--meta',
+                    help='path to meta.json',
+                    default=None,
+                    dest="meta")
 parser.add_argument('file', help='file to pretty print (or diff)')
 parser.add_argument('newfile',
                     nargs="?",
@@ -148,7 +146,8 @@ class AstDiffToHtml:
             '</script>\n'
             '</head>\n')
 
-    def __init__(self, omit_intact, split_fields):
+    def __init__(self, omit_intact, split_fields, meta):
+        self.meta = meta
         self.srcfiles = set()
         val_handlers = {
             'editNum': (lambda v: html.escape(f'<e{html.escape(str(v))}>')),
@@ -158,7 +157,7 @@ class AstDiffToHtml:
         }  # yapf: disable
         val_handlers.update({
             k: (lambda v: f'<a href="#{html.escape(v)}">{html.escape(v)}</a>')
-            for k in KNOWN_PTR_FIELDS if k != "addr"
+            for k in meta["ptrFieldNames"] if k != "addr"
         })
         self.diff_to_str_generic = DictDiffToHtml(omit_intact,
                                                         val_handlers,
@@ -167,10 +166,12 @@ class AstDiffToHtml:
 
     def file_handler(self, val):
         """print file field as link to relevant line and save filename in self.srcfiles for later processing"""
-        fname, linenum, _ = val.split(":")
-        if fname == "<built-in>": return html.escape(val)  # not a file
-        self.srcfiles.add(fname)
-        return f'<a href="#{html.escape(fname)}:{html.escape(linenum)}" onclick="showtab(\'{html.escape(fname)}\')">{html.escape(val)}</a>'
+        file, linenum, _ = val.split(":")
+        if file == "<built-in>": return html.escape(val)  # not a file
+        if file in self.meta["files"]: # convert fileid into filename
+            file = self.meta["files"][file]["filename"]
+        self.srcfiles.add(file)
+        return f'<a href="#{html.escape(file)}:{html.escape(linenum)}" onclick="showtab(\'{html.escape(file)}\')">{html.escape(val)}</a>'
 
     def diff_to_string(self, tree):
         self.srcfiles.clear()
@@ -219,17 +220,52 @@ class AstDiffToHtml:
             return ""
 
 
+def load_meta(path):
+    try:
+        return json.load(open(path))
+    except FileNotFoundError:
+        print(f"WARN: meta file not found. Some features may not work", file=sys.stderr)
+        return {"files": {}, "pointers": {}, "ptrFieldNames": [
+        # when meta not found, we default to hardcoded (likely outdated) list of ptr fields
+        "abovep", "addr", "blockp", "cellp", "classOrPackageNodep", "classp",
+        "cpkgp", "declp", "dtp", "ftaskp", "funcp", "ifacep", "itemp", "labelp",
+        "modp", "modVarp", "packagep", "pkgp", "scopep", "sensesp", "subDTypep",
+        "taskp", "typedefp", "varp", "varScopep"
+        ]}
+
+def guess_meta_path(args):
+    def match(name):
+        # Yeah, this is a bit overengineered scheme, but it should work
+        # even if you have multiple meta files in same dir
+        common = os.path.commonprefix([name, os.path.basename(args.file)])
+        if not common: return False
+
+        return (name == common + ".tree.meta.json" # Vtest1_990_final.tree.json -> Vtest1.tree.meta.json
+               or name == common + "meta.json") # test1.tree.json -> test1.tree.meta.json
+
+    matches = glob("*.tree.meta.json", root_dir=os.path.dirname(args.file))
+    matches = [x for x in matches if match(x)]
+    if len(matches) == 1: # only unambiguous match
+        args.meta = os.path.join(os.path.dirname(args.file), matches[0])
+        print(f"INFO: '{args.meta}' guessed as meta file", file=sys.stderr)
+    else: args.meta = ""
+
 def main(args=None):
-    if(args is None): args = parser.parse_args()
+    if args is None: args = parser.parse_args()
+    if args.meta is None: guess_meta_path(args)
+
+    meta = load_meta(args.meta);
     # allow for suplying alternative implementation like gojq
     jq_bin = os.environ.get("VERILATOR_JQ", "jq")
 
     jq_funcs = """
-    # Apply f to each AST node (assume that something is a node if and only if it has the op1 field)
-    # TODO: consider using better way of determining wheter something is a node or not
-    def ast_walk(f): walk(if type == "object" and has("op1") then f else . end);
-    def empty_ops: .op1,.op2,.op3,.op4 | select(length==0);""" + "def ptrs:" + ",".join(
-        "." + field for field in KNOWN_PTR_FIELDS) + ";"
+    # Apply f to each AST node (assume that something is a node if and only if it is object)
+    def ast_walk(f): walk(if type == "object" then f else . end);
+    def empty_ops: .[] | select(type=="array" and length==0);"""
+    if meta["ptrFieldNames"]:
+        jq_funcs += "def ptrs:" + ",".join("." + field for field in meta["ptrFieldNames"]) + ";"
+    else:
+        jq_funcs += "def ptrs: empty;"
 
     if not args.jq_query:
         if not args.del_list: args.del_list = "empty_ops"
@@ -240,7 +276,7 @@ def main(args=None):
     omit_intact = args.omit and args.newfile  # ommiting unmodified chunks does not make sense without diff
 
     if args.html:
-        diff_to_str = AstDiffToHtml(omit_intact, split_fields)
+        diff_to_str = AstDiffToHtml(omit_intact, split_fields, meta)
     else:
         val_handlers = {
             'editNum': (lambda v: f'<{stringify(v)}>'),
