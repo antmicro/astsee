@@ -178,8 +178,9 @@ class AstDiffToHtml:
     def diff_to_string(self, tree):
         self.srcfiles.clear()
         diff = self.diff_to_str_generic.diff_to_string(tree)
-        menu = "\n".join(self.make_btn(fname) for fname in self.srcfiles)
-        tabs = "\n".join(self.make_tab(fname) for fname in self.srcfiles)
+        srcfiles_sorted = sorted(self.srcfiles) # for sake of output stability
+        menu = "\n".join(self.make_btn(fname) for fname in srcfiles_sorted)
+        tabs = "\n".join(self.make_tab(fname) for fname in srcfiles_sorted)
 
         return dedent("""\
         <!doctype html>

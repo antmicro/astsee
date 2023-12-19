@@ -10,8 +10,6 @@ OUT_DIR = TEST_DIR + "/verilator_out"
 GOLD_DIR = TEST_DIR + "/verilator_golden"
 IN_DIR = TEST_DIR + "/verilator_in"
 
-# FIXME: fix output instability of `--html` (caused probably by `set` container that has undefined order)
-
 def run(request, args):
     test_name = request.node.name
     with open(f'{OUT_DIR}/{test_name}', 'w+') as out, redirect_stdout(out):
