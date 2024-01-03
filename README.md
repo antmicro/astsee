@@ -12,13 +12,14 @@ are supported via `astsee_verilator`.
 
 Given two JSON files, `a.json`:
 
+<!-- name="a.json" -->
 ```json
 {
   "type": "TEST", "addr": "0x55b700efa000", "editNum": 1, "file": "<built-in>:0:0", "name": "$root",
   "op1": [
     {
-      "type": "EXTMODULE", "addr": "0x55b700f36620", "editNum": 2362, "file": "test.v:16:8", "name": "__024root",
-      "op3": [
+      "type": "MODULE", "addr": "0x55b700f366c0", "editNum": 2361, "file": "test.v:16:8", "name": "__024root",
+      "op2": [
         { "type": "CELL", "addr": "0x55b700f50280", "editNum": 2364, "file": "test.v:16:8", "name": "t" }
       ]
     }
@@ -33,6 +34,7 @@ Given two JSON files, `a.json`:
 
 and `b.json`:
 
+<!-- name="b.json" -->
 ```json
 {
   "type": "TEST", "addr": "0x55b700efa000", "editNum": 1, "file": "<built-in>:0:0", "name": "$root",
@@ -54,12 +56,14 @@ and `b.json`:
 
 Run:
 
+<!-- name="pretty-print" -->
 ```sh
-astsee a.json 
+astsee a.json
 ```
 
 to pretty print it in a concise format:
 
+<!-- name="pretty-print-output" -->
 ```
  addr:0x55b700efa000, editNum:1, file:<built-in>:0:0, name:$root, type:TEST
  op1:
@@ -75,6 +79,7 @@ to pretty print it in a concise format:
 
 To produce a diff:
 
+<!-- name="produce-diff" -->
 ```sh
 astsee a.json b.json
 ```
@@ -97,6 +102,7 @@ pipx install git+https://github.com/antmicro/astsee
 
 Or clone the repository, `cd` to it, and run:
 
+<!-- name="install" -->
 ```sh
 pipx install .
 ```
@@ -105,6 +111,7 @@ pipx install .
 
 To run tests, invoke:
 
+<!-- name="test" -->
 ```sh
 pytest
 ```

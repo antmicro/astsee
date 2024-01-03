@@ -1,0 +1,34 @@
+name: test-readme
+run-name: Test README manuals
+on:
+  push:
+    branches:
+     - main
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install tuttest
+        run: pip install -e git+https://github.com/antmicro/tuttest#egg=tuttest
+      - name: Install test dependencies
+        run: pip install pytest deepdiff
+      - name: Test Installation
+        run: |
+          tuttest README.md install | bash -o pipefail -
+          astsee --help
+      - name: Run unit tests
+        run: |
+          tuttest README.md test | bash -o pipefail -
+      - name: Extract sample inputs and outputs from README
+        run: |
+          tuttest README.md a.json > a.json
+          tuttest README.md b.json > b.json
+      - name: Check if diffing works
+        run: |
+          tuttest README.md produce-diff | bash -o pipefail -
+      - name: Check if pretty print works
+        run: |
+          tuttest README.md pretty-print | bash -o pipefail -
