@@ -17,8 +17,8 @@ Given two JSON files, `a.json`:
   "type": "TEST", "addr": "0x55b700efa000", "editNum": 1, "file": "<built-in>:0:0", "name": "$root",
   "op1": [
     {
-      "type": "EXTMODULE", "addr": "0x55b700f36620", "editNum": 2362, "file": "test.v:16:8", "name": "__024root",
-      "op3": [
+      "type": "MODULE", "addr": "0x55b700f366c0", "editNum": 2361, "file": "test.v:16:8", "name": "__024root",
+      "op2": [
         { "type": "CELL", "addr": "0x55b700f50280", "editNum": 2364, "file": "test.v:16:8", "name": "t" }
       ]
     }
