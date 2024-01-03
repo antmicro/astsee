@@ -275,7 +275,8 @@ class DictDiffToTerm:
             self._output_explicit(k, v) for k, v in explicit)
         children = "".join(
             (self._output_children(k, v, indent) for k, v in children))
-        return f'{indent}{implicit}{" " + explicit if explicit else ""}\n{children}'
+        sep = " " if explicit and implicit else ""
+        return f'{indent}{implicit}{sep}{explicit}\n{children}'
 
     def _output_val(self, key, val, default_handler=stringify):
         return self.val_handlers.get(key, default_handler)(val.content)
