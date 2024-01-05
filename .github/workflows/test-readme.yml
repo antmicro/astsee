@@ -29,6 +29,10 @@ jobs:
       - name: Check if diffing works
         run: |
           tuttest README.md produce-diff | bash -o pipefail -
-      - name: Check if pretty print works
+          # diff output is hard to embed in README as text, so we don't do assertion on it
+      - name: Run pretty print and capture output
         run: |
-          tuttest README.md pretty-print | bash -o pipefail -
+          tuttest README.md pretty-print | bash -o pipefail - | tee actual-pretty-print-output
+      - name: Check if pretty print output matches README
+        run: |
+          diff <(tuttest README.md pretty-print-output) actual-pretty-print-output

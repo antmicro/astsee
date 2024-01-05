@@ -65,16 +65,16 @@ to pretty print it in a concise format:
 
 <!-- name="pretty-print-output" -->
 ```
- addr:0x55b700efa000, editNum:1, file:<built-in>:0:0, name:$root, type:TEST
+addr:0x55b700efa000, editNum:1, file:<built-in>:0:0, name:$root, type:TEST
  op1:
-    addr:0x55b700f366c0, editNum:2361, file:test.v:16:8, name:__024root, type:MODULE
+   addr:0x55b700f366c0, editNum:2361, file:test.v:16:8, name:__024root, type:MODULE
     op2:
-       addr:0x55b700f50280, editNum:2364, file:test.v:16:8, name:t, type:CELL
+      addr:0x55b700f50280, editNum:2364, file:test.v:16:8, name:t, type:CELL
  op4:
-    addr:0x55b700f50280, editNum:2364, file:test.v:16:8, name:t, type:CELL
-    addr:0x55b700f50280, editNum:2364, file:test.v:16:8, name:t, type:CELL
-    addr:0x55b700f50280, editNum:2364, file:test.v:16:8, name:t, type:CELL
-    addr:0x55b700f50280, editNum:2364, file:test.v:16:8, name:t, type:CELL
+   addr:0x55b700f50280, editNum:2364, file:test.v:16:8, name:t, type:CELL
+   addr:0x55b700f50280, editNum:2364, file:test.v:16:8, name:t, type:CELL
+   addr:0x55b700f50280, editNum:2364, file:test.v:16:8, name:t, type:CELL
+   addr:0x55b700f50280, editNum:2364, file:test.v:16:8, name:t, type:CELL
 ```
 
 To produce a diff:
