@@ -107,6 +107,15 @@ Or clone the repository, `cd` to it, and run:
 pipx install .
 ```
 
+## Dev install
+
+To install project in editable mode (so changes are immediately reflected in executable), with extra dependencies meant for development only (like test framework):
+
+clone repo, `cd` to it, and run:
+```sh
+pip install -e '.[dev]'
+```
+
 ## Tests
 
 To run tests, invoke:
