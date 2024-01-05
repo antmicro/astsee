@@ -1,0 +1,17 @@
+stages:
+  - test
+
+variables:
+  SCALENODE_DEBUG_PRINT: 1
+  GIT_DEPTH: 1
+
+test-readme:
+  image: "d2s://external/docker/debian:bookworm"
+  tags: ['ace-x86_64']
+  variables:
+    SCALENODE_CPU: 1
+    SCALENODE_RAM: 2048
+  script:
+    - apt-get -qqy update && apt-get -qqy --no-install-recommends install jq python3 python3-pip git
+    - pip install --break-system-packages -e '.[dev]'
+    - .ci-scripts/test.sh
