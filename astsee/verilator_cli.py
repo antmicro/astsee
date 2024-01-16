@@ -164,16 +164,41 @@ class AstDiffToHtml:
                                                         split_fields,
                                                         embeddable=True)
 
-    def loc_handler(self, val):
+    def resolve_path(self, file):
+        # Try to find symbolic/relative (prefered) or absolute path of file.
+        # Returns tuple (found, path)
+        #
+        # NOTE: supsectible to TOCTOU, but it should not be a problem for us
+        sym_path = file["filename"]
+        abs_path = file["realpath"]
+
+        if sym_path == "<built-in>" or sym_path == "<command-line>":  # not a file
+            return False, sym_path
+        if os.path.exists(sym_path):
+            return True, sym_path
+        if os.path.exists(abs_path):
+            return True, abs_path
+
+        if sym_path == "<verilated_std>" and "VERILATOR_ROOT" in os.environ:
+            print(f'WARN: {abs_path} not found, falling back to $VERILATOR_ROOT/include/verilated_std.sv', file=sys.stderr)
+            abs_path = os.path.join(os.environ["VERILATOR_ROOT"], "include", "verilated_std.sv")
+
+        print(f'WARN: {sym_path} nor {abs_path} not found, skipping. cwd: {os.getcwd()}', file=sys.stderr)
+        return False, sym_path
+
+    def loc_handler(self, loc):
         """print location field as link to relevant line and save filename in self.srcfiles for later processing"""
-        file, loc_begin, _ = val.split(",")
+        id, loc_begin, _ = loc.split(",")
         linenum, _ = loc_begin.split(":")
-        if file in self.meta["files"]: # convert fileid into filename
-            file = self.meta["files"][file]["realpath"]
-        if file == "<built-in>" or file == "<command-line>":
-            return html.escape(file)  # not a file. row/col location is also irrevelant
-        self.srcfiles.add(file)
-        return f'<a href="#{html.escape(file)}:{html.escape(linenum)}" onclick="showtab(\'{html.escape(file)}\')">{html.escape(val)}</a>'
+        found, path = self.resolve_path(self.meta["files"][id])
+        if not found:
+            if path == "<built-in>" or path == "<command-line>":
+                return html.escape(path)  # not a file. row/col location is also irrevelant
+            else:
+                return html.escape(loc)
+        else:
+            self.srcfiles.add(path)
+            return f'<a href="#{html.escape(path)}:{html.escape(linenum)}" onclick="showtab(\'{html.escape(path)}\')">{html.escape(loc)}</a>'
 
     def diff_to_string(self, tree):
         self.srcfiles.clear()

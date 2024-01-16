@@ -9,6 +9,7 @@ TEST_DIR = os.path.dirname(__file__)
 OUT_DIR = TEST_DIR + "/verilator_out"
 GOLD_DIR = TEST_DIR + "/verilator_golden"
 IN_DIR = TEST_DIR + "/verilator_in"
+os.chdir(IN_DIR) # html tests rely on relative paths
 
 def run(request, args):
     test_name = request.node.name
