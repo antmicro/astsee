@@ -64,13 +64,15 @@ parser_group.add_argument('--jq',
                           default="",
                           dest="jq_query")
 parser.add_argument('--meta',
-                    help='path to meta.json',
+                    help='path to .tree.meta.json used for resolving ids and identifying ptr fields.\n'
+                         'If not given, astsee will try to deduce it from .tree.json path.\n'
+                         "If not found, ids won't be resolved, and hardcoded list will be used for fields identification",
                     default=None,
                     dest="meta")
-parser.add_argument('file', help='file to pretty print (or diff)')
+parser.add_argument('file', help='.tree.json file to pretty print (or diff)')
 parser.add_argument('newfile',
                     nargs="?",
-                    help='optional new version of file (enables diff)',
+                    help='optional new version of .tree.json file (enables diff)',
                     default=None)
 parser.add_argument(
     '--html',
