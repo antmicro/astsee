@@ -8,6 +8,7 @@ import sys
 from functools import partial
 import html
 from textwrap import dedent
+import logging as log
 from astsee import make_diff, DictDiffToTerm, DictDiffToHtml, IntactNode, ReplaceDiffNode, stringify, load_jsons, is_children
 
 
@@ -75,6 +76,10 @@ parser.add_argument(
     '--html',
     help='output diff as html rather than plaintext colored with ansi escapes',
     action='store_true')
+parser.add_argument('--loglevel',
+                    default='warning',
+                    choices=['critical', 'error', 'warning', 'info', 'debug'],
+                    help='log level. default=warning')
 
 
 class AstDiffToHtml:
@@ -180,10 +185,10 @@ class AstDiffToHtml:
             return True, abs_path
 
         if sym_path == "<verilated_std>" and "VERILATOR_ROOT" in os.environ:
-            print(f'WARN: {abs_path} not found, falling back to $VERILATOR_ROOT/include/verilated_std.sv', file=sys.stderr)
+            log.warning(f'{abs_path} not found, falling back to $VERILATOR_ROOT/include/verilated_std.sv')
             abs_path = os.path.join(os.environ["VERILATOR_ROOT"], "include", "verilated_std.sv")
 
-        print(f'WARN: {sym_path} nor {abs_path} not found, skipping. cwd: {os.getcwd()}', file=sys.stderr)
+        log.warning(f'{sym_path} nor {abs_path} not found, skipping. cwd: {os.getcwd()}')
         return False, sym_path
 
     def loc_handler(self, loc):
@@ -244,7 +249,7 @@ class AstDiffToHtml:
                     rows += f'<span class="th" id="{fname}:{i+1}">{i+1}</span>{line}\n'
             return f'<div class="tab y-scrollable" id="{fname}"><pre class="code-block">{rows}</pre></div>'
         except FileNotFoundError:
-            print(f'WARN: file {fname} not found, skipping', file=sys.stderr)
+            log.warning(f'file {fname} not found, skipping')
             return ""
 
 
@@ -252,7 +257,7 @@ def load_meta(path):
     try:
         return json.load(open(path))
     except FileNotFoundError:
-        print(f"WARN: meta file not found. Some features may not work", file=sys.stderr)
+        log.warning("meta file not found. Some features may not work")
         return {"files": {}, "pointers": {}, "ptrFieldNames": [
         # when meta not found, we default to hardcoded (likely outdated) list of ptr fields
         "abovep", "addr", "blockp", "cellp", "classOrPackageNodep", "classp",
@@ -275,11 +280,12 @@ def guess_meta_path(args):
     matches = [x for x in matches if match(x)]
     if len(matches) == 1: # only unambiguous match
         args.meta = os.path.join(os.path.dirname(args.file), matches[0])
-        print(f"INFO: '{args.meta}' guessed as meta file", file=sys.stderr)
+        log.info(f"'{args.meta}' guessed as meta file")
     else: args.meta = ""
 
 def main(args=None):
     if args is None: args = parser.parse_args()
+    log.basicConfig(level=args.loglevel.upper())
     if args.meta is None: guess_meta_path(args)
 
     meta = load_meta(args.meta);
