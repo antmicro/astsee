@@ -7,8 +7,10 @@ import os
 import sys
 from functools import partial
 import html
+from tempfile import NamedTemporaryFile
 from textwrap import dedent
 import logging as log
+import webbrowser
 from astsee import make_diff, DictDiffToTerm, DictDiffToHtml, IntactNode, ReplaceDiffNode, stringify, load_jsons, is_children
 
 
@@ -84,6 +86,11 @@ parser.add_argument(
     '--html',
     help='output diff as html rather than plaintext colored with ansi escapes',
     action='store_true')
+parser.add_argument(
+    '--htmlb',
+    help='like --html, but the generated file is opened in a web browser',
+    action='store_true',
+    dest="html_browser")
 parser.add_argument('--loglevel',
                     default='warning',
                     choices=['critical', 'error', 'warning', 'info', 'debug'],
@@ -317,7 +324,7 @@ def main(args=None):
     split_fields = partial(split_ast_fields, omit_false_flags=args.omit)
     omit_intact = args.omit and args.newfile  # ommiting unmodified chunks does not make sense without diff
 
-    if args.html:
+    if args.html or args.html_browser:
         diff_to_str = AstDiffToHtml(omit_intact, split_fields, meta)
     else:
         val_handlers = {
@@ -337,7 +344,12 @@ def main(args=None):
     else:  # both files suplied, diff
         tree = make_diff(*load_jsons_([args.file, args.newfile]))
 
-    print(diff_to_str.diff_to_string(tree), end="")
+    if args.html_browser:
+        with NamedTemporaryFile('w', delete=False, suffix='.html') as out:
+            out.write(diff_to_str.diff_to_string(tree))
+            webbrowser.open(f'file://{out.name}')
+    else:
+        print(diff_to_str.diff_to_string(tree), end="")
 
 
 if __name__ == "__main__":
