@@ -212,6 +212,11 @@ class AstDiffToHtml:
     def loc_handler(self, loc):
         """print location field as link to relevant line and save filename in self.srcfiles for later processing"""
         id, begin, end = loc.split(",")
+        (begin_row, begin_col), (end_row, end_col) = begin.split(":"), end.split(":")
+
+        if id not in self.meta["files"]:
+            return f'{html.escape(id)}:{html.escape(begin_row)}'
+
         found, path = self.resolve_path(self.meta["files"][id])
         if not found:
             if path == "<built-in>" or path == "<command-line>":
@@ -220,9 +225,9 @@ class AstDiffToHtml:
                 return html.escape(loc)
         else:
             self.srcfiles.add(path)
-            (begin_row, begin_col), (end_row, end_col) = begin.split(":"), end.split(":")
             onclick=f"highlight_file('{html.escape(path)}',{int(begin_row)},{int(begin_col)},{int(end_row)},{int(end_col)})"
-            return f'<a href="#{html.escape(path)}:{html.escape(begin_row)}" onclick="{onclick}">{html.escape(loc)}</a>'
+            short_loc=f'{html.escape(path)}:{html.escape(begin_row)}'
+            return f'<a href="#{short_loc}" onclick="{onclick}">{short_loc}</a>'
 
     def diff_to_string(self, tree):
         self.srcfiles.clear()
@@ -301,6 +306,13 @@ def guess_meta_path(args):
         log.info(f"'{args.meta}' guessed as meta file")
     else: args.meta = ""
 
+def plaintext_loc_handler(loc, meta):
+    id, begin, end = loc.split(",")
+    line = begin.split(":")[0]
+    if id in meta["files"]: return f'{meta["files"][id]["filename"]}:{line}'
+    else: return f'{id}:{line}'
+
+
 def main(args=None):
     if args is None: args = parser.parse_args()
     log.basicConfig(level=args.loglevel.upper())
@@ -330,9 +342,11 @@ def main(args=None):
     if args.html or args.html_browser:
         diff_to_str = AstDiffToHtml(omit_intact, split_fields, meta)
     else:
+        loc_handler = partial(plaintext_loc_handler, meta=meta)
         val_handlers = {
             'editNum': (lambda v: f'<{stringify(v)}>'),
             'name': (lambda v: f'"{stringify(v, quote_empty=0)}"'),
+            'loc': loc_handler,
         }
         diff_to_str = DictDiffToTerm(omit_intact, val_handlers, split_fields)
 

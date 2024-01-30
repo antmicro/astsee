@@ -40,6 +40,10 @@ def test_tree_pprint_html(request):
 def test_tree_diff_html(request):
     run(request, f'{IN_DIR}/test1_a.tree.json {IN_DIR}/test1_b.tree.json --html')
 
+def test_tree_diff_html_filter_no_meta(request):
+    # empty meta arg disables guessing of meta file path
+    run(request, f'{IN_DIR}/test1_a.tree.json {IN_DIR}/test1_b.tree.json --html -d "ptrs" --meta ""')
+
 def test_pprint_dict_with_one_scalar(request):
     run(request, f'{IN_DIR}/dict_with_one_scalar.json')
 
