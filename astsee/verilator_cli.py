@@ -97,11 +97,18 @@ parser.add_argument('--loglevel',
                     help='log level. default=warning')
 
 
+def read_file(path):
+    with open(path) as f: return f.read()
+
+
 class AstDiffToHtml:
     CSS = dedent("""
     a { color: inherit; }
-    :target { /* highlight matched element */
+    mark { /* highlight matched element */
         background-color: gold;
+        .th {
+            background-color: white;
+        }
     }
     body {
         display: flex;
@@ -147,11 +154,7 @@ class AstDiffToHtml:
     }
     """)
 
-    JS = dedent("""\
-    var top_idx = 1;
-    function showtab(tabname) {
-        document.getElementById(tabname).style.zIndex = ++top_idx;
-    }""")
+    JS = read_file(f'{os.path.dirname(__file__)}/verilator.js')
 
     HEAD = ('<head>\n'
             '<meta charset="UTF-8"/>\n'
@@ -208,8 +211,7 @@ class AstDiffToHtml:
 
     def loc_handler(self, loc):
         """print location field as link to relevant line and save filename in self.srcfiles for later processing"""
-        id, loc_begin, _ = loc.split(",")
-        linenum, _ = loc_begin.split(":")
+        id, begin, end = loc.split(",")
         found, path = self.resolve_path(self.meta["files"][id])
         if not found:
             if path == "<built-in>" or path == "<command-line>":
@@ -218,7 +220,9 @@ class AstDiffToHtml:
                 return html.escape(loc)
         else:
             self.srcfiles.add(path)
-            return f'<a href="#{html.escape(path)}:{html.escape(linenum)}" onclick="showtab(\'{html.escape(path)}\')">{html.escape(loc)}</a>'
+            (begin_row, begin_col), (end_row, end_col) = begin.split(":"), end.split(":")
+            onclick=f"highlight_file('{html.escape(path)}',{int(begin_row)},{int(begin_col)},{int(end_row)},{int(end_col)})"
+            return f'<a href="#{html.escape(path)}:{html.escape(begin_row)}" onclick="{onclick}">{html.escape(loc)}</a>'
 
     def diff_to_string(self, tree):
         self.srcfiles.clear()
@@ -255,14 +259,13 @@ class AstDiffToHtml:
 
     def make_tab(self, fname):
         """load file into linenumbered tab"""
-        fname = html.escape(fname)
         rows = ""
         try:
             with open(fname, encoding='utf-8') as f:
                 for i, line in enumerate(f):
                     line = html.escape(line.rstrip())
-                    rows += f'<span class="th" id="{fname}:{i+1}">{i+1}</span>{line}\n'
-            return f'<div class="tab y-scrollable" id="{fname}"><pre class="code-block">{rows}</pre></div>'
+                    rows += f'<span class="th" id="{html.escape(fname)}:{i+1}">{i+1}</span>{line}\n'
+            return f'<div class="tab y-scrollable" id="{html.escape(fname)}"><pre class="code-block">{rows}</pre></div>'
         except FileNotFoundError:
             log.warning(f'file {fname} not found, skipping')
             return ""
