@@ -1,177 +1,507 @@
-NETLIST "$root" <built-in>:0:0 0x55abff5cfa40 timeprecision:1ps, timeunit:1ps
- op1:
-   MODULE "serial_adder" tests/verilator_in/test.sv:1:8 0x55abff5f8ba0 level:2, timeunit:1ps
-    op2:
-      VAR "WIDTH" tests/verilator_in/test.sv:1:23 0x55abff603c30 attrClocker:UNKNOWN, ioDirection:NONE, lifetime:NONE, varType:GPARAM
-       op1:
-         BASICDTYPE "LOGIC_IMPLICIT" tests/verilator_in/test.sv:1:23 0x55abff600a40 keyword:LOGIC_IMPLICIT
-      PORT "a" tests/verilator_in/test.sv:2:28 0x55abff604460
-      VAR "a" tests/verilator_in/test.sv:2:28 0x55abff604a50 attrClocker:UNKNOWN, ioDirection:INPUT, lifetime:NONE, varType:PORT
-       op1:
-         BASICDTYPE "logic" tests/verilator_in/test.sv:2:16 0x55abff604050 keyword:logic
-          op1:
-            RANGE "" tests/verilator_in/test.sv:2:16 0x55abff604670
-             op1:
-               SUB "" tests/verilator_in/test.sv:2:22 0x55abff604710
-                op1:
-                  PARSEREF "WIDTH" tests/verilator_in/test.sv:2:17 0x55abff6047c0 expect:TEXT
-                op2:
-                  CONST "?32?sh1" tests/verilator_in/test.sv:2:23 0x55abff604890
-             op2:
-               CONST "?32?sh0" tests/verilator_in/test.sv:2:25 0x55abff604970
-      PORT "b" tests/verilator_in/test.sv:3:28 0x55abff604de0
-      VAR "b" tests/verilator_in/test.sv:3:28 0x55abff6053d0 attrClocker:UNKNOWN, ioDirection:INPUT, lifetime:NONE, varType:PORT
-       op1:
-         BASICDTYPE "logic" tests/verilator_in/test.sv:3:16 0x55abff6045b0 keyword:logic
-          op1:
-            RANGE "" tests/verilator_in/test.sv:3:16 0x55abff604ff0
-             op1:
-               SUB "" tests/verilator_in/test.sv:3:22 0x55abff605090
-                op1:
-                  PARSEREF "WIDTH" tests/verilator_in/test.sv:3:17 0x55abff605140 expect:TEXT
-                op2:
-                  CONST "?32?sh1" tests/verilator_in/test.sv:3:23 0x55abff605210
-             op2:
-               CONST "?32?sh0" tests/verilator_in/test.sv:3:25 0x55abff6052f0
-      PORT "cin" tests/verilator_in/test.sv:4:16 0x55abff603e70
-      VAR "cin" tests/verilator_in/test.sv:4:16 0x55abff6056b0 attrClocker:UNKNOWN, ioDirection:INPUT, lifetime:NONE, varType:PORT
-       op1:
-         BASICDTYPE "LOGIC_IMPLICIT" tests/verilator_in/test.sv:4:16 0x55abff604f30 keyword:LOGIC_IMPLICIT
-      PORT "s" tests/verilator_in/test.sv:5:28 0x55abff605c10
-      VAR "s" tests/verilator_in/test.sv:5:28 0x55abff606250 attrClocker:UNKNOWN, ioDirection:OUTPUT, lifetime:NONE, varType:PORT
-       op1:
-         BASICDTYPE "logic" tests/verilator_in/test.sv:5:16 0x55abff6059f0 keyword:logic
-          op1:
-            RANGE "" tests/verilator_in/test.sv:5:16 0x55abff605e70
-             op1:
-               SUB "" tests/verilator_in/test.sv:5:22 0x55abff605f10
-                op1:
-                  PARSEREF "WIDTH" tests/verilator_in/test.sv:5:17 0x55abff605fc0 expect:TEXT
-                op2:
-                  CONST "?32?sh1" tests/verilator_in/test.sv:5:23 0x55abff606090
-             op2:
-               CONST "?32?sh0" tests/verilator_in/test.sv:5:25 0x55abff606170
-      PORT "cout" tests/verilator_in/test.sv:6:16 0x55abff6058f0
-      VAR "cout" tests/verilator_in/test.sv:6:16 0x55abff606530 attrClocker:UNKNOWN, ioDirection:OUTPUT, lifetime:NONE, varType:PORT
-       op1:
-         BASICDTYPE "LOGIC_IMPLICIT" tests/verilator_in/test.sv:6:16 0x55abff605db0 keyword:LOGIC_IMPLICIT
-      VAR "c" tests/verilator_in/test.sv:8:20 0x55abff606c90 attrClocker:UNKNOWN, ioDirection:NONE, lifetime:NONE, varType:WIRE
-       op1:
-         BASICDTYPE "logic" tests/verilator_in/test.sv:8:10 0x55abff606a60 keyword:logic
-          op1:
-            RANGE "" tests/verilator_in/test.sv:8:10 0x55abff606b20
-             op1:
-               PARSEREF "WIDTH" tests/verilator_in/test.sv:8:11 0x55abff606bc0 expect:TEXT
-             op2:
-               CONST "?32?sh0" tests/verilator_in/test.sv:8:17 0x55abff603f70
-      BEGIN "" tests/verilator_in/test.sv:10:14 0x55abff609600 generate:True, genfor:True, implied:True, unnamed:True
-       op1:
-         GENFOR "" tests/verilator_in/test.sv:10:14 0x55abff6096d0
-          op1:
-            ASSIGN "" tests/verilator_in/test.sv:10:28 0x55abff604330
-             op1:
-               CONST "?32?sh0" tests/verilator_in/test.sv:10:30 0x55abff604220
-             op2:
-               VARREF "i" tests/verilator_in/test.sv:10:26 0x55abff606810 access:WR, pkgp:UNLINKED, varScopep:UNLINKED, varp:0x55abff606ff0
-          op2:
-            LT "" tests/verilator_in/test.sv:10:35 0x55abff604170
-             op1:
-               PARSEREF "i" tests/verilator_in/test.sv:10:33 0x55abff607330 expect:TEXT
-             op2:
-               PARSEREF "WIDTH" tests/verilator_in/test.sv:10:37 0x55abff607490 expect:TEXT
-          op3:
-            ASSIGN "" tests/verilator_in/test.sv:10:45 0x55abff6076c0
-             op1:
-               ADD "" tests/verilator_in/test.sv:10:45 0x55abff607760
-                op1:
-                  PARSEREF "i" tests/verilator_in/test.sv:10:44 0x55abff607810 expect:TEXT
-                op2:
-                  CONST "?32?h1" tests/verilator_in/test.sv:10:45 0x55abff6078e0
-             op2:
-               PARSEREF "i" tests/verilator_in/test.sv:10:44 0x55abff6075f0 expect:TEXT
-          op4:
-            CELL "fa" tests/verilator_in/test.sv:11:20 0x55abff6093e0 modp:0x55abff60bda0
-             op1:
-               PIN "__pinNumber1" tests/verilator_in/test.sv:11:24 0x55abff607ed0 modVarp:UNLINKED
-                op1:
-                  SELBIT "" tests/verilator_in/test.sv:11:24 0x55abff607df0
-                   op1:
-                     PARSEREF "a" tests/verilator_in/test.sv:11:23 0x55abff607bc0 expect:TEXT
-                   op2:
-                     PARSEREF "i" tests/verilator_in/test.sv:11:25 0x55abff607d20 expect:TEXT
-               PIN "__pinNumber2" tests/verilator_in/test.sv:11:30 0x55abff608350 modVarp:UNLINKED
-                op1:
-                  SELBIT "" tests/verilator_in/test.sv:11:30 0x55abff608270
-                   op1:
-                     PARSEREF "b" tests/verilator_in/test.sv:11:29 0x55abff608040 expect:TEXT
-                   op2:
-                     PARSEREF "i" tests/verilator_in/test.sv:11:31 0x55abff6081a0 expect:TEXT
-               PIN "__pinNumber3" tests/verilator_in/test.sv:11:36 0x55abff6087d0 modVarp:UNLINKED
-                op1:
-                  SELBIT "" tests/verilator_in/test.sv:11:36 0x55abff6086f0
-                   op1:
-                     PARSEREF "c" tests/verilator_in/test.sv:11:35 0x55abff6084c0 expect:TEXT
-                   op2:
-                     PARSEREF "i" tests/verilator_in/test.sv:11:37 0x55abff608620 expect:TEXT
-               PIN "__pinNumber4" tests/verilator_in/test.sv:11:42 0x55abff608c50 modVarp:UNLINKED
-                op1:
-                  SELBIT "" tests/verilator_in/test.sv:11:42 0x55abff608b70
-                   op1:
-                     PARSEREF "s" tests/verilator_in/test.sv:11:41 0x55abff608940 expect:TEXT
-                   op2:
-                     PARSEREF "i" tests/verilator_in/test.sv:11:43 0x55abff608aa0 expect:TEXT
-               PIN "__pinNumber5" tests/verilator_in/test.sv:11:48 0x55abff609300 modVarp:UNLINKED
-                op1:
-                  SELBIT "" tests/verilator_in/test.sv:11:48 0x55abff609220
-                   op1:
-                     PARSEREF "c" tests/verilator_in/test.sv:11:47 0x55abff608dc0 expect:TEXT
-                   op2:
-                     ADD "" tests/verilator_in/test.sv:11:50 0x55abff609170
-                      op1:
-                        PARSEREF "i" tests/verilator_in/test.sv:11:49 0x55abff608f20 expect:TEXT
-                      op2:
-                        CONST "?32?sh1" tests/verilator_in/test.sv:11:51 0x55abff609060
-       op2:
-         VAR "i" tests/verilator_in/test.sv:10:26 0x55abff606ff0 attrClocker:UNKNOWN, ioDirection:NONE, lifetime:NONE, varType:GENVAR
-          op1:
-            BASICDTYPE "integer" tests/verilator_in/test.sv:10:26 0x55abff606f30 keyword:integer, range:31:0
-      ASSIGNW "" tests/verilator_in/test.sv:14:17 0x55abff609c20
-       op1:
-         PARSEREF "cin" tests/verilator_in/test.sv:14:19 0x55abff609b50 expect:TEXT
-       op2:
-         SELBIT "" tests/verilator_in/test.sv:14:13 0x55abff6099e0
-          op1:
-            PARSEREF "c" tests/verilator_in/test.sv:14:12 0x55abff609530 expect:TEXT
-          op2:
-            CONST "?32?sh0" tests/verilator_in/test.sv:14:14 0x55abff6098d0
-      ASSIGNW "" tests/verilator_in/test.sv:15:17 0x55abff60a420
-       op1:
-         SELBIT "" tests/verilator_in/test.sv:15:20 0x55abff60a340
-          op1:
-            PARSEREF "c" tests/verilator_in/test.sv:15:19 0x55abff609ee0 expect:TEXT
-          op2:
-            SUB "" tests/verilator_in/test.sv:15:26 0x55abff60a290
-             op1:
-               PARSEREF "WIDTH" tests/verilator_in/test.sv:15:21 0x55abff60a040 expect:TEXT
-             op2:
-               CONST "?32?sh1" tests/verilator_in/test.sv:15:27 0x55abff60a180
-       op2:
-         PARSEREF "cout" tests/verilator_in/test.sv:15:12 0x55abff609d80 expect:TEXT
-   NOTFOUNDMODULE "full_adder" tests/verilator_in/test.sv:11:20 0x55abff60bda0 level:3, timeunit:1ps
- op3:
-   TYPETABLE "" <built-in>:0:0 0x55abff5d0160
-    op1:
-      BASICDTYPE "integer" 0x55abff5ea540 generic:True, keyword:integer, range:31:0
-      BASICDTYPE "logic" 0x55abff5ecd40 generic:True, keyword:logic, range:31:0
-      BASICDTYPE "logic" 0x55abff5f37f0 generic:True, keyword:logic
-      VOIDDTYPE "" 0x55abff5f43d0
-      BASICDTYPE "logic" 0x55abff5fd0a0 generic:True, keyword:logic, range:31:0
-      BASICDTYPE "logic" 0x55abff5fd750 generic:True, keyword:logic, range:31:0
-      BASICDTYPE "logic" 0x55abff5ff9a0 generic:True, keyword:logic, range:295:0
-      BASICDTYPE "string" 0x55abff5ffbe0 generic:True, keyword:string
-      BASICDTYPE "logic" tests/verilator_in/test.sv:10:45 0x55abff6071b0 generic:True, keyword:logic, range:31:0
-   CONSTPOOL "" <built-in>:0:0 0x55abff5d0320
-    op1:
-      MODULE "@CONST-POOL@" <built-in>:0:0 0x55abff5d0440 level:0, timeunit:NONE
-       op2:
-         SCOPE "@CONST-POOL@" <built-in>:0:0 0x55abff5d0550 abovep:UNLINKED, cellp:UNLINKED, modp:0x55abff5d0440
+NETLIST "$root" a,0:0,0:0 (B) constPoolp:(D), delaySchedulerp:UNLINKED, dollarUnitPkgp:UNLINKED, dpiExportTriggerp:UNLINKED, evalNbap:UNLINKED, evalp:UNLINKED, nbaEventTriggerp:UNLINKED, nbaEventp:UNLINKED, stdPackagep:UNLINKED, timeprecision:1ps, timeunit:1ps, topScopep:UNLINKED, typeTablep:(C)
+ modulesp:
+   MODULE "serial_adder" d,15:8,15:20 (E) level:2, origName:serial_adder, timeunit:1ps
+    stmtsp:
+      VAR "WIDTH" d,15:23,15:28 (F) attrClocker:UNKNOWN, direction:NONE, lifetime:VSTATIC, origName:WIDTH, sensIfacep:UNLINKED, varType:GPARAM
+       valuep:
+         CONST "?32?sh8" d,15:29,15:30 (H)
+      VAR "a" d,16:28,16:29 (J) attrClocker:UNKNOWN, direction:INPUT, lifetime:NONE, origName:a, sensIfacep:UNLINKED, varType:PORT
+       childDTypep:
+         BASICDTYPE "logic" d,16:16,16:17 (K) keyword:logic
+          rangep:
+            RANGE "" d,16:16,16:17 (L)
+             leftp:
+               SUB "" d,16:22,16:23 (M)
+                lhsp:
+                  VARREF "WIDTH" d,16:17,16:22 (LF) access:RD, classOrPackagep:UNLINKED, varScopep:UNLINKED, varp:(F)
+                rhsp:
+                  CONST "?32?sh1" d,16:23,16:24 (O)
+             rightp:
+               CONST "?32?sh0" d,16:25,16:26 (P)
+      VAR "b" d,17:28,17:29 (R) attrClocker:UNKNOWN, direction:INPUT, lifetime:NONE, origName:b, sensIfacep:UNLINKED, varType:PORT
+       childDTypep:
+         BASICDTYPE "logic" d,17:16,17:17 (S) keyword:logic
+          rangep:
+            RANGE "" d,17:16,17:17 (T)
+             leftp:
+               SUB "" d,17:22,17:23 (U)
+                lhsp:
+                  VARREF "WIDTH" d,17:17,17:22 (MF) access:RD, classOrPackagep:UNLINKED, varScopep:UNLINKED, varp:(F)
+                rhsp:
+                  CONST "?32?sh1" d,17:23,17:24 (W)
+             rightp:
+               CONST "?32?sh0" d,17:25,17:26 (X)
+      VAR "cin" d,18:16,18:19 (Z) attrClocker:UNKNOWN, direction:INPUT, lifetime:NONE, origName:cin, sensIfacep:UNLINKED, varType:PORT
+       childDTypep:
+         BASICDTYPE "LOGIC_IMPLICIT" d,18:16,18:19 (AB) keyword:LOGIC_IMPLICIT
+      VAR "s" d,19:28,19:29 (CB) attrClocker:UNKNOWN, direction:OUTPUT, lifetime:NONE, origName:s, sensIfacep:UNLINKED, varType:PORT
+       childDTypep:
+         BASICDTYPE "logic" d,19:16,19:17 (DB) keyword:logic
+          rangep:
+            RANGE "" d,19:16,19:17 (EB)
+             leftp:
+               SUB "" d,19:22,19:23 (FB)
+                lhsp:
+                  VARREF "WIDTH" d,19:17,19:22 (NF) access:RD, classOrPackagep:UNLINKED, varScopep:UNLINKED, varp:(F)
+                rhsp:
+                  CONST "?32?sh1" d,19:23,19:24 (HB)
+             rightp:
+               CONST "?32?sh0" d,19:25,19:26 (IB)
+      VAR "cout" d,20:16,20:20 (KB) attrClocker:UNKNOWN, direction:OUTPUT, lifetime:NONE, origName:cout, sensIfacep:UNLINKED, varType:PORT
+       childDTypep:
+         BASICDTYPE "LOGIC_IMPLICIT" d,20:16,20:20 (LB) keyword:LOGIC_IMPLICIT
+      VAR "c" d,22:20,22:21 (MB) attrClocker:UNKNOWN, direction:NONE, lifetime:VSTATIC, origName:c, sensIfacep:UNLINKED, varType:WIRE
+       childDTypep:
+         BASICDTYPE "logic" d,22:10,22:11 (NB) keyword:logic
+          rangep:
+            RANGE "" d,22:10,22:11 (OB)
+             leftp:
+               VARREF "WIDTH" d,22:11,22:16 (OF) access:RD, classOrPackagep:UNLINKED, varScopep:UNLINKED, varp:(F)
+             rightp:
+               CONST "?32?sh0" d,22:17,22:18 (QB)
+      BEGIN "genblk1" d,24:14,24:17 (RB) generate:True, implied:True, unnamed:True
+       stmtsp:
+         VAR "i" d,24:26,24:27 (WB) attrClocker:UNKNOWN, direction:NONE, isUsedLoopIdx:True, lifetime:VSTATIC, origName:i, sensIfacep:UNLINKED, varType:GENVAR
+      BEGIN "genblk1[0]" d,25:20,25:22 (TG) generate:True
+       stmtsp:
+         CELL "fa" d,25:20,25:22 (UG) modp:(GC), origName:fa
+          pinsp:
+            PIN "__pinNumber1" d,25:24,25:25 (VG) modPTypep:UNLINKED, modVarp:(RD)
+             exprp:
+               SELBIT "" d,25:24,25:25 (WG)
+                fromp:
+                  VARREF "a" d,25:23,25:24 (XG) access:RD, classOrPackagep:UNLINKED, varScopep:UNLINKED, varp:(J)
+                bitp:
+                  CONST "?32?sh0" d,24:14,24:17 (YG)
+            PIN "__pinNumber2" d,25:30,25:31 (ZG) modPTypep:UNLINKED, modVarp:(UD)
+             exprp:
+               SELBIT "" d,25:30,25:31 (AH)
+                fromp:
+                  VARREF "b" d,25:29,25:30 (BH) access:RD, classOrPackagep:UNLINKED, varScopep:UNLINKED, varp:(R)
+                bitp:
+                  CONST "?32?sh0" d,24:14,24:17 (CH)
+            PIN "__pinNumber3" d,25:36,25:37 (DH) modPTypep:UNLINKED, modVarp:(XD)
+             exprp:
+               SELBIT "" d,25:36,25:37 (EH)
+                fromp:
+                  VARREF "c" d,25:35,25:36 (FH) access:RD, classOrPackagep:UNLINKED, varScopep:UNLINKED, varp:(MB)
+                bitp:
+                  CONST "?32?sh0" d,24:14,24:17 (GH)
+            PIN "__pinNumber4" d,25:42,25:43 (HH) modPTypep:UNLINKED, modVarp:(AE)
+             exprp:
+               SELBIT "" d,25:42,25:43 (IH)
+                fromp:
+                  VARREF "s" d,25:41,25:42 (JH) access:WR, classOrPackagep:UNLINKED, varScopep:UNLINKED, varp:(CB)
+                bitp:
+                  CONST "?32?sh0" d,24:14,24:17 (KH)
+            PIN "__pinNumber5" d,25:48,25:49 (LH) modPTypep:UNLINKED, modVarp:(DE)
+             exprp:
+               SELBIT "" d,25:48,25:49 (MH)
+                fromp:
+                  VARREF "c" d,25:47,25:48 (NH) access:WR, classOrPackagep:UNLINKED, varScopep:UNLINKED, varp:(MB)
+                bitp:
+                  ADD "" d,25:50,25:51 (OH)
+                   lhsp:
+                     CONST "?32?sh0" d,24:14,24:17 (PH)
+                   rhsp:
+                     CONST "?32?sh1" d,25:51,25:52 (QH)
+      BEGIN "genblk1[1]" d,25:20,25:22 (RH) generate:True
+       stmtsp:
+         CELL "fa" d,25:20,25:22 (SH) modp:(GC), origName:fa
+          pinsp:
+            PIN "__pinNumber1" d,25:24,25:25 (TH) modPTypep:UNLINKED, modVarp:(RD)
+             exprp:
+               SELBIT "" d,25:24,25:25 (UH)
+                fromp:
+                  VARREF "a" d,25:23,25:24 (VH) access:RD, classOrPackagep:UNLINKED, varScopep:UNLINKED, varp:(J)
+                bitp:
+                  CONST "?32?sh1" d,24:14,24:17 (WH)
+            PIN "__pinNumber2" d,25:30,25:31 (XH) modPTypep:UNLINKED, modVarp:(UD)
+             exprp:
+               SELBIT "" d,25:30,25:31 (YH)
+                fromp:
+                  VARREF "b" d,25:29,25:30 (ZH) access:RD, classOrPackagep:UNLINKED, varScopep:UNLINKED, varp:(R)
+                bitp:
+                  CONST "?32?sh1" d,24:14,24:17 (AI)
+            PIN "__pinNumber3" d,25:36,25:37 (BI) modPTypep:UNLINKED, modVarp:(XD)
+             exprp:
+               SELBIT "" d,25:36,25:37 (CI)
+                fromp:
+                  VARREF "c" d,25:35,25:36 (DI) access:RD, classOrPackagep:UNLINKED, varScopep:UNLINKED, varp:(MB)
+                bitp:
+                  CONST "?32?sh1" d,24:14,24:17 (EI)
+            PIN "__pinNumber4" d,25:42,25:43 (FI) modPTypep:UNLINKED, modVarp:(AE)
+             exprp:
+               SELBIT "" d,25:42,25:43 (GI)
+                fromp:
+                  VARREF "s" d,25:41,25:42 (HI) access:WR, classOrPackagep:UNLINKED, varScopep:UNLINKED, varp:(CB)
+                bitp:
+                  CONST "?32?sh1" d,24:14,24:17 (II)
+            PIN "__pinNumber5" d,25:48,25:49 (JI) modPTypep:UNLINKED, modVarp:(DE)
+             exprp:
+               SELBIT "" d,25:48,25:49 (KI)
+                fromp:
+                  VARREF "c" d,25:47,25:48 (LI) access:WR, classOrPackagep:UNLINKED, varScopep:UNLINKED, varp:(MB)
+                bitp:
+                  ADD "" d,25:50,25:51 (MI)
+                   lhsp:
+                     CONST "?32?sh1" d,24:14,24:17 (NI)
+                   rhsp:
+                     CONST "?32?sh1" d,25:51,25:52 (OI)
+      BEGIN "genblk1[2]" d,25:20,25:22 (PI) generate:True
+       stmtsp:
+         CELL "fa" d,25:20,25:22 (QI) modp:(GC), origName:fa
+          pinsp:
+            PIN "__pinNumber1" d,25:24,25:25 (RI) modPTypep:UNLINKED, modVarp:(RD)
+             exprp:
+               SELBIT "" d,25:24,25:25 (SI)
+                fromp:
+                  VARREF "a" d,25:23,25:24 (TI) access:RD, classOrPackagep:UNLINKED, varScopep:UNLINKED, varp:(J)
+                bitp:
+                  CONST "?32?sh2" d,24:14,24:17 (UI)
+            PIN "__pinNumber2" d,25:30,25:31 (VI) modPTypep:UNLINKED, modVarp:(UD)
+             exprp:
+               SELBIT "" d,25:30,25:31 (WI)
+                fromp:
+                  VARREF "b" d,25:29,25:30 (XI) access:RD, classOrPackagep:UNLINKED, varScopep:UNLINKED, varp:(R)
+                bitp:
+                  CONST "?32?sh2" d,24:14,24:17 (YI)
+            PIN "__pinNumber3" d,25:36,25:37 (ZI) modPTypep:UNLINKED, modVarp:(XD)
+             exprp:
+               SELBIT "" d,25:36,25:37 (AJ)
+                fromp:
+                  VARREF "c" d,25:35,25:36 (BJ) access:RD, classOrPackagep:UNLINKED, varScopep:UNLINKED, varp:(MB)
+                bitp:
+                  CONST "?32?sh2" d,24:14,24:17 (CJ)
+            PIN "__pinNumber4" d,25:42,25:43 (DJ) modPTypep:UNLINKED, modVarp:(AE)
+             exprp:
+               SELBIT "" d,25:42,25:43 (EJ)
+                fromp:
+                  VARREF "s" d,25:41,25:42 (FJ) access:WR, classOrPackagep:UNLINKED, varScopep:UNLINKED, varp:(CB)
+                bitp:
+                  CONST "?32?sh2" d,24:14,24:17 (GJ)
+            PIN "__pinNumber5" d,25:48,25:49 (HJ) modPTypep:UNLINKED, modVarp:(DE)
+             exprp:
+               SELBIT "" d,25:48,25:49 (IJ)
+                fromp:
+                  VARREF "c" d,25:47,25:48 (JJ) access:WR, classOrPackagep:UNLINKED, varScopep:UNLINKED, varp:(MB)
+                bitp:
+                  ADD "" d,25:50,25:51 (KJ)
+                   lhsp:
+                     CONST "?32?sh2" d,24:14,24:17 (LJ)
+                   rhsp:
+                     CONST "?32?sh1" d,25:51,25:52 (MJ)
+      BEGIN "genblk1[3]" d,25:20,25:22 (NJ) generate:True
+       stmtsp:
+         CELL "fa" d,25:20,25:22 (OJ) modp:(GC), origName:fa
+          pinsp:
+            PIN "__pinNumber1" d,25:24,25:25 (PJ) modPTypep:UNLINKED, modVarp:(RD)
+             exprp:
+               SELBIT "" d,25:24,25:25 (QJ)
+                fromp:
+                  VARREF "a" d,25:23,25:24 (RJ) access:RD, classOrPackagep:UNLINKED, varScopep:UNLINKED, varp:(J)
+                bitp:
+                  CONST "?32?sh3" d,24:14,24:17 (SJ)
+            PIN "__pinNumber2" d,25:30,25:31 (TJ) modPTypep:UNLINKED, modVarp:(UD)
+             exprp:
+               SELBIT "" d,25:30,25:31 (UJ)
+                fromp:
+                  VARREF "b" d,25:29,25:30 (VJ) access:RD, classOrPackagep:UNLINKED, varScopep:UNLINKED, varp:(R)
+                bitp:
+                  CONST "?32?sh3" d,24:14,24:17 (WJ)
+            PIN "__pinNumber3" d,25:36,25:37 (XJ) modPTypep:UNLINKED, modVarp:(XD)
+             exprp:
+               SELBIT "" d,25:36,25:37 (YJ)
+                fromp:
+                  VARREF "c" d,25:35,25:36 (ZJ) access:RD, classOrPackagep:UNLINKED, varScopep:UNLINKED, varp:(MB)
+                bitp:
+                  CONST "?32?sh3" d,24:14,24:17 (AK)
+            PIN "__pinNumber4" d,25:42,25:43 (BK) modPTypep:UNLINKED, modVarp:(AE)
+             exprp:
+               SELBIT "" d,25:42,25:43 (CK)
+                fromp:
+                  VARREF "s" d,25:41,25:42 (DK) access:WR, classOrPackagep:UNLINKED, varScopep:UNLINKED, varp:(CB)
+                bitp:
+                  CONST "?32?sh3" d,24:14,24:17 (EK)
+            PIN "__pinNumber5" d,25:48,25:49 (FK) modPTypep:UNLINKED, modVarp:(DE)
+             exprp:
+               SELBIT "" d,25:48,25:49 (GK)
+                fromp:
+                  VARREF "c" d,25:47,25:48 (HK) access:WR, classOrPackagep:UNLINKED, varScopep:UNLINKED, varp:(MB)
+                bitp:
+                  ADD "" d,25:50,25:51 (IK)
+                   lhsp:
+                     CONST "?32?sh3" d,24:14,24:17 (JK)
+                   rhsp:
+                     CONST "?32?sh1" d,25:51,25:52 (KK)
+      BEGIN "genblk1[4]" d,25:20,25:22 (LK) generate:True
+       stmtsp:
+         CELL "fa" d,25:20,25:22 (MK) modp:(GC), origName:fa
+          pinsp:
+            PIN "__pinNumber1" d,25:24,25:25 (NK) modPTypep:UNLINKED, modVarp:(RD)
+             exprp:
+               SELBIT "" d,25:24,25:25 (OK)
+                fromp:
+                  VARREF "a" d,25:23,25:24 (PK) access:RD, classOrPackagep:UNLINKED, varScopep:UNLINKED, varp:(J)
+                bitp:
+                  CONST "?32?sh4" d,24:14,24:17 (QK)
+            PIN "__pinNumber2" d,25:30,25:31 (RK) modPTypep:UNLINKED, modVarp:(UD)
+             exprp:
+               SELBIT "" d,25:30,25:31 (SK)
+                fromp:
+                  VARREF "b" d,25:29,25:30 (TK) access:RD, classOrPackagep:UNLINKED, varScopep:UNLINKED, varp:(R)
+                bitp:
+                  CONST "?32?sh4" d,24:14,24:17 (UK)
+            PIN "__pinNumber3" d,25:36,25:37 (VK) modPTypep:UNLINKED, modVarp:(XD)
+             exprp:
+               SELBIT "" d,25:36,25:37 (WK)
+                fromp:
+                  VARREF "c" d,25:35,25:36 (XK) access:RD, classOrPackagep:UNLINKED, varScopep:UNLINKED, varp:(MB)
+                bitp:
+                  CONST "?32?sh4" d,24:14,24:17 (YK)
+            PIN "__pinNumber4" d,25:42,25:43 (ZK) modPTypep:UNLINKED, modVarp:(AE)
+             exprp:
+               SELBIT "" d,25:42,25:43 (AL)
+                fromp:
+                  VARREF "s" d,25:41,25:42 (BL) access:WR, classOrPackagep:UNLINKED, varScopep:UNLINKED, varp:(CB)
+                bitp:
+                  CONST "?32?sh4" d,24:14,24:17 (CL)
+            PIN "__pinNumber5" d,25:48,25:49 (DL) modPTypep:UNLINKED, modVarp:(DE)
+             exprp:
+               SELBIT "" d,25:48,25:49 (EL)
+                fromp:
+                  VARREF "c" d,25:47,25:48 (FL) access:WR, classOrPackagep:UNLINKED, varScopep:UNLINKED, varp:(MB)
+                bitp:
+                  ADD "" d,25:50,25:51 (GL)
+                   lhsp:
+                     CONST "?32?sh4" d,24:14,24:17 (HL)
+                   rhsp:
+                     CONST "?32?sh1" d,25:51,25:52 (IL)
+      BEGIN "genblk1[5]" d,25:20,25:22 (JL) generate:True
+       stmtsp:
+         CELL "fa" d,25:20,25:22 (KL) modp:(GC), origName:fa
+          pinsp:
+            PIN "__pinNumber1" d,25:24,25:25 (LL) modPTypep:UNLINKED, modVarp:(RD)
+             exprp:
+               SELBIT "" d,25:24,25:25 (ML)
+                fromp:
+                  VARREF "a" d,25:23,25:24 (NL) access:RD, classOrPackagep:UNLINKED, varScopep:UNLINKED, varp:(J)
+                bitp:
+                  CONST "?32?sh5" d,24:14,24:17 (OL)
+            PIN "__pinNumber2" d,25:30,25:31 (PL) modPTypep:UNLINKED, modVarp:(UD)
+             exprp:
+               SELBIT "" d,25:30,25:31 (QL)
+                fromp:
+                  VARREF "b" d,25:29,25:30 (RL) access:RD, classOrPackagep:UNLINKED, varScopep:UNLINKED, varp:(R)
+                bitp:
+                  CONST "?32?sh5" d,24:14,24:17 (SL)
+            PIN "__pinNumber3" d,25:36,25:37 (TL) modPTypep:UNLINKED, modVarp:(XD)
+             exprp:
+               SELBIT "" d,25:36,25:37 (UL)
+                fromp:
+                  VARREF "c" d,25:35,25:36 (VL) access:RD, classOrPackagep:UNLINKED, varScopep:UNLINKED, varp:(MB)
+                bitp:
+                  CONST "?32?sh5" d,24:14,24:17 (WL)
+            PIN "__pinNumber4" d,25:42,25:43 (XL) modPTypep:UNLINKED, modVarp:(AE)
+             exprp:
+               SELBIT "" d,25:42,25:43 (YL)
+                fromp:
+                  VARREF "s" d,25:41,25:42 (ZL) access:WR, classOrPackagep:UNLINKED, varScopep:UNLINKED, varp:(CB)
+                bitp:
+                  CONST "?32?sh5" d,24:14,24:17 (AM)
+            PIN "__pinNumber5" d,25:48,25:49 (BM) modPTypep:UNLINKED, modVarp:(DE)
+             exprp:
+               SELBIT "" d,25:48,25:49 (CM)
+                fromp:
+                  VARREF "c" d,25:47,25:48 (DM) access:WR, classOrPackagep:UNLINKED, varScopep:UNLINKED, varp:(MB)
+                bitp:
+                  ADD "" d,25:50,25:51 (EM)
+                   lhsp:
+                     CONST "?32?sh5" d,24:14,24:17 (FM)
+                   rhsp:
+                     CONST "?32?sh1" d,25:51,25:52 (GM)
+      BEGIN "genblk1[6]" d,25:20,25:22 (HM) generate:True
+       stmtsp:
+         CELL "fa" d,25:20,25:22 (IM) modp:(GC), origName:fa
+          pinsp:
+            PIN "__pinNumber1" d,25:24,25:25 (JM) modPTypep:UNLINKED, modVarp:(RD)
+             exprp:
+               SELBIT "" d,25:24,25:25 (KM)
+                fromp:
+                  VARREF "a" d,25:23,25:24 (LM) access:RD, classOrPackagep:UNLINKED, varScopep:UNLINKED, varp:(J)
+                bitp:
+                  CONST "?32?sh6" d,24:14,24:17 (MM)
+            PIN "__pinNumber2" d,25:30,25:31 (NM) modPTypep:UNLINKED, modVarp:(UD)
+             exprp:
+               SELBIT "" d,25:30,25:31 (OM)
+                fromp:
+                  VARREF "b" d,25:29,25:30 (PM) access:RD, classOrPackagep:UNLINKED, varScopep:UNLINKED, varp:(R)
+                bitp:
+                  CONST "?32?sh6" d,24:14,24:17 (QM)
+            PIN "__pinNumber3" d,25:36,25:37 (RM) modPTypep:UNLINKED, modVarp:(XD)
+             exprp:
+               SELBIT "" d,25:36,25:37 (SM)
+                fromp:
+                  VARREF "c" d,25:35,25:36 (TM) access:RD, classOrPackagep:UNLINKED, varScopep:UNLINKED, varp:(MB)
+                bitp:
+                  CONST "?32?sh6" d,24:14,24:17 (UM)
+            PIN "__pinNumber4" d,25:42,25:43 (VM) modPTypep:UNLINKED, modVarp:(AE)
+             exprp:
+               SELBIT "" d,25:42,25:43 (WM)
+                fromp:
+                  VARREF "s" d,25:41,25:42 (XM) access:WR, classOrPackagep:UNLINKED, varScopep:UNLINKED, varp:(CB)
+                bitp:
+                  CONST "?32?sh6" d,24:14,24:17 (YM)
+            PIN "__pinNumber5" d,25:48,25:49 (ZM) modPTypep:UNLINKED, modVarp:(DE)
+             exprp:
+               SELBIT "" d,25:48,25:49 (AN)
+                fromp:
+                  VARREF "c" d,25:47,25:48 (BN) access:WR, classOrPackagep:UNLINKED, varScopep:UNLINKED, varp:(MB)
+                bitp:
+                  ADD "" d,25:50,25:51 (CN)
+                   lhsp:
+                     CONST "?32?sh6" d,24:14,24:17 (DN)
+                   rhsp:
+                     CONST "?32?sh1" d,25:51,25:52 (EN)
+      BEGIN "genblk1[7]" d,25:20,25:22 (FN) generate:True
+       stmtsp:
+         CELL "fa" d,25:20,25:22 (GN) modp:(GC), origName:fa
+          pinsp:
+            PIN "__pinNumber1" d,25:24,25:25 (HN) modPTypep:UNLINKED, modVarp:(RD)
+             exprp:
+               SELBIT "" d,25:24,25:25 (IN)
+                fromp:
+                  VARREF "a" d,25:23,25:24 (JN) access:RD, classOrPackagep:UNLINKED, varScopep:UNLINKED, varp:(J)
+                bitp:
+                  CONST "?32?sh7" d,24:14,24:17 (KN)
+            PIN "__pinNumber2" d,25:30,25:31 (LN) modPTypep:UNLINKED, modVarp:(UD)
+             exprp:
+               SELBIT "" d,25:30,25:31 (MN)
+                fromp:
+                  VARREF "b" d,25:29,25:30 (NN) access:RD, classOrPackagep:UNLINKED, varScopep:UNLINKED, varp:(R)
+                bitp:
+                  CONST "?32?sh7" d,24:14,24:17 (ON)
+            PIN "__pinNumber3" d,25:36,25:37 (PN) modPTypep:UNLINKED, modVarp:(XD)
+             exprp:
+               SELBIT "" d,25:36,25:37 (QN)
+                fromp:
+                  VARREF "c" d,25:35,25:36 (RN) access:RD, classOrPackagep:UNLINKED, varScopep:UNLINKED, varp:(MB)
+                bitp:
+                  CONST "?32?sh7" d,24:14,24:17 (SN)
+            PIN "__pinNumber4" d,25:42,25:43 (TN) modPTypep:UNLINKED, modVarp:(AE)
+             exprp:
+               SELBIT "" d,25:42,25:43 (UN)
+                fromp:
+                  VARREF "s" d,25:41,25:42 (VN) access:WR, classOrPackagep:UNLINKED, varScopep:UNLINKED, varp:(CB)
+                bitp:
+                  CONST "?32?sh7" d,24:14,24:17 (WN)
+            PIN "__pinNumber5" d,25:48,25:49 (XN) modPTypep:UNLINKED, modVarp:(DE)
+             exprp:
+               SELBIT "" d,25:48,25:49 (YN)
+                fromp:
+                  VARREF "c" d,25:47,25:48 (ZN) access:WR, classOrPackagep:UNLINKED, varScopep:UNLINKED, varp:(MB)
+                bitp:
+                  ADD "" d,25:50,25:51 (AO)
+                   lhsp:
+                     CONST "?32?sh7" d,24:14,24:17 (BO)
+                   rhsp:
+                     CONST "?32?sh1" d,25:51,25:52 (CO)
+      ASSIGNW "" d,28:17,28:18 (ED)
+       rhsp:
+         VARREF "cin" d,28:19,28:22 (DG) access:RD, classOrPackagep:UNLINKED, varScopep:UNLINKED, varp:(Z)
+       lhsp:
+         SELBIT "" d,28:13,28:14 (GD)
+          fromp:
+            VARREF "c" d,28:12,28:13 (EG) access:WR, classOrPackagep:UNLINKED, varScopep:UNLINKED, varp:(MB)
+          bitp:
+            CONST "?32?sh0" d,28:14,28:15 (ID)
+      ASSIGNW "" d,29:17,29:18 (JD)
+       rhsp:
+         SELBIT "" d,29:20,29:21 (KD)
+          fromp:
+            VARREF "c" d,29:19,29:20 (FG) access:RD, classOrPackagep:UNLINKED, varScopep:UNLINKED, varp:(MB)
+          bitp:
+            SUB "" d,29:26,29:27 (MD)
+             lhsp:
+               VARREF "WIDTH" d,29:21,29:26 (GG) access:RD, classOrPackagep:UNLINKED, varScopep:UNLINKED, varp:(F)
+             rhsp:
+               CONST "?32?sh1" d,29:27,29:28 (OD)
+       lhsp:
+         VARREF "cout" d,29:12,29:16 (HG) access:WR, classOrPackagep:UNLINKED, varScopep:UNLINKED, varp:(KB)
+   MODULE "full_adder" d,5:8,5:18 (GC) level:3, origName:full_adder, timeunit:1ps
+    stmtsp:
+      VAR "a" d,6:15,6:16 (RD) attrClocker:UNKNOWN, direction:INPUT, lifetime:NONE, origName:a, sensIfacep:UNLINKED, varType:PORT
+       childDTypep:
+         BASICDTYPE "LOGIC_IMPLICIT" d,6:15,6:16 (SD) keyword:LOGIC_IMPLICIT
+      VAR "b" d,7:15,7:16 (UD) attrClocker:UNKNOWN, direction:INPUT, lifetime:NONE, origName:b, sensIfacep:UNLINKED, varType:PORT
+       childDTypep:
+         BASICDTYPE "LOGIC_IMPLICIT" d,7:15,7:16 (VD) keyword:LOGIC_IMPLICIT
+      VAR "cin" d,8:15,8:18 (XD) attrClocker:UNKNOWN, direction:INPUT, lifetime:NONE, origName:cin, sensIfacep:UNLINKED, varType:PORT
+       childDTypep:
+         BASICDTYPE "LOGIC_IMPLICIT" d,8:15,8:18 (YD) keyword:LOGIC_IMPLICIT
+      VAR "s" d,9:16,9:17 (AE) attrClocker:UNKNOWN, direction:OUTPUT, lifetime:NONE, origName:s, sensIfacep:UNLINKED, varType:PORT
+       childDTypep:
+         BASICDTYPE "LOGIC_IMPLICIT" d,9:16,9:17 (BE) keyword:LOGIC_IMPLICIT
+      VAR "cout" d,10:16,10:20 (DE) attrClocker:UNKNOWN, direction:OUTPUT, lifetime:NONE, origName:cout, sensIfacep:UNLINKED, varType:PORT
+       childDTypep:
+         BASICDTYPE "LOGIC_IMPLICIT" d,10:16,10:20 (EE) keyword:LOGIC_IMPLICIT
+      ASSIGNW "" d,11:14,11:15 (FE)
+       rhsp:
+         XOR "" d,11:19,11:20 (GE)
+          lhsp:
+            XOR "" d,11:17,11:18 (HE)
+             lhsp:
+               VARREF "a" d,11:16,11:17 (IG) access:RD, classOrPackagep:UNLINKED, varScopep:UNLINKED, varp:(RD)
+             rhsp:
+               VARREF "b" d,11:18,11:19 (JG) access:RD, classOrPackagep:UNLINKED, varScopep:UNLINKED, varp:(UD)
+          rhsp:
+            VARREF "cin" d,11:20,11:23 (KG) access:RD, classOrPackagep:UNLINKED, varScopep:UNLINKED, varp:(XD)
+       lhsp:
+         VARREF "s" d,11:12,11:13 (LG) access:WR, classOrPackagep:UNLINKED, varScopep:UNLINKED, varp:(AE)
+      ASSIGNW "" d,12:17,12:18 (ME)
+       rhsp:
+         OR "" d,12:35,12:36 (NE)
+          lhsp:
+            OR "" d,12:25,12:26 (OE)
+             lhsp:
+               AND "" d,12:21,12:22 (PE)
+                lhsp:
+                  VARREF "a" d,12:20,12:21 (MG) access:RD, classOrPackagep:UNLINKED, varScopep:UNLINKED, varp:(RD)
+                rhsp:
+                  VARREF "b" d,12:22,12:23 (NG) access:RD, classOrPackagep:UNLINKED, varScopep:UNLINKED, varp:(UD)
+             rhsp:
+               AND "" d,12:29,12:30 (SE)
+                lhsp:
+                  VARREF "b" d,12:28,12:29 (OG) access:RD, classOrPackagep:UNLINKED, varScopep:UNLINKED, varp:(UD)
+                rhsp:
+                  VARREF "cin" d,12:30,12:33 (PG) access:RD, classOrPackagep:UNLINKED, varScopep:UNLINKED, varp:(XD)
+          rhsp:
+            AND "" d,12:39,12:40 (VE)
+             lhsp:
+               VARREF "a" d,12:38,12:39 (QG) access:RD, classOrPackagep:UNLINKED, varScopep:UNLINKED, varp:(RD)
+             rhsp:
+               VARREF "cin" d,12:40,12:43 (RG) access:RD, classOrPackagep:UNLINKED, varScopep:UNLINKED, varp:(XD)
+       lhsp:
+         VARREF "cout" d,12:12,12:16 (SG) access:WR, classOrPackagep:UNLINKED, varScopep:UNLINKED, varp:(DE)
+ miscsp:
+   TYPETABLE "" a,0:0,0:0 (C) constraintRefp:UNLINKED, emptyQueuep:UNLINKED, queueIndexp:UNLINKED, streamp:UNLINKED, voidp:(ZE)
+    typesp:
+      BASICDTYPE "integer" c,31:27,31:28 (AF) generic:True, keyword:integer, range:31:0
+      BASICDTYPE "logic" c,33:32,33:33 (BF) generic:True, keyword:logic, range:31:0
+      BASICDTYPE "logic" c,50:22,50:24 (CF) generic:True, keyword:logic
+      VOIDDTYPE "" c,51:21,51:30 (ZE)
+      BASICDTYPE "logic" c,119:22,119:23 (DF) generic:True, keyword:logic, range:31:0
+      BASICDTYPE "logic" c,121:22,121:23 (EF) generic:True, keyword:logic, range:31:0
+      BASICDTYPE "logic" c,156:17,156:56 (FF) generic:True, keyword:logic, range:295:0
+      BASICDTYPE "string" c,156:10,156:16 (GF) generic:True, keyword:string
+      BASICDTYPE "logic" d,15:29,15:30 (HF) generic:True, keyword:logic, range:31:0
+      BASICDTYPE "logic" d,24:45,24:47 (IF) generic:True, keyword:logic, range:31:0
+      BASICDTYPE "LOGIC_IMPLICIT" d,15:23,15:28 (G) keyword:LOGIC_IMPLICIT
+      BASICDTYPE "integer" d,24:26,24:27 (DD) keyword:integer, range:31:0
+      BASICDTYPE "logic" d,24:35,24:36 (DO) generic:True, keyword:logic, range:31:0
+      BASICDTYPE "logic" d,24:45,24:47 (EO) generic:True, keyword:logic, range:31:0
+   CONSTPOOL "" a,0:0,0:0 (D)
+    modulep:
+      MODULE "@CONST-POOL@" a,0:0,0:0 (JF) level:0, origName:@CONST-POOL@, timeunit:NONE
+       stmtsp:
+         SCOPE "@CONST-POOL@" a,0:0,0:0 (KF) aboveCellp:UNLINKED, aboveScopep:UNLINKED, modp:(JF)

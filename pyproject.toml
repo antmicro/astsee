@@ -21,7 +21,7 @@ packages = ["astsee"]
 
 [tool.pytest.ini_options]
 pythonpath = ["."]
-testpaths = ["tests/verilator"]
+testpaths = ["tests/"]
 
 [tool.yapf]
 COLUMN_LIMIT=120

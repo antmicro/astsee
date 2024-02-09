@@ -206,19 +206,18 @@ class BasicDiffToTerm:
         return f"{diff.colsym()}{indent}{key_prefix}{s}\n"
 
 
+def is_children(x):
+    """return true if x looks like container"""
+    if isinstance(x, OmittedNode):
+        return True  # only containers are turned into OmittedNode
+    if isinstance(x, ReplaceDiffNode):
+        x = x.old  # we assume that if old is container then new also is
+    return isinstance(x.content, (list, dict))
+
 def default_split_fields(diff):
-
-    def _is_children(x):
-        """return true if x looks like container"""
-        if isinstance(x, OmittedNode):
-            return True  # only containers are turned into OmittedNode
-        if isinstance(x, ReplaceDiffNode):
-            x = x.old  # we assume that if old is container then new also is
-        return isinstance(x.content, (list, dict))
-
     implicit = []
-    explicit = sorted([(k, v) for k, v in diff.items() if not _is_children(v)])
-    children = sorted([(k, v) for k, v in diff.items() if _is_children(v)])
+    explicit = sorted([(k, v) for k, v in diff.items() if not is_children(v)])
+    children = sorted([(k, v) for k, v in diff.items() if is_children(v)])
     return implicit, explicit, children
 
 

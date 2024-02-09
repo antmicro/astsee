@@ -9,8 +9,7 @@ TEST_DIR = os.path.dirname(__file__)
 OUT_DIR = TEST_DIR + "/verilator_out"
 GOLD_DIR = TEST_DIR + "/verilator_golden"
 IN_DIR = TEST_DIR + "/verilator_in"
-
-# FIXME: fix output instability of `--html` (caused probably by `set` container that has undefined order)
+os.chdir(IN_DIR) # html tests rely on relative paths
 
 def run(request, args):
     test_name = request.node.name
@@ -20,19 +19,23 @@ def run(request, args):
 
 
 def test_tree_pprint(request):
-    run(request, f'{IN_DIR}/test_a.tree.json')
+    run(request, f'{IN_DIR}/test1_a.tree.json')
 
 def test_tree_diff(request):
-    run(request, f'{IN_DIR}/test_a.tree.json {IN_DIR}/test_b.tree.json')
+    run(request, f'{IN_DIR}/test1_a.tree.json {IN_DIR}/test1_b.tree.json')
 
 def test_tree_diff_filter(request):
-    run(request, f'{IN_DIR}/test_a.tree.json {IN_DIR}/test_b.tree.json -d ".editNum"')
+    run(request, f'{IN_DIR}/test1_a.tree.json {IN_DIR}/test1_b.tree.json -d ".editNum"')
+
+def test_tree_diff_filter_no_meta(request):
+    # empty meta arg disables guessing of meta file path
+    run(request, f'{IN_DIR}/test1_a.tree.json {IN_DIR}/test1_b.tree.json -d "ptrs" --meta ""')
 
 def test_tree_pprint_html(request):
-    run(request, f'{IN_DIR}/test_a.tree.json --html')
+    run(request, f'{IN_DIR}/test1_a.tree.json --html')
 
 def test_tree_diff_html(request):
-    run(request, f'{IN_DIR}/test_a.tree.json {IN_DIR}/test_b.tree.json --html')
+    run(request, f'{IN_DIR}/test1_a.tree.json {IN_DIR}/test1_b.tree.json --html')
 
 def test_pprint_dict_with_one_scalar(request):
     run(request, f'{IN_DIR}/dict_with_one_scalar.json')
