@@ -4,15 +4,9 @@
 <meta charset="UTF-8"/>
 <style>
 /* Shared CSS */
-{{diff_css|safe}}
+{{extern_css|safe}}
 /* AST specific CSS */
 a { color: inherit; }
-mark { /* highlight matched element */
-    background-color: gold;
-    .th {
-        background-color: white;
-    }
-}
 body {
     display: flex;
     flex-flow: row nowrap;
@@ -55,16 +49,23 @@ body {
 .y-scrollable {
     overflow-y: scroll;
 }
+pre {
+    white-space: pre-wrap;
+}
+.linenos {
+    user-select: none;
+}
+.linenos::selection {
+    /* work around imperfect behaviour of "user-select:none" in firefox: programmatically
+    selected element would still be highlighted (even though it would be ignored by ctrl+c) */
+    background-color: transparent;
+}
 </style>
 <script>
 var top_idx = 1;
-var markTag = null;
+
 function showtab(tabname) {
     document.getElementById(tabname).style.zIndex = ++top_idx;
-}
-function markTagReset() {
-    if(markTag) markTag.replaceWith(...markTag.childNodes);
-    markTag = document.createElement("mark");
 }
 function skipToChar(node, i) {
     // Skip to node that contains ith character.
@@ -86,17 +87,20 @@ function skipToChar(node, i) {
         }
     }
 }
-function highlight_file(name, first_row, first_col, last_row, end_col) {
+function selectFileFragment(name, first_row, first_col, last_row, end_col) {
     showtab(name);
-    markTagReset();
     const range = document.createRange();
+    const [startNode, startOffset] = skipToChar(document.getElementById(name + "-" + first_row).nextSibling.nextSibling, first_col-1);
+    range.setStart(startNode, startOffset);
+    const [endNode, endOffset] = skipToChar(document.getElementById(name + "-" + last_row).nextSibling.nextSibling, end_col-1);
+    range.setEnd(endNode, endOffset);
 
-    const [startNode, startOffset] = skipToChar(document.getElementById(name + ":" + first_row).nextSibling, first_col-1)
-    range.setStart(startNode, startOffset)
-    const [endNode, endOffset] = skipToChar(document.getElementById(name + ":" + last_row).nextSibling, end_col-1)
-    range.setEnd(endNode, endOffset)
-
-    range.surroundContents(markTag);
+    // going to href would clear selection in firefox, so it should be done first
+    window.location.href = "#" + name + "-" + first_row;
+    const sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+    return false; // prevent default action (going to href) of <a href="..." onclick="return selectFileFragment(...)">
 }
 </script>
 </head>
