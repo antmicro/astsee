@@ -12,6 +12,10 @@ readme = "README.md"
 dependencies = ["deepdiff >= 5.5.0"]
 requires-python = ">=3.9"
 
+
+[project.optional-dependencies]
+dev = ["pytest", "tuttest @ git+https://github.com/antmicro/tuttest#egg=tuttest"]
+
 [project.scripts]
 astsee = "astsee.generic_cli:main"
 astsee_verilator = "astsee.verilator_cli:main"
