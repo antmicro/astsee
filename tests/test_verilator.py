@@ -31,6 +31,9 @@ def test_tree_diff_filter_no_meta(request):
     # empty meta arg disables guessing of meta file path
     run(request, f'{IN_DIR}/test1_a.tree.json {IN_DIR}/test1_b.tree.json -d "ptrs" --meta ""')
 
+def test_tree_diff_skip_nodes(request):
+    run(request, f'{IN_DIR}/test1_a.tree.json {IN_DIR}/test1_b.tree.json --skip-nodes \'.type=="ASSIGNW"\'')
+
 def test_tree_pprint_html(request):
     run(request, f'{IN_DIR}/test1_a.tree.json --html')
 

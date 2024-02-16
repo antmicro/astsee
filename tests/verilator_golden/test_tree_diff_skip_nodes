@@ -1,0 +1,684 @@
+[39mNETLIST [39m"$root" [39ma,0:0,0:0 [39m(B) [39mconstPoolp:(D)[39m, [39mdelaySchedulerp:UNLINKED[39m, [39mdollarUnitPkgp:UNLINKED[39m, [39mdpiExportTriggerp:UNLINKED[39m, [39mevalNbap:UNLINKED[39m, [39mevalp:UNLINKED[39m, [39mnbaEventTriggerp:UNLINKED[39m, [39mnbaEventp:UNLINKED[39m, [39mstdPackagep:UNLINKED[39m, [39mtimeprecision:1ps[39m, [39mtimeunit:1ps[39m, [39mtopScopep:UNLINKED[39m, [39mtypeTablep:(C)
+ [39mmodulesp:
+   [39mMODULE [39m"serial_adder" [39md,15:8,15:20 [39m(E) [39mlevel:2[39m, [39morigName:serial_adder[39m, [39mtimeunit:1ps
+    [39mstmtsp:
+      [39m... * 1
+      [39mVAR [39m"a" [39md,16:28,16:29 [39m(J) [39mattrClocker:UNKNOWN[39m, [39mdirection:INPUT[39m, [39mlifetime:NONE[39m, [39morigName:a[39m, [39msensIfacep:UNLINKED[39m, [39mvarType:PORT
+       [31mchildDTypep:
+         [31mBASICDTYPE [31m"logic" [31md,16:16,16:17 [31m(K) [31mkeyword:logic
+          [31mrangep:
+            [31mRANGE [31m"" [31md,16:16,16:17 [31m(L)
+             [31mleftp:
+               [31mSUB [31m"" [31md,16:22,16:23 [31m(M)
+                [31mlhsp:
+                  [31mVARREF [31m"WIDTH" [31md,16:17,16:22 [31m(LF) [31maccess:RD[39m, [31mclassOrPackagep:UNLINKED[39m, [31mvarScopep:UNLINKED[39m, [31mvarp:(F)
+                [31mrhsp:
+                  [31mCONST [31m"?32?sh1" [31md,16:23,16:24 [31m(O)
+             [31mrightp:
+               [31mCONST [31m"?32?sh0" [31md,16:25,16:26 [31m(P)
+      [39mVAR [39m"b" [39md,17:28,17:29 [39m(R) [39mattrClocker:UNKNOWN[39m, [39mdirection:INPUT[39m, [39mlifetime:NONE[39m, [39morigName:b[39m, [39msensIfacep:UNLINKED[39m, [39mvarType:PORT
+       [31mchildDTypep:
+         [31mBASICDTYPE [31m"logic" [31md,17:16,17:17 [31m(S) [31mkeyword:logic
+          [31mrangep:
+            [31mRANGE [31m"" [31md,17:16,17:17 [31m(T)
+             [31mleftp:
+               [31mSUB [31m"" [31md,17:22,17:23 [31m(U)
+                [31mlhsp:
+                  [31mVARREF [31m"WIDTH" [31md,17:17,17:22 [31m(MF) [31maccess:RD[39m, [31mclassOrPackagep:UNLINKED[39m, [31mvarScopep:UNLINKED[39m, [31mvarp:(F)
+                [31mrhsp:
+                  [31mCONST [31m"?32?sh1" [31md,17:23,17:24 [31m(W)
+             [31mrightp:
+               [31mCONST [31m"?32?sh0" [31md,17:25,17:26 [31m(X)
+      [39mVAR [39m"cin" [39md,18:16,18:19 [39m(Z) [39mattrClocker:UNKNOWN[39m, [39mdirection:INPUT[39m, [39mlifetime:NONE[39m, [39morigName:cin[39m, [39msensIfacep:UNLINKED[39m, [39mvarType:PORT
+       [31mchildDTypep:
+         [31mBASICDTYPE [31m"LOGIC_IMPLICIT" [31md,18:16,18:19 [31m(AB) [31mkeyword:LOGIC_IMPLICIT
+      [39mVAR [39m"s" [39md,19:28,19:29 [39m(CB) [39mattrClocker:UNKNOWN[39m, [39mdirection:OUTPUT[39m, [39mlifetime:NONE[39m, [39morigName:s[39m, [39msensIfacep:UNLINKED[39m, [39mvarType:PORT
+       [31mchildDTypep:
+         [31mBASICDTYPE [31m"logic" [31md,19:16,19:17 [31m(DB) [31mkeyword:logic
+          [31mrangep:
+            [31mRANGE [31m"" [31md,19:16,19:17 [31m(EB)
+             [31mleftp:
+               [31mSUB [31m"" [31md,19:22,19:23 [31m(FB)
+                [31mlhsp:
+                  [31mVARREF [31m"WIDTH" [31md,19:17,19:22 [31m(NF) [31maccess:RD[39m, [31mclassOrPackagep:UNLINKED[39m, [31mvarScopep:UNLINKED[39m, [31mvarp:(F)
+                [31mrhsp:
+                  [31mCONST [31m"?32?sh1" [31md,19:23,19:24 [31m(HB)
+             [31mrightp:
+               [31mCONST [31m"?32?sh0" [31md,19:25,19:26 [31m(IB)
+      [39mVAR [39m"cout" [39md,20:16,20:20 [39m(KB) [39mattrClocker:UNKNOWN[39m, [39mdirection:OUTPUT[39m, [39mlifetime:NONE[39m, [39morigName:cout[39m, [39msensIfacep:UNLINKED[39m, [39mvarType:PORT
+       [31mchildDTypep:
+         [31mBASICDTYPE [31m"LOGIC_IMPLICIT" [31md,20:16,20:20 [31m(LB) [31mkeyword:LOGIC_IMPLICIT
+      [39mVAR [39m"c" [39md,22:20,22:21 [39m(MB) [39mattrClocker:UNKNOWN[39m, [39mdirection:NONE[39m, [39mlifetime:VSTATIC[39m, [39morigName:c[39m, [39msensIfacep:UNLINKED[39m, [39mvarType:WIRE
+       [31mchildDTypep:
+         [31mBASICDTYPE [31m"logic" [31md,22:10,22:11 [31m(NB) [31mkeyword:logic
+          [31mrangep:
+            [31mRANGE [31m"" [31md,22:10,22:11 [31m(OB)
+             [31mleftp:
+               [31mVARREF [31m"WIDTH" [31md,22:11,22:16 [31m(OF) [31maccess:RD[39m, [31mclassOrPackagep:UNLINKED[39m, [31mvarScopep:UNLINKED[39m, [31mvarp:(F)
+             [31mrightp:
+               [31mCONST [31m"?32?sh0" [31md,22:17,22:18 [31m(QB)
+      [39m... * 1
+      [39mBEGIN [39m"genblk1[0]" [39md,25:20,25:22 [39m(TG) [39mgenerate:True
+       [39mstmtsp:
+         [39mCELL [39m"fa" [39md,25:20,25:22 [39m(UG) [39mmodp:(GC)[39m, [39morigName:fa
+          [39mpinsp:
+            [39mPIN [39m"__pinNumber1" [39md,25:24,25:25 [39m(VG) [39mmodPTypep:UNLINKED[39m, [39mmodVarp:(RD)
+             [39mexprp:
+               [31mSELBIT[39m->[32mSEL [39m"" [39md,25:24,25:25 [31m(WG)[39m->[32m(FO) [32mdeclElWidth:1[39m, [32mdeclRange:[7:0]
+                [39mfromp:
+                  [39m... * 1
+                [31mbitp:
+                  [31mCONST [31m"?32?sh0" [31md,24:14,24:17 [31m(YG)
+                [32mlsbp:
+                  [32mCONST [32m"3'h0" [32md,24:14,24:17 [32m(GO)
+                [32mwidthp:
+                  [32mCONST [32m"?32?h1" [32md,25:24,25:25 [32m(HO)
+            [39mPIN [39m"__pinNumber2" [39md,25:30,25:31 [39m(ZG) [39mmodPTypep:UNLINKED[39m, [39mmodVarp:(UD)
+             [39mexprp:
+               [31mSELBIT[39m->[32mSEL [39m"" [39md,25:30,25:31 [31m(AH)[39m->[32m(IO) [32mdeclElWidth:1[39m, [32mdeclRange:[7:0]
+                [39mfromp:
+                  [39m... * 1
+                [31mbitp:
+                  [31mCONST [31m"?32?sh0" [31md,24:14,24:17 [31m(CH)
+                [32mlsbp:
+                  [32mCONST [32m"3'h0" [32md,24:14,24:17 [32m(JO)
+                [32mwidthp:
+                  [32mCONST [32m"?32?h1" [32md,25:30,25:31 [32m(KO)
+            [39mPIN [39m"__pinNumber3" [39md,25:36,25:37 [39m(DH) [39mmodPTypep:UNLINKED[39m, [39mmodVarp:(XD)
+             [39mexprp:
+               [31mSELBIT[39m->[32mSEL [39m"" [39md,25:36,25:37 [31m(EH)[39m->[32m(LO) [32mdeclElWidth:1[39m, [32mdeclRange:[8:0]
+                [39mfromp:
+                  [39m... * 1
+                [31mbitp:
+                  [31mCONST [31m"?32?sh0" [31md,24:14,24:17 [31m(GH)
+                [32mlsbp:
+                  [32mCONST [32m"4'h0" [32md,24:14,24:17 [32m(MO)
+                [32mwidthp:
+                  [32mCONST [32m"?32?h1" [32md,25:36,25:37 [32m(NO)
+            [39mPIN [39m"__pinNumber4" [39md,25:42,25:43 [39m(HH) [39mmodPTypep:UNLINKED[39m, [39mmodVarp:(AE)
+             [39mexprp:
+               [31mSELBIT[39m->[32mSEL [39m"" [39md,25:42,25:43 [31m(IH)[39m->[32m(OO) [32mdeclElWidth:1[39m, [32mdeclRange:[7:0]
+                [39mfromp:
+                  [39m... * 1
+                [31mbitp:
+                  [31mCONST [31m"?32?sh0" [31md,24:14,24:17 [31m(KH)
+                [32mlsbp:
+                  [32mCONST [32m"3'h0" [32md,24:14,24:17 [32m(PO)
+                [32mwidthp:
+                  [32mCONST [32m"?32?h1" [32md,25:42,25:43 [32m(QO)
+            [39mPIN [39m"__pinNumber5" [39md,25:48,25:49 [39m(LH) [39mmodPTypep:UNLINKED[39m, [39mmodVarp:(DE)
+             [39mexprp:
+               [31mSELBIT[39m->[32mSEL [39m"" [39md,25:48,25:49 [31m(MH)[39m->[32m(RO) [32mdeclElWidth:1[39m, [32mdeclRange:[8:0]
+                [39mfromp:
+                  [39m... * 1
+                [31mbitp:
+                  [31mADD [31m"" [31md,25:50,25:51 [31m(OH)
+                   [31mlhsp:
+                     [31mCONST [31m"?32?sh0" [31md,24:14,24:17 [31m(PH)
+                   [31mrhsp:
+                     [31mCONST [31m"?32?sh1" [31md,25:51,25:52 [31m(QH)
+                [32mlsbp:
+                  [32mSEL [32m"" [32md,25:50,25:51 [32m(SO)
+                   [32mfromp:
+                     [32mADD [32m"" [32md,25:50,25:51 [32m(OH)
+                      [32mlhsp:
+                        [32mCONST [32m"?32?sh0" [32md,24:14,24:17 [32m(PH)
+                      [32mrhsp:
+                        [32mCONST [32m"?32?sh1" [32md,25:51,25:52 [32m(QH)
+                   [32mlsbp:
+                     [32mCONST [32m"32'h0" [32md,25:50,25:51 [32m(TO)
+                   [32mwidthp:
+                     [32mCONST [32m"32'h4" [32md,25:50,25:51 [32m(UO)
+                [32mwidthp:
+                  [32mCONST [32m"?32?h1" [32md,25:48,25:49 [32m(VO)
+      [39mBEGIN [39m"genblk1[1]" [39md,25:20,25:22 [39m(RH) [39mgenerate:True
+       [39mstmtsp:
+         [39mCELL [39m"fa" [39md,25:20,25:22 [39m(SH) [39mmodp:(GC)[39m, [39morigName:fa
+          [39mpinsp:
+            [39mPIN [39m"__pinNumber1" [39md,25:24,25:25 [39m(TH) [39mmodPTypep:UNLINKED[39m, [39mmodVarp:(RD)
+             [39mexprp:
+               [31mSELBIT[39m->[32mSEL [39m"" [39md,25:24,25:25 [31m(UH)[39m->[32m(WO) [32mdeclElWidth:1[39m, [32mdeclRange:[7:0]
+                [39mfromp:
+                  [39m... * 1
+                [31mbitp:
+                  [31mCONST [31m"?32?sh1" [31md,24:14,24:17 [31m(WH)
+                [32mlsbp:
+                  [32mCONST [32m"3'h1" [32md,24:14,24:17 [32m(XO)
+                [32mwidthp:
+                  [32mCONST [32m"?32?h1" [32md,25:24,25:25 [32m(YO)
+            [39mPIN [39m"__pinNumber2" [39md,25:30,25:31 [39m(XH) [39mmodPTypep:UNLINKED[39m, [39mmodVarp:(UD)
+             [39mexprp:
+               [31mSELBIT[39m->[32mSEL [39m"" [39md,25:30,25:31 [31m(YH)[39m->[32m(ZO) [32mdeclElWidth:1[39m, [32mdeclRange:[7:0]
+                [39mfromp:
+                  [39m... * 1
+                [31mbitp:
+                  [31mCONST [31m"?32?sh1" [31md,24:14,24:17 [31m(AI)
+                [32mlsbp:
+                  [32mCONST [32m"3'h1" [32md,24:14,24:17 [32m(AP)
+                [32mwidthp:
+                  [32mCONST [32m"?32?h1" [32md,25:30,25:31 [32m(BP)
+            [39mPIN [39m"__pinNumber3" [39md,25:36,25:37 [39m(BI) [39mmodPTypep:UNLINKED[39m, [39mmodVarp:(XD)
+             [39mexprp:
+               [31mSELBIT[39m->[32mSEL [39m"" [39md,25:36,25:37 [31m(CI)[39m->[32m(CP) [32mdeclElWidth:1[39m, [32mdeclRange:[8:0]
+                [39mfromp:
+                  [39m... * 1
+                [31mbitp:
+                  [31mCONST [31m"?32?sh1" [31md,24:14,24:17 [31m(EI)
+                [32mlsbp:
+                  [32mCONST [32m"4'h1" [32md,24:14,24:17 [32m(DP)
+                [32mwidthp:
+                  [32mCONST [32m"?32?h1" [32md,25:36,25:37 [32m(EP)
+            [39mPIN [39m"__pinNumber4" [39md,25:42,25:43 [39m(FI) [39mmodPTypep:UNLINKED[39m, [39mmodVarp:(AE)
+             [39mexprp:
+               [31mSELBIT[39m->[32mSEL [39m"" [39md,25:42,25:43 [31m(GI)[39m->[32m(FP) [32mdeclElWidth:1[39m, [32mdeclRange:[7:0]
+                [39mfromp:
+                  [39m... * 1
+                [31mbitp:
+                  [31mCONST [31m"?32?sh1" [31md,24:14,24:17 [31m(II)
+                [32mlsbp:
+                  [32mCONST [32m"3'h1" [32md,24:14,24:17 [32m(GP)
+                [32mwidthp:
+                  [32mCONST [32m"?32?h1" [32md,25:42,25:43 [32m(HP)
+            [39mPIN [39m"__pinNumber5" [39md,25:48,25:49 [39m(JI) [39mmodPTypep:UNLINKED[39m, [39mmodVarp:(DE)
+             [39mexprp:
+               [31mSELBIT[39m->[32mSEL [39m"" [39md,25:48,25:49 [31m(KI)[39m->[32m(IP) [32mdeclElWidth:1[39m, [32mdeclRange:[8:0]
+                [39mfromp:
+                  [39m... * 1
+                [31mbitp:
+                  [31mADD [31m"" [31md,25:50,25:51 [31m(MI)
+                   [31mlhsp:
+                     [31mCONST [31m"?32?sh1" [31md,24:14,24:17 [31m(NI)
+                   [31mrhsp:
+                     [31mCONST [31m"?32?sh1" [31md,25:51,25:52 [31m(OI)
+                [32mlsbp:
+                  [32mSEL [32m"" [32md,25:50,25:51 [32m(JP)
+                   [32mfromp:
+                     [32mADD [32m"" [32md,25:50,25:51 [32m(MI)
+                      [32mlhsp:
+                        [32mCONST [32m"?32?sh1" [32md,24:14,24:17 [32m(NI)
+                      [32mrhsp:
+                        [32mCONST [32m"?32?sh1" [32md,25:51,25:52 [32m(OI)
+                   [32mlsbp:
+                     [32mCONST [32m"32'h0" [32md,25:50,25:51 [32m(KP)
+                   [32mwidthp:
+                     [32mCONST [32m"32'h4" [32md,25:50,25:51 [32m(LP)
+                [32mwidthp:
+                  [32mCONST [32m"?32?h1" [32md,25:48,25:49 [32m(MP)
+      [39mBEGIN [39m"genblk1[2]" [39md,25:20,25:22 [39m(PI) [39mgenerate:True
+       [39mstmtsp:
+         [39mCELL [39m"fa" [39md,25:20,25:22 [39m(QI) [39mmodp:(GC)[39m, [39morigName:fa
+          [39mpinsp:
+            [39mPIN [39m"__pinNumber1" [39md,25:24,25:25 [39m(RI) [39mmodPTypep:UNLINKED[39m, [39mmodVarp:(RD)
+             [39mexprp:
+               [31mSELBIT[39m->[32mSEL [39m"" [39md,25:24,25:25 [31m(SI)[39m->[32m(NP) [32mdeclElWidth:1[39m, [32mdeclRange:[7:0]
+                [39mfromp:
+                  [39m... * 1
+                [31mbitp:
+                  [31mCONST [31m"?32?sh2" [31md,24:14,24:17 [31m(UI)
+                [32mlsbp:
+                  [32mCONST [32m"3'h2" [32md,24:14,24:17 [32m(OP)
+                [32mwidthp:
+                  [32mCONST [32m"?32?h1" [32md,25:24,25:25 [32m(PP)
+            [39mPIN [39m"__pinNumber2" [39md,25:30,25:31 [39m(VI) [39mmodPTypep:UNLINKED[39m, [39mmodVarp:(UD)
+             [39mexprp:
+               [31mSELBIT[39m->[32mSEL [39m"" [39md,25:30,25:31 [31m(WI)[39m->[32m(QP) [32mdeclElWidth:1[39m, [32mdeclRange:[7:0]
+                [39mfromp:
+                  [39m... * 1
+                [31mbitp:
+                  [31mCONST [31m"?32?sh2" [31md,24:14,24:17 [31m(YI)
+                [32mlsbp:
+                  [32mCONST [32m"3'h2" [32md,24:14,24:17 [32m(RP)
+                [32mwidthp:
+                  [32mCONST [32m"?32?h1" [32md,25:30,25:31 [32m(SP)
+            [39mPIN [39m"__pinNumber3" [39md,25:36,25:37 [39m(ZI) [39mmodPTypep:UNLINKED[39m, [39mmodVarp:(XD)
+             [39mexprp:
+               [31mSELBIT[39m->[32mSEL [39m"" [39md,25:36,25:37 [31m(AJ)[39m->[32m(TP) [32mdeclElWidth:1[39m, [32mdeclRange:[8:0]
+                [39mfromp:
+                  [39m... * 1
+                [31mbitp:
+                  [31mCONST [31m"?32?sh2" [31md,24:14,24:17 [31m(CJ)
+                [32mlsbp:
+                  [32mCONST [32m"4'h2" [32md,24:14,24:17 [32m(UP)
+                [32mwidthp:
+                  [32mCONST [32m"?32?h1" [32md,25:36,25:37 [32m(VP)
+            [39mPIN [39m"__pinNumber4" [39md,25:42,25:43 [39m(DJ) [39mmodPTypep:UNLINKED[39m, [39mmodVarp:(AE)
+             [39mexprp:
+               [31mSELBIT[39m->[32mSEL [39m"" [39md,25:42,25:43 [31m(EJ)[39m->[32m(WP) [32mdeclElWidth:1[39m, [32mdeclRange:[7:0]
+                [39mfromp:
+                  [39m... * 1
+                [31mbitp:
+                  [31mCONST [31m"?32?sh2" [31md,24:14,24:17 [31m(GJ)
+                [32mlsbp:
+                  [32mCONST [32m"3'h2" [32md,24:14,24:17 [32m(XP)
+                [32mwidthp:
+                  [32mCONST [32m"?32?h1" [32md,25:42,25:43 [32m(YP)
+            [39mPIN [39m"__pinNumber5" [39md,25:48,25:49 [39m(HJ) [39mmodPTypep:UNLINKED[39m, [39mmodVarp:(DE)
+             [39mexprp:
+               [31mSELBIT[39m->[32mSEL [39m"" [39md,25:48,25:49 [31m(IJ)[39m->[32m(ZP) [32mdeclElWidth:1[39m, [32mdeclRange:[8:0]
+                [39mfromp:
+                  [39m... * 1
+                [31mbitp:
+                  [31mADD [31m"" [31md,25:50,25:51 [31m(KJ)
+                   [31mlhsp:
+                     [31mCONST [31m"?32?sh2" [31md,24:14,24:17 [31m(LJ)
+                   [31mrhsp:
+                     [31mCONST [31m"?32?sh1" [31md,25:51,25:52 [31m(MJ)
+                [32mlsbp:
+                  [32mSEL [32m"" [32md,25:50,25:51 [32m(AQ)
+                   [32mfromp:
+                     [32mADD [32m"" [32md,25:50,25:51 [32m(KJ)
+                      [32mlhsp:
+                        [32mCONST [32m"?32?sh2" [32md,24:14,24:17 [32m(LJ)
+                      [32mrhsp:
+                        [32mCONST [32m"?32?sh1" [32md,25:51,25:52 [32m(MJ)
+                   [32mlsbp:
+                     [32mCONST [32m"32'h0" [32md,25:50,25:51 [32m(BQ)
+                   [32mwidthp:
+                     [32mCONST [32m"32'h4" [32md,25:50,25:51 [32m(CQ)
+                [32mwidthp:
+                  [32mCONST [32m"?32?h1" [32md,25:48,25:49 [32m(DQ)
+      [39mBEGIN [39m"genblk1[3]" [39md,25:20,25:22 [39m(NJ) [39mgenerate:True
+       [39mstmtsp:
+         [39mCELL [39m"fa" [39md,25:20,25:22 [39m(OJ) [39mmodp:(GC)[39m, [39morigName:fa
+          [39mpinsp:
+            [39mPIN [39m"__pinNumber1" [39md,25:24,25:25 [39m(PJ) [39mmodPTypep:UNLINKED[39m, [39mmodVarp:(RD)
+             [39mexprp:
+               [31mSELBIT[39m->[32mSEL [39m"" [39md,25:24,25:25 [31m(QJ)[39m->[32m(EQ) [32mdeclElWidth:1[39m, [32mdeclRange:[7:0]
+                [39mfromp:
+                  [39m... * 1
+                [31mbitp:
+                  [31mCONST [31m"?32?sh3" [31md,24:14,24:17 [31m(SJ)
+                [32mlsbp:
+                  [32mCONST [32m"3'h3" [32md,24:14,24:17 [32m(FQ)
+                [32mwidthp:
+                  [32mCONST [32m"?32?h1" [32md,25:24,25:25 [32m(GQ)
+            [39mPIN [39m"__pinNumber2" [39md,25:30,25:31 [39m(TJ) [39mmodPTypep:UNLINKED[39m, [39mmodVarp:(UD)
+             [39mexprp:
+               [31mSELBIT[39m->[32mSEL [39m"" [39md,25:30,25:31 [31m(UJ)[39m->[32m(HQ) [32mdeclElWidth:1[39m, [32mdeclRange:[7:0]
+                [39mfromp:
+                  [39m... * 1
+                [31mbitp:
+                  [31mCONST [31m"?32?sh3" [31md,24:14,24:17 [31m(WJ)
+                [32mlsbp:
+                  [32mCONST [32m"3'h3" [32md,24:14,24:17 [32m(IQ)
+                [32mwidthp:
+                  [32mCONST [32m"?32?h1" [32md,25:30,25:31 [32m(JQ)
+            [39mPIN [39m"__pinNumber3" [39md,25:36,25:37 [39m(XJ) [39mmodPTypep:UNLINKED[39m, [39mmodVarp:(XD)
+             [39mexprp:
+               [31mSELBIT[39m->[32mSEL [39m"" [39md,25:36,25:37 [31m(YJ)[39m->[32m(KQ) [32mdeclElWidth:1[39m, [32mdeclRange:[8:0]
+                [39mfromp:
+                  [39m... * 1
+                [31mbitp:
+                  [31mCONST [31m"?32?sh3" [31md,24:14,24:17 [31m(AK)
+                [32mlsbp:
+                  [32mCONST [32m"4'h3" [32md,24:14,24:17 [32m(LQ)
+                [32mwidthp:
+                  [32mCONST [32m"?32?h1" [32md,25:36,25:37 [32m(MQ)
+            [39mPIN [39m"__pinNumber4" [39md,25:42,25:43 [39m(BK) [39mmodPTypep:UNLINKED[39m, [39mmodVarp:(AE)
+             [39mexprp:
+               [31mSELBIT[39m->[32mSEL [39m"" [39md,25:42,25:43 [31m(CK)[39m->[32m(NQ) [32mdeclElWidth:1[39m, [32mdeclRange:[7:0]
+                [39mfromp:
+                  [39m... * 1
+                [31mbitp:
+                  [31mCONST [31m"?32?sh3" [31md,24:14,24:17 [31m(EK)
+                [32mlsbp:
+                  [32mCONST [32m"3'h3" [32md,24:14,24:17 [32m(OQ)
+                [32mwidthp:
+                  [32mCONST [32m"?32?h1" [32md,25:42,25:43 [32m(PQ)
+            [39mPIN [39m"__pinNumber5" [39md,25:48,25:49 [39m(FK) [39mmodPTypep:UNLINKED[39m, [39mmodVarp:(DE)
+             [39mexprp:
+               [31mSELBIT[39m->[32mSEL [39m"" [39md,25:48,25:49 [31m(GK)[39m->[32m(QQ) [32mdeclElWidth:1[39m, [32mdeclRange:[8:0]
+                [39mfromp:
+                  [39m... * 1
+                [31mbitp:
+                  [31mADD [31m"" [31md,25:50,25:51 [31m(IK)
+                   [31mlhsp:
+                     [31mCONST [31m"?32?sh3" [31md,24:14,24:17 [31m(JK)
+                   [31mrhsp:
+                     [31mCONST [31m"?32?sh1" [31md,25:51,25:52 [31m(KK)
+                [32mlsbp:
+                  [32mSEL [32m"" [32md,25:50,25:51 [32m(RQ)
+                   [32mfromp:
+                     [32mADD [32m"" [32md,25:50,25:51 [32m(IK)
+                      [32mlhsp:
+                        [32mCONST [32m"?32?sh3" [32md,24:14,24:17 [32m(JK)
+                      [32mrhsp:
+                        [32mCONST [32m"?32?sh1" [32md,25:51,25:52 [32m(KK)
+                   [32mlsbp:
+                     [32mCONST [32m"32'h0" [32md,25:50,25:51 [32m(SQ)
+                   [32mwidthp:
+                     [32mCONST [32m"32'h4" [32md,25:50,25:51 [32m(TQ)
+                [32mwidthp:
+                  [32mCONST [32m"?32?h1" [32md,25:48,25:49 [32m(UQ)
+      [39mBEGIN [39m"genblk1[4]" [39md,25:20,25:22 [39m(LK) [39mgenerate:True
+       [39mstmtsp:
+         [39mCELL [39m"fa" [39md,25:20,25:22 [39m(MK) [39mmodp:(GC)[39m, [39morigName:fa
+          [39mpinsp:
+            [39mPIN [39m"__pinNumber1" [39md,25:24,25:25 [39m(NK) [39mmodPTypep:UNLINKED[39m, [39mmodVarp:(RD)
+             [39mexprp:
+               [31mSELBIT[39m->[32mSEL [39m"" [39md,25:24,25:25 [31m(OK)[39m->[32m(VQ) [32mdeclElWidth:1[39m, [32mdeclRange:[7:0]
+                [39mfromp:
+                  [39m... * 1
+                [31mbitp:
+                  [31mCONST [31m"?32?sh4" [31md,24:14,24:17 [31m(QK)
+                [32mlsbp:
+                  [32mCONST [32m"3'h4" [32md,24:14,24:17 [32m(WQ)
+                [32mwidthp:
+                  [32mCONST [32m"?32?h1" [32md,25:24,25:25 [32m(XQ)
+            [39mPIN [39m"__pinNumber2" [39md,25:30,25:31 [39m(RK) [39mmodPTypep:UNLINKED[39m, [39mmodVarp:(UD)
+             [39mexprp:
+               [31mSELBIT[39m->[32mSEL [39m"" [39md,25:30,25:31 [31m(SK)[39m->[32m(YQ) [32mdeclElWidth:1[39m, [32mdeclRange:[7:0]
+                [39mfromp:
+                  [39m... * 1
+                [31mbitp:
+                  [31mCONST [31m"?32?sh4" [31md,24:14,24:17 [31m(UK)
+                [32mlsbp:
+                  [32mCONST [32m"3'h4" [32md,24:14,24:17 [32m(ZQ)
+                [32mwidthp:
+                  [32mCONST [32m"?32?h1" [32md,25:30,25:31 [32m(AR)
+            [39mPIN [39m"__pinNumber3" [39md,25:36,25:37 [39m(VK) [39mmodPTypep:UNLINKED[39m, [39mmodVarp:(XD)
+             [39mexprp:
+               [31mSELBIT[39m->[32mSEL [39m"" [39md,25:36,25:37 [31m(WK)[39m->[32m(BR) [32mdeclElWidth:1[39m, [32mdeclRange:[8:0]
+                [39mfromp:
+                  [39m... * 1
+                [31mbitp:
+                  [31mCONST [31m"?32?sh4" [31md,24:14,24:17 [31m(YK)
+                [32mlsbp:
+                  [32mCONST [32m"4'h4" [32md,24:14,24:17 [32m(CR)
+                [32mwidthp:
+                  [32mCONST [32m"?32?h1" [32md,25:36,25:37 [32m(DR)
+            [39mPIN [39m"__pinNumber4" [39md,25:42,25:43 [39m(ZK) [39mmodPTypep:UNLINKED[39m, [39mmodVarp:(AE)
+             [39mexprp:
+               [31mSELBIT[39m->[32mSEL [39m"" [39md,25:42,25:43 [31m(AL)[39m->[32m(ER) [32mdeclElWidth:1[39m, [32mdeclRange:[7:0]
+                [39mfromp:
+                  [39m... * 1
+                [31mbitp:
+                  [31mCONST [31m"?32?sh4" [31md,24:14,24:17 [31m(CL)
+                [32mlsbp:
+                  [32mCONST [32m"3'h4" [32md,24:14,24:17 [32m(FR)
+                [32mwidthp:
+                  [32mCONST [32m"?32?h1" [32md,25:42,25:43 [32m(GR)
+            [39mPIN [39m"__pinNumber5" [39md,25:48,25:49 [39m(DL) [39mmodPTypep:UNLINKED[39m, [39mmodVarp:(DE)
+             [39mexprp:
+               [31mSELBIT[39m->[32mSEL [39m"" [39md,25:48,25:49 [31m(EL)[39m->[32m(HR) [32mdeclElWidth:1[39m, [32mdeclRange:[8:0]
+                [39mfromp:
+                  [39m... * 1
+                [31mbitp:
+                  [31mADD [31m"" [31md,25:50,25:51 [31m(GL)
+                   [31mlhsp:
+                     [31mCONST [31m"?32?sh4" [31md,24:14,24:17 [31m(HL)
+                   [31mrhsp:
+                     [31mCONST [31m"?32?sh1" [31md,25:51,25:52 [31m(IL)
+                [32mlsbp:
+                  [32mSEL [32m"" [32md,25:50,25:51 [32m(IR)
+                   [32mfromp:
+                     [32mADD [32m"" [32md,25:50,25:51 [32m(GL)
+                      [32mlhsp:
+                        [32mCONST [32m"?32?sh4" [32md,24:14,24:17 [32m(HL)
+                      [32mrhsp:
+                        [32mCONST [32m"?32?sh1" [32md,25:51,25:52 [32m(IL)
+                   [32mlsbp:
+                     [32mCONST [32m"32'h0" [32md,25:50,25:51 [32m(JR)
+                   [32mwidthp:
+                     [32mCONST [32m"32'h4" [32md,25:50,25:51 [32m(KR)
+                [32mwidthp:
+                  [32mCONST [32m"?32?h1" [32md,25:48,25:49 [32m(LR)
+      [39mBEGIN [39m"genblk1[5]" [39md,25:20,25:22 [39m(JL) [39mgenerate:True
+       [39mstmtsp:
+         [39mCELL [39m"fa" [39md,25:20,25:22 [39m(KL) [39mmodp:(GC)[39m, [39morigName:fa
+          [39mpinsp:
+            [39mPIN [39m"__pinNumber1" [39md,25:24,25:25 [39m(LL) [39mmodPTypep:UNLINKED[39m, [39mmodVarp:(RD)
+             [39mexprp:
+               [31mSELBIT[39m->[32mSEL [39m"" [39md,25:24,25:25 [31m(ML)[39m->[32m(MR) [32mdeclElWidth:1[39m, [32mdeclRange:[7:0]
+                [39mfromp:
+                  [39m... * 1
+                [31mbitp:
+                  [31mCONST [31m"?32?sh5" [31md,24:14,24:17 [31m(OL)
+                [32mlsbp:
+                  [32mCONST [32m"3'h5" [32md,24:14,24:17 [32m(NR)
+                [32mwidthp:
+                  [32mCONST [32m"?32?h1" [32md,25:24,25:25 [32m(OR)
+            [39mPIN [39m"__pinNumber2" [39md,25:30,25:31 [39m(PL) [39mmodPTypep:UNLINKED[39m, [39mmodVarp:(UD)
+             [39mexprp:
+               [31mSELBIT[39m->[32mSEL [39m"" [39md,25:30,25:31 [31m(QL)[39m->[32m(PR) [32mdeclElWidth:1[39m, [32mdeclRange:[7:0]
+                [39mfromp:
+                  [39m... * 1
+                [31mbitp:
+                  [31mCONST [31m"?32?sh5" [31md,24:14,24:17 [31m(SL)
+                [32mlsbp:
+                  [32mCONST [32m"3'h5" [32md,24:14,24:17 [32m(QR)
+                [32mwidthp:
+                  [32mCONST [32m"?32?h1" [32md,25:30,25:31 [32m(RR)
+            [39mPIN [39m"__pinNumber3" [39md,25:36,25:37 [39m(TL) [39mmodPTypep:UNLINKED[39m, [39mmodVarp:(XD)
+             [39mexprp:
+               [31mSELBIT[39m->[32mSEL [39m"" [39md,25:36,25:37 [31m(UL)[39m->[32m(SR) [32mdeclElWidth:1[39m, [32mdeclRange:[8:0]
+                [39mfromp:
+                  [39m... * 1
+                [31mbitp:
+                  [31mCONST [31m"?32?sh5" [31md,24:14,24:17 [31m(WL)
+                [32mlsbp:
+                  [32mCONST [32m"4'h5" [32md,24:14,24:17 [32m(TR)
+                [32mwidthp:
+                  [32mCONST [32m"?32?h1" [32md,25:36,25:37 [32m(UR)
+            [39mPIN [39m"__pinNumber4" [39md,25:42,25:43 [39m(XL) [39mmodPTypep:UNLINKED[39m, [39mmodVarp:(AE)
+             [39mexprp:
+               [31mSELBIT[39m->[32mSEL [39m"" [39md,25:42,25:43 [31m(YL)[39m->[32m(VR) [32mdeclElWidth:1[39m, [32mdeclRange:[7:0]
+                [39mfromp:
+                  [39m... * 1
+                [31mbitp:
+                  [31mCONST [31m"?32?sh5" [31md,24:14,24:17 [31m(AM)
+                [32mlsbp:
+                  [32mCONST [32m"3'h5" [32md,24:14,24:17 [32m(WR)
+                [32mwidthp:
+                  [32mCONST [32m"?32?h1" [32md,25:42,25:43 [32m(XR)
+            [39mPIN [39m"__pinNumber5" [39md,25:48,25:49 [39m(BM) [39mmodPTypep:UNLINKED[39m, [39mmodVarp:(DE)
+             [39mexprp:
+               [31mSELBIT[39m->[32mSEL [39m"" [39md,25:48,25:49 [31m(CM)[39m->[32m(YR) [32mdeclElWidth:1[39m, [32mdeclRange:[8:0]
+                [39mfromp:
+                  [39m... * 1
+                [31mbitp:
+                  [31mADD [31m"" [31md,25:50,25:51 [31m(EM)
+                   [31mlhsp:
+                     [31mCONST [31m"?32?sh5" [31md,24:14,24:17 [31m(FM)
+                   [31mrhsp:
+                     [31mCONST [31m"?32?sh1" [31md,25:51,25:52 [31m(GM)
+                [32mlsbp:
+                  [32mSEL [32m"" [32md,25:50,25:51 [32m(ZR)
+                   [32mfromp:
+                     [32mADD [32m"" [32md,25:50,25:51 [32m(EM)
+                      [32mlhsp:
+                        [32mCONST [32m"?32?sh5" [32md,24:14,24:17 [32m(FM)
+                      [32mrhsp:
+                        [32mCONST [32m"?32?sh1" [32md,25:51,25:52 [32m(GM)
+                   [32mlsbp:
+                     [32mCONST [32m"32'h0" [32md,25:50,25:51 [32m(AS)
+                   [32mwidthp:
+                     [32mCONST [32m"32'h4" [32md,25:50,25:51 [32m(BS)
+                [32mwidthp:
+                  [32mCONST [32m"?32?h1" [32md,25:48,25:49 [32m(CS)
+      [39mBEGIN [39m"genblk1[6]" [39md,25:20,25:22 [39m(HM) [39mgenerate:True
+       [39mstmtsp:
+         [39mCELL [39m"fa" [39md,25:20,25:22 [39m(IM) [39mmodp:(GC)[39m, [39morigName:fa
+          [39mpinsp:
+            [39mPIN [39m"__pinNumber1" [39md,25:24,25:25 [39m(JM) [39mmodPTypep:UNLINKED[39m, [39mmodVarp:(RD)
+             [39mexprp:
+               [31mSELBIT[39m->[32mSEL [39m"" [39md,25:24,25:25 [31m(KM)[39m->[32m(DS) [32mdeclElWidth:1[39m, [32mdeclRange:[7:0]
+                [39mfromp:
+                  [39m... * 1
+                [31mbitp:
+                  [31mCONST [31m"?32?sh6" [31md,24:14,24:17 [31m(MM)
+                [32mlsbp:
+                  [32mCONST [32m"3'h6" [32md,24:14,24:17 [32m(ES)
+                [32mwidthp:
+                  [32mCONST [32m"?32?h1" [32md,25:24,25:25 [32m(FS)
+            [39mPIN [39m"__pinNumber2" [39md,25:30,25:31 [39m(NM) [39mmodPTypep:UNLINKED[39m, [39mmodVarp:(UD)
+             [39mexprp:
+               [31mSELBIT[39m->[32mSEL [39m"" [39md,25:30,25:31 [31m(OM)[39m->[32m(GS) [32mdeclElWidth:1[39m, [32mdeclRange:[7:0]
+                [39mfromp:
+                  [39m... * 1
+                [31mbitp:
+                  [31mCONST [31m"?32?sh6" [31md,24:14,24:17 [31m(QM)
+                [32mlsbp:
+                  [32mCONST [32m"3'h6" [32md,24:14,24:17 [32m(HS)
+                [32mwidthp:
+                  [32mCONST [32m"?32?h1" [32md,25:30,25:31 [32m(IS)
+            [39mPIN [39m"__pinNumber3" [39md,25:36,25:37 [39m(RM) [39mmodPTypep:UNLINKED[39m, [39mmodVarp:(XD)
+             [39mexprp:
+               [31mSELBIT[39m->[32mSEL [39m"" [39md,25:36,25:37 [31m(SM)[39m->[32m(JS) [32mdeclElWidth:1[39m, [32mdeclRange:[8:0]
+                [39mfromp:
+                  [39m... * 1
+                [31mbitp:
+                  [31mCONST [31m"?32?sh6" [31md,24:14,24:17 [31m(UM)
+                [32mlsbp:
+                  [32mCONST [32m"4'h6" [32md,24:14,24:17 [32m(KS)
+                [32mwidthp:
+                  [32mCONST [32m"?32?h1" [32md,25:36,25:37 [32m(LS)
+            [39mPIN [39m"__pinNumber4" [39md,25:42,25:43 [39m(VM) [39mmodPTypep:UNLINKED[39m, [39mmodVarp:(AE)
+             [39mexprp:
+               [31mSELBIT[39m->[32mSEL [39m"" [39md,25:42,25:43 [31m(WM)[39m->[32m(MS) [32mdeclElWidth:1[39m, [32mdeclRange:[7:0]
+                [39mfromp:
+                  [39m... * 1
+                [31mbitp:
+                  [31mCONST [31m"?32?sh6" [31md,24:14,24:17 [31m(YM)
+                [32mlsbp:
+                  [32mCONST [32m"3'h6" [32md,24:14,24:17 [32m(NS)
+                [32mwidthp:
+                  [32mCONST [32m"?32?h1" [32md,25:42,25:43 [32m(OS)
+            [39mPIN [39m"__pinNumber5" [39md,25:48,25:49 [39m(ZM) [39mmodPTypep:UNLINKED[39m, [39mmodVarp:(DE)
+             [39mexprp:
+               [31mSELBIT[39m->[32mSEL [39m"" [39md,25:48,25:49 [31m(AN)[39m->[32m(PS) [32mdeclElWidth:1[39m, [32mdeclRange:[8:0]
+                [39mfromp:
+                  [39m... * 1
+                [31mbitp:
+                  [31mADD [31m"" [31md,25:50,25:51 [31m(CN)
+                   [31mlhsp:
+                     [31mCONST [31m"?32?sh6" [31md,24:14,24:17 [31m(DN)
+                   [31mrhsp:
+                     [31mCONST [31m"?32?sh1" [31md,25:51,25:52 [31m(EN)
+                [32mlsbp:
+                  [32mSEL [32m"" [32md,25:50,25:51 [32m(QS)
+                   [32mfromp:
+                     [32mADD [32m"" [32md,25:50,25:51 [32m(CN)
+                      [32mlhsp:
+                        [32mCONST [32m"?32?sh6" [32md,24:14,24:17 [32m(DN)
+                      [32mrhsp:
+                        [32mCONST [32m"?32?sh1" [32md,25:51,25:52 [32m(EN)
+                   [32mlsbp:
+                     [32mCONST [32m"32'h0" [32md,25:50,25:51 [32m(RS)
+                   [32mwidthp:
+                     [32mCONST [32m"32'h4" [32md,25:50,25:51 [32m(SS)
+                [32mwidthp:
+                  [32mCONST [32m"?32?h1" [32md,25:48,25:49 [32m(TS)
+      [39mBEGIN [39m"genblk1[7]" [39md,25:20,25:22 [39m(FN) [39mgenerate:True
+       [39mstmtsp:
+         [39mCELL [39m"fa" [39md,25:20,25:22 [39m(GN) [39mmodp:(GC)[39m, [39morigName:fa
+          [39mpinsp:
+            [39mPIN [39m"__pinNumber1" [39md,25:24,25:25 [39m(HN) [39mmodPTypep:UNLINKED[39m, [39mmodVarp:(RD)
+             [39mexprp:
+               [31mSELBIT[39m->[32mSEL [39m"" [39md,25:24,25:25 [31m(IN)[39m->[32m(US) [32mdeclElWidth:1[39m, [32mdeclRange:[7:0]
+                [39mfromp:
+                  [39m... * 1
+                [31mbitp:
+                  [31mCONST [31m"?32?sh7" [31md,24:14,24:17 [31m(KN)
+                [32mlsbp:
+                  [32mCONST [32m"3'h7" [32md,24:14,24:17 [32m(VS)
+                [32mwidthp:
+                  [32mCONST [32m"?32?h1" [32md,25:24,25:25 [32m(WS)
+            [39mPIN [39m"__pinNumber2" [39md,25:30,25:31 [39m(LN) [39mmodPTypep:UNLINKED[39m, [39mmodVarp:(UD)
+             [39mexprp:
+               [31mSELBIT[39m->[32mSEL [39m"" [39md,25:30,25:31 [31m(MN)[39m->[32m(XS) [32mdeclElWidth:1[39m, [32mdeclRange:[7:0]
+                [39mfromp:
+                  [39m... * 1
+                [31mbitp:
+                  [31mCONST [31m"?32?sh7" [31md,24:14,24:17 [31m(ON)
+                [32mlsbp:
+                  [32mCONST [32m"3'h7" [32md,24:14,24:17 [32m(YS)
+                [32mwidthp:
+                  [32mCONST [32m"?32?h1" [32md,25:30,25:31 [32m(ZS)
+            [39mPIN [39m"__pinNumber3" [39md,25:36,25:37 [39m(PN) [39mmodPTypep:UNLINKED[39m, [39mmodVarp:(XD)
+             [39mexprp:
+               [31mSELBIT[39m->[32mSEL [39m"" [39md,25:36,25:37 [31m(QN)[39m->[32m(AT) [32mdeclElWidth:1[39m, [32mdeclRange:[8:0]
+                [39mfromp:
+                  [39m... * 1
+                [31mbitp:
+                  [31mCONST [31m"?32?sh7" [31md,24:14,24:17 [31m(SN)
+                [32mlsbp:
+                  [32mCONST [32m"4'h7" [32md,24:14,24:17 [32m(BT)
+                [32mwidthp:
+                  [32mCONST [32m"?32?h1" [32md,25:36,25:37 [32m(CT)
+            [39mPIN [39m"__pinNumber4" [39md,25:42,25:43 [39m(TN) [39mmodPTypep:UNLINKED[39m, [39mmodVarp:(AE)
+             [39mexprp:
+               [31mSELBIT[39m->[32mSEL [39m"" [39md,25:42,25:43 [31m(UN)[39m->[32m(DT) [32mdeclElWidth:1[39m, [32mdeclRange:[7:0]
+                [39mfromp:
+                  [39m... * 1
+                [31mbitp:
+                  [31mCONST [31m"?32?sh7" [31md,24:14,24:17 [31m(WN)
+                [32mlsbp:
+                  [32mCONST [32m"3'h7" [32md,24:14,24:17 [32m(ET)
+                [32mwidthp:
+                  [32mCONST [32m"?32?h1" [32md,25:42,25:43 [32m(FT)
+            [39mPIN [39m"__pinNumber5" [39md,25:48,25:49 [39m(XN) [39mmodPTypep:UNLINKED[39m, [39mmodVarp:(DE)
+             [39mexprp:
+               [31mSELBIT[39m->[32mSEL [39m"" [39md,25:48,25:49 [31m(YN)[39m->[32m(GT) [32mdeclElWidth:1[39m, [32mdeclRange:[8:0]
+                [39mfromp:
+                  [39m... * 1
+                [31mbitp:
+                  [31mADD [31m"" [31md,25:50,25:51 [31m(AO)
+                   [31mlhsp:
+                     [31mCONST [31m"?32?sh7" [31md,24:14,24:17 [31m(BO)
+                   [31mrhsp:
+                     [31mCONST [31m"?32?sh1" [31md,25:51,25:52 [31m(CO)
+                [32mlsbp:
+                  [32mSEL [32m"" [32md,25:50,25:51 [32m(HT)
+                   [32mfromp:
+                     [32mADD [32m"" [32md,25:50,25:51 [32m(AO)
+                      [32mlhsp:
+                        [32mCONST [32m"?32?sh7" [32md,24:14,24:17 [32m(BO)
+                      [32mrhsp:
+                        [32mCONST [32m"?32?sh1" [32md,25:51,25:52 [32m(CO)
+                   [32mlsbp:
+                     [32mCONST [32m"32'h0" [32md,25:50,25:51 [32m(IT)
+                   [32mwidthp:
+                     [32mCONST [32m"32'h4" [32md,25:50,25:51 [32m(JT)
+                [32mwidthp:
+                  [32mCONST [32m"?32?h1" [32md,25:48,25:49 [32m(KT)
+   [39mMODULE [39m"full_adder" [39md,5:8,5:18 [39m(GC) [39mlevel:3[39m, [39morigName:full_adder[39m, [39mtimeunit:1ps
+    [39mstmtsp:
+      [39mVAR [39m"a" [39md,6:15,6:16 [39m(RD) [39mattrClocker:UNKNOWN[39m, [39mdirection:INPUT[39m, [39mlifetime:NONE[39m, [39morigName:a[39m, [39msensIfacep:UNLINKED[39m, [39mvarType:PORT
+       [31mchildDTypep:
+         [31mBASICDTYPE [31m"LOGIC_IMPLICIT" [31md,6:15,6:16 [31m(SD) [31mkeyword:LOGIC_IMPLICIT
+      [39mVAR [39m"b" [39md,7:15,7:16 [39m(UD) [39mattrClocker:UNKNOWN[39m, [39mdirection:INPUT[39m, [39mlifetime:NONE[39m, [39morigName:b[39m, [39msensIfacep:UNLINKED[39m, [39mvarType:PORT
+       [31mchildDTypep:
+         [31mBASICDTYPE [31m"LOGIC_IMPLICIT" [31md,7:15,7:16 [31m(VD) [31mkeyword:LOGIC_IMPLICIT
+      [39mVAR [39m"cin" [39md,8:15,8:18 [39m(XD) [39mattrClocker:UNKNOWN[39m, [39mdirection:INPUT[39m, [39mlifetime:NONE[39m, [39morigName:cin[39m, [39msensIfacep:UNLINKED[39m, [39mvarType:PORT
+       [31mchildDTypep:
+         [31mBASICDTYPE [31m"LOGIC_IMPLICIT" [31md,8:15,8:18 [31m(YD) [31mkeyword:LOGIC_IMPLICIT
+      [39mVAR [39m"s" [39md,9:16,9:17 [39m(AE) [39mattrClocker:UNKNOWN[39m, [39mdirection:OUTPUT[39m, [39mlifetime:NONE[39m, [39morigName:s[39m, [39msensIfacep:UNLINKED[39m, [39mvarType:PORT
+       [31mchildDTypep:
+         [31mBASICDTYPE [31m"LOGIC_IMPLICIT" [31md,9:16,9:17 [31m(BE) [31mkeyword:LOGIC_IMPLICIT
+      [39mVAR [39m"cout" [39md,10:16,10:20 [39m(DE) [39mattrClocker:UNKNOWN[39m, [39mdirection:OUTPUT[39m, [39mlifetime:NONE[39m, [39morigName:cout[39m, [39msensIfacep:UNLINKED[39m, [39mvarType:PORT
+       [31mchildDTypep:
+         [31mBASICDTYPE [31m"LOGIC_IMPLICIT" [31md,10:16,10:20 [31m(EE) [31mkeyword:LOGIC_IMPLICIT
+ [39mmiscsp:
+   [39mTYPETABLE [39m"" [39ma,0:0,0:0 [39m(C) [39mconstraintRefp:UNLINKED[39m, [39memptyQueuep:UNLINKED[39m, [39mqueueIndexp:UNLINKED[39m, [39mstreamp:UNLINKED[39m, [39mvoidp:(ZE)
+    [39mtypesp:
+      [39m... * 10
+      [39mBASICDTYPE [39m"LOGIC_IMPLICIT" [39md,15:23,15:28 [39m(G) [39mgeneric:[31mFalse[39m->[32mTrue[39m, [39mkeyword:LOGIC_IMPLICIT
+      [39m... * 3
+      [32mBASICDTYPE [32m"LOGIC_IMPLICIT" [32md,6:15,6:16 [32m(SD) [32mkeyword:LOGIC_IMPLICIT
+      [32mBASICDTYPE [32m"LOGIC_IMPLICIT" [32md,7:15,7:16 [32m(VD) [32mkeyword:LOGIC_IMPLICIT
+      [32mBASICDTYPE [32m"LOGIC_IMPLICIT" [32md,8:15,8:18 [32m(YD) [32mkeyword:LOGIC_IMPLICIT
+      [32mBASICDTYPE [32m"LOGIC_IMPLICIT" [32md,9:16,9:17 [32m(BE) [32mkeyword:LOGIC_IMPLICIT
+      [32mBASICDTYPE [32m"LOGIC_IMPLICIT" [32md,10:16,10:20 [32m(EE) [32mkeyword:LOGIC_IMPLICIT
+      [32mBASICDTYPE [32m"logic" [32md,16:16,16:17 [32m(K) [32mkeyword:logic[39m, [32mrange:7:0
+      [32mBASICDTYPE [32m"logic" [32md,17:16,17:17 [32m(S) [32mkeyword:logic[39m, [32mrange:7:0
+      [32mBASICDTYPE [32m"LOGIC_IMPLICIT" [32md,18:16,18:19 [32m(AB) [32mkeyword:LOGIC_IMPLICIT
+      [32mBASICDTYPE [32m"logic" [32md,19:16,19:17 [32m(DB) [32mkeyword:logic[39m, [32mrange:7:0
+      [32mBASICDTYPE [32m"LOGIC_IMPLICIT" [32md,20:16,20:20 [32m(LB) [32mkeyword:LOGIC_IMPLICIT
+      [32mBASICDTYPE [32m"logic" [32md,22:10,22:11 [32m(NB) [32mkeyword:logic[39m, [32mrange:8:0
+      [32mBASICDTYPE [32m"logic" [32md,25:24,25:25 [32m(TT) [32mgeneric:True[39m, [32mkeyword:logic[39m, [32mrange:2:0
+      [32mBASICDTYPE [32m"logic" [32md,24:14,24:17 [32m(UT) [32mgeneric:True[39m, [32mkeyword:logic[39m, [32mrange:2:0
+      [32mBASICDTYPE [32m"logic" [32md,25:36,25:37 [32m(VT) [32mgeneric:True[39m, [32mkeyword:logic[39m, [32mrange:3:0
+      [32mBASICDTYPE [32m"logic" [32md,24:14,24:17 [32m(WT) [32mgeneric:True[39m, [32mkeyword:logic[39m, [32mrange:3:0
+   [39m... * 1
+[39m

@@ -34,7 +34,7 @@ parser = argparse.ArgumentParser(
  - ast_walk(f)  apply f to each node (assume that every and only node has op1 field)
  - empty_ops    match all empty op arrays
  - ptrs         match all known pointer fields (like "addr", "varp", "modp" etc.)
- By default (i.e. unless --jq is used), ast_walk(del(empty_ops, <stuff passed to -d>)) is called
+ By default (i.e. unless --jq is used), ast_walk(select(<stuff passed to --skip-nodes> | not) | del(empty_ops, <stuff passed to -d>)) is called
 
 examples:
  $ %(prog)s dump.tree.json # pretty print
@@ -42,6 +42,8 @@ examples:
  $ %(prog)s -d '.file' 1.tree.json 2.tree.json # remove "file" fields and do diff
  $ %(prog)s -d '.file, .editNum' 1.tree.json # remove "file" and "editNum" fields
  $ %(prog)s -d 'ptrs' 1.tree.json # remove all pointer fields (note lack of dot before func name)
+ $ %(prog)s --skip-nodes '.type=="ASSIGNW"' 1.tree.json # remove nodes of type ASSIGNW
+ $ %(prog)s --skip-nodes '.loc | split(",") | .[0]=="d"' 1.tree.json # remove nodes located in file with id "d"
 
 VERILATOR_JQ env-var can be used to supply alternative jq impl (like gojq)
 """,
@@ -59,6 +61,10 @@ parser_group.add_argument('-d',
                           help='delete fields matched by the given jq query',
                           default="",
                           dest="del_list")
+parser_group.add_argument('--skip-nodes',
+                          help='Skip AST nodes matched by the given jq query',
+                          default="false",
+                          dest="skip_nodes")
 parser_group.add_argument('--jq',
                           help='preprocess file(s) with given jq query',
                           default="",
@@ -306,7 +312,7 @@ def main(args=None):
     if not args.jq_query:
         if not args.del_list: args.del_list = "empty_ops"
         else: args.del_list += ",empty_ops"
-        args.jq_query = f"ast_walk(del({args.del_list}))"
+        args.jq_query = f'ast_walk(select({args.skip_nodes} | not) | del({args.del_list}))'
 
     split_fields = partial(split_ast_fields, omit_false_flags=args.omit)
     omit_intact = args.omit and args.newfile  # ommiting unmodified chunks does not make sense without diff
