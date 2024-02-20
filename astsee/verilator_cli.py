@@ -13,7 +13,6 @@ import logging as log
 import webbrowser
 from astsee import make_diff, DictDiffToTerm, DictDiffToHtml, IntactNode, ReplaceDiffNode, stringify, load_jsons, is_children
 
-
 def split_ast_fields(ast, omit_false_flags):
     """split and sort ast fields"""
     implicit = [(k, ast.pop(k))
@@ -97,78 +96,7 @@ parser.add_argument('--loglevel',
                     help='log level. default=warning')
 
 
-def read_file(path):
-    with open(path) as f: return f.read()
-
-
 class AstDiffToHtml:
-    CSS = dedent("""
-    a { color: inherit; }
-    mark { /* highlight matched element */
-        background-color: gold;
-        .th {
-            background-color: white;
-        }
-    }
-    body {
-        display: flex;
-        flex-flow: row nowrap;
-        height: 100vh;
-        margin: 0;
-        padding: 0;
-        border: 0;
-        font-size: 14px;
-    }
-    .pane {
-        height: 100vh;
-        border: solid 1px black;
-        box-sizing: border-box;
-        flex: 0 0 50%;
-    }
-    .source-pane {
-        display: flex;
-        flex-flow: column nowrap;
-
-        .tabmenu {
-            display: flex;
-            flex-flow: row wrap;
-        }
-        .tabs {
-            height: 100%;
-            position: relative;
-        }
-        .tab {
-            position: absolute;
-            background: white;
-            height: 100%;
-            width: 100%;
-            top: 0;
-            left: 0;
-        }
-        .tab:first-child {
-            z-index: 1;
-        }
-    }
-    .y-scrollable {
-        overflow-y: scroll;
-    }
-    """)
-
-    JS = read_file(f'{os.path.dirname(__file__)}/verilator.js')
-
-    HEAD = ('<head>\n'
-            '<meta charset="UTF-8"/>\n'
-            '<style>\n'
-            '/* Shared CSS */\n'
-            f'{DictDiffToHtml.CSS}\n'
-            '/* AST specific CSS */'
-            f'{CSS}\n'
-            '</style>\n'
-            '<script>\n'
-            f'{JS}\n'
-            '</script>\n'
-            '</head>\n')
-
     def __init__(self, omit_intact, split_fields, meta):
         self.meta = meta
         self.srcfiles = set()
@@ -186,6 +114,8 @@ class AstDiffToHtml:
                                                         val_handlers,
                                                         split_fields,
                                                         embeddable=True)
+        globals = {'make_tab': self.make_tab, "diff_css": DictDiffToHtml.CSS}
+        self.template = self.diff_to_str_generic.make_html_tmpl("verilator.html.jinja", globals)
 
     def resolve_path(self, file):
         # Try to find symbolic/relative (prefered) or absolute path of file.
@@ -232,35 +162,7 @@ class AstDiffToHtml:
     def diff_to_string(self, tree):
         self.srcfiles.clear()
         diff = self.diff_to_str_generic.diff_to_string(tree)
-        srcfiles_sorted = sorted(self.srcfiles) # for sake of output stability
-        menu = "\n".join(self.make_btn(fname) for fname in srcfiles_sorted)
-        tabs = "\n".join(self.make_tab(fname) for fname in srcfiles_sorted)
-
-        return dedent("""\
-        <!doctype html>
-        <html>
-        {}
-        <body>
-
-        <div class="pane y-scrollable">
-        {}
-        </div>
-
-        <div class="pane source-pane">
-        <div class="tabmenu">
-        {}
-        </div>
-        <div class="tabs">
-        {}
-        </div>
-        </div>
-        </body></html>
-        """).format(self.HEAD, diff, menu, tabs)
-
-    def make_btn(self, fname):
-        """make button for showing tab"""
-        fname = html.escape(fname)
-        return f'<button type="button" onclick="showtab(\'{fname}\')">{fname}</button>'
+        return self.template.render({"diff": diff, "srcfiles": sorted(self.srcfiles)})
 
     def make_tab(self, fname):
         """load file into linenumbered tab"""

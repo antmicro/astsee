@@ -1,11 +1,13 @@
 # pylint: disable=line-too-long,invalid-name,multiple-statements,missing-function-docstring,missing-class-docstring,missing-module-docstring,no-else-return,too-few-public-methods
 import html
 import json
+import os
 import subprocess
 import sys
 import textwrap
 from itertools import chain
 from deepdiff import DeepDiff
+import jinja2
 
 COLOR_RESET = "\u001b[39m"
 COLOR_RED = "\u001b[31m"
@@ -346,24 +348,8 @@ class DictDiffToHtml:
         }
     }
     """)
-    HTML_TEMPLATE = textwrap.dedent("""\
-    <!doctype html>
-    <head>
-    <meta charset="UTF-8"/>
-    <style type="text/css">
-        {css}
-    </style>
-    </head>
-    <body>
-        {body}
-    </body>
-    """)
 
     CHUNK_SIZE = 1000
-
-    def chunk(self, rows, n=CHUNK_SIZE):
-        for i in range(0, len(rows), n):
-            yield rows[i:i + n]
 
     def __init__(self,
                  omit_intact,
@@ -374,6 +360,8 @@ class DictDiffToHtml:
         self.val_handlers = {} if val_handlers is None else val_handlers
         self.split_fields = default_split_fields if split_fields is None else split_fields
         self.embeddable = embeddable
+        globals={'embeddable': embeddable, 'CSS': self.CSS, 'CHUNK_SIZE': self.CHUNK_SIZE}
+        self.template = self.make_html_tmpl("generic.html.jinja", globals)
 
     def _colorize(self, color, text):
         if color == COLOR_RESET: return text
@@ -388,17 +376,7 @@ class DictDiffToHtml:
         return self.val_handlers.get(key, default_handler)(val.content)
 
     def diff_to_string(self, diff):
-        rows = [
-            f'<span class="th">{i+1}</span>{row}\n' for i, row in enumerate(
-                self._diff_to_string(diff, "").splitlines())
-        ]
-        chunks = ''.join(f'<div class="chunk">{"".join(c)}</div>'
-                         for c in self.chunk(rows))
-        html_body = f'<pre class="code-block">{chunks}</pre>'
-        if self.embeddable:
-            return html_body
-        else:
-            return self.HTML_TEMPLATE.format(css=self.CSS, body=html_body)
+        return self.template.render({"diff": self._diff_to_string(diff, "").splitlines()})
 
     def _diff_to_string(self, diff, indent):
         if isinstance(diff, OmittedNode):
@@ -439,6 +417,12 @@ class DictDiffToHtml:
         if isinstance(val, ReplaceDiffNode):
             return f'{prefix}{self._output_explicit(key, val.old, True)}->{self._output_explicit(key, val.new, True)}'
         return self._colorize(val.color(), prefix + self._output_val(key, val))
+
+    def make_html_tmpl(self, name, globals=None):
+        """Load jinja template from astsee dir, enable autoescape and set globals"""
+        return jinja2.Environment(
+                loader = jinja2.FileSystemLoader(os.path.dirname(__file__)), autoescape = True
+                ).get_template(name, globals=globals)
 
 
 def load_jsons(files, jq_query, jq_bin="jq", jq_funcs=""):

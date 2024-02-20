@@ -1,0 +1,21 @@
+{% if not embeddable -%}
+<!doctype html>
+<head>
+<meta charset="UTF-8"/>
+<style type="text/css">
+{{CSS}}
+</style>
+</head>
+<body>
+{% endif -%}
+<pre class="code-block"><div class="chunk">
+{%- for row in diff -%}
+   {% if loop.index is divisibleby CHUNK_SIZE -%}
+     </div> <div class="chunk">
+   {% endif -%}
+   <span class="th">{{loop.index}}</span>{{row|safe}}
+{% endfor -%}
+</div></pre>
+{%- if not embeddable %}
+</body>
+{% endif %}

@@ -74,7 +74,6 @@ body {
 .y-scrollable {
     overflow-y: scroll;
 }
-
 </style>
 <script>
 var top_idx = 1;
@@ -118,10 +117,8 @@ function highlight_file(name, first_row, first_col, last_row, end_col) {
 
     range.surroundContents(markTag);
 }
-
 </script>
 </head>
-
 <body>
 
 <div class="pane y-scrollable">
@@ -854,10 +851,8 @@ function highlight_file(name, first_row, first_col, last_row, end_col) {
 
 <div class="pane source-pane">
 <div class="tabmenu">
-
 </div>
 <div class="tabs">
-
 </div>
 </div>
 </body></html>
