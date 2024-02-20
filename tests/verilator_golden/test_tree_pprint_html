@@ -125,513 +125,513 @@ function highlight_file(name, first_row, first_col, last_row, end_col) {
 <body>
 
 <div class="pane y-scrollable">
-<pre class="code-block"><div class="chunk"><span class="th">0</span>NETLIST &quot;$root&quot; &lt;built-in&gt; <span id="(B)">(B)</span> constPoolp:<a href="#(D)">(D)</a>, delaySchedulerp:<a href="#UNLINKED">UNLINKED</a>, dollarUnitPkgp:<a href="#UNLINKED">UNLINKED</a>, dpiExportTriggerp:<a href="#UNLINKED">UNLINKED</a>, evalNbap:<a href="#UNLINKED">UNLINKED</a>, evalp:<a href="#UNLINKED">UNLINKED</a>, nbaEventTriggerp:<a href="#UNLINKED">UNLINKED</a>, nbaEventp:<a href="#UNLINKED">UNLINKED</a>, stdPackagep:<a href="#UNLINKED">UNLINKED</a>, timeprecision:1ps, timeunit:1ps, topScopep:<a href="#UNLINKED">UNLINKED</a>, typeTablep:<a href="#(C)">(C)</a>
-<span class="th">1</span> modulesp:
-<span class="th">2</span>   MODULE &quot;serial_adder&quot; <a href="#test1.sv:15" onclick="highlight_file('test1.sv',15,8,15,20)">test1.sv:15</a> <span id="(E)">(E)</span> level:2, origName:serial_adder, timeunit:1ps
-<span class="th">3</span>    stmtsp:
-<span class="th">4</span>      VAR &quot;WIDTH&quot; <a href="#test1.sv:15" onclick="highlight_file('test1.sv',15,23,15,28)">test1.sv:15</a> <span id="(F)">(F)</span> attrClocker:UNKNOWN, direction:NONE, lifetime:VSTATIC, origName:WIDTH, sensIfacep:<a href="#UNLINKED">UNLINKED</a>, varType:GPARAM
-<span class="th">5</span>       valuep:
-<span class="th">6</span>         CONST &quot;?32?sh8&quot; <a href="#test1.sv:15" onclick="highlight_file('test1.sv',15,29,15,30)">test1.sv:15</a> <span id="(H)">(H)</span>
-<span class="th">7</span>      VAR &quot;a&quot; <a href="#test1.sv:16" onclick="highlight_file('test1.sv',16,28,16,29)">test1.sv:16</a> <span id="(J)">(J)</span> attrClocker:UNKNOWN, direction:INPUT, lifetime:NONE, origName:a, sensIfacep:<a href="#UNLINKED">UNLINKED</a>, varType:PORT
-<span class="th">8</span>       childDTypep:
-<span class="th">9</span>         BASICDTYPE &quot;logic&quot; <a href="#test1.sv:16" onclick="highlight_file('test1.sv',16,16,16,17)">test1.sv:16</a> <span id="(K)">(K)</span> keyword:logic
-<span class="th">10</span>          rangep:
-<span class="th">11</span>            RANGE &quot;&quot; <a href="#test1.sv:16" onclick="highlight_file('test1.sv',16,16,16,17)">test1.sv:16</a> <span id="(L)">(L)</span>
-<span class="th">12</span>             leftp:
-<span class="th">13</span>               SUB &quot;&quot; <a href="#test1.sv:16" onclick="highlight_file('test1.sv',16,22,16,23)">test1.sv:16</a> <span id="(M)">(M)</span>
-<span class="th">14</span>                lhsp:
-<span class="th">15</span>                  VARREF &quot;WIDTH&quot; <a href="#test1.sv:16" onclick="highlight_file('test1.sv',16,17,16,22)">test1.sv:16</a> <span id="(LF)">(LF)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(F)">(F)</a>
-<span class="th">16</span>                rhsp:
-<span class="th">17</span>                  CONST &quot;?32?sh1&quot; <a href="#test1.sv:16" onclick="highlight_file('test1.sv',16,23,16,24)">test1.sv:16</a> <span id="(O)">(O)</span>
-<span class="th">18</span>             rightp:
-<span class="th">19</span>               CONST &quot;?32?sh0&quot; <a href="#test1.sv:16" onclick="highlight_file('test1.sv',16,25,16,26)">test1.sv:16</a> <span id="(P)">(P)</span>
-<span class="th">20</span>      VAR &quot;b&quot; <a href="#test1.sv:17" onclick="highlight_file('test1.sv',17,28,17,29)">test1.sv:17</a> <span id="(R)">(R)</span> attrClocker:UNKNOWN, direction:INPUT, lifetime:NONE, origName:b, sensIfacep:<a href="#UNLINKED">UNLINKED</a>, varType:PORT
-<span class="th">21</span>       childDTypep:
-<span class="th">22</span>         BASICDTYPE &quot;logic&quot; <a href="#test1.sv:17" onclick="highlight_file('test1.sv',17,16,17,17)">test1.sv:17</a> <span id="(S)">(S)</span> keyword:logic
-<span class="th">23</span>          rangep:
-<span class="th">24</span>            RANGE &quot;&quot; <a href="#test1.sv:17" onclick="highlight_file('test1.sv',17,16,17,17)">test1.sv:17</a> <span id="(T)">(T)</span>
-<span class="th">25</span>             leftp:
-<span class="th">26</span>               SUB &quot;&quot; <a href="#test1.sv:17" onclick="highlight_file('test1.sv',17,22,17,23)">test1.sv:17</a> <span id="(U)">(U)</span>
-<span class="th">27</span>                lhsp:
-<span class="th">28</span>                  VARREF &quot;WIDTH&quot; <a href="#test1.sv:17" onclick="highlight_file('test1.sv',17,17,17,22)">test1.sv:17</a> <span id="(MF)">(MF)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(F)">(F)</a>
-<span class="th">29</span>                rhsp:
-<span class="th">30</span>                  CONST &quot;?32?sh1&quot; <a href="#test1.sv:17" onclick="highlight_file('test1.sv',17,23,17,24)">test1.sv:17</a> <span id="(W)">(W)</span>
-<span class="th">31</span>             rightp:
-<span class="th">32</span>               CONST &quot;?32?sh0&quot; <a href="#test1.sv:17" onclick="highlight_file('test1.sv',17,25,17,26)">test1.sv:17</a> <span id="(X)">(X)</span>
-<span class="th">33</span>      VAR &quot;cin&quot; <a href="#test1.sv:18" onclick="highlight_file('test1.sv',18,16,18,19)">test1.sv:18</a> <span id="(Z)">(Z)</span> attrClocker:UNKNOWN, direction:INPUT, lifetime:NONE, origName:cin, sensIfacep:<a href="#UNLINKED">UNLINKED</a>, varType:PORT
-<span class="th">34</span>       childDTypep:
-<span class="th">35</span>         BASICDTYPE &quot;LOGIC_IMPLICIT&quot; <a href="#test1.sv:18" onclick="highlight_file('test1.sv',18,16,18,19)">test1.sv:18</a> <span id="(AB)">(AB)</span> keyword:LOGIC_IMPLICIT
-<span class="th">36</span>      VAR &quot;s&quot; <a href="#test1.sv:19" onclick="highlight_file('test1.sv',19,28,19,29)">test1.sv:19</a> <span id="(CB)">(CB)</span> attrClocker:UNKNOWN, direction:OUTPUT, lifetime:NONE, origName:s, sensIfacep:<a href="#UNLINKED">UNLINKED</a>, varType:PORT
-<span class="th">37</span>       childDTypep:
-<span class="th">38</span>         BASICDTYPE &quot;logic&quot; <a href="#test1.sv:19" onclick="highlight_file('test1.sv',19,16,19,17)">test1.sv:19</a> <span id="(DB)">(DB)</span> keyword:logic
-<span class="th">39</span>          rangep:
-<span class="th">40</span>            RANGE &quot;&quot; <a href="#test1.sv:19" onclick="highlight_file('test1.sv',19,16,19,17)">test1.sv:19</a> <span id="(EB)">(EB)</span>
-<span class="th">41</span>             leftp:
-<span class="th">42</span>               SUB &quot;&quot; <a href="#test1.sv:19" onclick="highlight_file('test1.sv',19,22,19,23)">test1.sv:19</a> <span id="(FB)">(FB)</span>
-<span class="th">43</span>                lhsp:
-<span class="th">44</span>                  VARREF &quot;WIDTH&quot; <a href="#test1.sv:19" onclick="highlight_file('test1.sv',19,17,19,22)">test1.sv:19</a> <span id="(NF)">(NF)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(F)">(F)</a>
-<span class="th">45</span>                rhsp:
-<span class="th">46</span>                  CONST &quot;?32?sh1&quot; <a href="#test1.sv:19" onclick="highlight_file('test1.sv',19,23,19,24)">test1.sv:19</a> <span id="(HB)">(HB)</span>
-<span class="th">47</span>             rightp:
-<span class="th">48</span>               CONST &quot;?32?sh0&quot; <a href="#test1.sv:19" onclick="highlight_file('test1.sv',19,25,19,26)">test1.sv:19</a> <span id="(IB)">(IB)</span>
-<span class="th">49</span>      VAR &quot;cout&quot; <a href="#test1.sv:20" onclick="highlight_file('test1.sv',20,16,20,20)">test1.sv:20</a> <span id="(KB)">(KB)</span> attrClocker:UNKNOWN, direction:OUTPUT, lifetime:NONE, origName:cout, sensIfacep:<a href="#UNLINKED">UNLINKED</a>, varType:PORT
-<span class="th">50</span>       childDTypep:
-<span class="th">51</span>         BASICDTYPE &quot;LOGIC_IMPLICIT&quot; <a href="#test1.sv:20" onclick="highlight_file('test1.sv',20,16,20,20)">test1.sv:20</a> <span id="(LB)">(LB)</span> keyword:LOGIC_IMPLICIT
-<span class="th">52</span>      VAR &quot;c&quot; <a href="#test1.sv:22" onclick="highlight_file('test1.sv',22,20,22,21)">test1.sv:22</a> <span id="(MB)">(MB)</span> attrClocker:UNKNOWN, direction:NONE, lifetime:VSTATIC, origName:c, sensIfacep:<a href="#UNLINKED">UNLINKED</a>, varType:WIRE
-<span class="th">53</span>       childDTypep:
-<span class="th">54</span>         BASICDTYPE &quot;logic&quot; <a href="#test1.sv:22" onclick="highlight_file('test1.sv',22,10,22,11)">test1.sv:22</a> <span id="(NB)">(NB)</span> keyword:logic
-<span class="th">55</span>          rangep:
-<span class="th">56</span>            RANGE &quot;&quot; <a href="#test1.sv:22" onclick="highlight_file('test1.sv',22,10,22,11)">test1.sv:22</a> <span id="(OB)">(OB)</span>
-<span class="th">57</span>             leftp:
-<span class="th">58</span>               VARREF &quot;WIDTH&quot; <a href="#test1.sv:22" onclick="highlight_file('test1.sv',22,11,22,16)">test1.sv:22</a> <span id="(OF)">(OF)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(F)">(F)</a>
-<span class="th">59</span>             rightp:
-<span class="th">60</span>               CONST &quot;?32?sh0&quot; <a href="#test1.sv:22" onclick="highlight_file('test1.sv',22,17,22,18)">test1.sv:22</a> <span id="(QB)">(QB)</span>
-<span class="th">61</span>      BEGIN &quot;genblk1&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(RB)">(RB)</span> generate:True, implied:True, unnamed:True
-<span class="th">62</span>       stmtsp:
-<span class="th">63</span>         VAR &quot;i&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,26,24,27)">test1.sv:24</a> <span id="(WB)">(WB)</span> attrClocker:UNKNOWN, direction:NONE, isUsedLoopIdx:True, lifetime:VSTATIC, origName:i, sensIfacep:<a href="#UNLINKED">UNLINKED</a>, varType:GENVAR
-<span class="th">64</span>      BEGIN &quot;genblk1[0]&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,20,25,22)">test1.sv:25</a> <span id="(TG)">(TG)</span> generate:True
-<span class="th">65</span>       stmtsp:
-<span class="th">66</span>         CELL &quot;fa&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,20,25,22)">test1.sv:25</a> <span id="(UG)">(UG)</span> modp:<a href="#(GC)">(GC)</a>, origName:fa
-<span class="th">67</span>          pinsp:
-<span class="th">68</span>            PIN &quot;__pinNumber1&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,24,25,25)">test1.sv:25</a> <span id="(VG)">(VG)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(RD)">(RD)</a>
-<span class="th">69</span>             exprp:
-<span class="th">70</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,24,25,25)">test1.sv:25</a> <span id="(WG)">(WG)</span>
-<span class="th">71</span>                fromp:
-<span class="th">72</span>                  VARREF &quot;a&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,23,25,24)">test1.sv:25</a> <span id="(XG)">(XG)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(J)">(J)</a>
-<span class="th">73</span>                bitp:
-<span class="th">74</span>                  CONST &quot;?32?sh0&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(YG)">(YG)</span>
-<span class="th">75</span>            PIN &quot;__pinNumber2&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,30,25,31)">test1.sv:25</a> <span id="(ZG)">(ZG)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(UD)">(UD)</a>
-<span class="th">76</span>             exprp:
-<span class="th">77</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,30,25,31)">test1.sv:25</a> <span id="(AH)">(AH)</span>
-<span class="th">78</span>                fromp:
-<span class="th">79</span>                  VARREF &quot;b&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,29,25,30)">test1.sv:25</a> <span id="(BH)">(BH)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(R)">(R)</a>
-<span class="th">80</span>                bitp:
-<span class="th">81</span>                  CONST &quot;?32?sh0&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(CH)">(CH)</span>
-<span class="th">82</span>            PIN &quot;__pinNumber3&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,36,25,37)">test1.sv:25</a> <span id="(DH)">(DH)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(XD)">(XD)</a>
-<span class="th">83</span>             exprp:
-<span class="th">84</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,36,25,37)">test1.sv:25</a> <span id="(EH)">(EH)</span>
-<span class="th">85</span>                fromp:
-<span class="th">86</span>                  VARREF &quot;c&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,35,25,36)">test1.sv:25</a> <span id="(FH)">(FH)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(MB)">(MB)</a>
-<span class="th">87</span>                bitp:
-<span class="th">88</span>                  CONST &quot;?32?sh0&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(GH)">(GH)</span>
-<span class="th">89</span>            PIN &quot;__pinNumber4&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,42,25,43)">test1.sv:25</a> <span id="(HH)">(HH)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(AE)">(AE)</a>
-<span class="th">90</span>             exprp:
-<span class="th">91</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,42,25,43)">test1.sv:25</a> <span id="(IH)">(IH)</span>
-<span class="th">92</span>                fromp:
-<span class="th">93</span>                  VARREF &quot;s&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,41,25,42)">test1.sv:25</a> <span id="(JH)">(JH)</span> access:WR, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(CB)">(CB)</a>
-<span class="th">94</span>                bitp:
-<span class="th">95</span>                  CONST &quot;?32?sh0&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(KH)">(KH)</span>
-<span class="th">96</span>            PIN &quot;__pinNumber5&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,48,25,49)">test1.sv:25</a> <span id="(LH)">(LH)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(DE)">(DE)</a>
-<span class="th">97</span>             exprp:
-<span class="th">98</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,48,25,49)">test1.sv:25</a> <span id="(MH)">(MH)</span>
-<span class="th">99</span>                fromp:
-<span class="th">100</span>                  VARREF &quot;c&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,47,25,48)">test1.sv:25</a> <span id="(NH)">(NH)</span> access:WR, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(MB)">(MB)</a>
-<span class="th">101</span>                bitp:
-<span class="th">102</span>                  ADD &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,50,25,51)">test1.sv:25</a> <span id="(OH)">(OH)</span>
-<span class="th">103</span>                   lhsp:
-<span class="th">104</span>                     CONST &quot;?32?sh0&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(PH)">(PH)</span>
-<span class="th">105</span>                   rhsp:
-<span class="th">106</span>                     CONST &quot;?32?sh1&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,51,25,52)">test1.sv:25</a> <span id="(QH)">(QH)</span>
-<span class="th">107</span>      BEGIN &quot;genblk1[1]&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,20,25,22)">test1.sv:25</a> <span id="(RH)">(RH)</span> generate:True
-<span class="th">108</span>       stmtsp:
-<span class="th">109</span>         CELL &quot;fa&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,20,25,22)">test1.sv:25</a> <span id="(SH)">(SH)</span> modp:<a href="#(GC)">(GC)</a>, origName:fa
-<span class="th">110</span>          pinsp:
-<span class="th">111</span>            PIN &quot;__pinNumber1&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,24,25,25)">test1.sv:25</a> <span id="(TH)">(TH)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(RD)">(RD)</a>
-<span class="th">112</span>             exprp:
-<span class="th">113</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,24,25,25)">test1.sv:25</a> <span id="(UH)">(UH)</span>
-<span class="th">114</span>                fromp:
-<span class="th">115</span>                  VARREF &quot;a&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,23,25,24)">test1.sv:25</a> <span id="(VH)">(VH)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(J)">(J)</a>
-<span class="th">116</span>                bitp:
-<span class="th">117</span>                  CONST &quot;?32?sh1&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(WH)">(WH)</span>
-<span class="th">118</span>            PIN &quot;__pinNumber2&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,30,25,31)">test1.sv:25</a> <span id="(XH)">(XH)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(UD)">(UD)</a>
-<span class="th">119</span>             exprp:
-<span class="th">120</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,30,25,31)">test1.sv:25</a> <span id="(YH)">(YH)</span>
-<span class="th">121</span>                fromp:
-<span class="th">122</span>                  VARREF &quot;b&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,29,25,30)">test1.sv:25</a> <span id="(ZH)">(ZH)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(R)">(R)</a>
-<span class="th">123</span>                bitp:
-<span class="th">124</span>                  CONST &quot;?32?sh1&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(AI)">(AI)</span>
-<span class="th">125</span>            PIN &quot;__pinNumber3&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,36,25,37)">test1.sv:25</a> <span id="(BI)">(BI)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(XD)">(XD)</a>
-<span class="th">126</span>             exprp:
-<span class="th">127</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,36,25,37)">test1.sv:25</a> <span id="(CI)">(CI)</span>
-<span class="th">128</span>                fromp:
-<span class="th">129</span>                  VARREF &quot;c&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,35,25,36)">test1.sv:25</a> <span id="(DI)">(DI)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(MB)">(MB)</a>
-<span class="th">130</span>                bitp:
-<span class="th">131</span>                  CONST &quot;?32?sh1&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(EI)">(EI)</span>
-<span class="th">132</span>            PIN &quot;__pinNumber4&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,42,25,43)">test1.sv:25</a> <span id="(FI)">(FI)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(AE)">(AE)</a>
-<span class="th">133</span>             exprp:
-<span class="th">134</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,42,25,43)">test1.sv:25</a> <span id="(GI)">(GI)</span>
-<span class="th">135</span>                fromp:
-<span class="th">136</span>                  VARREF &quot;s&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,41,25,42)">test1.sv:25</a> <span id="(HI)">(HI)</span> access:WR, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(CB)">(CB)</a>
-<span class="th">137</span>                bitp:
-<span class="th">138</span>                  CONST &quot;?32?sh1&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(II)">(II)</span>
-<span class="th">139</span>            PIN &quot;__pinNumber5&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,48,25,49)">test1.sv:25</a> <span id="(JI)">(JI)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(DE)">(DE)</a>
-<span class="th">140</span>             exprp:
-<span class="th">141</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,48,25,49)">test1.sv:25</a> <span id="(KI)">(KI)</span>
-<span class="th">142</span>                fromp:
-<span class="th">143</span>                  VARREF &quot;c&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,47,25,48)">test1.sv:25</a> <span id="(LI)">(LI)</span> access:WR, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(MB)">(MB)</a>
-<span class="th">144</span>                bitp:
-<span class="th">145</span>                  ADD &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,50,25,51)">test1.sv:25</a> <span id="(MI)">(MI)</span>
-<span class="th">146</span>                   lhsp:
-<span class="th">147</span>                     CONST &quot;?32?sh1&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(NI)">(NI)</span>
-<span class="th">148</span>                   rhsp:
-<span class="th">149</span>                     CONST &quot;?32?sh1&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,51,25,52)">test1.sv:25</a> <span id="(OI)">(OI)</span>
-<span class="th">150</span>      BEGIN &quot;genblk1[2]&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,20,25,22)">test1.sv:25</a> <span id="(PI)">(PI)</span> generate:True
-<span class="th">151</span>       stmtsp:
-<span class="th">152</span>         CELL &quot;fa&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,20,25,22)">test1.sv:25</a> <span id="(QI)">(QI)</span> modp:<a href="#(GC)">(GC)</a>, origName:fa
-<span class="th">153</span>          pinsp:
-<span class="th">154</span>            PIN &quot;__pinNumber1&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,24,25,25)">test1.sv:25</a> <span id="(RI)">(RI)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(RD)">(RD)</a>
-<span class="th">155</span>             exprp:
-<span class="th">156</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,24,25,25)">test1.sv:25</a> <span id="(SI)">(SI)</span>
-<span class="th">157</span>                fromp:
-<span class="th">158</span>                  VARREF &quot;a&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,23,25,24)">test1.sv:25</a> <span id="(TI)">(TI)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(J)">(J)</a>
-<span class="th">159</span>                bitp:
-<span class="th">160</span>                  CONST &quot;?32?sh2&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(UI)">(UI)</span>
-<span class="th">161</span>            PIN &quot;__pinNumber2&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,30,25,31)">test1.sv:25</a> <span id="(VI)">(VI)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(UD)">(UD)</a>
-<span class="th">162</span>             exprp:
-<span class="th">163</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,30,25,31)">test1.sv:25</a> <span id="(WI)">(WI)</span>
-<span class="th">164</span>                fromp:
-<span class="th">165</span>                  VARREF &quot;b&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,29,25,30)">test1.sv:25</a> <span id="(XI)">(XI)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(R)">(R)</a>
-<span class="th">166</span>                bitp:
-<span class="th">167</span>                  CONST &quot;?32?sh2&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(YI)">(YI)</span>
-<span class="th">168</span>            PIN &quot;__pinNumber3&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,36,25,37)">test1.sv:25</a> <span id="(ZI)">(ZI)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(XD)">(XD)</a>
-<span class="th">169</span>             exprp:
-<span class="th">170</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,36,25,37)">test1.sv:25</a> <span id="(AJ)">(AJ)</span>
-<span class="th">171</span>                fromp:
-<span class="th">172</span>                  VARREF &quot;c&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,35,25,36)">test1.sv:25</a> <span id="(BJ)">(BJ)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(MB)">(MB)</a>
-<span class="th">173</span>                bitp:
-<span class="th">174</span>                  CONST &quot;?32?sh2&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(CJ)">(CJ)</span>
-<span class="th">175</span>            PIN &quot;__pinNumber4&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,42,25,43)">test1.sv:25</a> <span id="(DJ)">(DJ)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(AE)">(AE)</a>
-<span class="th">176</span>             exprp:
-<span class="th">177</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,42,25,43)">test1.sv:25</a> <span id="(EJ)">(EJ)</span>
-<span class="th">178</span>                fromp:
-<span class="th">179</span>                  VARREF &quot;s&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,41,25,42)">test1.sv:25</a> <span id="(FJ)">(FJ)</span> access:WR, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(CB)">(CB)</a>
-<span class="th">180</span>                bitp:
-<span class="th">181</span>                  CONST &quot;?32?sh2&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(GJ)">(GJ)</span>
-<span class="th">182</span>            PIN &quot;__pinNumber5&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,48,25,49)">test1.sv:25</a> <span id="(HJ)">(HJ)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(DE)">(DE)</a>
-<span class="th">183</span>             exprp:
-<span class="th">184</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,48,25,49)">test1.sv:25</a> <span id="(IJ)">(IJ)</span>
-<span class="th">185</span>                fromp:
-<span class="th">186</span>                  VARREF &quot;c&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,47,25,48)">test1.sv:25</a> <span id="(JJ)">(JJ)</span> access:WR, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(MB)">(MB)</a>
-<span class="th">187</span>                bitp:
-<span class="th">188</span>                  ADD &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,50,25,51)">test1.sv:25</a> <span id="(KJ)">(KJ)</span>
-<span class="th">189</span>                   lhsp:
-<span class="th">190</span>                     CONST &quot;?32?sh2&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(LJ)">(LJ)</span>
-<span class="th">191</span>                   rhsp:
-<span class="th">192</span>                     CONST &quot;?32?sh1&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,51,25,52)">test1.sv:25</a> <span id="(MJ)">(MJ)</span>
-<span class="th">193</span>      BEGIN &quot;genblk1[3]&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,20,25,22)">test1.sv:25</a> <span id="(NJ)">(NJ)</span> generate:True
-<span class="th">194</span>       stmtsp:
-<span class="th">195</span>         CELL &quot;fa&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,20,25,22)">test1.sv:25</a> <span id="(OJ)">(OJ)</span> modp:<a href="#(GC)">(GC)</a>, origName:fa
-<span class="th">196</span>          pinsp:
-<span class="th">197</span>            PIN &quot;__pinNumber1&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,24,25,25)">test1.sv:25</a> <span id="(PJ)">(PJ)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(RD)">(RD)</a>
-<span class="th">198</span>             exprp:
-<span class="th">199</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,24,25,25)">test1.sv:25</a> <span id="(QJ)">(QJ)</span>
-<span class="th">200</span>                fromp:
-<span class="th">201</span>                  VARREF &quot;a&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,23,25,24)">test1.sv:25</a> <span id="(RJ)">(RJ)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(J)">(J)</a>
-<span class="th">202</span>                bitp:
-<span class="th">203</span>                  CONST &quot;?32?sh3&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(SJ)">(SJ)</span>
-<span class="th">204</span>            PIN &quot;__pinNumber2&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,30,25,31)">test1.sv:25</a> <span id="(TJ)">(TJ)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(UD)">(UD)</a>
-<span class="th">205</span>             exprp:
-<span class="th">206</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,30,25,31)">test1.sv:25</a> <span id="(UJ)">(UJ)</span>
-<span class="th">207</span>                fromp:
-<span class="th">208</span>                  VARREF &quot;b&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,29,25,30)">test1.sv:25</a> <span id="(VJ)">(VJ)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(R)">(R)</a>
-<span class="th">209</span>                bitp:
-<span class="th">210</span>                  CONST &quot;?32?sh3&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(WJ)">(WJ)</span>
-<span class="th">211</span>            PIN &quot;__pinNumber3&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,36,25,37)">test1.sv:25</a> <span id="(XJ)">(XJ)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(XD)">(XD)</a>
-<span class="th">212</span>             exprp:
-<span class="th">213</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,36,25,37)">test1.sv:25</a> <span id="(YJ)">(YJ)</span>
-<span class="th">214</span>                fromp:
-<span class="th">215</span>                  VARREF &quot;c&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,35,25,36)">test1.sv:25</a> <span id="(ZJ)">(ZJ)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(MB)">(MB)</a>
-<span class="th">216</span>                bitp:
-<span class="th">217</span>                  CONST &quot;?32?sh3&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(AK)">(AK)</span>
-<span class="th">218</span>            PIN &quot;__pinNumber4&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,42,25,43)">test1.sv:25</a> <span id="(BK)">(BK)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(AE)">(AE)</a>
-<span class="th">219</span>             exprp:
-<span class="th">220</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,42,25,43)">test1.sv:25</a> <span id="(CK)">(CK)</span>
-<span class="th">221</span>                fromp:
-<span class="th">222</span>                  VARREF &quot;s&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,41,25,42)">test1.sv:25</a> <span id="(DK)">(DK)</span> access:WR, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(CB)">(CB)</a>
-<span class="th">223</span>                bitp:
-<span class="th">224</span>                  CONST &quot;?32?sh3&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(EK)">(EK)</span>
-<span class="th">225</span>            PIN &quot;__pinNumber5&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,48,25,49)">test1.sv:25</a> <span id="(FK)">(FK)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(DE)">(DE)</a>
-<span class="th">226</span>             exprp:
-<span class="th">227</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,48,25,49)">test1.sv:25</a> <span id="(GK)">(GK)</span>
-<span class="th">228</span>                fromp:
-<span class="th">229</span>                  VARREF &quot;c&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,47,25,48)">test1.sv:25</a> <span id="(HK)">(HK)</span> access:WR, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(MB)">(MB)</a>
-<span class="th">230</span>                bitp:
-<span class="th">231</span>                  ADD &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,50,25,51)">test1.sv:25</a> <span id="(IK)">(IK)</span>
-<span class="th">232</span>                   lhsp:
-<span class="th">233</span>                     CONST &quot;?32?sh3&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(JK)">(JK)</span>
-<span class="th">234</span>                   rhsp:
-<span class="th">235</span>                     CONST &quot;?32?sh1&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,51,25,52)">test1.sv:25</a> <span id="(KK)">(KK)</span>
-<span class="th">236</span>      BEGIN &quot;genblk1[4]&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,20,25,22)">test1.sv:25</a> <span id="(LK)">(LK)</span> generate:True
-<span class="th">237</span>       stmtsp:
-<span class="th">238</span>         CELL &quot;fa&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,20,25,22)">test1.sv:25</a> <span id="(MK)">(MK)</span> modp:<a href="#(GC)">(GC)</a>, origName:fa
-<span class="th">239</span>          pinsp:
-<span class="th">240</span>            PIN &quot;__pinNumber1&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,24,25,25)">test1.sv:25</a> <span id="(NK)">(NK)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(RD)">(RD)</a>
-<span class="th">241</span>             exprp:
-<span class="th">242</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,24,25,25)">test1.sv:25</a> <span id="(OK)">(OK)</span>
-<span class="th">243</span>                fromp:
-<span class="th">244</span>                  VARREF &quot;a&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,23,25,24)">test1.sv:25</a> <span id="(PK)">(PK)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(J)">(J)</a>
-<span class="th">245</span>                bitp:
-<span class="th">246</span>                  CONST &quot;?32?sh4&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(QK)">(QK)</span>
-<span class="th">247</span>            PIN &quot;__pinNumber2&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,30,25,31)">test1.sv:25</a> <span id="(RK)">(RK)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(UD)">(UD)</a>
-<span class="th">248</span>             exprp:
-<span class="th">249</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,30,25,31)">test1.sv:25</a> <span id="(SK)">(SK)</span>
-<span class="th">250</span>                fromp:
-<span class="th">251</span>                  VARREF &quot;b&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,29,25,30)">test1.sv:25</a> <span id="(TK)">(TK)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(R)">(R)</a>
-<span class="th">252</span>                bitp:
-<span class="th">253</span>                  CONST &quot;?32?sh4&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(UK)">(UK)</span>
-<span class="th">254</span>            PIN &quot;__pinNumber3&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,36,25,37)">test1.sv:25</a> <span id="(VK)">(VK)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(XD)">(XD)</a>
-<span class="th">255</span>             exprp:
-<span class="th">256</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,36,25,37)">test1.sv:25</a> <span id="(WK)">(WK)</span>
-<span class="th">257</span>                fromp:
-<span class="th">258</span>                  VARREF &quot;c&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,35,25,36)">test1.sv:25</a> <span id="(XK)">(XK)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(MB)">(MB)</a>
-<span class="th">259</span>                bitp:
-<span class="th">260</span>                  CONST &quot;?32?sh4&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(YK)">(YK)</span>
-<span class="th">261</span>            PIN &quot;__pinNumber4&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,42,25,43)">test1.sv:25</a> <span id="(ZK)">(ZK)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(AE)">(AE)</a>
-<span class="th">262</span>             exprp:
-<span class="th">263</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,42,25,43)">test1.sv:25</a> <span id="(AL)">(AL)</span>
-<span class="th">264</span>                fromp:
-<span class="th">265</span>                  VARREF &quot;s&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,41,25,42)">test1.sv:25</a> <span id="(BL)">(BL)</span> access:WR, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(CB)">(CB)</a>
-<span class="th">266</span>                bitp:
-<span class="th">267</span>                  CONST &quot;?32?sh4&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(CL)">(CL)</span>
-<span class="th">268</span>            PIN &quot;__pinNumber5&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,48,25,49)">test1.sv:25</a> <span id="(DL)">(DL)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(DE)">(DE)</a>
-<span class="th">269</span>             exprp:
-<span class="th">270</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,48,25,49)">test1.sv:25</a> <span id="(EL)">(EL)</span>
-<span class="th">271</span>                fromp:
-<span class="th">272</span>                  VARREF &quot;c&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,47,25,48)">test1.sv:25</a> <span id="(FL)">(FL)</span> access:WR, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(MB)">(MB)</a>
-<span class="th">273</span>                bitp:
-<span class="th">274</span>                  ADD &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,50,25,51)">test1.sv:25</a> <span id="(GL)">(GL)</span>
-<span class="th">275</span>                   lhsp:
-<span class="th">276</span>                     CONST &quot;?32?sh4&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(HL)">(HL)</span>
-<span class="th">277</span>                   rhsp:
-<span class="th">278</span>                     CONST &quot;?32?sh1&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,51,25,52)">test1.sv:25</a> <span id="(IL)">(IL)</span>
-<span class="th">279</span>      BEGIN &quot;genblk1[5]&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,20,25,22)">test1.sv:25</a> <span id="(JL)">(JL)</span> generate:True
-<span class="th">280</span>       stmtsp:
-<span class="th">281</span>         CELL &quot;fa&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,20,25,22)">test1.sv:25</a> <span id="(KL)">(KL)</span> modp:<a href="#(GC)">(GC)</a>, origName:fa
-<span class="th">282</span>          pinsp:
-<span class="th">283</span>            PIN &quot;__pinNumber1&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,24,25,25)">test1.sv:25</a> <span id="(LL)">(LL)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(RD)">(RD)</a>
-<span class="th">284</span>             exprp:
-<span class="th">285</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,24,25,25)">test1.sv:25</a> <span id="(ML)">(ML)</span>
-<span class="th">286</span>                fromp:
-<span class="th">287</span>                  VARREF &quot;a&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,23,25,24)">test1.sv:25</a> <span id="(NL)">(NL)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(J)">(J)</a>
-<span class="th">288</span>                bitp:
-<span class="th">289</span>                  CONST &quot;?32?sh5&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(OL)">(OL)</span>
-<span class="th">290</span>            PIN &quot;__pinNumber2&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,30,25,31)">test1.sv:25</a> <span id="(PL)">(PL)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(UD)">(UD)</a>
-<span class="th">291</span>             exprp:
-<span class="th">292</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,30,25,31)">test1.sv:25</a> <span id="(QL)">(QL)</span>
-<span class="th">293</span>                fromp:
-<span class="th">294</span>                  VARREF &quot;b&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,29,25,30)">test1.sv:25</a> <span id="(RL)">(RL)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(R)">(R)</a>
-<span class="th">295</span>                bitp:
-<span class="th">296</span>                  CONST &quot;?32?sh5&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(SL)">(SL)</span>
-<span class="th">297</span>            PIN &quot;__pinNumber3&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,36,25,37)">test1.sv:25</a> <span id="(TL)">(TL)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(XD)">(XD)</a>
-<span class="th">298</span>             exprp:
-<span class="th">299</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,36,25,37)">test1.sv:25</a> <span id="(UL)">(UL)</span>
-<span class="th">300</span>                fromp:
-<span class="th">301</span>                  VARREF &quot;c&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,35,25,36)">test1.sv:25</a> <span id="(VL)">(VL)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(MB)">(MB)</a>
-<span class="th">302</span>                bitp:
-<span class="th">303</span>                  CONST &quot;?32?sh5&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(WL)">(WL)</span>
-<span class="th">304</span>            PIN &quot;__pinNumber4&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,42,25,43)">test1.sv:25</a> <span id="(XL)">(XL)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(AE)">(AE)</a>
-<span class="th">305</span>             exprp:
-<span class="th">306</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,42,25,43)">test1.sv:25</a> <span id="(YL)">(YL)</span>
-<span class="th">307</span>                fromp:
-<span class="th">308</span>                  VARREF &quot;s&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,41,25,42)">test1.sv:25</a> <span id="(ZL)">(ZL)</span> access:WR, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(CB)">(CB)</a>
-<span class="th">309</span>                bitp:
-<span class="th">310</span>                  CONST &quot;?32?sh5&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(AM)">(AM)</span>
-<span class="th">311</span>            PIN &quot;__pinNumber5&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,48,25,49)">test1.sv:25</a> <span id="(BM)">(BM)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(DE)">(DE)</a>
-<span class="th">312</span>             exprp:
-<span class="th">313</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,48,25,49)">test1.sv:25</a> <span id="(CM)">(CM)</span>
-<span class="th">314</span>                fromp:
-<span class="th">315</span>                  VARREF &quot;c&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,47,25,48)">test1.sv:25</a> <span id="(DM)">(DM)</span> access:WR, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(MB)">(MB)</a>
-<span class="th">316</span>                bitp:
-<span class="th">317</span>                  ADD &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,50,25,51)">test1.sv:25</a> <span id="(EM)">(EM)</span>
-<span class="th">318</span>                   lhsp:
-<span class="th">319</span>                     CONST &quot;?32?sh5&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(FM)">(FM)</span>
-<span class="th">320</span>                   rhsp:
-<span class="th">321</span>                     CONST &quot;?32?sh1&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,51,25,52)">test1.sv:25</a> <span id="(GM)">(GM)</span>
-<span class="th">322</span>      BEGIN &quot;genblk1[6]&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,20,25,22)">test1.sv:25</a> <span id="(HM)">(HM)</span> generate:True
-<span class="th">323</span>       stmtsp:
-<span class="th">324</span>         CELL &quot;fa&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,20,25,22)">test1.sv:25</a> <span id="(IM)">(IM)</span> modp:<a href="#(GC)">(GC)</a>, origName:fa
-<span class="th">325</span>          pinsp:
-<span class="th">326</span>            PIN &quot;__pinNumber1&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,24,25,25)">test1.sv:25</a> <span id="(JM)">(JM)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(RD)">(RD)</a>
-<span class="th">327</span>             exprp:
-<span class="th">328</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,24,25,25)">test1.sv:25</a> <span id="(KM)">(KM)</span>
-<span class="th">329</span>                fromp:
-<span class="th">330</span>                  VARREF &quot;a&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,23,25,24)">test1.sv:25</a> <span id="(LM)">(LM)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(J)">(J)</a>
-<span class="th">331</span>                bitp:
-<span class="th">332</span>                  CONST &quot;?32?sh6&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(MM)">(MM)</span>
-<span class="th">333</span>            PIN &quot;__pinNumber2&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,30,25,31)">test1.sv:25</a> <span id="(NM)">(NM)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(UD)">(UD)</a>
-<span class="th">334</span>             exprp:
-<span class="th">335</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,30,25,31)">test1.sv:25</a> <span id="(OM)">(OM)</span>
-<span class="th">336</span>                fromp:
-<span class="th">337</span>                  VARREF &quot;b&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,29,25,30)">test1.sv:25</a> <span id="(PM)">(PM)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(R)">(R)</a>
-<span class="th">338</span>                bitp:
-<span class="th">339</span>                  CONST &quot;?32?sh6&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(QM)">(QM)</span>
-<span class="th">340</span>            PIN &quot;__pinNumber3&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,36,25,37)">test1.sv:25</a> <span id="(RM)">(RM)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(XD)">(XD)</a>
-<span class="th">341</span>             exprp:
-<span class="th">342</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,36,25,37)">test1.sv:25</a> <span id="(SM)">(SM)</span>
-<span class="th">343</span>                fromp:
-<span class="th">344</span>                  VARREF &quot;c&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,35,25,36)">test1.sv:25</a> <span id="(TM)">(TM)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(MB)">(MB)</a>
-<span class="th">345</span>                bitp:
-<span class="th">346</span>                  CONST &quot;?32?sh6&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(UM)">(UM)</span>
-<span class="th">347</span>            PIN &quot;__pinNumber4&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,42,25,43)">test1.sv:25</a> <span id="(VM)">(VM)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(AE)">(AE)</a>
-<span class="th">348</span>             exprp:
-<span class="th">349</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,42,25,43)">test1.sv:25</a> <span id="(WM)">(WM)</span>
-<span class="th">350</span>                fromp:
-<span class="th">351</span>                  VARREF &quot;s&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,41,25,42)">test1.sv:25</a> <span id="(XM)">(XM)</span> access:WR, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(CB)">(CB)</a>
-<span class="th">352</span>                bitp:
-<span class="th">353</span>                  CONST &quot;?32?sh6&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(YM)">(YM)</span>
-<span class="th">354</span>            PIN &quot;__pinNumber5&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,48,25,49)">test1.sv:25</a> <span id="(ZM)">(ZM)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(DE)">(DE)</a>
-<span class="th">355</span>             exprp:
-<span class="th">356</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,48,25,49)">test1.sv:25</a> <span id="(AN)">(AN)</span>
-<span class="th">357</span>                fromp:
-<span class="th">358</span>                  VARREF &quot;c&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,47,25,48)">test1.sv:25</a> <span id="(BN)">(BN)</span> access:WR, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(MB)">(MB)</a>
-<span class="th">359</span>                bitp:
-<span class="th">360</span>                  ADD &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,50,25,51)">test1.sv:25</a> <span id="(CN)">(CN)</span>
-<span class="th">361</span>                   lhsp:
-<span class="th">362</span>                     CONST &quot;?32?sh6&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(DN)">(DN)</span>
-<span class="th">363</span>                   rhsp:
-<span class="th">364</span>                     CONST &quot;?32?sh1&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,51,25,52)">test1.sv:25</a> <span id="(EN)">(EN)</span>
-<span class="th">365</span>      BEGIN &quot;genblk1[7]&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,20,25,22)">test1.sv:25</a> <span id="(FN)">(FN)</span> generate:True
-<span class="th">366</span>       stmtsp:
-<span class="th">367</span>         CELL &quot;fa&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,20,25,22)">test1.sv:25</a> <span id="(GN)">(GN)</span> modp:<a href="#(GC)">(GC)</a>, origName:fa
-<span class="th">368</span>          pinsp:
-<span class="th">369</span>            PIN &quot;__pinNumber1&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,24,25,25)">test1.sv:25</a> <span id="(HN)">(HN)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(RD)">(RD)</a>
-<span class="th">370</span>             exprp:
-<span class="th">371</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,24,25,25)">test1.sv:25</a> <span id="(IN)">(IN)</span>
-<span class="th">372</span>                fromp:
-<span class="th">373</span>                  VARREF &quot;a&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,23,25,24)">test1.sv:25</a> <span id="(JN)">(JN)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(J)">(J)</a>
-<span class="th">374</span>                bitp:
-<span class="th">375</span>                  CONST &quot;?32?sh7&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(KN)">(KN)</span>
-<span class="th">376</span>            PIN &quot;__pinNumber2&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,30,25,31)">test1.sv:25</a> <span id="(LN)">(LN)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(UD)">(UD)</a>
-<span class="th">377</span>             exprp:
-<span class="th">378</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,30,25,31)">test1.sv:25</a> <span id="(MN)">(MN)</span>
-<span class="th">379</span>                fromp:
-<span class="th">380</span>                  VARREF &quot;b&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,29,25,30)">test1.sv:25</a> <span id="(NN)">(NN)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(R)">(R)</a>
-<span class="th">381</span>                bitp:
-<span class="th">382</span>                  CONST &quot;?32?sh7&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(ON)">(ON)</span>
-<span class="th">383</span>            PIN &quot;__pinNumber3&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,36,25,37)">test1.sv:25</a> <span id="(PN)">(PN)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(XD)">(XD)</a>
-<span class="th">384</span>             exprp:
-<span class="th">385</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,36,25,37)">test1.sv:25</a> <span id="(QN)">(QN)</span>
-<span class="th">386</span>                fromp:
-<span class="th">387</span>                  VARREF &quot;c&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,35,25,36)">test1.sv:25</a> <span id="(RN)">(RN)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(MB)">(MB)</a>
-<span class="th">388</span>                bitp:
-<span class="th">389</span>                  CONST &quot;?32?sh7&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(SN)">(SN)</span>
-<span class="th">390</span>            PIN &quot;__pinNumber4&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,42,25,43)">test1.sv:25</a> <span id="(TN)">(TN)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(AE)">(AE)</a>
-<span class="th">391</span>             exprp:
-<span class="th">392</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,42,25,43)">test1.sv:25</a> <span id="(UN)">(UN)</span>
-<span class="th">393</span>                fromp:
-<span class="th">394</span>                  VARREF &quot;s&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,41,25,42)">test1.sv:25</a> <span id="(VN)">(VN)</span> access:WR, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(CB)">(CB)</a>
-<span class="th">395</span>                bitp:
-<span class="th">396</span>                  CONST &quot;?32?sh7&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(WN)">(WN)</span>
-<span class="th">397</span>            PIN &quot;__pinNumber5&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,48,25,49)">test1.sv:25</a> <span id="(XN)">(XN)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(DE)">(DE)</a>
-<span class="th">398</span>             exprp:
-<span class="th">399</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,48,25,49)">test1.sv:25</a> <span id="(YN)">(YN)</span>
-<span class="th">400</span>                fromp:
-<span class="th">401</span>                  VARREF &quot;c&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,47,25,48)">test1.sv:25</a> <span id="(ZN)">(ZN)</span> access:WR, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(MB)">(MB)</a>
-<span class="th">402</span>                bitp:
-<span class="th">403</span>                  ADD &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,50,25,51)">test1.sv:25</a> <span id="(AO)">(AO)</span>
-<span class="th">404</span>                   lhsp:
-<span class="th">405</span>                     CONST &quot;?32?sh7&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(BO)">(BO)</span>
-<span class="th">406</span>                   rhsp:
-<span class="th">407</span>                     CONST &quot;?32?sh1&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,51,25,52)">test1.sv:25</a> <span id="(CO)">(CO)</span>
-<span class="th">408</span>      ASSIGNW &quot;&quot; <a href="#test1.sv:28" onclick="highlight_file('test1.sv',28,17,28,18)">test1.sv:28</a> <span id="(ED)">(ED)</span>
-<span class="th">409</span>       rhsp:
-<span class="th">410</span>         VARREF &quot;cin&quot; <a href="#test1.sv:28" onclick="highlight_file('test1.sv',28,19,28,22)">test1.sv:28</a> <span id="(DG)">(DG)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(Z)">(Z)</a>
-<span class="th">411</span>       lhsp:
-<span class="th">412</span>         SELBIT &quot;&quot; <a href="#test1.sv:28" onclick="highlight_file('test1.sv',28,13,28,14)">test1.sv:28</a> <span id="(GD)">(GD)</span>
-<span class="th">413</span>          fromp:
-<span class="th">414</span>            VARREF &quot;c&quot; <a href="#test1.sv:28" onclick="highlight_file('test1.sv',28,12,28,13)">test1.sv:28</a> <span id="(EG)">(EG)</span> access:WR, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(MB)">(MB)</a>
-<span class="th">415</span>          bitp:
-<span class="th">416</span>            CONST &quot;?32?sh0&quot; <a href="#test1.sv:28" onclick="highlight_file('test1.sv',28,14,28,15)">test1.sv:28</a> <span id="(ID)">(ID)</span>
-<span class="th">417</span>      ASSIGNW &quot;&quot; <a href="#test1.sv:29" onclick="highlight_file('test1.sv',29,17,29,18)">test1.sv:29</a> <span id="(JD)">(JD)</span>
-<span class="th">418</span>       rhsp:
-<span class="th">419</span>         SELBIT &quot;&quot; <a href="#test1.sv:29" onclick="highlight_file('test1.sv',29,20,29,21)">test1.sv:29</a> <span id="(KD)">(KD)</span>
-<span class="th">420</span>          fromp:
-<span class="th">421</span>            VARREF &quot;c&quot; <a href="#test1.sv:29" onclick="highlight_file('test1.sv',29,19,29,20)">test1.sv:29</a> <span id="(FG)">(FG)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(MB)">(MB)</a>
-<span class="th">422</span>          bitp:
-<span class="th">423</span>            SUB &quot;&quot; <a href="#test1.sv:29" onclick="highlight_file('test1.sv',29,26,29,27)">test1.sv:29</a> <span id="(MD)">(MD)</span>
-<span class="th">424</span>             lhsp:
-<span class="th">425</span>               VARREF &quot;WIDTH&quot; <a href="#test1.sv:29" onclick="highlight_file('test1.sv',29,21,29,26)">test1.sv:29</a> <span id="(GG)">(GG)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(F)">(F)</a>
-<span class="th">426</span>             rhsp:
-<span class="th">427</span>               CONST &quot;?32?sh1&quot; <a href="#test1.sv:29" onclick="highlight_file('test1.sv',29,27,29,28)">test1.sv:29</a> <span id="(OD)">(OD)</span>
-<span class="th">428</span>       lhsp:
-<span class="th">429</span>         VARREF &quot;cout&quot; <a href="#test1.sv:29" onclick="highlight_file('test1.sv',29,12,29,16)">test1.sv:29</a> <span id="(HG)">(HG)</span> access:WR, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(KB)">(KB)</a>
-<span class="th">430</span>   MODULE &quot;full_adder&quot; <a href="#test1.sv:5" onclick="highlight_file('test1.sv',5,8,5,18)">test1.sv:5</a> <span id="(GC)">(GC)</span> level:3, origName:full_adder, timeunit:1ps
-<span class="th">431</span>    stmtsp:
-<span class="th">432</span>      VAR &quot;a&quot; <a href="#test1.sv:6" onclick="highlight_file('test1.sv',6,15,6,16)">test1.sv:6</a> <span id="(RD)">(RD)</span> attrClocker:UNKNOWN, direction:INPUT, lifetime:NONE, origName:a, sensIfacep:<a href="#UNLINKED">UNLINKED</a>, varType:PORT
-<span class="th">433</span>       childDTypep:
-<span class="th">434</span>         BASICDTYPE &quot;LOGIC_IMPLICIT&quot; <a href="#test1.sv:6" onclick="highlight_file('test1.sv',6,15,6,16)">test1.sv:6</a> <span id="(SD)">(SD)</span> keyword:LOGIC_IMPLICIT
-<span class="th">435</span>      VAR &quot;b&quot; <a href="#test1.sv:7" onclick="highlight_file('test1.sv',7,15,7,16)">test1.sv:7</a> <span id="(UD)">(UD)</span> attrClocker:UNKNOWN, direction:INPUT, lifetime:NONE, origName:b, sensIfacep:<a href="#UNLINKED">UNLINKED</a>, varType:PORT
-<span class="th">436</span>       childDTypep:
-<span class="th">437</span>         BASICDTYPE &quot;LOGIC_IMPLICIT&quot; <a href="#test1.sv:7" onclick="highlight_file('test1.sv',7,15,7,16)">test1.sv:7</a> <span id="(VD)">(VD)</span> keyword:LOGIC_IMPLICIT
-<span class="th">438</span>      VAR &quot;cin&quot; <a href="#test1.sv:8" onclick="highlight_file('test1.sv',8,15,8,18)">test1.sv:8</a> <span id="(XD)">(XD)</span> attrClocker:UNKNOWN, direction:INPUT, lifetime:NONE, origName:cin, sensIfacep:<a href="#UNLINKED">UNLINKED</a>, varType:PORT
-<span class="th">439</span>       childDTypep:
-<span class="th">440</span>         BASICDTYPE &quot;LOGIC_IMPLICIT&quot; <a href="#test1.sv:8" onclick="highlight_file('test1.sv',8,15,8,18)">test1.sv:8</a> <span id="(YD)">(YD)</span> keyword:LOGIC_IMPLICIT
-<span class="th">441</span>      VAR &quot;s&quot; <a href="#test1.sv:9" onclick="highlight_file('test1.sv',9,16,9,17)">test1.sv:9</a> <span id="(AE)">(AE)</span> attrClocker:UNKNOWN, direction:OUTPUT, lifetime:NONE, origName:s, sensIfacep:<a href="#UNLINKED">UNLINKED</a>, varType:PORT
-<span class="th">442</span>       childDTypep:
-<span class="th">443</span>         BASICDTYPE &quot;LOGIC_IMPLICIT&quot; <a href="#test1.sv:9" onclick="highlight_file('test1.sv',9,16,9,17)">test1.sv:9</a> <span id="(BE)">(BE)</span> keyword:LOGIC_IMPLICIT
-<span class="th">444</span>      VAR &quot;cout&quot; <a href="#test1.sv:10" onclick="highlight_file('test1.sv',10,16,10,20)">test1.sv:10</a> <span id="(DE)">(DE)</span> attrClocker:UNKNOWN, direction:OUTPUT, lifetime:NONE, origName:cout, sensIfacep:<a href="#UNLINKED">UNLINKED</a>, varType:PORT
-<span class="th">445</span>       childDTypep:
-<span class="th">446</span>         BASICDTYPE &quot;LOGIC_IMPLICIT&quot; <a href="#test1.sv:10" onclick="highlight_file('test1.sv',10,16,10,20)">test1.sv:10</a> <span id="(EE)">(EE)</span> keyword:LOGIC_IMPLICIT
-<span class="th">447</span>      ASSIGNW &quot;&quot; <a href="#test1.sv:11" onclick="highlight_file('test1.sv',11,14,11,15)">test1.sv:11</a> <span id="(FE)">(FE)</span>
-<span class="th">448</span>       rhsp:
-<span class="th">449</span>         XOR &quot;&quot; <a href="#test1.sv:11" onclick="highlight_file('test1.sv',11,19,11,20)">test1.sv:11</a> <span id="(GE)">(GE)</span>
-<span class="th">450</span>          lhsp:
-<span class="th">451</span>            XOR &quot;&quot; <a href="#test1.sv:11" onclick="highlight_file('test1.sv',11,17,11,18)">test1.sv:11</a> <span id="(HE)">(HE)</span>
-<span class="th">452</span>             lhsp:
-<span class="th">453</span>               VARREF &quot;a&quot; <a href="#test1.sv:11" onclick="highlight_file('test1.sv',11,16,11,17)">test1.sv:11</a> <span id="(IG)">(IG)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(RD)">(RD)</a>
-<span class="th">454</span>             rhsp:
-<span class="th">455</span>               VARREF &quot;b&quot; <a href="#test1.sv:11" onclick="highlight_file('test1.sv',11,18,11,19)">test1.sv:11</a> <span id="(JG)">(JG)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(UD)">(UD)</a>
-<span class="th">456</span>          rhsp:
-<span class="th">457</span>            VARREF &quot;cin&quot; <a href="#test1.sv:11" onclick="highlight_file('test1.sv',11,20,11,23)">test1.sv:11</a> <span id="(KG)">(KG)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(XD)">(XD)</a>
-<span class="th">458</span>       lhsp:
-<span class="th">459</span>         VARREF &quot;s&quot; <a href="#test1.sv:11" onclick="highlight_file('test1.sv',11,12,11,13)">test1.sv:11</a> <span id="(LG)">(LG)</span> access:WR, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(AE)">(AE)</a>
-<span class="th">460</span>      ASSIGNW &quot;&quot; <a href="#test1.sv:12" onclick="highlight_file('test1.sv',12,17,12,18)">test1.sv:12</a> <span id="(ME)">(ME)</span>
-<span class="th">461</span>       rhsp:
-<span class="th">462</span>         OR &quot;&quot; <a href="#test1.sv:12" onclick="highlight_file('test1.sv',12,35,12,36)">test1.sv:12</a> <span id="(NE)">(NE)</span>
-<span class="th">463</span>          lhsp:
-<span class="th">464</span>            OR &quot;&quot; <a href="#test1.sv:12" onclick="highlight_file('test1.sv',12,25,12,26)">test1.sv:12</a> <span id="(OE)">(OE)</span>
-<span class="th">465</span>             lhsp:
-<span class="th">466</span>               AND &quot;&quot; <a href="#test1.sv:12" onclick="highlight_file('test1.sv',12,21,12,22)">test1.sv:12</a> <span id="(PE)">(PE)</span>
-<span class="th">467</span>                lhsp:
-<span class="th">468</span>                  VARREF &quot;a&quot; <a href="#test1.sv:12" onclick="highlight_file('test1.sv',12,20,12,21)">test1.sv:12</a> <span id="(MG)">(MG)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(RD)">(RD)</a>
-<span class="th">469</span>                rhsp:
-<span class="th">470</span>                  VARREF &quot;b&quot; <a href="#test1.sv:12" onclick="highlight_file('test1.sv',12,22,12,23)">test1.sv:12</a> <span id="(NG)">(NG)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(UD)">(UD)</a>
-<span class="th">471</span>             rhsp:
-<span class="th">472</span>               AND &quot;&quot; <a href="#test1.sv:12" onclick="highlight_file('test1.sv',12,29,12,30)">test1.sv:12</a> <span id="(SE)">(SE)</span>
-<span class="th">473</span>                lhsp:
-<span class="th">474</span>                  VARREF &quot;b&quot; <a href="#test1.sv:12" onclick="highlight_file('test1.sv',12,28,12,29)">test1.sv:12</a> <span id="(OG)">(OG)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(UD)">(UD)</a>
-<span class="th">475</span>                rhsp:
-<span class="th">476</span>                  VARREF &quot;cin&quot; <a href="#test1.sv:12" onclick="highlight_file('test1.sv',12,30,12,33)">test1.sv:12</a> <span id="(PG)">(PG)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(XD)">(XD)</a>
-<span class="th">477</span>          rhsp:
-<span class="th">478</span>            AND &quot;&quot; <a href="#test1.sv:12" onclick="highlight_file('test1.sv',12,39,12,40)">test1.sv:12</a> <span id="(VE)">(VE)</span>
-<span class="th">479</span>             lhsp:
-<span class="th">480</span>               VARREF &quot;a&quot; <a href="#test1.sv:12" onclick="highlight_file('test1.sv',12,38,12,39)">test1.sv:12</a> <span id="(QG)">(QG)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(RD)">(RD)</a>
-<span class="th">481</span>             rhsp:
-<span class="th">482</span>               VARREF &quot;cin&quot; <a href="#test1.sv:12" onclick="highlight_file('test1.sv',12,40,12,43)">test1.sv:12</a> <span id="(RG)">(RG)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(XD)">(XD)</a>
-<span class="th">483</span>       lhsp:
-<span class="th">484</span>         VARREF &quot;cout&quot; <a href="#test1.sv:12" onclick="highlight_file('test1.sv',12,12,12,16)">test1.sv:12</a> <span id="(SG)">(SG)</span> access:WR, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(DE)">(DE)</a>
-<span class="th">485</span> miscsp:
-<span class="th">486</span>   TYPETABLE &quot;&quot; &lt;built-in&gt; <span id="(C)">(C)</span> constraintRefp:<a href="#UNLINKED">UNLINKED</a>, emptyQueuep:<a href="#UNLINKED">UNLINKED</a>, queueIndexp:<a href="#UNLINKED">UNLINKED</a>, streamp:<a href="#UNLINKED">UNLINKED</a>, voidp:<a href="#(ZE)">(ZE)</a>
-<span class="th">487</span>    typesp:
-<span class="th">488</span>      BASICDTYPE &quot;integer&quot; <a href="#&lt;verilated_std&gt;:31" onclick="highlight_file('&lt;verilated_std&gt;',31,27,31,28)">&lt;verilated_std&gt;:31</a> <span id="(AF)">(AF)</span> generic:True, keyword:integer, range:31:0
-<span class="th">489</span>      BASICDTYPE &quot;logic&quot; <a href="#&lt;verilated_std&gt;:33" onclick="highlight_file('&lt;verilated_std&gt;',33,32,33,33)">&lt;verilated_std&gt;:33</a> <span id="(BF)">(BF)</span> generic:True, keyword:logic, range:31:0
-<span class="th">490</span>      BASICDTYPE &quot;logic&quot; <a href="#&lt;verilated_std&gt;:50" onclick="highlight_file('&lt;verilated_std&gt;',50,22,50,24)">&lt;verilated_std&gt;:50</a> <span id="(CF)">(CF)</span> generic:True, keyword:logic
-<span class="th">491</span>      VOIDDTYPE &quot;&quot; <a href="#&lt;verilated_std&gt;:51" onclick="highlight_file('&lt;verilated_std&gt;',51,21,51,30)">&lt;verilated_std&gt;:51</a> <span id="(ZE)">(ZE)</span>
-<span class="th">492</span>      BASICDTYPE &quot;logic&quot; <a href="#&lt;verilated_std&gt;:119" onclick="highlight_file('&lt;verilated_std&gt;',119,22,119,23)">&lt;verilated_std&gt;:119</a> <span id="(DF)">(DF)</span> generic:True, keyword:logic, range:31:0
-<span class="th">493</span>      BASICDTYPE &quot;logic&quot; <a href="#&lt;verilated_std&gt;:121" onclick="highlight_file('&lt;verilated_std&gt;',121,22,121,23)">&lt;verilated_std&gt;:121</a> <span id="(EF)">(EF)</span> generic:True, keyword:logic, range:31:0
-<span class="th">494</span>      BASICDTYPE &quot;logic&quot; <a href="#&lt;verilated_std&gt;:156" onclick="highlight_file('&lt;verilated_std&gt;',156,17,156,56)">&lt;verilated_std&gt;:156</a> <span id="(FF)">(FF)</span> generic:True, keyword:logic, range:295:0
-<span class="th">495</span>      BASICDTYPE &quot;string&quot; <a href="#&lt;verilated_std&gt;:156" onclick="highlight_file('&lt;verilated_std&gt;',156,10,156,16)">&lt;verilated_std&gt;:156</a> <span id="(GF)">(GF)</span> generic:True, keyword:string
-<span class="th">496</span>      BASICDTYPE &quot;logic&quot; <a href="#test1.sv:15" onclick="highlight_file('test1.sv',15,29,15,30)">test1.sv:15</a> <span id="(HF)">(HF)</span> generic:True, keyword:logic, range:31:0
-<span class="th">497</span>      BASICDTYPE &quot;logic&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,45,24,47)">test1.sv:24</a> <span id="(IF)">(IF)</span> generic:True, keyword:logic, range:31:0
-<span class="th">498</span>      BASICDTYPE &quot;LOGIC_IMPLICIT&quot; <a href="#test1.sv:15" onclick="highlight_file('test1.sv',15,23,15,28)">test1.sv:15</a> <span id="(G)">(G)</span> keyword:LOGIC_IMPLICIT
-<span class="th">499</span>      BASICDTYPE &quot;integer&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,26,24,27)">test1.sv:24</a> <span id="(DD)">(DD)</span> keyword:integer, range:31:0
-<span class="th">500</span>      BASICDTYPE &quot;logic&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,35,24,36)">test1.sv:24</a> <span id="(DO)">(DO)</span> generic:True, keyword:logic, range:31:0
-<span class="th">501</span>      BASICDTYPE &quot;logic&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,45,24,47)">test1.sv:24</a> <span id="(EO)">(EO)</span> generic:True, keyword:logic, range:31:0
-<span class="th">502</span>   CONSTPOOL &quot;&quot; &lt;built-in&gt; <span id="(D)">(D)</span>
-<span class="th">503</span>    modulep:
-<span class="th">504</span>      MODULE &quot;@CONST-POOL@&quot; &lt;built-in&gt; <span id="(JF)">(JF)</span> level:0, origName:@CONST-POOL@, timeunit:NONE
-<span class="th">505</span>       stmtsp:
-<span class="th">506</span>         SCOPE &quot;@CONST-POOL@&quot; &lt;built-in&gt; <span id="(KF)">(KF)</span> aboveCellp:<a href="#UNLINKED">UNLINKED</a>, aboveScopep:<a href="#UNLINKED">UNLINKED</a>, modp:<a href="#(JF)">(JF)</a>
+<pre class="code-block"><div class="chunk"><span class="th">1</span>NETLIST &quot;$root&quot; &lt;built-in&gt; <span id="(B)">(B)</span> constPoolp:<a href="#(D)">(D)</a>, delaySchedulerp:<a href="#UNLINKED">UNLINKED</a>, dollarUnitPkgp:<a href="#UNLINKED">UNLINKED</a>, dpiExportTriggerp:<a href="#UNLINKED">UNLINKED</a>, evalNbap:<a href="#UNLINKED">UNLINKED</a>, evalp:<a href="#UNLINKED">UNLINKED</a>, nbaEventTriggerp:<a href="#UNLINKED">UNLINKED</a>, nbaEventp:<a href="#UNLINKED">UNLINKED</a>, stdPackagep:<a href="#UNLINKED">UNLINKED</a>, timeprecision:1ps, timeunit:1ps, topScopep:<a href="#UNLINKED">UNLINKED</a>, typeTablep:<a href="#(C)">(C)</a>
+<span class="th">2</span> modulesp:
+<span class="th">3</span>   MODULE &quot;serial_adder&quot; <a href="#test1.sv:15" onclick="highlight_file('test1.sv',15,8,15,20)">test1.sv:15</a> <span id="(E)">(E)</span> level:2, origName:serial_adder, timeunit:1ps
+<span class="th">4</span>    stmtsp:
+<span class="th">5</span>      VAR &quot;WIDTH&quot; <a href="#test1.sv:15" onclick="highlight_file('test1.sv',15,23,15,28)">test1.sv:15</a> <span id="(F)">(F)</span> attrClocker:UNKNOWN, direction:NONE, lifetime:VSTATIC, origName:WIDTH, sensIfacep:<a href="#UNLINKED">UNLINKED</a>, varType:GPARAM
+<span class="th">6</span>       valuep:
+<span class="th">7</span>         CONST &quot;?32?sh8&quot; <a href="#test1.sv:15" onclick="highlight_file('test1.sv',15,29,15,30)">test1.sv:15</a> <span id="(H)">(H)</span>
+<span class="th">8</span>      VAR &quot;a&quot; <a href="#test1.sv:16" onclick="highlight_file('test1.sv',16,28,16,29)">test1.sv:16</a> <span id="(J)">(J)</span> attrClocker:UNKNOWN, direction:INPUT, lifetime:NONE, origName:a, sensIfacep:<a href="#UNLINKED">UNLINKED</a>, varType:PORT
+<span class="th">9</span>       childDTypep:
+<span class="th">10</span>         BASICDTYPE &quot;logic&quot; <a href="#test1.sv:16" onclick="highlight_file('test1.sv',16,16,16,17)">test1.sv:16</a> <span id="(K)">(K)</span> keyword:logic
+<span class="th">11</span>          rangep:
+<span class="th">12</span>            RANGE &quot;&quot; <a href="#test1.sv:16" onclick="highlight_file('test1.sv',16,16,16,17)">test1.sv:16</a> <span id="(L)">(L)</span>
+<span class="th">13</span>             leftp:
+<span class="th">14</span>               SUB &quot;&quot; <a href="#test1.sv:16" onclick="highlight_file('test1.sv',16,22,16,23)">test1.sv:16</a> <span id="(M)">(M)</span>
+<span class="th">15</span>                lhsp:
+<span class="th">16</span>                  VARREF &quot;WIDTH&quot; <a href="#test1.sv:16" onclick="highlight_file('test1.sv',16,17,16,22)">test1.sv:16</a> <span id="(LF)">(LF)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(F)">(F)</a>
+<span class="th">17</span>                rhsp:
+<span class="th">18</span>                  CONST &quot;?32?sh1&quot; <a href="#test1.sv:16" onclick="highlight_file('test1.sv',16,23,16,24)">test1.sv:16</a> <span id="(O)">(O)</span>
+<span class="th">19</span>             rightp:
+<span class="th">20</span>               CONST &quot;?32?sh0&quot; <a href="#test1.sv:16" onclick="highlight_file('test1.sv',16,25,16,26)">test1.sv:16</a> <span id="(P)">(P)</span>
+<span class="th">21</span>      VAR &quot;b&quot; <a href="#test1.sv:17" onclick="highlight_file('test1.sv',17,28,17,29)">test1.sv:17</a> <span id="(R)">(R)</span> attrClocker:UNKNOWN, direction:INPUT, lifetime:NONE, origName:b, sensIfacep:<a href="#UNLINKED">UNLINKED</a>, varType:PORT
+<span class="th">22</span>       childDTypep:
+<span class="th">23</span>         BASICDTYPE &quot;logic&quot; <a href="#test1.sv:17" onclick="highlight_file('test1.sv',17,16,17,17)">test1.sv:17</a> <span id="(S)">(S)</span> keyword:logic
+<span class="th">24</span>          rangep:
+<span class="th">25</span>            RANGE &quot;&quot; <a href="#test1.sv:17" onclick="highlight_file('test1.sv',17,16,17,17)">test1.sv:17</a> <span id="(T)">(T)</span>
+<span class="th">26</span>             leftp:
+<span class="th">27</span>               SUB &quot;&quot; <a href="#test1.sv:17" onclick="highlight_file('test1.sv',17,22,17,23)">test1.sv:17</a> <span id="(U)">(U)</span>
+<span class="th">28</span>                lhsp:
+<span class="th">29</span>                  VARREF &quot;WIDTH&quot; <a href="#test1.sv:17" onclick="highlight_file('test1.sv',17,17,17,22)">test1.sv:17</a> <span id="(MF)">(MF)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(F)">(F)</a>
+<span class="th">30</span>                rhsp:
+<span class="th">31</span>                  CONST &quot;?32?sh1&quot; <a href="#test1.sv:17" onclick="highlight_file('test1.sv',17,23,17,24)">test1.sv:17</a> <span id="(W)">(W)</span>
+<span class="th">32</span>             rightp:
+<span class="th">33</span>               CONST &quot;?32?sh0&quot; <a href="#test1.sv:17" onclick="highlight_file('test1.sv',17,25,17,26)">test1.sv:17</a> <span id="(X)">(X)</span>
+<span class="th">34</span>      VAR &quot;cin&quot; <a href="#test1.sv:18" onclick="highlight_file('test1.sv',18,16,18,19)">test1.sv:18</a> <span id="(Z)">(Z)</span> attrClocker:UNKNOWN, direction:INPUT, lifetime:NONE, origName:cin, sensIfacep:<a href="#UNLINKED">UNLINKED</a>, varType:PORT
+<span class="th">35</span>       childDTypep:
+<span class="th">36</span>         BASICDTYPE &quot;LOGIC_IMPLICIT&quot; <a href="#test1.sv:18" onclick="highlight_file('test1.sv',18,16,18,19)">test1.sv:18</a> <span id="(AB)">(AB)</span> keyword:LOGIC_IMPLICIT
+<span class="th">37</span>      VAR &quot;s&quot; <a href="#test1.sv:19" onclick="highlight_file('test1.sv',19,28,19,29)">test1.sv:19</a> <span id="(CB)">(CB)</span> attrClocker:UNKNOWN, direction:OUTPUT, lifetime:NONE, origName:s, sensIfacep:<a href="#UNLINKED">UNLINKED</a>, varType:PORT
+<span class="th">38</span>       childDTypep:
+<span class="th">39</span>         BASICDTYPE &quot;logic&quot; <a href="#test1.sv:19" onclick="highlight_file('test1.sv',19,16,19,17)">test1.sv:19</a> <span id="(DB)">(DB)</span> keyword:logic
+<span class="th">40</span>          rangep:
+<span class="th">41</span>            RANGE &quot;&quot; <a href="#test1.sv:19" onclick="highlight_file('test1.sv',19,16,19,17)">test1.sv:19</a> <span id="(EB)">(EB)</span>
+<span class="th">42</span>             leftp:
+<span class="th">43</span>               SUB &quot;&quot; <a href="#test1.sv:19" onclick="highlight_file('test1.sv',19,22,19,23)">test1.sv:19</a> <span id="(FB)">(FB)</span>
+<span class="th">44</span>                lhsp:
+<span class="th">45</span>                  VARREF &quot;WIDTH&quot; <a href="#test1.sv:19" onclick="highlight_file('test1.sv',19,17,19,22)">test1.sv:19</a> <span id="(NF)">(NF)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(F)">(F)</a>
+<span class="th">46</span>                rhsp:
+<span class="th">47</span>                  CONST &quot;?32?sh1&quot; <a href="#test1.sv:19" onclick="highlight_file('test1.sv',19,23,19,24)">test1.sv:19</a> <span id="(HB)">(HB)</span>
+<span class="th">48</span>             rightp:
+<span class="th">49</span>               CONST &quot;?32?sh0&quot; <a href="#test1.sv:19" onclick="highlight_file('test1.sv',19,25,19,26)">test1.sv:19</a> <span id="(IB)">(IB)</span>
+<span class="th">50</span>      VAR &quot;cout&quot; <a href="#test1.sv:20" onclick="highlight_file('test1.sv',20,16,20,20)">test1.sv:20</a> <span id="(KB)">(KB)</span> attrClocker:UNKNOWN, direction:OUTPUT, lifetime:NONE, origName:cout, sensIfacep:<a href="#UNLINKED">UNLINKED</a>, varType:PORT
+<span class="th">51</span>       childDTypep:
+<span class="th">52</span>         BASICDTYPE &quot;LOGIC_IMPLICIT&quot; <a href="#test1.sv:20" onclick="highlight_file('test1.sv',20,16,20,20)">test1.sv:20</a> <span id="(LB)">(LB)</span> keyword:LOGIC_IMPLICIT
+<span class="th">53</span>      VAR &quot;c&quot; <a href="#test1.sv:22" onclick="highlight_file('test1.sv',22,20,22,21)">test1.sv:22</a> <span id="(MB)">(MB)</span> attrClocker:UNKNOWN, direction:NONE, lifetime:VSTATIC, origName:c, sensIfacep:<a href="#UNLINKED">UNLINKED</a>, varType:WIRE
+<span class="th">54</span>       childDTypep:
+<span class="th">55</span>         BASICDTYPE &quot;logic&quot; <a href="#test1.sv:22" onclick="highlight_file('test1.sv',22,10,22,11)">test1.sv:22</a> <span id="(NB)">(NB)</span> keyword:logic
+<span class="th">56</span>          rangep:
+<span class="th">57</span>            RANGE &quot;&quot; <a href="#test1.sv:22" onclick="highlight_file('test1.sv',22,10,22,11)">test1.sv:22</a> <span id="(OB)">(OB)</span>
+<span class="th">58</span>             leftp:
+<span class="th">59</span>               VARREF &quot;WIDTH&quot; <a href="#test1.sv:22" onclick="highlight_file('test1.sv',22,11,22,16)">test1.sv:22</a> <span id="(OF)">(OF)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(F)">(F)</a>
+<span class="th">60</span>             rightp:
+<span class="th">61</span>               CONST &quot;?32?sh0&quot; <a href="#test1.sv:22" onclick="highlight_file('test1.sv',22,17,22,18)">test1.sv:22</a> <span id="(QB)">(QB)</span>
+<span class="th">62</span>      BEGIN &quot;genblk1&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(RB)">(RB)</span> generate:True, implied:True, unnamed:True
+<span class="th">63</span>       stmtsp:
+<span class="th">64</span>         VAR &quot;i&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,26,24,27)">test1.sv:24</a> <span id="(WB)">(WB)</span> attrClocker:UNKNOWN, direction:NONE, isUsedLoopIdx:True, lifetime:VSTATIC, origName:i, sensIfacep:<a href="#UNLINKED">UNLINKED</a>, varType:GENVAR
+<span class="th">65</span>      BEGIN &quot;genblk1[0]&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,20,25,22)">test1.sv:25</a> <span id="(TG)">(TG)</span> generate:True
+<span class="th">66</span>       stmtsp:
+<span class="th">67</span>         CELL &quot;fa&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,20,25,22)">test1.sv:25</a> <span id="(UG)">(UG)</span> modp:<a href="#(GC)">(GC)</a>, origName:fa
+<span class="th">68</span>          pinsp:
+<span class="th">69</span>            PIN &quot;__pinNumber1&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,24,25,25)">test1.sv:25</a> <span id="(VG)">(VG)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(RD)">(RD)</a>
+<span class="th">70</span>             exprp:
+<span class="th">71</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,24,25,25)">test1.sv:25</a> <span id="(WG)">(WG)</span>
+<span class="th">72</span>                fromp:
+<span class="th">73</span>                  VARREF &quot;a&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,23,25,24)">test1.sv:25</a> <span id="(XG)">(XG)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(J)">(J)</a>
+<span class="th">74</span>                bitp:
+<span class="th">75</span>                  CONST &quot;?32?sh0&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(YG)">(YG)</span>
+<span class="th">76</span>            PIN &quot;__pinNumber2&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,30,25,31)">test1.sv:25</a> <span id="(ZG)">(ZG)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(UD)">(UD)</a>
+<span class="th">77</span>             exprp:
+<span class="th">78</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,30,25,31)">test1.sv:25</a> <span id="(AH)">(AH)</span>
+<span class="th">79</span>                fromp:
+<span class="th">80</span>                  VARREF &quot;b&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,29,25,30)">test1.sv:25</a> <span id="(BH)">(BH)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(R)">(R)</a>
+<span class="th">81</span>                bitp:
+<span class="th">82</span>                  CONST &quot;?32?sh0&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(CH)">(CH)</span>
+<span class="th">83</span>            PIN &quot;__pinNumber3&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,36,25,37)">test1.sv:25</a> <span id="(DH)">(DH)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(XD)">(XD)</a>
+<span class="th">84</span>             exprp:
+<span class="th">85</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,36,25,37)">test1.sv:25</a> <span id="(EH)">(EH)</span>
+<span class="th">86</span>                fromp:
+<span class="th">87</span>                  VARREF &quot;c&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,35,25,36)">test1.sv:25</a> <span id="(FH)">(FH)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(MB)">(MB)</a>
+<span class="th">88</span>                bitp:
+<span class="th">89</span>                  CONST &quot;?32?sh0&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(GH)">(GH)</span>
+<span class="th">90</span>            PIN &quot;__pinNumber4&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,42,25,43)">test1.sv:25</a> <span id="(HH)">(HH)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(AE)">(AE)</a>
+<span class="th">91</span>             exprp:
+<span class="th">92</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,42,25,43)">test1.sv:25</a> <span id="(IH)">(IH)</span>
+<span class="th">93</span>                fromp:
+<span class="th">94</span>                  VARREF &quot;s&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,41,25,42)">test1.sv:25</a> <span id="(JH)">(JH)</span> access:WR, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(CB)">(CB)</a>
+<span class="th">95</span>                bitp:
+<span class="th">96</span>                  CONST &quot;?32?sh0&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(KH)">(KH)</span>
+<span class="th">97</span>            PIN &quot;__pinNumber5&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,48,25,49)">test1.sv:25</a> <span id="(LH)">(LH)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(DE)">(DE)</a>
+<span class="th">98</span>             exprp:
+<span class="th">99</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,48,25,49)">test1.sv:25</a> <span id="(MH)">(MH)</span>
+<span class="th">100</span>                fromp:
+<span class="th">101</span>                  VARREF &quot;c&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,47,25,48)">test1.sv:25</a> <span id="(NH)">(NH)</span> access:WR, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(MB)">(MB)</a>
+<span class="th">102</span>                bitp:
+<span class="th">103</span>                  ADD &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,50,25,51)">test1.sv:25</a> <span id="(OH)">(OH)</span>
+<span class="th">104</span>                   lhsp:
+<span class="th">105</span>                     CONST &quot;?32?sh0&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(PH)">(PH)</span>
+<span class="th">106</span>                   rhsp:
+<span class="th">107</span>                     CONST &quot;?32?sh1&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,51,25,52)">test1.sv:25</a> <span id="(QH)">(QH)</span>
+<span class="th">108</span>      BEGIN &quot;genblk1[1]&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,20,25,22)">test1.sv:25</a> <span id="(RH)">(RH)</span> generate:True
+<span class="th">109</span>       stmtsp:
+<span class="th">110</span>         CELL &quot;fa&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,20,25,22)">test1.sv:25</a> <span id="(SH)">(SH)</span> modp:<a href="#(GC)">(GC)</a>, origName:fa
+<span class="th">111</span>          pinsp:
+<span class="th">112</span>            PIN &quot;__pinNumber1&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,24,25,25)">test1.sv:25</a> <span id="(TH)">(TH)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(RD)">(RD)</a>
+<span class="th">113</span>             exprp:
+<span class="th">114</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,24,25,25)">test1.sv:25</a> <span id="(UH)">(UH)</span>
+<span class="th">115</span>                fromp:
+<span class="th">116</span>                  VARREF &quot;a&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,23,25,24)">test1.sv:25</a> <span id="(VH)">(VH)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(J)">(J)</a>
+<span class="th">117</span>                bitp:
+<span class="th">118</span>                  CONST &quot;?32?sh1&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(WH)">(WH)</span>
+<span class="th">119</span>            PIN &quot;__pinNumber2&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,30,25,31)">test1.sv:25</a> <span id="(XH)">(XH)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(UD)">(UD)</a>
+<span class="th">120</span>             exprp:
+<span class="th">121</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,30,25,31)">test1.sv:25</a> <span id="(YH)">(YH)</span>
+<span class="th">122</span>                fromp:
+<span class="th">123</span>                  VARREF &quot;b&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,29,25,30)">test1.sv:25</a> <span id="(ZH)">(ZH)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(R)">(R)</a>
+<span class="th">124</span>                bitp:
+<span class="th">125</span>                  CONST &quot;?32?sh1&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(AI)">(AI)</span>
+<span class="th">126</span>            PIN &quot;__pinNumber3&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,36,25,37)">test1.sv:25</a> <span id="(BI)">(BI)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(XD)">(XD)</a>
+<span class="th">127</span>             exprp:
+<span class="th">128</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,36,25,37)">test1.sv:25</a> <span id="(CI)">(CI)</span>
+<span class="th">129</span>                fromp:
+<span class="th">130</span>                  VARREF &quot;c&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,35,25,36)">test1.sv:25</a> <span id="(DI)">(DI)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(MB)">(MB)</a>
+<span class="th">131</span>                bitp:
+<span class="th">132</span>                  CONST &quot;?32?sh1&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(EI)">(EI)</span>
+<span class="th">133</span>            PIN &quot;__pinNumber4&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,42,25,43)">test1.sv:25</a> <span id="(FI)">(FI)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(AE)">(AE)</a>
+<span class="th">134</span>             exprp:
+<span class="th">135</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,42,25,43)">test1.sv:25</a> <span id="(GI)">(GI)</span>
+<span class="th">136</span>                fromp:
+<span class="th">137</span>                  VARREF &quot;s&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,41,25,42)">test1.sv:25</a> <span id="(HI)">(HI)</span> access:WR, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(CB)">(CB)</a>
+<span class="th">138</span>                bitp:
+<span class="th">139</span>                  CONST &quot;?32?sh1&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(II)">(II)</span>
+<span class="th">140</span>            PIN &quot;__pinNumber5&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,48,25,49)">test1.sv:25</a> <span id="(JI)">(JI)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(DE)">(DE)</a>
+<span class="th">141</span>             exprp:
+<span class="th">142</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,48,25,49)">test1.sv:25</a> <span id="(KI)">(KI)</span>
+<span class="th">143</span>                fromp:
+<span class="th">144</span>                  VARREF &quot;c&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,47,25,48)">test1.sv:25</a> <span id="(LI)">(LI)</span> access:WR, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(MB)">(MB)</a>
+<span class="th">145</span>                bitp:
+<span class="th">146</span>                  ADD &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,50,25,51)">test1.sv:25</a> <span id="(MI)">(MI)</span>
+<span class="th">147</span>                   lhsp:
+<span class="th">148</span>                     CONST &quot;?32?sh1&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(NI)">(NI)</span>
+<span class="th">149</span>                   rhsp:
+<span class="th">150</span>                     CONST &quot;?32?sh1&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,51,25,52)">test1.sv:25</a> <span id="(OI)">(OI)</span>
+<span class="th">151</span>      BEGIN &quot;genblk1[2]&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,20,25,22)">test1.sv:25</a> <span id="(PI)">(PI)</span> generate:True
+<span class="th">152</span>       stmtsp:
+<span class="th">153</span>         CELL &quot;fa&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,20,25,22)">test1.sv:25</a> <span id="(QI)">(QI)</span> modp:<a href="#(GC)">(GC)</a>, origName:fa
+<span class="th">154</span>          pinsp:
+<span class="th">155</span>            PIN &quot;__pinNumber1&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,24,25,25)">test1.sv:25</a> <span id="(RI)">(RI)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(RD)">(RD)</a>
+<span class="th">156</span>             exprp:
+<span class="th">157</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,24,25,25)">test1.sv:25</a> <span id="(SI)">(SI)</span>
+<span class="th">158</span>                fromp:
+<span class="th">159</span>                  VARREF &quot;a&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,23,25,24)">test1.sv:25</a> <span id="(TI)">(TI)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(J)">(J)</a>
+<span class="th">160</span>                bitp:
+<span class="th">161</span>                  CONST &quot;?32?sh2&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(UI)">(UI)</span>
+<span class="th">162</span>            PIN &quot;__pinNumber2&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,30,25,31)">test1.sv:25</a> <span id="(VI)">(VI)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(UD)">(UD)</a>
+<span class="th">163</span>             exprp:
+<span class="th">164</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,30,25,31)">test1.sv:25</a> <span id="(WI)">(WI)</span>
+<span class="th">165</span>                fromp:
+<span class="th">166</span>                  VARREF &quot;b&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,29,25,30)">test1.sv:25</a> <span id="(XI)">(XI)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(R)">(R)</a>
+<span class="th">167</span>                bitp:
+<span class="th">168</span>                  CONST &quot;?32?sh2&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(YI)">(YI)</span>
+<span class="th">169</span>            PIN &quot;__pinNumber3&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,36,25,37)">test1.sv:25</a> <span id="(ZI)">(ZI)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(XD)">(XD)</a>
+<span class="th">170</span>             exprp:
+<span class="th">171</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,36,25,37)">test1.sv:25</a> <span id="(AJ)">(AJ)</span>
+<span class="th">172</span>                fromp:
+<span class="th">173</span>                  VARREF &quot;c&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,35,25,36)">test1.sv:25</a> <span id="(BJ)">(BJ)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(MB)">(MB)</a>
+<span class="th">174</span>                bitp:
+<span class="th">175</span>                  CONST &quot;?32?sh2&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(CJ)">(CJ)</span>
+<span class="th">176</span>            PIN &quot;__pinNumber4&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,42,25,43)">test1.sv:25</a> <span id="(DJ)">(DJ)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(AE)">(AE)</a>
+<span class="th">177</span>             exprp:
+<span class="th">178</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,42,25,43)">test1.sv:25</a> <span id="(EJ)">(EJ)</span>
+<span class="th">179</span>                fromp:
+<span class="th">180</span>                  VARREF &quot;s&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,41,25,42)">test1.sv:25</a> <span id="(FJ)">(FJ)</span> access:WR, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(CB)">(CB)</a>
+<span class="th">181</span>                bitp:
+<span class="th">182</span>                  CONST &quot;?32?sh2&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(GJ)">(GJ)</span>
+<span class="th">183</span>            PIN &quot;__pinNumber5&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,48,25,49)">test1.sv:25</a> <span id="(HJ)">(HJ)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(DE)">(DE)</a>
+<span class="th">184</span>             exprp:
+<span class="th">185</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,48,25,49)">test1.sv:25</a> <span id="(IJ)">(IJ)</span>
+<span class="th">186</span>                fromp:
+<span class="th">187</span>                  VARREF &quot;c&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,47,25,48)">test1.sv:25</a> <span id="(JJ)">(JJ)</span> access:WR, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(MB)">(MB)</a>
+<span class="th">188</span>                bitp:
+<span class="th">189</span>                  ADD &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,50,25,51)">test1.sv:25</a> <span id="(KJ)">(KJ)</span>
+<span class="th">190</span>                   lhsp:
+<span class="th">191</span>                     CONST &quot;?32?sh2&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(LJ)">(LJ)</span>
+<span class="th">192</span>                   rhsp:
+<span class="th">193</span>                     CONST &quot;?32?sh1&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,51,25,52)">test1.sv:25</a> <span id="(MJ)">(MJ)</span>
+<span class="th">194</span>      BEGIN &quot;genblk1[3]&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,20,25,22)">test1.sv:25</a> <span id="(NJ)">(NJ)</span> generate:True
+<span class="th">195</span>       stmtsp:
+<span class="th">196</span>         CELL &quot;fa&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,20,25,22)">test1.sv:25</a> <span id="(OJ)">(OJ)</span> modp:<a href="#(GC)">(GC)</a>, origName:fa
+<span class="th">197</span>          pinsp:
+<span class="th">198</span>            PIN &quot;__pinNumber1&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,24,25,25)">test1.sv:25</a> <span id="(PJ)">(PJ)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(RD)">(RD)</a>
+<span class="th">199</span>             exprp:
+<span class="th">200</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,24,25,25)">test1.sv:25</a> <span id="(QJ)">(QJ)</span>
+<span class="th">201</span>                fromp:
+<span class="th">202</span>                  VARREF &quot;a&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,23,25,24)">test1.sv:25</a> <span id="(RJ)">(RJ)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(J)">(J)</a>
+<span class="th">203</span>                bitp:
+<span class="th">204</span>                  CONST &quot;?32?sh3&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(SJ)">(SJ)</span>
+<span class="th">205</span>            PIN &quot;__pinNumber2&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,30,25,31)">test1.sv:25</a> <span id="(TJ)">(TJ)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(UD)">(UD)</a>
+<span class="th">206</span>             exprp:
+<span class="th">207</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,30,25,31)">test1.sv:25</a> <span id="(UJ)">(UJ)</span>
+<span class="th">208</span>                fromp:
+<span class="th">209</span>                  VARREF &quot;b&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,29,25,30)">test1.sv:25</a> <span id="(VJ)">(VJ)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(R)">(R)</a>
+<span class="th">210</span>                bitp:
+<span class="th">211</span>                  CONST &quot;?32?sh3&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(WJ)">(WJ)</span>
+<span class="th">212</span>            PIN &quot;__pinNumber3&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,36,25,37)">test1.sv:25</a> <span id="(XJ)">(XJ)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(XD)">(XD)</a>
+<span class="th">213</span>             exprp:
+<span class="th">214</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,36,25,37)">test1.sv:25</a> <span id="(YJ)">(YJ)</span>
+<span class="th">215</span>                fromp:
+<span class="th">216</span>                  VARREF &quot;c&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,35,25,36)">test1.sv:25</a> <span id="(ZJ)">(ZJ)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(MB)">(MB)</a>
+<span class="th">217</span>                bitp:
+<span class="th">218</span>                  CONST &quot;?32?sh3&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(AK)">(AK)</span>
+<span class="th">219</span>            PIN &quot;__pinNumber4&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,42,25,43)">test1.sv:25</a> <span id="(BK)">(BK)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(AE)">(AE)</a>
+<span class="th">220</span>             exprp:
+<span class="th">221</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,42,25,43)">test1.sv:25</a> <span id="(CK)">(CK)</span>
+<span class="th">222</span>                fromp:
+<span class="th">223</span>                  VARREF &quot;s&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,41,25,42)">test1.sv:25</a> <span id="(DK)">(DK)</span> access:WR, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(CB)">(CB)</a>
+<span class="th">224</span>                bitp:
+<span class="th">225</span>                  CONST &quot;?32?sh3&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(EK)">(EK)</span>
+<span class="th">226</span>            PIN &quot;__pinNumber5&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,48,25,49)">test1.sv:25</a> <span id="(FK)">(FK)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(DE)">(DE)</a>
+<span class="th">227</span>             exprp:
+<span class="th">228</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,48,25,49)">test1.sv:25</a> <span id="(GK)">(GK)</span>
+<span class="th">229</span>                fromp:
+<span class="th">230</span>                  VARREF &quot;c&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,47,25,48)">test1.sv:25</a> <span id="(HK)">(HK)</span> access:WR, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(MB)">(MB)</a>
+<span class="th">231</span>                bitp:
+<span class="th">232</span>                  ADD &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,50,25,51)">test1.sv:25</a> <span id="(IK)">(IK)</span>
+<span class="th">233</span>                   lhsp:
+<span class="th">234</span>                     CONST &quot;?32?sh3&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(JK)">(JK)</span>
+<span class="th">235</span>                   rhsp:
+<span class="th">236</span>                     CONST &quot;?32?sh1&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,51,25,52)">test1.sv:25</a> <span id="(KK)">(KK)</span>
+<span class="th">237</span>      BEGIN &quot;genblk1[4]&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,20,25,22)">test1.sv:25</a> <span id="(LK)">(LK)</span> generate:True
+<span class="th">238</span>       stmtsp:
+<span class="th">239</span>         CELL &quot;fa&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,20,25,22)">test1.sv:25</a> <span id="(MK)">(MK)</span> modp:<a href="#(GC)">(GC)</a>, origName:fa
+<span class="th">240</span>          pinsp:
+<span class="th">241</span>            PIN &quot;__pinNumber1&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,24,25,25)">test1.sv:25</a> <span id="(NK)">(NK)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(RD)">(RD)</a>
+<span class="th">242</span>             exprp:
+<span class="th">243</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,24,25,25)">test1.sv:25</a> <span id="(OK)">(OK)</span>
+<span class="th">244</span>                fromp:
+<span class="th">245</span>                  VARREF &quot;a&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,23,25,24)">test1.sv:25</a> <span id="(PK)">(PK)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(J)">(J)</a>
+<span class="th">246</span>                bitp:
+<span class="th">247</span>                  CONST &quot;?32?sh4&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(QK)">(QK)</span>
+<span class="th">248</span>            PIN &quot;__pinNumber2&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,30,25,31)">test1.sv:25</a> <span id="(RK)">(RK)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(UD)">(UD)</a>
+<span class="th">249</span>             exprp:
+<span class="th">250</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,30,25,31)">test1.sv:25</a> <span id="(SK)">(SK)</span>
+<span class="th">251</span>                fromp:
+<span class="th">252</span>                  VARREF &quot;b&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,29,25,30)">test1.sv:25</a> <span id="(TK)">(TK)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(R)">(R)</a>
+<span class="th">253</span>                bitp:
+<span class="th">254</span>                  CONST &quot;?32?sh4&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(UK)">(UK)</span>
+<span class="th">255</span>            PIN &quot;__pinNumber3&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,36,25,37)">test1.sv:25</a> <span id="(VK)">(VK)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(XD)">(XD)</a>
+<span class="th">256</span>             exprp:
+<span class="th">257</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,36,25,37)">test1.sv:25</a> <span id="(WK)">(WK)</span>
+<span class="th">258</span>                fromp:
+<span class="th">259</span>                  VARREF &quot;c&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,35,25,36)">test1.sv:25</a> <span id="(XK)">(XK)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(MB)">(MB)</a>
+<span class="th">260</span>                bitp:
+<span class="th">261</span>                  CONST &quot;?32?sh4&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(YK)">(YK)</span>
+<span class="th">262</span>            PIN &quot;__pinNumber4&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,42,25,43)">test1.sv:25</a> <span id="(ZK)">(ZK)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(AE)">(AE)</a>
+<span class="th">263</span>             exprp:
+<span class="th">264</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,42,25,43)">test1.sv:25</a> <span id="(AL)">(AL)</span>
+<span class="th">265</span>                fromp:
+<span class="th">266</span>                  VARREF &quot;s&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,41,25,42)">test1.sv:25</a> <span id="(BL)">(BL)</span> access:WR, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(CB)">(CB)</a>
+<span class="th">267</span>                bitp:
+<span class="th">268</span>                  CONST &quot;?32?sh4&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(CL)">(CL)</span>
+<span class="th">269</span>            PIN &quot;__pinNumber5&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,48,25,49)">test1.sv:25</a> <span id="(DL)">(DL)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(DE)">(DE)</a>
+<span class="th">270</span>             exprp:
+<span class="th">271</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,48,25,49)">test1.sv:25</a> <span id="(EL)">(EL)</span>
+<span class="th">272</span>                fromp:
+<span class="th">273</span>                  VARREF &quot;c&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,47,25,48)">test1.sv:25</a> <span id="(FL)">(FL)</span> access:WR, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(MB)">(MB)</a>
+<span class="th">274</span>                bitp:
+<span class="th">275</span>                  ADD &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,50,25,51)">test1.sv:25</a> <span id="(GL)">(GL)</span>
+<span class="th">276</span>                   lhsp:
+<span class="th">277</span>                     CONST &quot;?32?sh4&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(HL)">(HL)</span>
+<span class="th">278</span>                   rhsp:
+<span class="th">279</span>                     CONST &quot;?32?sh1&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,51,25,52)">test1.sv:25</a> <span id="(IL)">(IL)</span>
+<span class="th">280</span>      BEGIN &quot;genblk1[5]&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,20,25,22)">test1.sv:25</a> <span id="(JL)">(JL)</span> generate:True
+<span class="th">281</span>       stmtsp:
+<span class="th">282</span>         CELL &quot;fa&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,20,25,22)">test1.sv:25</a> <span id="(KL)">(KL)</span> modp:<a href="#(GC)">(GC)</a>, origName:fa
+<span class="th">283</span>          pinsp:
+<span class="th">284</span>            PIN &quot;__pinNumber1&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,24,25,25)">test1.sv:25</a> <span id="(LL)">(LL)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(RD)">(RD)</a>
+<span class="th">285</span>             exprp:
+<span class="th">286</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,24,25,25)">test1.sv:25</a> <span id="(ML)">(ML)</span>
+<span class="th">287</span>                fromp:
+<span class="th">288</span>                  VARREF &quot;a&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,23,25,24)">test1.sv:25</a> <span id="(NL)">(NL)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(J)">(J)</a>
+<span class="th">289</span>                bitp:
+<span class="th">290</span>                  CONST &quot;?32?sh5&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(OL)">(OL)</span>
+<span class="th">291</span>            PIN &quot;__pinNumber2&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,30,25,31)">test1.sv:25</a> <span id="(PL)">(PL)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(UD)">(UD)</a>
+<span class="th">292</span>             exprp:
+<span class="th">293</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,30,25,31)">test1.sv:25</a> <span id="(QL)">(QL)</span>
+<span class="th">294</span>                fromp:
+<span class="th">295</span>                  VARREF &quot;b&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,29,25,30)">test1.sv:25</a> <span id="(RL)">(RL)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(R)">(R)</a>
+<span class="th">296</span>                bitp:
+<span class="th">297</span>                  CONST &quot;?32?sh5&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(SL)">(SL)</span>
+<span class="th">298</span>            PIN &quot;__pinNumber3&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,36,25,37)">test1.sv:25</a> <span id="(TL)">(TL)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(XD)">(XD)</a>
+<span class="th">299</span>             exprp:
+<span class="th">300</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,36,25,37)">test1.sv:25</a> <span id="(UL)">(UL)</span>
+<span class="th">301</span>                fromp:
+<span class="th">302</span>                  VARREF &quot;c&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,35,25,36)">test1.sv:25</a> <span id="(VL)">(VL)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(MB)">(MB)</a>
+<span class="th">303</span>                bitp:
+<span class="th">304</span>                  CONST &quot;?32?sh5&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(WL)">(WL)</span>
+<span class="th">305</span>            PIN &quot;__pinNumber4&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,42,25,43)">test1.sv:25</a> <span id="(XL)">(XL)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(AE)">(AE)</a>
+<span class="th">306</span>             exprp:
+<span class="th">307</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,42,25,43)">test1.sv:25</a> <span id="(YL)">(YL)</span>
+<span class="th">308</span>                fromp:
+<span class="th">309</span>                  VARREF &quot;s&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,41,25,42)">test1.sv:25</a> <span id="(ZL)">(ZL)</span> access:WR, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(CB)">(CB)</a>
+<span class="th">310</span>                bitp:
+<span class="th">311</span>                  CONST &quot;?32?sh5&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(AM)">(AM)</span>
+<span class="th">312</span>            PIN &quot;__pinNumber5&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,48,25,49)">test1.sv:25</a> <span id="(BM)">(BM)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(DE)">(DE)</a>
+<span class="th">313</span>             exprp:
+<span class="th">314</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,48,25,49)">test1.sv:25</a> <span id="(CM)">(CM)</span>
+<span class="th">315</span>                fromp:
+<span class="th">316</span>                  VARREF &quot;c&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,47,25,48)">test1.sv:25</a> <span id="(DM)">(DM)</span> access:WR, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(MB)">(MB)</a>
+<span class="th">317</span>                bitp:
+<span class="th">318</span>                  ADD &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,50,25,51)">test1.sv:25</a> <span id="(EM)">(EM)</span>
+<span class="th">319</span>                   lhsp:
+<span class="th">320</span>                     CONST &quot;?32?sh5&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(FM)">(FM)</span>
+<span class="th">321</span>                   rhsp:
+<span class="th">322</span>                     CONST &quot;?32?sh1&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,51,25,52)">test1.sv:25</a> <span id="(GM)">(GM)</span>
+<span class="th">323</span>      BEGIN &quot;genblk1[6]&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,20,25,22)">test1.sv:25</a> <span id="(HM)">(HM)</span> generate:True
+<span class="th">324</span>       stmtsp:
+<span class="th">325</span>         CELL &quot;fa&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,20,25,22)">test1.sv:25</a> <span id="(IM)">(IM)</span> modp:<a href="#(GC)">(GC)</a>, origName:fa
+<span class="th">326</span>          pinsp:
+<span class="th">327</span>            PIN &quot;__pinNumber1&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,24,25,25)">test1.sv:25</a> <span id="(JM)">(JM)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(RD)">(RD)</a>
+<span class="th">328</span>             exprp:
+<span class="th">329</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,24,25,25)">test1.sv:25</a> <span id="(KM)">(KM)</span>
+<span class="th">330</span>                fromp:
+<span class="th">331</span>                  VARREF &quot;a&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,23,25,24)">test1.sv:25</a> <span id="(LM)">(LM)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(J)">(J)</a>
+<span class="th">332</span>                bitp:
+<span class="th">333</span>                  CONST &quot;?32?sh6&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(MM)">(MM)</span>
+<span class="th">334</span>            PIN &quot;__pinNumber2&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,30,25,31)">test1.sv:25</a> <span id="(NM)">(NM)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(UD)">(UD)</a>
+<span class="th">335</span>             exprp:
+<span class="th">336</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,30,25,31)">test1.sv:25</a> <span id="(OM)">(OM)</span>
+<span class="th">337</span>                fromp:
+<span class="th">338</span>                  VARREF &quot;b&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,29,25,30)">test1.sv:25</a> <span id="(PM)">(PM)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(R)">(R)</a>
+<span class="th">339</span>                bitp:
+<span class="th">340</span>                  CONST &quot;?32?sh6&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(QM)">(QM)</span>
+<span class="th">341</span>            PIN &quot;__pinNumber3&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,36,25,37)">test1.sv:25</a> <span id="(RM)">(RM)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(XD)">(XD)</a>
+<span class="th">342</span>             exprp:
+<span class="th">343</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,36,25,37)">test1.sv:25</a> <span id="(SM)">(SM)</span>
+<span class="th">344</span>                fromp:
+<span class="th">345</span>                  VARREF &quot;c&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,35,25,36)">test1.sv:25</a> <span id="(TM)">(TM)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(MB)">(MB)</a>
+<span class="th">346</span>                bitp:
+<span class="th">347</span>                  CONST &quot;?32?sh6&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(UM)">(UM)</span>
+<span class="th">348</span>            PIN &quot;__pinNumber4&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,42,25,43)">test1.sv:25</a> <span id="(VM)">(VM)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(AE)">(AE)</a>
+<span class="th">349</span>             exprp:
+<span class="th">350</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,42,25,43)">test1.sv:25</a> <span id="(WM)">(WM)</span>
+<span class="th">351</span>                fromp:
+<span class="th">352</span>                  VARREF &quot;s&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,41,25,42)">test1.sv:25</a> <span id="(XM)">(XM)</span> access:WR, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(CB)">(CB)</a>
+<span class="th">353</span>                bitp:
+<span class="th">354</span>                  CONST &quot;?32?sh6&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(YM)">(YM)</span>
+<span class="th">355</span>            PIN &quot;__pinNumber5&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,48,25,49)">test1.sv:25</a> <span id="(ZM)">(ZM)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(DE)">(DE)</a>
+<span class="th">356</span>             exprp:
+<span class="th">357</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,48,25,49)">test1.sv:25</a> <span id="(AN)">(AN)</span>
+<span class="th">358</span>                fromp:
+<span class="th">359</span>                  VARREF &quot;c&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,47,25,48)">test1.sv:25</a> <span id="(BN)">(BN)</span> access:WR, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(MB)">(MB)</a>
+<span class="th">360</span>                bitp:
+<span class="th">361</span>                  ADD &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,50,25,51)">test1.sv:25</a> <span id="(CN)">(CN)</span>
+<span class="th">362</span>                   lhsp:
+<span class="th">363</span>                     CONST &quot;?32?sh6&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(DN)">(DN)</span>
+<span class="th">364</span>                   rhsp:
+<span class="th">365</span>                     CONST &quot;?32?sh1&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,51,25,52)">test1.sv:25</a> <span id="(EN)">(EN)</span>
+<span class="th">366</span>      BEGIN &quot;genblk1[7]&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,20,25,22)">test1.sv:25</a> <span id="(FN)">(FN)</span> generate:True
+<span class="th">367</span>       stmtsp:
+<span class="th">368</span>         CELL &quot;fa&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,20,25,22)">test1.sv:25</a> <span id="(GN)">(GN)</span> modp:<a href="#(GC)">(GC)</a>, origName:fa
+<span class="th">369</span>          pinsp:
+<span class="th">370</span>            PIN &quot;__pinNumber1&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,24,25,25)">test1.sv:25</a> <span id="(HN)">(HN)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(RD)">(RD)</a>
+<span class="th">371</span>             exprp:
+<span class="th">372</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,24,25,25)">test1.sv:25</a> <span id="(IN)">(IN)</span>
+<span class="th">373</span>                fromp:
+<span class="th">374</span>                  VARREF &quot;a&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,23,25,24)">test1.sv:25</a> <span id="(JN)">(JN)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(J)">(J)</a>
+<span class="th">375</span>                bitp:
+<span class="th">376</span>                  CONST &quot;?32?sh7&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(KN)">(KN)</span>
+<span class="th">377</span>            PIN &quot;__pinNumber2&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,30,25,31)">test1.sv:25</a> <span id="(LN)">(LN)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(UD)">(UD)</a>
+<span class="th">378</span>             exprp:
+<span class="th">379</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,30,25,31)">test1.sv:25</a> <span id="(MN)">(MN)</span>
+<span class="th">380</span>                fromp:
+<span class="th">381</span>                  VARREF &quot;b&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,29,25,30)">test1.sv:25</a> <span id="(NN)">(NN)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(R)">(R)</a>
+<span class="th">382</span>                bitp:
+<span class="th">383</span>                  CONST &quot;?32?sh7&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(ON)">(ON)</span>
+<span class="th">384</span>            PIN &quot;__pinNumber3&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,36,25,37)">test1.sv:25</a> <span id="(PN)">(PN)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(XD)">(XD)</a>
+<span class="th">385</span>             exprp:
+<span class="th">386</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,36,25,37)">test1.sv:25</a> <span id="(QN)">(QN)</span>
+<span class="th">387</span>                fromp:
+<span class="th">388</span>                  VARREF &quot;c&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,35,25,36)">test1.sv:25</a> <span id="(RN)">(RN)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(MB)">(MB)</a>
+<span class="th">389</span>                bitp:
+<span class="th">390</span>                  CONST &quot;?32?sh7&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(SN)">(SN)</span>
+<span class="th">391</span>            PIN &quot;__pinNumber4&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,42,25,43)">test1.sv:25</a> <span id="(TN)">(TN)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(AE)">(AE)</a>
+<span class="th">392</span>             exprp:
+<span class="th">393</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,42,25,43)">test1.sv:25</a> <span id="(UN)">(UN)</span>
+<span class="th">394</span>                fromp:
+<span class="th">395</span>                  VARREF &quot;s&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,41,25,42)">test1.sv:25</a> <span id="(VN)">(VN)</span> access:WR, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(CB)">(CB)</a>
+<span class="th">396</span>                bitp:
+<span class="th">397</span>                  CONST &quot;?32?sh7&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(WN)">(WN)</span>
+<span class="th">398</span>            PIN &quot;__pinNumber5&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,48,25,49)">test1.sv:25</a> <span id="(XN)">(XN)</span> modPTypep:<a href="#UNLINKED">UNLINKED</a>, modVarp:<a href="#(DE)">(DE)</a>
+<span class="th">399</span>             exprp:
+<span class="th">400</span>               SELBIT &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,48,25,49)">test1.sv:25</a> <span id="(YN)">(YN)</span>
+<span class="th">401</span>                fromp:
+<span class="th">402</span>                  VARREF &quot;c&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,47,25,48)">test1.sv:25</a> <span id="(ZN)">(ZN)</span> access:WR, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(MB)">(MB)</a>
+<span class="th">403</span>                bitp:
+<span class="th">404</span>                  ADD &quot;&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,50,25,51)">test1.sv:25</a> <span id="(AO)">(AO)</span>
+<span class="th">405</span>                   lhsp:
+<span class="th">406</span>                     CONST &quot;?32?sh7&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,14,24,17)">test1.sv:24</a> <span id="(BO)">(BO)</span>
+<span class="th">407</span>                   rhsp:
+<span class="th">408</span>                     CONST &quot;?32?sh1&quot; <a href="#test1.sv:25" onclick="highlight_file('test1.sv',25,51,25,52)">test1.sv:25</a> <span id="(CO)">(CO)</span>
+<span class="th">409</span>      ASSIGNW &quot;&quot; <a href="#test1.sv:28" onclick="highlight_file('test1.sv',28,17,28,18)">test1.sv:28</a> <span id="(ED)">(ED)</span>
+<span class="th">410</span>       rhsp:
+<span class="th">411</span>         VARREF &quot;cin&quot; <a href="#test1.sv:28" onclick="highlight_file('test1.sv',28,19,28,22)">test1.sv:28</a> <span id="(DG)">(DG)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(Z)">(Z)</a>
+<span class="th">412</span>       lhsp:
+<span class="th">413</span>         SELBIT &quot;&quot; <a href="#test1.sv:28" onclick="highlight_file('test1.sv',28,13,28,14)">test1.sv:28</a> <span id="(GD)">(GD)</span>
+<span class="th">414</span>          fromp:
+<span class="th">415</span>            VARREF &quot;c&quot; <a href="#test1.sv:28" onclick="highlight_file('test1.sv',28,12,28,13)">test1.sv:28</a> <span id="(EG)">(EG)</span> access:WR, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(MB)">(MB)</a>
+<span class="th">416</span>          bitp:
+<span class="th">417</span>            CONST &quot;?32?sh0&quot; <a href="#test1.sv:28" onclick="highlight_file('test1.sv',28,14,28,15)">test1.sv:28</a> <span id="(ID)">(ID)</span>
+<span class="th">418</span>      ASSIGNW &quot;&quot; <a href="#test1.sv:29" onclick="highlight_file('test1.sv',29,17,29,18)">test1.sv:29</a> <span id="(JD)">(JD)</span>
+<span class="th">419</span>       rhsp:
+<span class="th">420</span>         SELBIT &quot;&quot; <a href="#test1.sv:29" onclick="highlight_file('test1.sv',29,20,29,21)">test1.sv:29</a> <span id="(KD)">(KD)</span>
+<span class="th">421</span>          fromp:
+<span class="th">422</span>            VARREF &quot;c&quot; <a href="#test1.sv:29" onclick="highlight_file('test1.sv',29,19,29,20)">test1.sv:29</a> <span id="(FG)">(FG)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(MB)">(MB)</a>
+<span class="th">423</span>          bitp:
+<span class="th">424</span>            SUB &quot;&quot; <a href="#test1.sv:29" onclick="highlight_file('test1.sv',29,26,29,27)">test1.sv:29</a> <span id="(MD)">(MD)</span>
+<span class="th">425</span>             lhsp:
+<span class="th">426</span>               VARREF &quot;WIDTH&quot; <a href="#test1.sv:29" onclick="highlight_file('test1.sv',29,21,29,26)">test1.sv:29</a> <span id="(GG)">(GG)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(F)">(F)</a>
+<span class="th">427</span>             rhsp:
+<span class="th">428</span>               CONST &quot;?32?sh1&quot; <a href="#test1.sv:29" onclick="highlight_file('test1.sv',29,27,29,28)">test1.sv:29</a> <span id="(OD)">(OD)</span>
+<span class="th">429</span>       lhsp:
+<span class="th">430</span>         VARREF &quot;cout&quot; <a href="#test1.sv:29" onclick="highlight_file('test1.sv',29,12,29,16)">test1.sv:29</a> <span id="(HG)">(HG)</span> access:WR, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(KB)">(KB)</a>
+<span class="th">431</span>   MODULE &quot;full_adder&quot; <a href="#test1.sv:5" onclick="highlight_file('test1.sv',5,8,5,18)">test1.sv:5</a> <span id="(GC)">(GC)</span> level:3, origName:full_adder, timeunit:1ps
+<span class="th">432</span>    stmtsp:
+<span class="th">433</span>      VAR &quot;a&quot; <a href="#test1.sv:6" onclick="highlight_file('test1.sv',6,15,6,16)">test1.sv:6</a> <span id="(RD)">(RD)</span> attrClocker:UNKNOWN, direction:INPUT, lifetime:NONE, origName:a, sensIfacep:<a href="#UNLINKED">UNLINKED</a>, varType:PORT
+<span class="th">434</span>       childDTypep:
+<span class="th">435</span>         BASICDTYPE &quot;LOGIC_IMPLICIT&quot; <a href="#test1.sv:6" onclick="highlight_file('test1.sv',6,15,6,16)">test1.sv:6</a> <span id="(SD)">(SD)</span> keyword:LOGIC_IMPLICIT
+<span class="th">436</span>      VAR &quot;b&quot; <a href="#test1.sv:7" onclick="highlight_file('test1.sv',7,15,7,16)">test1.sv:7</a> <span id="(UD)">(UD)</span> attrClocker:UNKNOWN, direction:INPUT, lifetime:NONE, origName:b, sensIfacep:<a href="#UNLINKED">UNLINKED</a>, varType:PORT
+<span class="th">437</span>       childDTypep:
+<span class="th">438</span>         BASICDTYPE &quot;LOGIC_IMPLICIT&quot; <a href="#test1.sv:7" onclick="highlight_file('test1.sv',7,15,7,16)">test1.sv:7</a> <span id="(VD)">(VD)</span> keyword:LOGIC_IMPLICIT
+<span class="th">439</span>      VAR &quot;cin&quot; <a href="#test1.sv:8" onclick="highlight_file('test1.sv',8,15,8,18)">test1.sv:8</a> <span id="(XD)">(XD)</span> attrClocker:UNKNOWN, direction:INPUT, lifetime:NONE, origName:cin, sensIfacep:<a href="#UNLINKED">UNLINKED</a>, varType:PORT
+<span class="th">440</span>       childDTypep:
+<span class="th">441</span>         BASICDTYPE &quot;LOGIC_IMPLICIT&quot; <a href="#test1.sv:8" onclick="highlight_file('test1.sv',8,15,8,18)">test1.sv:8</a> <span id="(YD)">(YD)</span> keyword:LOGIC_IMPLICIT
+<span class="th">442</span>      VAR &quot;s&quot; <a href="#test1.sv:9" onclick="highlight_file('test1.sv',9,16,9,17)">test1.sv:9</a> <span id="(AE)">(AE)</span> attrClocker:UNKNOWN, direction:OUTPUT, lifetime:NONE, origName:s, sensIfacep:<a href="#UNLINKED">UNLINKED</a>, varType:PORT
+<span class="th">443</span>       childDTypep:
+<span class="th">444</span>         BASICDTYPE &quot;LOGIC_IMPLICIT&quot; <a href="#test1.sv:9" onclick="highlight_file('test1.sv',9,16,9,17)">test1.sv:9</a> <span id="(BE)">(BE)</span> keyword:LOGIC_IMPLICIT
+<span class="th">445</span>      VAR &quot;cout&quot; <a href="#test1.sv:10" onclick="highlight_file('test1.sv',10,16,10,20)">test1.sv:10</a> <span id="(DE)">(DE)</span> attrClocker:UNKNOWN, direction:OUTPUT, lifetime:NONE, origName:cout, sensIfacep:<a href="#UNLINKED">UNLINKED</a>, varType:PORT
+<span class="th">446</span>       childDTypep:
+<span class="th">447</span>         BASICDTYPE &quot;LOGIC_IMPLICIT&quot; <a href="#test1.sv:10" onclick="highlight_file('test1.sv',10,16,10,20)">test1.sv:10</a> <span id="(EE)">(EE)</span> keyword:LOGIC_IMPLICIT
+<span class="th">448</span>      ASSIGNW &quot;&quot; <a href="#test1.sv:11" onclick="highlight_file('test1.sv',11,14,11,15)">test1.sv:11</a> <span id="(FE)">(FE)</span>
+<span class="th">449</span>       rhsp:
+<span class="th">450</span>         XOR &quot;&quot; <a href="#test1.sv:11" onclick="highlight_file('test1.sv',11,19,11,20)">test1.sv:11</a> <span id="(GE)">(GE)</span>
+<span class="th">451</span>          lhsp:
+<span class="th">452</span>            XOR &quot;&quot; <a href="#test1.sv:11" onclick="highlight_file('test1.sv',11,17,11,18)">test1.sv:11</a> <span id="(HE)">(HE)</span>
+<span class="th">453</span>             lhsp:
+<span class="th">454</span>               VARREF &quot;a&quot; <a href="#test1.sv:11" onclick="highlight_file('test1.sv',11,16,11,17)">test1.sv:11</a> <span id="(IG)">(IG)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(RD)">(RD)</a>
+<span class="th">455</span>             rhsp:
+<span class="th">456</span>               VARREF &quot;b&quot; <a href="#test1.sv:11" onclick="highlight_file('test1.sv',11,18,11,19)">test1.sv:11</a> <span id="(JG)">(JG)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(UD)">(UD)</a>
+<span class="th">457</span>          rhsp:
+<span class="th">458</span>            VARREF &quot;cin&quot; <a href="#test1.sv:11" onclick="highlight_file('test1.sv',11,20,11,23)">test1.sv:11</a> <span id="(KG)">(KG)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(XD)">(XD)</a>
+<span class="th">459</span>       lhsp:
+<span class="th">460</span>         VARREF &quot;s&quot; <a href="#test1.sv:11" onclick="highlight_file('test1.sv',11,12,11,13)">test1.sv:11</a> <span id="(LG)">(LG)</span> access:WR, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(AE)">(AE)</a>
+<span class="th">461</span>      ASSIGNW &quot;&quot; <a href="#test1.sv:12" onclick="highlight_file('test1.sv',12,17,12,18)">test1.sv:12</a> <span id="(ME)">(ME)</span>
+<span class="th">462</span>       rhsp:
+<span class="th">463</span>         OR &quot;&quot; <a href="#test1.sv:12" onclick="highlight_file('test1.sv',12,35,12,36)">test1.sv:12</a> <span id="(NE)">(NE)</span>
+<span class="th">464</span>          lhsp:
+<span class="th">465</span>            OR &quot;&quot; <a href="#test1.sv:12" onclick="highlight_file('test1.sv',12,25,12,26)">test1.sv:12</a> <span id="(OE)">(OE)</span>
+<span class="th">466</span>             lhsp:
+<span class="th">467</span>               AND &quot;&quot; <a href="#test1.sv:12" onclick="highlight_file('test1.sv',12,21,12,22)">test1.sv:12</a> <span id="(PE)">(PE)</span>
+<span class="th">468</span>                lhsp:
+<span class="th">469</span>                  VARREF &quot;a&quot; <a href="#test1.sv:12" onclick="highlight_file('test1.sv',12,20,12,21)">test1.sv:12</a> <span id="(MG)">(MG)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(RD)">(RD)</a>
+<span class="th">470</span>                rhsp:
+<span class="th">471</span>                  VARREF &quot;b&quot; <a href="#test1.sv:12" onclick="highlight_file('test1.sv',12,22,12,23)">test1.sv:12</a> <span id="(NG)">(NG)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(UD)">(UD)</a>
+<span class="th">472</span>             rhsp:
+<span class="th">473</span>               AND &quot;&quot; <a href="#test1.sv:12" onclick="highlight_file('test1.sv',12,29,12,30)">test1.sv:12</a> <span id="(SE)">(SE)</span>
+<span class="th">474</span>                lhsp:
+<span class="th">475</span>                  VARREF &quot;b&quot; <a href="#test1.sv:12" onclick="highlight_file('test1.sv',12,28,12,29)">test1.sv:12</a> <span id="(OG)">(OG)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(UD)">(UD)</a>
+<span class="th">476</span>                rhsp:
+<span class="th">477</span>                  VARREF &quot;cin&quot; <a href="#test1.sv:12" onclick="highlight_file('test1.sv',12,30,12,33)">test1.sv:12</a> <span id="(PG)">(PG)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(XD)">(XD)</a>
+<span class="th">478</span>          rhsp:
+<span class="th">479</span>            AND &quot;&quot; <a href="#test1.sv:12" onclick="highlight_file('test1.sv',12,39,12,40)">test1.sv:12</a> <span id="(VE)">(VE)</span>
+<span class="th">480</span>             lhsp:
+<span class="th">481</span>               VARREF &quot;a&quot; <a href="#test1.sv:12" onclick="highlight_file('test1.sv',12,38,12,39)">test1.sv:12</a> <span id="(QG)">(QG)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(RD)">(RD)</a>
+<span class="th">482</span>             rhsp:
+<span class="th">483</span>               VARREF &quot;cin&quot; <a href="#test1.sv:12" onclick="highlight_file('test1.sv',12,40,12,43)">test1.sv:12</a> <span id="(RG)">(RG)</span> access:RD, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(XD)">(XD)</a>
+<span class="th">484</span>       lhsp:
+<span class="th">485</span>         VARREF &quot;cout&quot; <a href="#test1.sv:12" onclick="highlight_file('test1.sv',12,12,12,16)">test1.sv:12</a> <span id="(SG)">(SG)</span> access:WR, classOrPackagep:<a href="#UNLINKED">UNLINKED</a>, varScopep:<a href="#UNLINKED">UNLINKED</a>, varp:<a href="#(DE)">(DE)</a>
+<span class="th">486</span> miscsp:
+<span class="th">487</span>   TYPETABLE &quot;&quot; &lt;built-in&gt; <span id="(C)">(C)</span> constraintRefp:<a href="#UNLINKED">UNLINKED</a>, emptyQueuep:<a href="#UNLINKED">UNLINKED</a>, queueIndexp:<a href="#UNLINKED">UNLINKED</a>, streamp:<a href="#UNLINKED">UNLINKED</a>, voidp:<a href="#(ZE)">(ZE)</a>
+<span class="th">488</span>    typesp:
+<span class="th">489</span>      BASICDTYPE &quot;integer&quot; <a href="#&lt;verilated_std&gt;:31" onclick="highlight_file('&lt;verilated_std&gt;',31,27,31,28)">&lt;verilated_std&gt;:31</a> <span id="(AF)">(AF)</span> generic:True, keyword:integer, range:31:0
+<span class="th">490</span>      BASICDTYPE &quot;logic&quot; <a href="#&lt;verilated_std&gt;:33" onclick="highlight_file('&lt;verilated_std&gt;',33,32,33,33)">&lt;verilated_std&gt;:33</a> <span id="(BF)">(BF)</span> generic:True, keyword:logic, range:31:0
+<span class="th">491</span>      BASICDTYPE &quot;logic&quot; <a href="#&lt;verilated_std&gt;:50" onclick="highlight_file('&lt;verilated_std&gt;',50,22,50,24)">&lt;verilated_std&gt;:50</a> <span id="(CF)">(CF)</span> generic:True, keyword:logic
+<span class="th">492</span>      VOIDDTYPE &quot;&quot; <a href="#&lt;verilated_std&gt;:51" onclick="highlight_file('&lt;verilated_std&gt;',51,21,51,30)">&lt;verilated_std&gt;:51</a> <span id="(ZE)">(ZE)</span>
+<span class="th">493</span>      BASICDTYPE &quot;logic&quot; <a href="#&lt;verilated_std&gt;:119" onclick="highlight_file('&lt;verilated_std&gt;',119,22,119,23)">&lt;verilated_std&gt;:119</a> <span id="(DF)">(DF)</span> generic:True, keyword:logic, range:31:0
+<span class="th">494</span>      BASICDTYPE &quot;logic&quot; <a href="#&lt;verilated_std&gt;:121" onclick="highlight_file('&lt;verilated_std&gt;',121,22,121,23)">&lt;verilated_std&gt;:121</a> <span id="(EF)">(EF)</span> generic:True, keyword:logic, range:31:0
+<span class="th">495</span>      BASICDTYPE &quot;logic&quot; <a href="#&lt;verilated_std&gt;:156" onclick="highlight_file('&lt;verilated_std&gt;',156,17,156,56)">&lt;verilated_std&gt;:156</a> <span id="(FF)">(FF)</span> generic:True, keyword:logic, range:295:0
+<span class="th">496</span>      BASICDTYPE &quot;string&quot; <a href="#&lt;verilated_std&gt;:156" onclick="highlight_file('&lt;verilated_std&gt;',156,10,156,16)">&lt;verilated_std&gt;:156</a> <span id="(GF)">(GF)</span> generic:True, keyword:string
+<span class="th">497</span>      BASICDTYPE &quot;logic&quot; <a href="#test1.sv:15" onclick="highlight_file('test1.sv',15,29,15,30)">test1.sv:15</a> <span id="(HF)">(HF)</span> generic:True, keyword:logic, range:31:0
+<span class="th">498</span>      BASICDTYPE &quot;logic&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,45,24,47)">test1.sv:24</a> <span id="(IF)">(IF)</span> generic:True, keyword:logic, range:31:0
+<span class="th">499</span>      BASICDTYPE &quot;LOGIC_IMPLICIT&quot; <a href="#test1.sv:15" onclick="highlight_file('test1.sv',15,23,15,28)">test1.sv:15</a> <span id="(G)">(G)</span> keyword:LOGIC_IMPLICIT
+<span class="th">500</span>      BASICDTYPE &quot;integer&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,26,24,27)">test1.sv:24</a> <span id="(DD)">(DD)</span> keyword:integer, range:31:0
+<span class="th">501</span>      BASICDTYPE &quot;logic&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,35,24,36)">test1.sv:24</a> <span id="(DO)">(DO)</span> generic:True, keyword:logic, range:31:0
+<span class="th">502</span>      BASICDTYPE &quot;logic&quot; <a href="#test1.sv:24" onclick="highlight_file('test1.sv',24,45,24,47)">test1.sv:24</a> <span id="(EO)">(EO)</span> generic:True, keyword:logic, range:31:0
+<span class="th">503</span>   CONSTPOOL &quot;&quot; &lt;built-in&gt; <span id="(D)">(D)</span>
+<span class="th">504</span>    modulep:
+<span class="th">505</span>      MODULE &quot;@CONST-POOL@&quot; &lt;built-in&gt; <span id="(JF)">(JF)</span> level:0, origName:@CONST-POOL@, timeunit:NONE
+<span class="th">506</span>       stmtsp:
+<span class="th">507</span>         SCOPE &quot;@CONST-POOL@&quot; &lt;built-in&gt; <span id="(KF)">(KF)</span> aboveCellp:<a href="#UNLINKED">UNLINKED</a>, aboveScopep:<a href="#UNLINKED">UNLINKED</a>, modp:<a href="#(JF)">(JF)</a>
 </div></pre>
 </div>
 

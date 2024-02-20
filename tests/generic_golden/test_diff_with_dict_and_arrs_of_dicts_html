@@ -25,14 +25,14 @@
 </style>
 </head>
 <body>
-    <pre class="code-block"><div class="chunk"><span class="th">0</span> addr:0x55b700efa000, editNum:1, file:&lt;built-in&gt;:0:0, name:$root, type:TEST
-<span class="th">1</span> op1:
-<span class="th">2</span>    addr:<span style="color:red;">0x55b700f366c0</span>-><span style="color:green;">0x55b700f36620</span>, editNum:<span style="color:red;">2361</span>-><span style="color:green;">2362</span>, file:test.v:16:8, name:__024root, type:<span style="color:red;">MODULE</span>-><span style="color:green;">EXTMODULE</span>
-<span class="th">3</span>    <span style="color:red;">op2:</span>
-<span class="th">4</span>       <span style="color:red;">addr:0x55b700f50280</span>, <span style="color:red;">editNum:2364</span>, <span style="color:red;">file:test.v:16:8</span>, <span style="color:red;">name:t</span>, <span style="color:red;">type:CELL</span>
-<span class="th">5</span>    <span style="color:green;">op3:</span>
-<span class="th">6</span>       <span style="color:green;">addr:0x55b700f50280</span>, <span style="color:green;">editNum:2364</span>, <span style="color:green;">file:test.v:16:8</span>, <span style="color:green;">name:t</span>, <span style="color:green;">type:CELL</span>
-<span class="th">7</span> op4:
-<span class="th">8</span>   ... * 4
+    <pre class="code-block"><div class="chunk"><span class="th">1</span> addr:0x55b700efa000, editNum:1, file:&lt;built-in&gt;:0:0, name:$root, type:TEST
+<span class="th">2</span> op1:
+<span class="th">3</span>    addr:<span style="color:red;">0x55b700f366c0</span>-><span style="color:green;">0x55b700f36620</span>, editNum:<span style="color:red;">2361</span>-><span style="color:green;">2362</span>, file:test.v:16:8, name:__024root, type:<span style="color:red;">MODULE</span>-><span style="color:green;">EXTMODULE</span>
+<span class="th">4</span>    <span style="color:red;">op2:</span>
+<span class="th">5</span>       <span style="color:red;">addr:0x55b700f50280</span>, <span style="color:red;">editNum:2364</span>, <span style="color:red;">file:test.v:16:8</span>, <span style="color:red;">name:t</span>, <span style="color:red;">type:CELL</span>
+<span class="th">6</span>    <span style="color:green;">op3:</span>
+<span class="th">7</span>       <span style="color:green;">addr:0x55b700f50280</span>, <span style="color:green;">editNum:2364</span>, <span style="color:green;">file:test.v:16:8</span>, <span style="color:green;">name:t</span>, <span style="color:green;">type:CELL</span>
+<span class="th">8</span> op4:
+<span class="th">9</span>   ... * 4
 </div></pre>
 </body>

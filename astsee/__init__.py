@@ -389,7 +389,7 @@ class DictDiffToHtml:
 
     def diff_to_string(self, diff):
         rows = [
-            f'<span class="th">{i}</span>{row}\n' for i, row in enumerate(
+            f'<span class="th">{i+1}</span>{row}\n' for i, row in enumerate(
                 self._diff_to_string(diff, "").splitlines())
         ]
         chunks = ''.join(f'<div class="chunk">{"".join(c)}</div>'
