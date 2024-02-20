@@ -118,7 +118,7 @@ class AstDiffToHtml:
                                                         val_handlers,
                                                         split_fields,
                                                         embeddable=True)
-        extern_css = DictDiffToHtml.CSS + self.make_highlighter().get_style_defs('.highlight')
+        extern_css = DictDiffToHtml.CSS + self.make_highlighter().get_style_defs('.code-block')
         globals = {'make_tab': self.make_tab, "extern_css": extern_css}
         self.template = self.diff_to_str_generic.make_html_tmpl("verilator.html.jinja", globals)
 
@@ -172,7 +172,7 @@ class AstDiffToHtml:
     def make_highlighter(self, lineanchor_id=None):
         # arbitrarily chosen style that does not override background (for consistency with non-pygments content)
         style=pygments.styles.get_style_by_name("xcode")
-        return pygments.formatters.HtmlFormatter(linenos="inline", lineanchors=lineanchor_id, style=style)
+        return pygments.formatters.HtmlFormatter(linenos="inline", lineanchors=lineanchor_id, style=style, cssclass="code-block")
 
     def make_tab(self, fname):
         """load file into linenumbered tab"""
@@ -181,7 +181,7 @@ class AstDiffToHtml:
             with open(fname, encoding='utf-8') as f:
                 verilog_lex = pygments.lexers.VerilogLexer()
                 rows = pygments.highlight(f.read(), verilog_lex, self.make_highlighter(fname))
-            return f'<div class="tab y-scrollable" id="{fname}"><pre class="code-block">{rows}</pre></div>'
+            return f'<div class="tab y-scrollable" id="{fname}">{rows}</div>'
         except FileNotFoundError:
             log.warning(f'file {fname} not found, skipping')
             return ""

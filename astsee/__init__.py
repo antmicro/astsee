@@ -315,7 +315,8 @@ class DictDiffToHtml:
     If `embeddable` flag set, then diff_to_string() returns only "code-block" without css and other boilerplate.
 
     Format of code-table:
-    <pre class="code-block">
+    <div class="code-block">
+    <pre>
     <div class="chunk> # lines are splited into smaller chunks for perf reasons
     <span class="th">1</span>first line
     <span class="th">2</span>second line
@@ -323,28 +324,25 @@ class DictDiffToHtml:
     </div>
     <div class="chunk">
     ...lines...
-    </div>
     </pre>
+    </div>
     """
 
     CSS = textwrap.dedent("""\
     .code-block {
-        margin: 0;
-        width: 100%;
-        overflow-wrap: break-word;
-        white-space: pre-wrap;
         box-sizing: border-box;
-        border-spacing: 0px;
         border: solid 1px black;
-        .th {
-            font-weight: normal; /* disable bold */
-            font-size: 12px;
+        .linenos {
             border-right: solid 1px silver;
             border-top: solid 1px silver;
-            padding: 2px;
         }
         .chunk {
           content-visibility: auto;
+        }
+        pre {
+            margin: 0 0;
+            white-space: pre-wrap;
+            overflow-wrap: break-word;
         }
     }
     """)
