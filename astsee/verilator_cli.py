@@ -7,8 +7,10 @@ import os
 import sys
 from functools import partial
 import html
+from tempfile import NamedTemporaryFile
 from textwrap import dedent
 import logging as log
+import webbrowser
 from astsee import make_diff, DictDiffToTerm, DictDiffToHtml, IntactNode, ReplaceDiffNode, stringify, load_jsons, is_children
 
 
@@ -84,17 +86,29 @@ parser.add_argument(
     '--html',
     help='output diff as html rather than plaintext colored with ansi escapes',
     action='store_true')
+parser.add_argument(
+    '--htmlb',
+    help='like --html, but the generated file is opened in a web browser',
+    action='store_true',
+    dest="html_browser")
 parser.add_argument('--loglevel',
                     default='warning',
                     choices=['critical', 'error', 'warning', 'info', 'debug'],
                     help='log level. default=warning')
 
 
+def read_file(path):
+    with open(path) as f: return f.read()
+
+
 class AstDiffToHtml:
     CSS = dedent("""
     a { color: inherit; }
-    :target { /* highlight matched element */
+    mark { /* highlight matched element */
         background-color: gold;
+        .th {
+            background-color: white;
+        }
     }
     body {
         display: flex;
@@ -140,11 +154,7 @@ class AstDiffToHtml:
     }
     """)
 
-    JS = dedent("""\
-    var top_idx = 1;
-    function showtab(tabname) {
-        document.getElementById(tabname).style.zIndex = ++top_idx;
-    }""")
+    JS = read_file(f'{os.path.dirname(__file__)}/verilator.js')
 
     HEAD = ('<head>\n'
             '<meta charset="UTF-8"/>\n'
@@ -201,8 +211,12 @@ class AstDiffToHtml:
 
     def loc_handler(self, loc):
         """print location field as link to relevant line and save filename in self.srcfiles for later processing"""
-        id, loc_begin, _ = loc.split(",")
-        linenum, _ = loc_begin.split(":")
+        id, begin, end = loc.split(",")
+        (begin_row, begin_col), (end_row, end_col) = begin.split(":"), end.split(":")
+
+        if id not in self.meta["files"]:
+            return f'{html.escape(id)}:{html.escape(begin_row)}'
+
         found, path = self.resolve_path(self.meta["files"][id])
         if not found:
             if path == "<built-in>" or path == "<command-line>":
@@ -211,7 +225,9 @@ class AstDiffToHtml:
                 return html.escape(loc)
         else:
             self.srcfiles.add(path)
-            return f'<a href="#{html.escape(path)}:{html.escape(linenum)}" onclick="showtab(\'{html.escape(path)}\')">{html.escape(loc)}</a>'
+            onclick=f"highlight_file('{html.escape(path)}',{int(begin_row)},{int(begin_col)},{int(end_row)},{int(end_col)})"
+            short_loc=f'{html.escape(path)}:{html.escape(begin_row)}'
+            return f'<a href="#{short_loc}" onclick="{onclick}">{short_loc}</a>'
 
     def diff_to_string(self, tree):
         self.srcfiles.clear()
@@ -248,14 +264,13 @@ class AstDiffToHtml:
 
     def make_tab(self, fname):
         """load file into linenumbered tab"""
-        fname = html.escape(fname)
         rows = ""
         try:
             with open(fname, encoding='utf-8') as f:
                 for i, line in enumerate(f):
                     line = html.escape(line.rstrip())
-                    rows += f'<span class="th" id="{fname}:{i+1}">{i+1}</span>{line}\n'
-            return f'<div class="tab y-scrollable" id="{fname}"><pre class="code-block">{rows}</pre></div>'
+                    rows += f'<span class="th" id="{html.escape(fname)}:{i+1}">{i+1}</span>{line}\n'
+            return f'<div class="tab y-scrollable" id="{html.escape(fname)}"><pre class="code-block">{rows}</pre></div>'
         except FileNotFoundError:
             log.warning(f'file {fname} not found, skipping')
             return ""
@@ -291,6 +306,13 @@ def guess_meta_path(args):
         log.info(f"'{args.meta}' guessed as meta file")
     else: args.meta = ""
 
+def plaintext_loc_handler(loc, meta):
+    id, begin, end = loc.split(",")
+    line = begin.split(":")[0]
+    if id in meta["files"]: return f'{meta["files"][id]["filename"]}:{line}'
+    else: return f'{id}:{line}'
+
+
 def main(args=None):
     if args is None: args = parser.parse_args()
     log.basicConfig(level=args.loglevel.upper())
@@ -317,12 +339,14 @@ def main(args=None):
     split_fields = partial(split_ast_fields, omit_false_flags=args.omit)
     omit_intact = args.omit and args.newfile  # ommiting unmodified chunks does not make sense without diff
 
-    if args.html:
+    if args.html or args.html_browser:
         diff_to_str = AstDiffToHtml(omit_intact, split_fields, meta)
     else:
+        loc_handler = partial(plaintext_loc_handler, meta=meta)
         val_handlers = {
             'editNum': (lambda v: f'<{stringify(v)}>'),
             'name': (lambda v: f'"{stringify(v, quote_empty=0)}"'),
+            'loc': loc_handler,
         }
         diff_to_str = DictDiffToTerm(omit_intact, val_handlers, split_fields)
 
@@ -337,7 +361,12 @@ def main(args=None):
     else:  # both files suplied, diff
         tree = make_diff(*load_jsons_([args.file, args.newfile]))
 
-    print(diff_to_str.diff_to_string(tree), end="")
+    if args.html_browser:
+        with NamedTemporaryFile('w', delete=False, suffix='.html') as out:
+            out.write(diff_to_str.diff_to_string(tree))
+            webbrowser.open(f'file://{out.name}')
+    else:
+        print(diff_to_str.diff_to_string(tree), end="")
 
 
 if __name__ == "__main__":
