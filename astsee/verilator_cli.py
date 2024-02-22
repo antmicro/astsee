@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # pylint: disable=line-too-long,invalid-name,multiple-statements,missing-function-docstring,missing-class-docstring,missing-module-docstring,no-else-return,too-few-public-methods
 import argparse
-from glob import glob
+import glob
 import json
 import os
 import sys
@@ -293,14 +293,14 @@ def guess_meta_path(args):
     def match(name):
         # Yeah, this is a bit overengineered scheme, but it should work
         # even if you have multiple meta files in same dir
-        common = os.path.commonprefix([name, os.path.basename(args.file)])
+        common = os.path.commonprefix([os.path.abspath(name), os.path.abspath(args.file)])
         if not common: return False
 
         return (name == common + ".tree.meta.json" # Vtest1_990_final.tree.json -> Vtest1.tree.meta.json
                or name == common + "meta.json") # test1.tree.json -> test1.tree.meta.json
 
-    matches = glob("*.tree.meta.json", root_dir=os.path.dirname(args.file))
-    matches = [x for x in matches if match(x)]
+    pattern = os.path.join(glob.escape(os.path.dirname(args.file)), "*.tree.meta.json")
+    matches = [x for x in glob.glob(pattern) if match(x)]
     if len(matches) == 1: # only unambiguous match
         args.meta = os.path.join(os.path.dirname(args.file), matches[0])
         log.info(f"'{args.meta}' guessed as meta file")

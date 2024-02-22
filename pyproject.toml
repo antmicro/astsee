@@ -10,7 +10,7 @@ license = { file = "Apache-2.0" }
 description = "Suite of tools for pretty printing, diffing, and exploring trees"
 readme = "README.md"
 dependencies = ["deepdiff >= 5.5.0"]
-requires-python = ">=3.9"
+requires-python = ">=3.8"
 
 
 [project.optional-dependencies]
