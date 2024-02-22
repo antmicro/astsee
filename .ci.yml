@@ -6,12 +6,15 @@ variables:
   GIT_DEPTH: 1
 
 test-readme:
-  image: "d2s://external/docker/debian:bookworm"
+  image: "d2s://external/docker/ubuntu:20.04"
   tags: ['ace-x86_64']
   variables:
     SCALENODE_CPU: 1
     SCALENODE_RAM: 2048
   script:
-    - apt-get -qqy update && apt-get -qqy --no-install-recommends install jq python3 python3-pip git
-    - pip install --break-system-packages -e '.[dev]'
+    - apt-get -qqy update && apt-get -qqy --no-install-recommends install jq python3 python3-pip python3-venv git
+    # Older pip has some problems with installing tuttest using git url so we have to update it.
+    # We have to do it in venv due to ubuntu `hands-off-system-packages.patch`
+    - python3 -m venv venv/ && source venv/bin/activate && pip install --upgrade pip
+    - pip install '.[dev]'
     - .ci-scripts/test.sh
