@@ -368,8 +368,8 @@ class DictDiffToHtml:
         self.val_handlers = {} if val_handlers is None else val_handlers
         self.split_fields = default_split_fields if split_fields is None else split_fields
         self.embeddable = embeddable
-        globals = {"embeddable": embeddable, "CSS": self.CSS, "CHUNK_SIZE": self.CHUNK_SIZE}
-        self.template = self.make_html_tmpl("generic.html.jinja", globals)
+        globals_ = {"embeddable": embeddable, "CSS": self.CSS, "CHUNK_SIZE": self.CHUNK_SIZE}
+        self.template = self.make_html_tmpl("generic.html.jinja", globals_)
 
     def _colorize(self, color, text):
         if color == COLOR_RESET:
@@ -424,11 +424,11 @@ class DictDiffToHtml:
             return f"{prefix}{self._output_explicit(key, val.old, True)}->{self._output_explicit(key, val.new, True)}"
         return self._colorize(val.color(), prefix + self._output_val(key, val))
 
-    def make_html_tmpl(self, name, globals=None):
-        """Load jinja template from astsee dir, enable autoescape and set globals"""
+    def make_html_tmpl(self, name, globals_=None):
+        """Load jinja template from astsee dir, enable autoescape and set globals_"""
         return jinja2.Environment(
             loader=jinja2.FileSystemLoader(os.path.dirname(__file__)), autoescape=True
-        ).get_template(name, globals=globals)
+        ).get_template(name, globals=globals_)
 
 
 def load_jsons(files, jq_query, jq_bin="jq", jq_funcs=""):

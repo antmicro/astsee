@@ -126,8 +126,8 @@ class AstDiffToHtml:
         extern_css = DictDiffToHtml.CSS + self.make_highlighter().get_style_defs(".code-block")
         with open(f"{os.path.dirname(__file__)}/verilator.js") as f:
             js = f.read()
-        globals = {"make_tab": self.make_tab, "extern_css": extern_css, "js": js}
-        self.template = self.diff_to_str_generic.make_html_tmpl("verilator.html.jinja", globals)
+        globals_ = {"make_tab": self.make_tab, "extern_css": extern_css, "js": js}
+        self.template = self.diff_to_str_generic.make_html_tmpl("verilator.html.jinja", globals_)
 
     def resolve_path(self, file):
         # Try to find symbolic/relative (prefered) or absolute path of file.
@@ -153,13 +153,13 @@ class AstDiffToHtml:
 
     def loc_handler(self, loc):
         """print location field as link to relevant line and save filename in self.srcfiles for later processing"""
-        id, begin, end = loc.split(",")
+        id_, begin, end = loc.split(",")
         (begin_row, begin_col), (end_row, end_col) = begin.split(":"), end.split(":")
 
-        if id not in self.meta["files"]:
-            return f"{html.escape(id)}:{html.escape(begin_row)}"
+        if id_ not in self.meta["files"]:
+            return f"{html.escape(id_)}:{html.escape(begin_row)}"
 
-        found, path = self.resolve_path(self.meta["files"][id])
+        found, path = self.resolve_path(self.meta["files"][id_])
         if not found:
             if path == "<built-in>" or path == "<command-line>":
                 return html.escape(path)  # not a file. row/col location is also irrevelant
@@ -233,12 +233,12 @@ def guess_meta_path(args):
 
 
 def plaintext_loc_handler(loc, meta):
-    id, begin, end = loc.split(",")
+    id_, begin, end = loc.split(",")
     line = begin.split(":")[0]
-    if id in meta["files"]:
-        return f'{meta["files"][id]["filename"]}:{line}'
+    if id_ in meta["files"]:
+        return f'{meta["files"][id_]["filename"]}:{line}'
     else:
-        return f"{id}:{line}"
+        return f"{id_}:{line}"
 
 
 def main(args=None):
