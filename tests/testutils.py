@@ -3,9 +3,9 @@ import sys
 
 
 def assert_golden2(out_path, golden_path):
-    with open(out_path, "r") as f:
+    with open(out_path, "r", encoding="utf-8") as f:
         out = list(f)
-    with open(golden_path, "r") as f:
+    with open(golden_path, "r", encoding="utf-8") as f:
         golden = list(f)
     assert out == golden, f"{out_path} != {golden_path}"
 

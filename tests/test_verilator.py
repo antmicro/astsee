@@ -16,7 +16,7 @@ os.chdir(IN_DIR)  # html tests rely on relative paths
 
 def run(request, args):
     test_name = request.node.name
-    with open(f"{OUT_DIR}/{test_name}", "w+") as out, redirect_stdout(out):
+    with open(f"{OUT_DIR}/{test_name}", "w+", encoding="utf-8") as out, redirect_stdout(out):
         vastsee.main(vastsee.parser.parse_args(shlex.split(args)))
     assert_golden(test_name, request.config.option.golden, OUT_DIR, GOLD_DIR)
 

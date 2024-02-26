@@ -124,7 +124,7 @@ class AstDiffToHtml:
         )
         self.diff_to_str_generic = DictDiffToHtml(omit_intact, val_handlers, split_fields, embeddable=True)
         extern_css = DictDiffToHtml.CSS + self.make_highlighter().get_style_defs(".code-block")
-        with open(f"{os.path.dirname(__file__)}/verilator.js") as f:
+        with open(f"{os.path.dirname(__file__)}/verilator.js", encoding="utf-8") as f:
             js = f.read()
         globals_ = {"make_tab": self.make_tab, "extern_css": extern_css, "js": js}
         self.template = self.diff_to_str_generic.make_html_tmpl("verilator.html.jinja", globals_)
@@ -198,7 +198,7 @@ class AstDiffToHtml:
 
 def load_meta(path):
     try:
-        return json.load(open(path))
+        return json.load(open(path, encoding="utf-8"))
     except FileNotFoundError:
         log.warning("meta file not found. Some features may not work")
         return {"files": {}, "pointers": {}, "ptrFieldNames": [

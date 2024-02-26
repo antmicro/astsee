@@ -437,7 +437,7 @@ def load_jsons(files, jq_query, jq_bin="jq", jq_funcs=""):
     For sake of performance, preprocessing is done in parallel"""
     # pylint: disable=consider-using-with
     if not jq_query:
-        return [json.load(open(f)) for f in files]
+        return [json.load(open(f, encoding="utf-8")) for f in files]
 
     procs = []
     for file in files:
