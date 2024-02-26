@@ -137,7 +137,7 @@ class AstDiffToHtml:
         sym_path = file["filename"]
         abs_path = file["realpath"]
 
-        if sym_path == "<built-in>" or sym_path == "<command-line>":  # not a file
+        if sym_path in ("<built-in>", "<command-line>"):  # not a file
             return False, sym_path
         if os.path.exists(sym_path):
             return True, sym_path
@@ -161,7 +161,7 @@ class AstDiffToHtml:
 
         found, path = self.resolve_path(self.meta["files"][id_])
         if not found:
-            if path == "<built-in>" or path == "<command-line>":
+            if path in ("<built-in>", "<command-line>"):
                 return html.escape(path)  # not a file. row/col location is also irrevelant
             else:
                 return html.escape(loc)
