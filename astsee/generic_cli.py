@@ -1,9 +1,10 @@
 import argparse
 from functools import partial
-from astsee import make_diff, DictDiffToTerm, DictDiffToHtml, BasicDiffToTerm, IntactNode, load_jsons
+
+from astsee import BasicDiffToTerm, DictDiffToHtml, DictDiffToTerm, IntactNode, load_jsons, make_diff
 
 parser = argparse.ArgumentParser(
-    description='pretty print json and do optional filtering/diff',
+    description="pretty print json and do optional filtering/diff",
     epilog="""By default (i.e. unless --jq is used), ast_walk(del(empty_ops, <stuff passed to -d>)) is called
 
 examples:
@@ -12,37 +13,35 @@ examples:
  $ %(prog)s old.json new.json --html # diff to html rather than plaintext
  $ %(prog)s old.json new.json --jsonlike # diff in format visually resembling json
 """,
-    formatter_class=argparse.RawDescriptionHelpFormatter)
+    formatter_class=argparse.RawDescriptionHelpFormatter,
+)
 
 parser.add_argument(
-    '-v',
-    '--verbose',
-    help='print everything (i.e don\'t omit "uninteresting" data)',
-    action='store_false',
-    dest="omit")
-parser.add_argument('--jq',
-                          help='preprocess file(s) with given jq query',
-                          default="",
-                          dest="jq_query")
-parser.add_argument('file', help='file to pretty print (or diff)')
-parser.add_argument('newfile',
-                    nargs="?",
-                    help='optional new version of file (enables diff)',
-                    default=None)
+    "-v", "--verbose", help='print everything (i.e don\'t omit "uninteresting" data)', action="store_false", dest="omit"
+)
+parser.add_argument("--jq", help="preprocess file(s) with given jq query", default="", dest="jq_query")
+parser.add_argument("file", help="file to pretty print (or diff)")
+parser.add_argument("newfile", nargs="?", help="optional new version of file (enables diff)", default=None)
 parser_group = parser.add_mutually_exclusive_group()
 parser_group.add_argument(
-    '--html',
-    help='output diff as html rather than plaintext colored with ansi escapes',
-    action='store_true')
-parser_group.add_argument('--basic', help='output diff in basic, JSON-like format rather than default terse one', action='store_true')
+    "--html", help="output diff as html rather than plaintext colored with ansi escapes", action="store_true"
+)
+parser_group.add_argument(
+    "--basic", help="output diff in basic, JSON-like format rather than default terse one", action="store_true"
+)
+
 
 def main(args=None):
-    if(args is None): args = parser.parse_args()
+    if args is None:
+        args = parser.parse_args()
     omit_intact = args.omit and args.newfile  # ommiting unmodified chunks does not make sense without diff
 
-    if args.html: diff_to_str = DictDiffToHtml(omit_intact)
-    elif args.basic: diff_to_str = BasicDiffToTerm(omit_intact)
-    else: diff_to_str = DictDiffToTerm(omit_intact)
+    if args.html:
+        diff_to_str = DictDiffToHtml(omit_intact)
+    elif args.basic:
+        diff_to_str = BasicDiffToTerm(omit_intact)
+    else:
+        diff_to_str = DictDiffToTerm(omit_intact)
 
     load_jsons_ = partial(load_jsons, jq_query=args.jq_query)
 
@@ -57,4 +56,3 @@ def main(args=None):
 
 if __name__ == "__main__":
     main()
-

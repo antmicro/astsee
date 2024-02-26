@@ -6,8 +6,9 @@ import subprocess
 import sys
 import textwrap
 from itertools import chain
-from deepdiff import DeepDiff
+
 import jinja2
+from deepdiff import DeepDiff
 
 COLOR_RESET = "\u001b[39m"
 COLOR_RED = "\u001b[31m"
@@ -22,12 +23,13 @@ def is_scalar(obj):
 def stringify(x, quote_empty=True):
     """Return x as string with "special chars" escaped. For sake of readilibity we return empty strings as '""' rather than '' (unless quote_empty==False)"""
     x = str(x).encode("unicode_escape").decode("utf-8")
-    if x or not quote_empty: return x
-    else: return '""'
+    if x or not quote_empty:
+        return x
+    else:
+        return '""'
 
 
 class DiffNode:
-
     def __init__(self, content):
         self.content = content
 
@@ -53,13 +55,15 @@ class DiffNode:
     def list_omit_it(self):
         omit_count = 0
         for elem in self.list_it():
-            if elem.shouldOmit(): omit_count += 1
+            if elem.shouldOmit():
+                omit_count += 1
             else:
                 if omit_count:
                     yield OmittedNode(omit_count)
                     omit_count = 0
                 yield elem
-        if omit_count: yield OmittedNode(omit_count)
+        if omit_count:
+            yield OmittedNode(omit_count)
 
     def shouldOmit(self):
         return False
@@ -67,15 +71,17 @@ class DiffNode:
     def propagate(self, child):
         if isinstance(child, DiffNode):
             return child  # already tagged, no need to propagate
-        if isinstance(self, DelDiffNode): return DelDiffNode(child)
-        if isinstance(self, AddDiffNode): return AddDiffNode(child)
+        if isinstance(self, DelDiffNode):
+            return DelDiffNode(child)
+        if isinstance(self, AddDiffNode):
+            return AddDiffNode(child)
         return IntactNode(child)
 
     def color(self):
         return COLOR_RESET
 
     def symbol(self):
-        return ' '
+        return " "
 
     def colsym(self):
         return self.color() + self.symbol()
@@ -98,25 +104,22 @@ class OmittedNode(IntactNode):
 
 
 class DelDiffNode(DiffNode):
-
     def color(self):
         return COLOR_RED
 
     def symbol(self):
-        return '-'
+        return "-"
 
 
 class AddDiffNode(DiffNode):
-
     def color(self):
         return COLOR_GREEN
 
     def symbol(self):
-        return '+'
+        return "+"
 
 
 class ReplaceDiffNode(DiffNode):
-
     def __init__(self, old, new):
         # pylint: disable=super-init-not-called
         self.old = DelDiffNode(old)
@@ -126,7 +129,7 @@ class ReplaceDiffNode(DiffNode):
         return COLOR_YELLOW
 
     def symbol(self):
-        return '~'
+        return "~"
 
 
 def make_diff(old, new):
@@ -143,23 +146,20 @@ def make_diff(old, new):
             node = node.content[p]
         return node.content, path[-1]
 
-    ddiff = DeepDiff(old, new, view='tree')
+    ddiff = DeepDiff(old, new, view="tree")
     root = ParentOfModified(old)
-    for item in chain(ddiff.get('dictionary_item_removed', ()),
-                      ddiff.get('iterable_item_removed', ())):
-        parent, key = get_node(root, item.path(output_format='list'))
+    for item in chain(ddiff.get("dictionary_item_removed", ()), ddiff.get("iterable_item_removed", ())):
+        parent, key = get_node(root, item.path(output_format="list"))
         parent[key] = DelDiffNode(item.t1)
-    for item in ddiff.get('dictionary_item_added', ()):
-        parent, key = get_node(root, item.path(output_format='list'))
+    for item in ddiff.get("dictionary_item_added", ()):
+        parent, key = get_node(root, item.path(output_format="list"))
         parent[key] = AddDiffNode(item.t2)
-    for item in ddiff.get('iterable_item_added', ()):
-        parent, idx = get_node(root, item.path(output_format='list'))
+    for item in ddiff.get("iterable_item_added", ()):
+        parent, idx = get_node(root, item.path(output_format="list"))
         parent.insert(idx, AddDiffNode(item.t2))
-    for item in chain(ddiff.get('values_changed', ()),
-                      ddiff.get('type_changes', ())):
-        assert item.path(output_format='list'
-                         ), "direct replacement of root node is unimplemented"
-        parent, key = get_node(root, item.path(output_format='list'))
+    for item in chain(ddiff.get("values_changed", ()), ddiff.get("type_changes", ())):
+        assert item.path(output_format="list"), "direct replacement of root node is unimplemented"
+        parent, key = get_node(root, item.path(output_format="list"))
         parent[key] = ReplaceDiffNode(item.t1, item.t2)
 
     return root
@@ -172,7 +172,9 @@ class BasicDiffToTerm:
     """
 
     def __init__(self, omit_intact):
-        self.omit_intact = omit_intact  # represent chunks of unchanged non-scalars (dicts/arrays) as "... * <count of omissions>"
+        self.omit_intact = (
+            omit_intact  # represent chunks of unchanged non-scalars (dicts/arrays) as "... * <count of omissions>"
+        )
 
     def diff_to_string(self, diff):
         if isinstance(diff, IntactNode):
@@ -187,22 +189,32 @@ class BasicDiffToTerm:
             if is_scalar(diff.old.content) and is_scalar(diff.new.content):
                 return f"{diff.colsym()}{COLOR_RESET}{indent}{key_prefix}{diff.old.color()}{stringify(diff.old.content)}{COLOR_RESET} -> {diff.new.color()}{stringify(diff.new.content)}\n"
             else:
-                return self._diff_to_string(diff.old, indent,
-                                            key_prefix) + self._diff_to_string(
-                                                diff.new, indent, key_prefix)
+                return self._diff_to_string(diff.old, indent, key_prefix) + self._diff_to_string(
+                    diff.new, indent, key_prefix
+                )
         subindent = indent + "  "
 
         if isinstance(diff, OmittedNode):
             s = "... * " + str(diff.content)
         elif isinstance(diff.content, list):
-            s = "[\n" + "".join(
-                self._diff_to_string(subnode, subindent, "") for subnode in
-                diff.list_it(self.omit_intact)) + diff.colsym() + indent + "]"
+            s = (
+                "[\n"
+                + "".join(self._diff_to_string(subnode, subindent, "") for subnode in diff.list_it(self.omit_intact))
+                + diff.colsym()
+                + indent
+                + "]"
+            )
         elif isinstance(diff.content, dict):
-            s = "{\n" + "".join(
-                self._diff_to_string(subnode, subindent, subkey + ": ")
-                for subkey, subnode in diff.dict_it(
-                    self.omit_intact)) + diff.colsym() + indent + "}"
+            s = (
+                "{\n"
+                + "".join(
+                    self._diff_to_string(subnode, subindent, subkey + ": ")
+                    for subkey, subnode in diff.dict_it(self.omit_intact)
+                )
+                + diff.colsym()
+                + indent
+                + "}"
+            )
         else:
             s = stringify(diff.content)
         return f"{diff.colsym()}{indent}{key_prefix}{s}\n"
@@ -215,6 +227,7 @@ def is_children(x):
     if isinstance(x, ReplaceDiffNode):
         x = x.old  # we assume that if old is container then new also is
     return isinstance(x.content, (list, dict))
+
 
 def default_split_fields(diff):
     implicit = []
@@ -251,7 +264,9 @@ class DictDiffToTerm:
         - split_fields(), if specified, should be func that turns dict into tuple: (implicit, explicit, children) where
           each group is list of (key,value) pairs. See default_split_fields for example.
         """
-        self.omit_intact = omit_intact  # represent chunks of unchanged non-scalars (dicts/arrays) as "... * <count of omissions>"
+        self.omit_intact = (
+            omit_intact  # represent chunks of unchanged non-scalars (dicts/arrays) as "... * <count of omissions>"
+        )
         self.val_handlers = {} if val_handlers is None else val_handlers
         self.split_fields = default_split_fields if split_fields is None else split_fields
 
@@ -266,39 +281,34 @@ class DictDiffToTerm:
         if isinstance(diff, OmittedNode):
             return f"{indent}{diff.color()}... * {diff.content}\n"
         if isinstance(diff, ReplaceDiffNode):
-            return self._diff_to_string(
-                diff.old, indent) + self._diff_to_string(diff.new, indent)
+            return self._diff_to_string(diff.old, indent) + self._diff_to_string(diff.new, indent)
 
         diff = dict(diff.dict_it(self.omit_intact))
         implicit, explicit, children = self.split_fields(diff)
         implicit = " ".join((self._output_implicit(k, v) for k, v in implicit))
-        explicit = (COLOR_RESET + ", ").join(
-            self._output_explicit(k, v) for k, v in explicit)
-        children = "".join(
-            (self._output_children(k, v, indent) for k, v in children))
+        explicit = (COLOR_RESET + ", ").join(self._output_explicit(k, v) for k, v in explicit)
+        children = "".join((self._output_children(k, v, indent) for k, v in children))
         sep = " " if explicit and implicit else ""
-        return f'{indent}{implicit}{sep}{explicit}\n{children}'
+        return f"{indent}{implicit}{sep}{explicit}\n{children}"
 
     def _output_val(self, key, val, default_handler=stringify):
         return self.val_handlers.get(key, default_handler)(val.content)
 
     def _output_implicit(self, key, val):
         if isinstance(val, ReplaceDiffNode):
-            return f'{self._output_implicit(key, val.old)}{COLOR_RESET}->{self._output_implicit(key, val.new)}'
-        return f'{val.color()}{self._output_val(key, val)}'
+            return f"{self._output_implicit(key, val.old)}{COLOR_RESET}->{self._output_implicit(key, val.new)}"
+        return f"{val.color()}{self._output_val(key, val)}"
 
     def _output_explicit(self, key, val, replacement=False):
         # don't output key twice
         prefix = "" if replacement else stringify(key) + ":"
         if isinstance(val, ReplaceDiffNode):
-            return f'{COLOR_RESET}{prefix}{self._output_explicit(key, val.old, True)}{COLOR_RESET}->{self._output_explicit(key, val.new, True)}'
-        return f'{val.color()}{prefix}{self._output_val(key, val)}'
+            return f"{COLOR_RESET}{prefix}{self._output_explicit(key, val.old, True)}{COLOR_RESET}->{self._output_explicit(key, val.new, True)}"
+        return f"{val.color()}{prefix}{self._output_val(key, val)}"
 
     def _output_children(self, key, children, indent):
         if isinstance(children, ReplaceDiffNode):
-            return self._diff_to_string(children.old,
-                                        indent) + self._diff_to_string(
-                                            children.new, indent)
+            return self._diff_to_string(children.old, indent) + self._diff_to_string(children.new, indent)
 
         s = indent + " " + children.color() + key + ":\n"
         if isinstance(children.content, list):
@@ -328,7 +338,8 @@ class DictDiffToHtml:
     </div>
     """
 
-    CSS = textwrap.dedent("""\
+    CSS = textwrap.dedent(
+        """\
     .code-block {
         box-sizing: border-box;
         border: solid 1px black;
@@ -345,24 +356,24 @@ class DictDiffToHtml:
             overflow-wrap: break-word;
         }
     }
-    """)
+    """
+    )
 
     CHUNK_SIZE = 1000
 
-    def __init__(self,
-                 omit_intact,
-                 val_handlers=None,
-                 split_fields=None,
-                 embeddable=False):
-        self.omit_intact = omit_intact  # represent chunks of unchanged non-scalars (dicts/arrays) as "... * <count of omissions>"
+    def __init__(self, omit_intact, val_handlers=None, split_fields=None, embeddable=False):
+        self.omit_intact = (
+            omit_intact  # represent chunks of unchanged non-scalars (dicts/arrays) as "... * <count of omissions>"
+        )
         self.val_handlers = {} if val_handlers is None else val_handlers
         self.split_fields = default_split_fields if split_fields is None else split_fields
         self.embeddable = embeddable
-        globals={'embeddable': embeddable, 'CSS': self.CSS, 'CHUNK_SIZE': self.CHUNK_SIZE}
+        globals = {"embeddable": embeddable, "CSS": self.CSS, "CHUNK_SIZE": self.CHUNK_SIZE}
         self.template = self.make_html_tmpl("generic.html.jinja", globals)
 
     def _colorize(self, color, text):
-        if color == COLOR_RESET: return text
+        if color == COLOR_RESET:
+            return text
         LUT = {COLOR_RED: "red", COLOR_GREEN: "green", COLOR_YELLOW: "yellow"}
         return f'<span style="color:{LUT[color]};">{text}</span>'
 
@@ -370,7 +381,8 @@ class DictDiffToHtml:
         return html.escape(stringify(x))
 
     def _output_val(self, key, val, default_handler=None):
-        if default_handler is None: default_handler = self.escape
+        if default_handler is None:
+            default_handler = self.escape
         return self.val_handlers.get(key, default_handler)(val.content)
 
     def diff_to_string(self, diff):
@@ -380,21 +392,17 @@ class DictDiffToHtml:
         if isinstance(diff, OmittedNode):
             return f'{indent}{self._colorize(diff.color(), "... * "+str(diff.content))}\n'
         if isinstance(diff, ReplaceDiffNode):
-            return self._diff_to_string(
-                diff.old, indent) + self._diff_to_string(diff.new, indent)
+            return self._diff_to_string(diff.old, indent) + self._diff_to_string(diff.new, indent)
         diff = dict(diff.dict_it(self.omit_intact))
         implicit, explicit, children = self.split_fields(diff)
         implicit = " ".join(self._output_implicit(k, v) for k, v in implicit)
         explicit = ", ".join(self._output_explicit(k, v) for k, v in explicit)
-        children = "".join(
-            (self._output_children(k, v, indent) for k, v in children))
+        children = "".join((self._output_children(k, v, indent) for k, v in children))
         return f'{indent}{implicit}{" " + explicit if explicit else ""}\n{children}'
 
     def _output_children(self, key, children, indent):
         if isinstance(children, ReplaceDiffNode):
-            return self._output_children(key, children.old,
-                                         indent) + self._output_children(
-                                             key, children.new, indent)
+            return self._output_children(key, children.old, indent) + self._output_children(key, children.new, indent)
 
         s = f'{indent} {self._colorize(children.color(), key + ":")}\n'
         if isinstance(children.content, list):
@@ -406,21 +414,21 @@ class DictDiffToHtml:
 
     def _output_implicit(self, key, val):
         if isinstance(val, ReplaceDiffNode):
-            return f'{self._output_implicit(key, val.old)}->{self._output_implicit(key, val.new)}'
+            return f"{self._output_implicit(key, val.old)}->{self._output_implicit(key, val.new)}"
         return self._colorize(val.color(), self._output_val(key, val))
 
     def _output_explicit(self, key, val, replacement=False):
         # don't output key twice
         prefix = "" if replacement else stringify(key) + ":"
         if isinstance(val, ReplaceDiffNode):
-            return f'{prefix}{self._output_explicit(key, val.old, True)}->{self._output_explicit(key, val.new, True)}'
+            return f"{prefix}{self._output_explicit(key, val.old, True)}->{self._output_explicit(key, val.new, True)}"
         return self._colorize(val.color(), prefix + self._output_val(key, val))
 
     def make_html_tmpl(self, name, globals=None):
         """Load jinja template from astsee dir, enable autoescape and set globals"""
         return jinja2.Environment(
-                loader = jinja2.FileSystemLoader(os.path.dirname(__file__)), autoescape = True
-                ).get_template(name, globals=globals)
+            loader=jinja2.FileSystemLoader(os.path.dirname(__file__)), autoescape=True
+        ).get_template(name, globals=globals)
 
 
 def load_jsons(files, jq_query, jq_bin="jq", jq_funcs=""):
