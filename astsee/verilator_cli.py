@@ -119,7 +119,9 @@ class AstDiffToHtml:
                                                         split_fields,
                                                         embeddable=True)
         extern_css = DictDiffToHtml.CSS + self.make_highlighter().get_style_defs('.code-block')
-        globals = {'make_tab': self.make_tab, "extern_css": extern_css}
+        with open(f"{os.path.dirname(__file__)}/verilator.js") as f:
+            js = f.read()
+        globals = {'make_tab': self.make_tab, "extern_css": extern_css, "js": js}
         self.template = self.diff_to_str_generic.make_html_tmpl("verilator.html.jinja", globals)
 
     def resolve_path(self, file):
