@@ -1,4 +1,4 @@
-var topIdx = 1;
+let topIdx = 1;
 
 function showtab(tabname) {
   document.getElementById(tabname).style.zIndex = ++topIdx;
@@ -23,6 +23,7 @@ function skipToChar(node, i) {
     }
   }
 }
+/* exported selectFileFragment */
 function selectFileFragment(name, firstRow, firstCol, lastRow, endCol) {
   showtab(name);
   const range = document.createRange();

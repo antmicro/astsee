@@ -39,3 +39,4 @@ COLUMN_LIMIT = 120
 [tool.pylint.'MESSAGES CONTROL']
 max-line-length = 120
 disable = ["multiple-statements", "missing-function-docstring", "missing-module-docstring"]
+good-names = ["f"]

@@ -179,7 +179,7 @@ class AstDiffToHtml:
     def make_highlighter(self, lineanchor_id=None):
         # arbitrarily chosen style that does not override background (for consistency with non-pygments content)
         style = pygments.styles.get_style_by_name("xcode")
-        return pygments.formatters.HtmlFormatter(
+        return pygments.formatters.HtmlFormatter(  # pylint: disable=maybe-no-member
             linenos="inline", lineanchors=lineanchor_id, style=style, cssclass="code-block"
         )
 
@@ -188,7 +188,7 @@ class AstDiffToHtml:
         rows = ""
         try:
             with open(fname, encoding="utf-8") as f:
-                verilog_lex = pygments.lexers.VerilogLexer()
+                verilog_lex = pygments.lexers.VerilogLexer()  # pylint: disable=maybe-no-member
                 rows = pygments.highlight(f.read(), verilog_lex, self.make_highlighter(fname))
             return f'<div class="tab y-scrollable" id="{fname}">{rows}</div>'
         except FileNotFoundError:
@@ -233,7 +233,7 @@ def guess_meta_path(args):
 
 
 def plaintext_loc_handler(loc, meta):
-    id_, begin, end = loc.split(",")
+    id_, begin, _ = loc.split(",")
     line = begin.split(":")[0]
     if id_ in meta["files"]:
         return f'{meta["files"][id_]["filename"]}:{line}'
@@ -242,6 +242,7 @@ def plaintext_loc_handler(loc, meta):
 
 
 def main(args=None):
+    # pylint: disable=too-many-branches
     if args is None:
         args = parser.parse_args()
     log.basicConfig(level=args.loglevel.upper())
