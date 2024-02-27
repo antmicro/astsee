@@ -170,9 +170,11 @@ function skipToChar(node, i) {
 function selectFileFragment(name, firstRow, firstCol, lastRow, endCol) {
   showtab(name);
   const range = document.createRange();
-  const [startNode, startOffset] = skipToChar(document.getElementById(name + '-' + firstRow).nextSibling.nextSibling, firstCol-1);
+  const [startNode, startOffset] =
+     skipToChar(document.getElementById(name + '-' + firstRow).nextSibling.nextSibling, firstCol-1);
   range.setStart(startNode, startOffset);
-  const [endNode, endOffset] = skipToChar(document.getElementById(name + '-' + lastRow).nextSibling.nextSibling, endCol-1);
+  const [endNode, endOffset] =
+     skipToChar(document.getElementById(name + '-' + lastRow).nextSibling.nextSibling, endCol-1);
   range.setEnd(endNode, endOffset);
 
   // going to href would clear selection in firefox, so it should be done first
