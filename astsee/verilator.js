@@ -1,7 +1,7 @@
-var top_idx = 1;
+var topIdx = 1;
 
 function showtab(tabname) {
-  document.getElementById(tabname).style.zIndex = ++top_idx;
+  document.getElementById(tabname).style.zIndex = ++topIdx;
 }
 function skipToChar(node, i) {
   // Skip to node that contains ith character.
@@ -23,16 +23,16 @@ function skipToChar(node, i) {
     }
   }
 }
-function selectFileFragment(name, first_row, first_col, last_row, end_col) {
+function selectFileFragment(name, firstRow, firstCol, lastRow, endCol) {
   showtab(name);
   const range = document.createRange();
-  const [startNode, startOffset] = skipToChar(document.getElementById(name + '-' + first_row).nextSibling.nextSibling, first_col-1);
+  const [startNode, startOffset] = skipToChar(document.getElementById(name + '-' + firstRow).nextSibling.nextSibling, firstCol-1);
   range.setStart(startNode, startOffset);
-  const [endNode, endOffset] = skipToChar(document.getElementById(name + '-' + last_row).nextSibling.nextSibling, end_col-1);
+  const [endNode, endOffset] = skipToChar(document.getElementById(name + '-' + lastRow).nextSibling.nextSibling, endCol-1);
   range.setEnd(endNode, endOffset);
 
   // going to href would clear selection in firefox, so it should be done first
-  window.location.href = '#' + name + '-' + first_row;
+  window.location.href = '#' + name + '-' + firstRow;
   const sel = window.getSelection();
   sel.removeAllRanges();
   sel.addRange(range);
