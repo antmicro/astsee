@@ -145,10 +145,10 @@ class AstDiffToHtml:
             return True, abs_path
 
         if sym_path == "<verilated_std>" and "VERILATOR_ROOT" in os.environ:
-            log.warning(f"{abs_path} not found, falling back to $VERILATOR_ROOT/include/verilated_std.sv")
+            log.warning("'%s' not found, falling back to $VERILATOR_ROOT/include/verilated_std.sv", abs_path)
             abs_path = os.path.join(os.environ["VERILATOR_ROOT"], "include", "verilated_std.sv")
 
-        log.warning(f"{sym_path} nor {abs_path} not found, skipping. cwd: {os.getcwd()}")
+        log.warning("'%s' nor '%s' not found, skipping. cwd: {os.getcwd()}", sym_path, abs_path)
         return False, sym_path
 
     def loc_handler(self, loc):
@@ -192,7 +192,7 @@ class AstDiffToHtml:
                 rows = pygments.highlight(f.read(), verilog_lex, self.make_highlighter(fname))
             return f'<div class="tab y-scrollable" id="{fname}">{rows}</div>'
         except FileNotFoundError:
-            log.warning(f"file {fname} not found, skipping")
+            log.warning("file '%s' not found, skipping", fname)
             return ""
 
 
@@ -227,7 +227,7 @@ def guess_meta_path(args):
     matches = [x for x in glob.glob(pattern) if match(x)]
     if len(matches) == 1:  # only unambiguous match
         args.meta = matches[0]
-        log.info(f"'{args.meta}' guessed as meta file")
+        log.info("'%s' guessed as meta file", args.meta)
     else:
         args.meta = ""
 
