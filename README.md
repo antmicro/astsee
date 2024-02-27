@@ -116,9 +116,11 @@ clone repo, `cd` to it, and run:
 pip install -e '.[dev]'
 ```
 
+You may also want to do `npm install .` to get `node_modules/.bin/eslint`
+
 ## Tests
 
-To run tests, invoke:
+To run main tests, invoke:
 
 <!-- name="test" -->
 ```sh
@@ -129,6 +131,20 @@ in project root. To update tests:
 
 ```sh
 pytest --golden
+```
+
+## Make
+
+To run all tests, linters and format-checkers, invoke:
+
+```sh
+make
+```
+
+in project root. To auto-apply linter/formatter fixes, run:
+
+```sh
+make autofix
 ```
 
 ## Known limitations/bugs

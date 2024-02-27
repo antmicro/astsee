@@ -14,7 +14,7 @@ requires-python = ">=3.8"
 
 
 [project.optional-dependencies]
-dev = ["pytest", "tuttest @ git+https://github.com/antmicro/tuttest#egg=tuttest"]
+dev = ["pytest", "tuttest @ git+https://github.com/antmicro/tuttest#egg=tuttest", "ruff>=0.2.2", "isort>=5.13.2", "pylint>=3.1.0"]
 
 [project.scripts]
 astsee = "astsee.generic_cli:main"
@@ -27,8 +27,15 @@ packages = ["astsee"]
 pythonpath = ["."]
 testpaths = ["tests/"]
 
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+ignore = ["E701"]
+
 [tool.yapf]
-COLUMN_LIMIT=120
+COLUMN_LIMIT = 120
 
 [tool.pylint.'MESSAGES CONTROL']
 max-line-length = 120
+disable = ["multiple-statements", "missing-function-docstring", "missing-module-docstring"]

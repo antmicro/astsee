@@ -9,11 +9,18 @@ on:
 jobs:
   test:
     runs-on: ubuntu-20.04
+    env:
+      # CI makes some programs think that they are writing to pipe, so they switch ansi escapes off
+      # Some of them respect one of these vars for disabling this behaviour
+      FORCE_COLOR: 1
+      CLICOLOR_FORCE: 1
     steps:
       - uses: actions/checkout@v3
       - name: Install depedencies
-        # Older pip has some problems with installing tuttest using git url so we have to update it.
-        # We have to use venv due to ubuntu `hands-off-system-packages.patch`
-        run: python3 -m venv venv/ && source venv/bin/activate && pip install --upgrade pip && pip install '.[dev]'
+        run: |
+          npm install .
+          # Older pip has some problems with installing tuttest using git url so we have to update it.
+          # We have to use venv due to ubuntu `hands-off-system-packages.patch`
+          python3 -m venv venv/ && source venv/bin/activate && pip install --upgrade pip && pip install '.[dev]'
       - name: Run tests
-        run: source venv/bin/activate && .ci-scripts/test.sh
+        run: source venv/bin/activate && make
