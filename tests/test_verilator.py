@@ -18,7 +18,8 @@ def run(request, args):
     test_name = request.node.name
     with open(f"{OUT_DIR}/{test_name}", "w+", encoding="utf-8") as out, redirect_stdout(out):
         vastsee.main(vastsee.parser.parse_args(shlex.split(args)))
-    assert_golden(test_name, request.config.option.golden, OUT_DIR, GOLD_DIR)
+    update_golden = request.config.option.golden or "ASTSEE_UPDATE_GOLDEN" in os.environ
+    assert_golden(test_name, update_golden, OUT_DIR, GOLD_DIR)
 
 
 def test_tree_pprint(request):

@@ -131,6 +131,8 @@ in project root. To update tests:
 
 ```sh
 pytest --golden
+# or
+ASTSEE_UPDATE_GOLDEN=1 pytest
 ```
 
 ## Make
