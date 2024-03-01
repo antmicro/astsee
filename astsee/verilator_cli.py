@@ -6,7 +6,6 @@ import html
 import json
 import logging as log
 import os
-import re
 import webbrowser
 from functools import partial
 from tempfile import NamedTemporaryFile
@@ -106,11 +105,13 @@ parser.add_argument(
 )
 
 
-class BackrefHtmlFormatter(pygments.formatters.HtmlFormatter):  # pylint: disable=maybe-no-member
-    def __init__(self, referenced_lines, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.referenced_lines = referenced_lines
-        self.fname = kwargs["lineanchors"]
+class HtmlHighlighter(pygments.formatters.HtmlFormatter):  # pylint: disable=maybe-no-member
+    def __init__(self, backref_lines=None, fname=None):
+        # arbitrarily chosen style that does not override background (for consistency with non-pygments content)
+        style = pygments.styles.get_style_by_name("xcode")
+        super().__init__(style=style, cssclass="code-block")
+        self.backref_lines = backref_lines
+        self.fname = fname
 
     def wrap(self, source):
         i = 0
@@ -118,12 +119,13 @@ class BackrefHtmlFormatter(pygments.formatters.HtmlFormatter):  # pylint: disabl
         for is_source_line, line in source:
             if is_source_line:
                 i += 1
-                if i in self.referenced_lines:
-                    line = re.sub(
-                        r'(<span class="linenos">[ 0-9]+</span>)',
-                        f'<a class="backref" href="#back-{self.fname}-{i}">\\1</a>',
-                        line,
-                    )
+                line_id = f"{html.escape(self.fname)}-{i}"
+                span = f'<span class="linenos">{i}</span>'
+                if i in self.backref_lines:
+                    line_prefix = f'<a id="{line_id}" class="backref" href="#back-{line_id}">{span}</a>'
+                else:
+                    line_prefix = f'<a id="{line_id}">{span}</a>'
+                line = f"{line_prefix}{line}"
             yield is_source_line, line
         yield 0, "</pre></div>"
 
@@ -146,7 +148,7 @@ class AstDiffToHtml:
             }
         )
         self.diff_to_str_generic = DictDiffToHtml(omit_intact, val_handlers, split_fields, embeddable=True)
-        extern_css = DictDiffToHtml.CSS + self.make_highlighter().get_style_defs(".code-block")
+        extern_css = DictDiffToHtml.CSS + HtmlHighlighter().get_style_defs(".code-block")
         with open(f"{os.path.dirname(__file__)}/rich_view.js", encoding="utf-8") as f:
             js = f.read()
         globals_ = {"make_tab": self.make_tab, "extern_css": extern_css, "js": js}
@@ -202,21 +204,13 @@ class AstDiffToHtml:
         diff = self.diff_to_str_generic.diff_to_string(tree)
         return self.template.render({"diff": diff, "srcfiles": sorted(self.srcfiles)})
 
-    def make_highlighter(self, fname=None):
-        # arbitrarily chosen style that does not override background (for consistency with non-pygments content)
-        style = pygments.styles.get_style_by_name("xcode")
-        referenced_lines = self.srcfiles[fname] if fname is not None else set()
-        return BackrefHtmlFormatter(
-            referenced_lines, linenos="inline", lineanchors=fname, style=style, cssclass="code-block"
-        )
-
     def make_tab(self, fname):
         """load file into linenumbered tab"""
         rows = ""
         try:
             with open(fname, encoding="utf-8") as f:
                 verilog_lex = pygments.lexers.VerilogLexer()  # pylint: disable=maybe-no-member
-                rows = pygments.highlight(f.read(), verilog_lex, self.make_highlighter(fname))
+                rows = pygments.highlight(f.read(), verilog_lex, HtmlHighlighter(self.srcfiles[fname], fname))
             return f'<div class="tab y-scrollable" id="{fname}">{rows}</div>'
         except FileNotFoundError:
             log.warning("file '%s' not found, skipping", fname)
