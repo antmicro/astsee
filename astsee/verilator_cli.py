@@ -207,13 +207,15 @@ def guess_meta_path(args):
         common = os.path.commonprefix([os.path.abspath(name), os.path.abspath(args.file)])
         if not common: return False
 
-        return (name == common + ".tree.meta.json" # Vtest1_990_final.tree.json -> Vtest1.tree.meta.json
-               or name == common + "meta.json") # test1.tree.json -> test1.tree.meta.json
+        return os.path.abspath(name) in (
+            common + ".tree.meta.json", # Vtest1_990_final.tree.json -> Vtest1.tree.meta.json
+            common + "meta.json" # test1.tree.json -> test1.tree.meta.json
+        )
 
     pattern = os.path.join(glob.escape(os.path.dirname(args.file)), "*.tree.meta.json")
     matches = [x for x in glob.glob(pattern) if match(x)]
     if len(matches) == 1: # only unambiguous match
-        args.meta = os.path.join(os.path.dirname(args.file), matches[0])
+        args.meta = matches[0]
         log.info(f"'{args.meta}' guessed as meta file")
     else: args.meta = ""
 
