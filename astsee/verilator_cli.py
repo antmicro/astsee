@@ -12,6 +12,10 @@ from textwrap import dedent
 import logging as log
 import webbrowser
 from astsee import make_diff, DictDiffToTerm, DictDiffToHtml, IntactNode, ReplaceDiffNode, stringify, load_jsons, is_children
+import pygments
+import pygments.styles
+import pygments.formatters
+import pygments.lexers
 
 def split_ast_fields(ast, omit_false_flags):
     """split and sort ast fields"""
@@ -114,7 +118,8 @@ class AstDiffToHtml:
                                                         val_handlers,
                                                         split_fields,
                                                         embeddable=True)
-        globals = {'make_tab': self.make_tab, "diff_css": DictDiffToHtml.CSS}
+        extern_css = DictDiffToHtml.CSS + self.make_highlighter().get_style_defs('.code-block')
+        globals = {'make_tab': self.make_tab, "extern_css": extern_css}
         self.template = self.diff_to_str_generic.make_html_tmpl("verilator.html.jinja", globals)
 
     def resolve_path(self, file):
@@ -155,8 +160,8 @@ class AstDiffToHtml:
                 return html.escape(loc)
         else:
             self.srcfiles.add(path)
-            onclick=f"highlight_file('{html.escape(path)}',{int(begin_row)},{int(begin_col)},{int(end_row)},{int(end_col)})"
-            short_loc=f'{html.escape(path)}:{html.escape(begin_row)}'
+            onclick=f"return selectFileFragment('{html.escape(path)}',{int(begin_row)},{int(begin_col)},{int(end_row)},{int(end_col)})"
+            short_loc=f'{html.escape(path)}-{html.escape(begin_row)}'
             return f'<a href="#{short_loc}" onclick="{onclick}">{short_loc}</a>'
 
     def diff_to_string(self, tree):
@@ -164,15 +169,19 @@ class AstDiffToHtml:
         diff = self.diff_to_str_generic.diff_to_string(tree)
         return self.template.render({"diff": diff, "srcfiles": sorted(self.srcfiles)})
 
+    def make_highlighter(self, lineanchor_id=None):
+        # arbitrarily chosen style that does not override background (for consistency with non-pygments content)
+        style=pygments.styles.get_style_by_name("xcode")
+        return pygments.formatters.HtmlFormatter(linenos="inline", lineanchors=lineanchor_id, style=style, cssclass="code-block")
+
     def make_tab(self, fname):
         """load file into linenumbered tab"""
         rows = ""
         try:
             with open(fname, encoding='utf-8') as f:
-                for i, line in enumerate(f):
-                    line = html.escape(line.rstrip())
-                    rows += f'<span class="th" id="{html.escape(fname)}:{i+1}">{i+1}</span>{line}\n'
-            return f'<div class="tab y-scrollable" id="{html.escape(fname)}"><pre class="code-block">{rows}</pre></div>'
+                verilog_lex = pygments.lexers.VerilogLexer()
+                rows = pygments.highlight(f.read(), verilog_lex, self.make_highlighter(fname))
+            return f'<div class="tab y-scrollable" id="{fname}">{rows}</div>'
         except FileNotFoundError:
             log.warning(f'file {fname} not found, skipping')
             return ""

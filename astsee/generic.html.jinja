@@ -8,14 +8,14 @@
 </head>
 <body>
 {% endif -%}
-<pre class="code-block"><div class="chunk">
+<div class="code-block"><pre><div class="chunk">
 {%- for row in diff -%}
    {% if loop.index is divisibleby CHUNK_SIZE -%}
      </div> <div class="chunk">
    {% endif -%}
-   <span class="th">{{loop.index}}</span>{{row|safe}}
+   <span class="linenos">{{loop.index}}</span>{{row|safe}}
 {% endfor -%}
-</div></pre>
+</div></pre></div>
 {%- if not embeddable %}
 </body>
 {% endif %}
