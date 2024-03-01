@@ -89,7 +89,15 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .code-block .vm { color: #000000 } /* Name.Variable.Magic */
 .code-block .il { color: #1C01CE } /* Literal.Number.Integer.Long */
 /* AST specific CSS */
+a.backref {
+    text-decoration: none;
+    font-weight: bold;
+    background-color: #F0F8FF;
+}
 a { color: inherit; }
+:target {
+    background-color: gold;
+}
 body {
     display: flex;
     flex-flow: row nowrap;

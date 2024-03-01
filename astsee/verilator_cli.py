@@ -6,6 +6,7 @@ import html
 import json
 import logging as log
 import os
+import re
 import webbrowser
 from functools import partial
 from tempfile import NamedTemporaryFile
@@ -105,10 +106,32 @@ parser.add_argument(
 )
 
 
+class BackrefHtmlFormatter(pygments.formatters.HtmlFormatter):  # pylint: disable=maybe-no-member
+    def __init__(self, referenced_lines, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.referenced_lines = referenced_lines
+        self.fname = kwargs["lineanchors"]
+
+    def wrap(self, source):
+        i = 0
+        yield 0, '<div class="code-block"><pre>'
+        for is_source_line, line in source:
+            if is_source_line:
+                i += 1
+                if i in self.referenced_lines:
+                    line = re.sub(
+                        r'(<span class="linenos">[ 0-9]+</span>)',
+                        f'<a class="backref" href="#back-{self.fname}-{i}">\\1</a>',
+                        line,
+                    )
+            yield is_source_line, line
+        yield 0, "</pre></div>"
+
+
 class AstDiffToHtml:
     def __init__(self, omit_intact, split_fields, meta):
         self.meta = meta
-        self.srcfiles = set()
+        self.srcfiles = {}  # filename : set_of_referenced_lines
         val_handlers = {
             'editNum': (lambda v: html.escape(f'<e{html.escape(str(v))}>')),
             'name': (lambda v: html.escape(f'"{stringify(v, quote_empty=0)}"')),
@@ -166,9 +189,12 @@ class AstDiffToHtml:
             else:
                 return html.escape(loc)
         else:
-            self.srcfiles.add(path)
+            self.srcfiles.setdefault(path, set())
             onclick = f"return selectFileFragment('{html.escape(path)}',{int(begin_row)},{int(begin_col)},{int(end_row)},{int(end_col)})"
             short_loc = f"{html.escape(path)}-{html.escape(begin_row)}"
+            if begin_row not in self.srcfiles[path]:
+                self.srcfiles[path].add(int(begin_row))
+                return f'<a id="back-{short_loc}" href="#{short_loc}" onclick="{onclick}">{short_loc}</a>'
             return f'<a href="#{short_loc}" onclick="{onclick}">{short_loc}</a>'
 
     def diff_to_string(self, tree):
@@ -176,11 +202,12 @@ class AstDiffToHtml:
         diff = self.diff_to_str_generic.diff_to_string(tree)
         return self.template.render({"diff": diff, "srcfiles": sorted(self.srcfiles)})
 
-    def make_highlighter(self, lineanchor_id=None):
+    def make_highlighter(self, fname=None):
         # arbitrarily chosen style that does not override background (for consistency with non-pygments content)
         style = pygments.styles.get_style_by_name("xcode")
-        return pygments.formatters.HtmlFormatter(  # pylint: disable=maybe-no-member
-            linenos="inline", lineanchors=lineanchor_id, style=style, cssclass="code-block"
+        referenced_lines = self.srcfiles[fname] if fname is not None else set()
+        return BackrefHtmlFormatter(
+            referenced_lines, linenos="inline", lineanchors=fname, style=style, cssclass="code-block"
         )
 
     def make_tab(self, fname):
