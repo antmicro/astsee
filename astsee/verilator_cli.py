@@ -124,10 +124,10 @@ class AstDiffToHtml:
         )
         self.diff_to_str_generic = DictDiffToHtml(omit_intact, val_handlers, split_fields, embeddable=True)
         extern_css = DictDiffToHtml.CSS + self.make_highlighter().get_style_defs(".code-block")
-        with open(f"{os.path.dirname(__file__)}/verilator.js", encoding="utf-8") as f:
+        with open(f"{os.path.dirname(__file__)}/rich_view.js", encoding="utf-8") as f:
             js = f.read()
         globals_ = {"make_tab": self.make_tab, "extern_css": extern_css, "js": js}
-        self.template = self.diff_to_str_generic.make_html_tmpl("verilator.html.jinja", globals_)
+        self.template = self.diff_to_str_generic.make_html_tmpl("rich_view.html.jinja", globals_)
 
     def resolve_path(self, file):
         # Try to find symbolic/relative (prefered) or absolute path of file.

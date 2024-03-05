@@ -369,7 +369,7 @@ class DictDiffToHtml:
         self.split_fields = default_split_fields if split_fields is None else split_fields
         self.embeddable = embeddable
         globals_ = {"embeddable": embeddable, "CSS": self.CSS, "CHUNK_SIZE": self.CHUNK_SIZE}
-        self.template = self.make_html_tmpl("generic.html.jinja", globals_)
+        self.template = self.make_html_tmpl("basic_view.html.jinja", globals_)
 
     def _colorize(self, color, text):
         if color == COLOR_RESET:
