@@ -3,10 +3,10 @@
 Copyright (c) 2023-2024 [Antmicro](https://www.antmicro.com)
 
 A suite of tools for pretty printing, diffing, and exploring abstract syntax
-trees. You can use the generic `astsee` tool that accepts mostly arbitrary
+trees. You can use the `astsee json` tool that accepts mostly arbitrary
 tree-like structures in JSON format, or a variant for a specific AST type.
 Currently, only [Verilator](https://github.com/verilator/verilator) JSON trees
-are supported via `astsee_verilator`.
+are supported via `astsee verilator`.
 
 ## Usage
 
@@ -58,7 +58,7 @@ Run:
 
 <!-- name="pretty-print" -->
 ```sh
-astsee a.json
+astsee json a.json
 ```
 
 to pretty print it in a concise format:
@@ -81,7 +81,7 @@ To produce a diff:
 
 <!-- name="produce-diff" -->
 ```sh
-astsee a.json b.json
+astsee json a.json b.json
 ```
 
 ![astsee a.json b.json](img/generic_diff_ab.png)
@@ -98,7 +98,7 @@ firefox diff.html
 To see all available options:
 
 ```sh
-astsee --help
+astsee json --help
 ```
 
 ## Installation and usage

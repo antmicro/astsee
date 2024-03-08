@@ -4,6 +4,7 @@ from functools import partial
 from astsee import BasicDiffToTerm, DictDiffToHtml, DictDiffToTerm, IntactNode, load_jsons, make_diff
 
 parser = argparse.ArgumentParser(
+    prog="astsee json",
     description="pretty print json and do optional filtering/diff",
     epilog="""By default (i.e. unless --jq is used), ast_walk(del(empty_ops, <stuff passed to -d>)) is called
 
