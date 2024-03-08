@@ -5,7 +5,7 @@ variables:
   SCALENODE_DEBUG_PRINT: 1
   GIT_DEPTH: 1
 
-test-readme:
+test-and-lint:
   image: "d2s://external/docker/ubuntu:20.04"
   tags: ['ace-x86_64']
   variables:

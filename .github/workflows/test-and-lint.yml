@@ -1,11 +1,11 @@
-name: test-readme
-run-name: Test README manuals
+name: test-and-lint
+run-name: Run tests, linters, and format checkers
 on:
   push:
   pull_request:
 
 jobs:
-  test:
+  test-and-lint:
     runs-on: ubuntu-20.04
     env:
       # CI makes some programs think that they are writing to pipe, so they switch ansi escapes off
