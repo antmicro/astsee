@@ -2,8 +2,6 @@ name: test-readme
 run-name: Test README manuals
 on:
   push:
-    branches:
-     - main
   pull_request:
 
 jobs:
