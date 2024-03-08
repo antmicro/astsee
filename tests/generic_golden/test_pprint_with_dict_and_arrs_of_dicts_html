@@ -22,15 +22,17 @@
 </style>
 </head>
 <body>
-<div class="code-block"><pre><div class="chunk"><span class="linenos">1</span> addr:0x55b700efa000, editNum:1, file:&lt;built-in&gt;:0:0, name:$root, type:TEST
-<span class="linenos">2</span> op1:
-<span class="linenos">3</span>    addr:0x55b700f366c0, editNum:2361, file:test.v:16:8, name:__024root, type:MODULE
-<span class="linenos">4</span>    op2:
-<span class="linenos">5</span>       addr:0x55b700f50280, editNum:2364, file:test.v:16:8, name:t, type:CELL
-<span class="linenos">6</span> op4:
-<span class="linenos">7</span>    addr:0x55b700f50280, editNum:2364, file:test.v:16:8, name:t, type:CELL
-<span class="linenos">8</span>    addr:0x55b700f50280, editNum:2364, file:test.v:16:8, name:t, type:CELL
-<span class="linenos">9</span>    addr:0x55b700f50280, editNum:2364, file:test.v:16:8, name:t, type:CELL
-<span class="linenos">10</span>    addr:0x55b700f50280, editNum:2364, file:test.v:16:8, name:t, type:CELL
+
+
+<div class="code-block"><pre><div class="chunk"><span class="linenos" style="width:2ch;">1</span> addr:0x55b700efa000, editNum:1, file:&lt;built-in&gt;:0:0, name:$root, type:TEST
+<span class="linenos" style="width:2ch;">2</span> op1:
+<span class="linenos" style="width:2ch;">3</span>    addr:0x55b700f366c0, editNum:2361, file:test.v:16:8, name:__024root, type:MODULE
+<span class="linenos" style="width:2ch;">4</span>    op2:
+<span class="linenos" style="width:2ch;">5</span>       addr:0x55b700f50280, editNum:2364, file:test.v:16:8, name:t, type:CELL
+<span class="linenos" style="width:2ch;">6</span> op4:
+<span class="linenos" style="width:2ch;">7</span>    addr:0x55b700f50280, editNum:2364, file:test.v:16:8, name:t, type:CELL
+<span class="linenos" style="width:2ch;">8</span>    addr:0x55b700f50280, editNum:2364, file:test.v:16:8, name:t, type:CELL
+<span class="linenos" style="width:2ch;">9</span>    addr:0x55b700f50280, editNum:2364, file:test.v:16:8, name:t, type:CELL
+<span class="linenos" style="width:2ch;">10</span>    addr:0x55b700f50280, editNum:2364, file:test.v:16:8, name:t, type:CELL
 </div></pre></div>
 </body>

@@ -115,12 +115,16 @@ class HtmlHighlighter(pygments.formatters.HtmlFormatter):  # pylint: disable=may
 
     def wrap(self, source):
         i = 0
+        source = tuple(source)
+        lines_cnt = sum((is_source_line for is_source_line, _ in source))
+        idx_width = len(str(lines_cnt))
+
         yield 0, '<div class="code-block"><pre>'
         for is_source_line, line in source:
             if is_source_line:
                 i += 1
                 line_id = f"{html.escape(self.fname)}-{i}"
-                span = f'<span class="linenos">{i}</span>'
+                span = f'<span class="linenos" style="width:{idx_width}ch;">{i}</span>'
                 if i in self.backref_lines:
                     line_prefix = f'<a id="{line_id}" class="backref" href="#back-{line_id}">{span}</a>'
                 else:
