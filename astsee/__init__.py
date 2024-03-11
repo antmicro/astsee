@@ -225,7 +225,7 @@ def is_children(x):
     if isinstance(x, OmittedNode):
         return True  # only containers are turned into OmittedNode
     if isinstance(x, ReplaceDiffNode):
-        x = x.old  # we assume that if old is container then new also is
+        return isinstance(x.old.content, (list, dict)) or isinstance(x.new.content, (list, dict))
     return isinstance(x.content, (list, dict))
 
 
@@ -282,14 +282,20 @@ class DictDiffToTerm:
             return f"{indent}{diff.color()}... * {diff.content}\n"
         if isinstance(diff, ReplaceDiffNode):
             return self._diff_to_string(diff.old, indent) + self._diff_to_string(diff.new, indent)
-
-        diff = dict(diff.dict_it(self.omit_intact))
-        implicit, explicit, children = self.split_fields(diff)
-        implicit = " ".join((self._output_implicit(k, v) for k, v in implicit))
-        explicit = (COLOR_RESET + ", ").join(self._output_explicit(k, v) for k, v in explicit)
-        children = "".join((self._output_children(k, v, indent) for k, v in children))
-        sep = " " if explicit and implicit else ""
-        return f"{indent}{implicit}{sep}{explicit}\n{children}"
+        if isinstance(diff.content, list):
+            s = ""
+            for child in diff.list_it(self.omit_intact):
+                s += self._diff_to_string(child, indent)
+            return s
+        if isinstance(diff.content, dict):
+            diff = dict(diff.dict_it(self.omit_intact))
+            implicit, explicit, children = self.split_fields(diff)
+            implicit = " ".join((self._output_implicit(k, v) for k, v in implicit))
+            explicit = (COLOR_RESET + ", ").join(self._output_explicit(k, v) for k, v in explicit)
+            children = "".join((self._output_children(k, v, indent) for k, v in children))
+            sep = " " if explicit and implicit else ""
+            return f"{indent}{implicit}{sep}{explicit}\n{children}"
+        return f"{indent}{diff.color()}{diff.content}\n"
 
     def _output_val(self, key, val, default_handler=stringify):
         return self.val_handlers.get(key, default_handler)(val.content)
@@ -308,15 +314,9 @@ class DictDiffToTerm:
 
     def _output_children(self, key, children, indent):
         if isinstance(children, ReplaceDiffNode):
-            return self._diff_to_string(children.old, indent) + self._diff_to_string(children.new, indent)
-
-        s = indent + " " + children.color() + key + ":\n"
-        if isinstance(children.content, list):
-            for child in children.list_it(self.omit_intact):
-                s += self._diff_to_string(child, indent + "   ")
-        else:
-            s += self._diff_to_string(children, indent + "   ")
-        return s
+            return self._output_children(key, children.old, indent) + self._output_children(key, children.new, indent)
+        s = f"{indent} {children.color()}{key}:\n"
+        return s + self._diff_to_string(children, indent + "   ")
 
 
 class DictDiffToHtml:
@@ -393,24 +393,26 @@ class DictDiffToHtml:
             return f'{indent}{self._colorize(diff.color(), "... * "+str(diff.content))}\n'
         if isinstance(diff, ReplaceDiffNode):
             return self._diff_to_string(diff.old, indent) + self._diff_to_string(diff.new, indent)
-        diff = dict(diff.dict_it(self.omit_intact))
-        implicit, explicit, children = self.split_fields(diff)
-        implicit = " ".join(self._output_implicit(k, v) for k, v in implicit)
-        explicit = ", ".join(self._output_explicit(k, v) for k, v in explicit)
-        children = "".join((self._output_children(k, v, indent) for k, v in children))
-        return f'{indent}{implicit}{" " + explicit if explicit else ""}\n{children}'
+        if isinstance(diff.content, list):
+            s = ""
+            for child in diff.list_it(self.omit_intact):
+                s += self._diff_to_string(child, indent)
+            return s
+        if isinstance(diff.content, dict):
+            diff = dict(diff.dict_it(self.omit_intact))
+            implicit, explicit, children = self.split_fields(diff)
+            implicit = " ".join(self._output_implicit(k, v) for k, v in implicit)
+            explicit = ", ".join(self._output_explicit(k, v) for k, v in explicit)
+            children = "".join((self._output_children(k, v, indent) for k, v in children))
+            return f'{indent}{implicit}{" " + explicit if explicit else ""}\n{children}'
+        return f"{indent}{self._colorize(diff.color(), diff.content)}\n"
 
     def _output_children(self, key, children, indent):
         if isinstance(children, ReplaceDiffNode):
             return self._output_children(key, children.old, indent) + self._output_children(key, children.new, indent)
 
         s = f'{indent} {self._colorize(children.color(), key + ":")}\n'
-        if isinstance(children.content, list):
-            for child in children.list_it(self.omit_intact):
-                s += self._diff_to_string(child, indent + "   ")
-        else:
-            s += self._diff_to_string(children, indent + "   ")
-        return s
+        return s + self._diff_to_string(children, indent + "   ")
 
     def _output_implicit(self, key, val):
         if isinstance(val, ReplaceDiffNode):
