@@ -2,3 +2,6 @@
 *.egg-info/
 build/
 venv/
+node_modules/
+# for now, we don't use lock
+package-lock.json

@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<style>
+/* Shared CSS */
+{{extern_css|safe}}
+/* AST specific CSS */
+a { color: inherit; }
+body {
+    display: flex;
+    flex-flow: row nowrap;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 14px;
+}
+.pane {
+    height: 100vh;
+    border: solid 1px black;
+    box-sizing: border-box;
+    flex: 0 0 50%;
+}
+.source-pane {
+    display: flex;
+    flex-flow: column nowrap;
+
+    .tabmenu {
+        display: flex;
+        flex-flow: row wrap;
+    }
+    .tabs {
+        height: 100%;
+        position: relative;
+    }
+    .tab {
+        position: absolute;
+        background: white;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+    }
+    .tab:first-child {
+        z-index: 1;
+    }
+}
+.y-scrollable {
+    overflow-y: scroll;
+}
+.linenos {
+    user-select: none;
+}
+.linenos::selection {
+    /* work around imperfect behaviour of "user-select:none" in firefox: programmatically
+    selected element would still be highlighted (even though it would be ignored by ctrl+c) */
+    background-color: transparent;
+}
+</style>
+<script>
+{{js|safe-}}
+</script>
+</head>
+<body>
+
+<div class="pane y-scrollable">
+{{diff|safe}}
+</div>
+
+<div class="pane source-pane">
+<div class="tabmenu">
+{% for fname in srcfiles-%}
+   <button type="button" onclick="showtab('{{fname}}')">{{fname}}</button>
+{% endfor -%}
+</div>
+<div class="tabs">
+{% for fname in srcfiles-%}
+  {{make_tab(fname)|safe}}
+{% endfor -%}
+</div>
+</div>
+</body></html>
+
