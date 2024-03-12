@@ -58,13 +58,15 @@ def test_tree_diff_html_filter_no_meta(request):
 def test_pprint_dict_with_one_scalar(request):
     run(request, f"{IN_DIR}/dict_with_one_scalar.json")
 
+
 def test_diff_nodelist_replaced_with_scalar(request):
     run(request, f"{IN_DIR}/nodelist_replaced_with_scalar/a.json {IN_DIR}/nodelist_replaced_with_scalar/b.json")
+
 
 def test_diff_html_nodelist_replaced_with_scalar(request):
     run(request, f"{IN_DIR}/nodelist_replaced_with_scalar/a.json {IN_DIR}/nodelist_replaced_with_scalar/b.json --html")
 
-@pytest.mark.xfail(reason="unimplemented")
+
 def test_pprint_nested_empty_arr(request):
     run(request, f"{IN_DIR}/nested_empty_arr.json")
 
