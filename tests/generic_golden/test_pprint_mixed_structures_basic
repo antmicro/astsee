@@ -1,6 +1,7 @@
  {
    dict: {
-     dict1: [
+     foo: bar
+     arr: [
        2
        foo
        1

@@ -285,7 +285,7 @@ class DictDiffToTerm:
         if isinstance(diff.content, list):
             s = ""
             for child in diff.list_it(self.omit_intact):
-                s += self._diff_to_string(child, indent)
+                s += self._diff_to_string(child, indent + " ")
             return s
         if isinstance(diff.content, dict):
             diff = dict(diff.dict_it(self.omit_intact))
@@ -315,8 +315,11 @@ class DictDiffToTerm:
     def _output_children(self, key, children, indent):
         if isinstance(children, ReplaceDiffNode):
             return self._output_children(key, children.old, indent) + self._output_children(key, children.new, indent)
-        s = f"{indent} {children.color()}{key}:\n"
-        return s + self._diff_to_string(children, indent + "   ")
+
+        if is_children(children):
+            return f'{indent} {children.color()}{key}:\n{self._diff_to_string(children, indent+"  ")}'
+        else:  # Scalar may get classified as children (e.g when array was replaced with string)
+            return f'{indent} {children.color()}{key}: {self._diff_to_string(children, "")}'
 
 
 class DictDiffToHtml:
@@ -396,7 +399,7 @@ class DictDiffToHtml:
         if isinstance(diff.content, list):
             s = ""
             for child in diff.list_it(self.omit_intact):
-                s += self._diff_to_string(child, indent)
+                s += self._diff_to_string(child, indent + " ")
             return s
         if isinstance(diff.content, dict):
             diff = dict(diff.dict_it(self.omit_intact))
@@ -411,8 +414,12 @@ class DictDiffToHtml:
         if isinstance(children, ReplaceDiffNode):
             return self._output_children(key, children.old, indent) + self._output_children(key, children.new, indent)
 
-        s = f'{indent} {self._colorize(children.color(), key + ":")}\n'
-        return s + self._diff_to_string(children, indent + "   ")
+        if is_children(children):
+            return (
+                f'{indent} {self._colorize(children.color(), key + ":")}\n{self._diff_to_string(children, indent+"  ")}'
+            )
+        else:  # Scalar may get classified as children (e.g when array was replaced with string)
+            return f'{indent} {self._colorize(children.color(), key + ":")}: {self._diff_to_string(children, "")}'
 
     def _output_implicit(self, key, val):
         if isinstance(val, ReplaceDiffNode):

@@ -206,8 +206,7 @@ function selectFileFragment(name, firstRow, firstCol, lastRow, endCol) {
 <div class="code-block"><pre><div class="chunk"><span class="linenos" style="width:1ch;">1</span>NETLIST &quot;$root&quot; a:0 <span id="(B)">(B)</span>
 <span class="linenos" style="width:1ch;">2</span> <span style="color:red;">modulesp:</span>
 <span class="linenos" style="width:1ch;">3</span>   <span style="color:red;">MODULE</span> <span style="color:red;">&quot;serial_adder&quot;</span> <span style="color:red;">d:15</span> <span style="color:red;"><span id="(E)">(E)</span></span>
-<span class="linenos" style="width:1ch;">4</span> <span style="color:green;">modulesp:</span>
-<span class="linenos" style="width:1ch;">5</span>   <span style="color:green;">UNLINKED</span>
+<span class="linenos" style="width:1ch;">4</span> <span style="color:green;">modulesp:</span>: <span style="color:green;">UNLINKED</span>
 </div></pre></div>
 </div>
 

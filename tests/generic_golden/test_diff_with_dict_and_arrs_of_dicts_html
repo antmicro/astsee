@@ -32,6 +32,6 @@
 <span class="linenos" style="width:1ch;">6</span>    <span style="color:green;">op3:</span>
 <span class="linenos" style="width:1ch;">7</span>       <span style="color:green;">addr:0x55b700f50280</span>, <span style="color:green;">editNum:2364</span>, <span style="color:green;">file:test.v:16:8</span>, <span style="color:green;">name:t</span>, <span style="color:green;">type:CELL</span>
 <span class="linenos" style="width:1ch;">8</span> op4:
-<span class="linenos" style="width:1ch;">9</span>   ... * 4
+<span class="linenos" style="width:1ch;">9</span>  ... * 4
 </div></pre></div>
 </body>

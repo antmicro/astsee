@@ -5,14 +5,14 @@ bar:1, foo:2
  arr2:
    1
  arr3:
-   1
+    1
  arr4:
-   1
-   2
+    1
+    2
    2
  dict:
-   
-    dict1:
-      2
-      foo
-      1
+  foo:bar
+   arr:
+     2
+     foo
+     1
