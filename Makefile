@@ -45,7 +45,7 @@ pytest:
 
 .PHONY: readme-test
 readme-test:
-	TMPDIR=$$(mktemp -d) && cp README.md "$$TMPDIR/" && cd "$$TMPDIR" \
+	TMPDIR=$$(mktemp -d) && cp README.md "$$TMPDIR/" && cp -r "tests/" "$$TMPDIR/" && cd "$$TMPDIR" \
 	# Extract inputs from README \
 	tuttest README.md a.json > a.json && tuttest README.md b.json > b.json \
 	# Check if diffing works (doesn't crash) \
@@ -53,4 +53,9 @@ readme-test:
 	# Run pretty print and capture output \
 	tuttest README.md pretty-print | bash -o pipefail - | tee actual-pretty-print-output && \
 	# Check if pretty print output matches README \
-	diff <(tuttest README.md pretty-print-output) actual-pretty-print-output --color=always
+	diff <(tuttest README.md pretty-print-output) actual-pretty-print-output --color=always && \
+	# Same for verilator \
+	tuttest README.md verilator-pretty-print | bash -o pipefail - | tee actual-verilator-pretty-print-output && \
+	diff <(tuttest README.md verilator-pretty-print-output) actual-verilator-pretty-print-output --color=always && \
+	# cleanup \
+	rm -rf "$$TMPDIR"

@@ -86,6 +86,16 @@ astsee a.json b.json
 
 ![astsee a.json b.json](img/generic_diff_ab.png)
 
+There is also option for changing output format from plain text (possibly colored with ansi escapes)
+to html:
+
+```sh
+astsee a.json b.json --html > diff.html
+firefox diff.html
+```
+
+![astsee a.json b.json --html](img/generic_diff_ab_html.png)
+
 To see all available options:
 
 ```sh
@@ -113,6 +123,37 @@ In Ubuntu/Debian you can install it with
 ```sh
 apt install jq
 ```
+
+## Verilator mode
+Astsee provides separate mode specialized for dumps of Verilator's AST:
+<!-- name="verilator-pretty-print" -->
+```sh
+astsee_verilator tests/verilator_in/test1_a.tree.json | head -n 10 # head for brevity
+```
+
+<!-- name="verilator-pretty-print-output" -->
+```
+NETLIST "$root" <built-in>:0 (B) constPoolp:(D), delaySchedulerp:UNLINKED, dollarUnitPkgp:UNLINKED, dpiExportTriggerp:UNLINKED, evalNbap:UNLINKED, evalp:UNLINKED, nbaEventTriggerp:UNLINKED, nbaEventp:UNLINKED, stdPackagep:UNLINKED, timeprecision:1ps, timeunit:1ps, topScopep:UNLINKED, typeTablep:(C)
+ modulesp:
+   MODULE "serial_adder" test1.sv:15 (E) level:2, origName:serial_adder, timeunit:1ps
+    stmtsp:
+      VAR "WIDTH" test1.sv:15 (F) attrClocker:UNKNOWN, direction:NONE, lifetime:VSTATIC, origName:WIDTH, sensIfacep:UNLINKED, varType:GPARAM
+       valuep:
+         CONST "?32?sh8" test1.sv:15 (H)
+      VAR "a" test1.sv:16 (J) attrClocker:UNKNOWN, direction:INPUT, lifetime:NONE, origName:a, sensIfacep:UNLINKED, varType:PORT
+       childDTypep:
+         BASICDTYPE "logic" test1.sv:16 (K) keyword:logic
+```
+
+For brevity, some common fields like "type" or name, are "implicit" (i.e printed always as n-th field, with key skipped)
+
+`--html` option of verilator mode provides you with rich features such as jumping between related lines of AST and source code:
+```sh
+astsee_verilator tests/verilator_in/test1_a.tree.json --html > foo.html
+firefox foo.html
+```
+
+![astsee_verilator --html](img/verilator_html_pprint.png)
 
 ## Dev install
 
