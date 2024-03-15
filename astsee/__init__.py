@@ -427,7 +427,7 @@ def load_jsons(files, jq_query, jq_bin="jq", jq_funcs=""):
         try:
             procs.append(subprocess.Popen(cmd, stdout=subprocess.PIPE))
         except FileNotFoundError:
-            print(f"{jq_bin} executable not found (make sure it is installed)")
+            print(f"{jq_bin} executable not found (make sure it is installed)", file=sys.stderr)
             sys.exit(1)
 
     out = []
