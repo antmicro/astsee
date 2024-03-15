@@ -10,7 +10,7 @@ a.backref {
     text-decoration: none;
     font-weight: bold;
 {%- if dark %}
-    span { background-color: #172d42; }
+    span { background-color: #458588; }
 {%- else %}
     span { background-color: #F0F8FF; }
 {% endif -%}
@@ -18,7 +18,7 @@ a.backref {
 a { color: inherit; }
 :target {
 {%- if dark %}
-    background-color: blue;
+    background-color: #076678;
 {%- else %}
     background-color: gold;
 {% endif -%}
@@ -32,7 +32,7 @@ body {
     border: 0;
     font-size: 14px;
 {% if dark %}
-    background: #0d1117;
+    background: #332d37;
     color: #e6edf3;
 {% endif -%}
 }
@@ -61,7 +61,7 @@ body {
         top: 0;
         left: 0;
 {%- if dark %}
-        background: #0d1117;
+        background: #332d37;
 {%- else %}
         background-color: white; /* we have to use some color here so it won't be transparent */
 {%- endif %}
@@ -70,6 +70,9 @@ body {
         z-index: 1;
     }
 }
+{% if dark %}
+.code-block { background: #332d37; }
+{% endif -%}
 .y-scrollable {
     overflow-y: scroll;
 }

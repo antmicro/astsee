@@ -377,17 +377,21 @@ class DictDiffToHtml(DictDiff):
 
     CHUNK_SIZE = 1000
 
-    def __init__(self, omit_intact, val_handlers=None, split_fields=None, embeddable=False):
+    # pylint: disable=too-many-arguments
+    def __init__(self, omit_intact, val_handlers=None, split_fields=None, embeddable=False, colors=None):
         super().__init__(omit_intact, val_handlers, split_fields)
         self.embeddable = embeddable
+        if colors is None:
+            self.colors = {COLOR_RED: "red", COLOR_GREEN: "green"}
+        else:
+            self.colors = colors
         globals_ = {"embeddable": embeddable, "CSS": self.CSS, "CHUNK_SIZE": self.CHUNK_SIZE}
         self.template = self.make_html_tmpl("basic_view.html.jinja", globals_)
 
     def _colorize(self, color, text):
         if color == COLOR_RESET:
             return text
-        LUT = {COLOR_RED: "red", COLOR_GREEN: "green", COLOR_YELLOW: "yellow"}
-        return f'<span style="color:{LUT[color]};">{text}</span>'
+        return f'<span style="color:{self.colors[color]};">{text}</span>'
 
     def escape(self, x):
         return html.escape(stringify(x))

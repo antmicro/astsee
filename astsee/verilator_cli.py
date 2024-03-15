@@ -24,6 +24,8 @@ from astsee import (
     load_jsons,
     make_diff,
     stringify,
+    COLOR_GREEN,
+    COLOR_RED,
 )
 
 
@@ -109,7 +111,8 @@ parser.add_argument(
 class HtmlHighlighter(pygments.formatters.HtmlFormatter):  # pylint: disable=maybe-no-member
     def __init__(self, dark, backref_lines=None, fname=None):
         if dark:
-            style = pygments.styles.get_style_by_name("github-dark")
+            # style = pygments.styles.get_style_by_name("github-dark")
+            style = pygments.styles.get_style_by_name("gruvbox-dark")
         else:
             style = pygments.styles.get_style_by_name("xcode")
         super().__init__(style=style, cssclass="code-block")
@@ -155,7 +158,13 @@ class AstDiffToHtml:
                 if k != "addr"
             }
         )
-        self.diff_to_str_generic = DictDiffToHtml(omit_intact, val_handlers, split_fields, embeddable=True)
+        if dark:
+            colors = {COLOR_RED: "#e74a3c", COLOR_GREEN: "#00af91"}
+        else:
+            colors = None
+        self.diff_to_str_generic = DictDiffToHtml(
+            omit_intact, val_handlers, split_fields, embeddable=True, colors=colors
+        )
         extern_css = DictDiffToHtml.CSS + HtmlHighlighter(dark).get_style_defs(".code-block")
         with open(f"{os.path.dirname(__file__)}/rich_view.js", encoding="utf-8") as f:
             js = f.read()
