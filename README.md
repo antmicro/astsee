@@ -107,6 +107,13 @@ Or clone the repository, `cd` to it, and run:
 pipx install .
 ```
 
+As of now astsee depends on `jq` installed gloablly in system
+
+In Ubuntu/Debian you can install it with
+```sh
+apt install jq
+```
+
 ## Dev install
 
 To install project in editable mode (so changes are immediately reflected in executable), with extra dependencies meant for development only (like test framework):
