@@ -97,6 +97,7 @@ parser.add_argument(
     action="store_true",
     dest="html_browser",
 )
+parser.add_argument("--dark", help="Use dark mode. Applicable with --html(b)", action="store_true")
 parser.add_argument(
     "--loglevel",
     default="warning",
@@ -106,9 +107,11 @@ parser.add_argument(
 
 
 class HtmlHighlighter(pygments.formatters.HtmlFormatter):  # pylint: disable=maybe-no-member
-    def __init__(self, backref_lines=None, fname=None):
-        # arbitrarily chosen style that does not override background (for consistency with non-pygments content)
-        style = pygments.styles.get_style_by_name("xcode")
+    def __init__(self, dark, backref_lines=None, fname=None):
+        if dark:
+            style = pygments.styles.get_style_by_name("github-dark")
+        else:
+            style = pygments.styles.get_style_by_name("xcode")
         super().__init__(style=style, cssclass="code-block")
         self.backref_lines = backref_lines
         self.fname = fname
@@ -135,8 +138,9 @@ class HtmlHighlighter(pygments.formatters.HtmlFormatter):  # pylint: disable=may
 
 
 class AstDiffToHtml:
-    def __init__(self, omit_intact, split_fields, meta):
+    def __init__(self, omit_intact, split_fields, meta, dark):
         self.meta = meta
+        self.dark = dark
         self.srcfiles = {}  # filename : set_of_referenced_lines
         val_handlers = {
             'editNum': (lambda v: html.escape(f'<e{html.escape(str(v))}>')),
@@ -152,10 +156,10 @@ class AstDiffToHtml:
             }
         )
         self.diff_to_str_generic = DictDiffToHtml(omit_intact, val_handlers, split_fields, embeddable=True)
-        extern_css = DictDiffToHtml.CSS + HtmlHighlighter().get_style_defs(".code-block")
+        extern_css = DictDiffToHtml.CSS + HtmlHighlighter(dark).get_style_defs(".code-block")
         with open(f"{os.path.dirname(__file__)}/rich_view.js", encoding="utf-8") as f:
             js = f.read()
-        globals_ = {"make_tab": self.make_tab, "extern_css": extern_css, "js": js}
+        globals_ = {"make_tab": self.make_tab, "extern_css": extern_css, "js": js, "dark": dark}
         self.template = self.diff_to_str_generic.make_html_tmpl("rich_view.html.jinja", globals_)
 
     def resolve_path(self, file):
@@ -214,7 +218,9 @@ class AstDiffToHtml:
         try:
             with open(fname, encoding="utf-8") as f:
                 verilog_lex = pygments.lexers.VerilogLexer()  # pylint: disable=maybe-no-member
-                rows = pygments.highlight(f.read(), verilog_lex, HtmlHighlighter(self.srcfiles[fname], fname))
+                rows = pygments.highlight(
+                    f.read(), verilog_lex, HtmlHighlighter(self.dark, self.srcfiles[fname], fname)
+                )
             return f'<div class="tab y-scrollable" id="{fname}">{rows}</div>'
         except FileNotFoundError:
             log.warning("file '%s' not found, skipping", fname)
@@ -298,7 +304,7 @@ def main(args=None):
     omit_intact = args.omit and args.newfile  # ommiting unmodified chunks does not make sense without diff
 
     if args.html or args.html_browser:
-        diff_to_str = AstDiffToHtml(omit_intact, split_fields, meta)
+        diff_to_str = AstDiffToHtml(omit_intact, split_fields, meta, args.dark)
     else:
         loc_handler = partial(plaintext_loc_handler, meta=meta)
         val_handlers = {

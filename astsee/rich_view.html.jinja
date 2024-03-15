@@ -9,11 +9,19 @@
 a.backref {
     text-decoration: none;
     font-weight: bold;
-    background-color: #F0F8FF;
+{%- if dark %}
+    span { background-color: #172d42; }
+{%- else %}
+    span { background-color: #F0F8FF; }
+{% endif -%}
 }
 a { color: inherit; }
 :target {
+{%- if dark %}
+    background-color: blue;
+{%- else %}
     background-color: gold;
+{% endif -%}
 }
 body {
     display: flex;
@@ -23,6 +31,10 @@ body {
     padding: 0;
     border: 0;
     font-size: 14px;
+{% if dark %}
+    background: #0d1117;
+    color: #e6edf3;
+{% endif -%}
 }
 .pane {
     height: 100vh;
@@ -44,11 +56,15 @@ body {
     }
     .tab {
         position: absolute;
-        background: white;
         height: 100%;
         width: 100%;
         top: 0;
         left: 0;
+{%- if dark %}
+        background: #0d1117;
+{%- else %}
+        background-color: white; /* we have to use some color here so it won't be transparent */
+{%- endif %}
     }
     .tab:first-child {
         z-index: 1;

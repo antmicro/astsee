@@ -92,7 +92,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 a.backref {
     text-decoration: none;
     font-weight: bold;
-    background-color: #F0F8FF;
+    span { background-color: #F0F8FF; }
 }
 a { color: inherit; }
 :target {
@@ -127,11 +127,11 @@ body {
     }
     .tab {
         position: absolute;
-        background: white;
         height: 100%;
         width: 100%;
         top: 0;
         left: 0;
+        background-color: white; /* we have to use some color here so it won't be transparent */
     }
     .tab:first-child {
         z-index: 1;
