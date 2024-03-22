@@ -411,7 +411,8 @@ class DictDiffToHtml:
             implicit = " ".join(self._output_implicit(k, v) for k, v in implicit)
             explicit = ", ".join(self._output_explicit(k, v) for k, v in explicit)
             children = "".join((self._output_children(k, v, indent) for k, v in children))
-            return f'{indent}{implicit}{" " + explicit if explicit else ""}\n{children}'
+            sep = " " if explicit and implicit else ""
+            return f"{indent}{implicit}{sep}{explicit}\n{children}"
         return f"{indent}{self._colorize(diff.color(), diff.content)}\n"
 
     def _output_children(self, key, children, indent):
