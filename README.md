@@ -86,8 +86,7 @@ astsee a.json b.json
 
 ![astsee a.json b.json](img/generic_diff_ab.png)
 
-There is also option for changing output format from plain text (possibly colored with ansi escapes)
-to html:
+There is also an option to generate HTML instead of ANSI text:
 
 ```sh
 astsee a.json b.json --html > diff.html
@@ -117,15 +116,15 @@ Or clone the repository, `cd` to it, and run:
 pipx install .
 ```
 
-As of now astsee depends on `jq` installed gloablly in system
+As of now, `astsee` depends on `jq` being accessible in `PATH`.
 
-In Ubuntu/Debian you can install it with
+On Ubuntu or Debian, you can install it with
 ```sh
 apt install jq
 ```
 
 ## Verilator mode
-Astsee provides separate mode specialized for dumps of Verilator's AST:
+Astsee provides a separate mode for interpreting Verilator AST dumps:
 <!-- name="verilator-pretty-print" -->
 ```sh
 astsee_verilator tests/verilator_in/test1_a.tree.json | head -n 10 # head for brevity
@@ -145,12 +144,14 @@ NETLIST "$root" <built-in>:0 (B) constPoolp:(D), delaySchedulerp:UNLINKED, dolla
          BASICDTYPE "logic" test1.sv:16 (K) keyword:logic
 ```
 
-For brevity, some common fields like "type" or name, are "implicit" (i.e printed always as n-th field, with key skipped)
+For brevity, some common fields like `type` or `name` are printed without the key.
 
-`--html` option of verilator mode provides you with rich features such as jumping between related lines of AST and source code:
+The `--html` option provides rich features such as jumping between corresponding AST nodes and source lines:
 ```sh
 astsee_verilator tests/verilator_in/test1_a.tree.json --html > foo.html
 firefox foo.html
+# Or to open generated file directly in browser:
+astsee_verilator tests/verilator_in/test1_a.tree.json --htmlb
 ```
 
 ![astsee_verilator --html](img/verilator_html_pprint.png)
