@@ -270,16 +270,18 @@ class DictDiffToTerm:
         self.val_handlers = {} if val_handlers is None else val_handlers
         self.split_fields = default_split_fields if split_fields is None else split_fields
 
-    def diff_to_string(self, diff):
-        if isinstance(diff, IntactNode):
-            # remove unnecessary ansi escape flood from unmodified tree
-            return self._diff_to_string(diff, "").replace(COLOR_RESET, "")
+    def _colorize(self, color, text):
+        if color == COLOR_RESET:
+            return text
         else:
-            return self._diff_to_string(diff, "") + COLOR_RESET
+            return f"{color}{text}{COLOR_RESET}"
+
+    def diff_to_string(self, diff):
+        return self._diff_to_string(diff, "")
 
     def _diff_to_string(self, diff, indent):
         if isinstance(diff, OmittedNode):
-            return f"{indent}{diff.color()}... * {diff.content}\n"
+            return f'{indent}{self._colorize(diff.color(), "... * "+str(diff.content))}\n'
         if isinstance(diff, ReplaceDiffNode):
             return self._diff_to_string(diff.old, indent) + self._diff_to_string(diff.new, indent)
         if isinstance(diff.content, list):
@@ -291,35 +293,37 @@ class DictDiffToTerm:
             diff = dict(diff.dict_it(self.omit_intact))
             implicit, explicit, children = self.split_fields(diff)
             implicit = " ".join((self._output_implicit(k, v) for k, v in implicit))
-            explicit = (COLOR_RESET + ", ").join(self._output_explicit(k, v) for k, v in explicit)
+            explicit = ", ".join(self._output_explicit(k, v) for k, v in explicit)
             children = "".join((self._output_children(k, v, indent) for k, v in children))
             sep = " " if explicit and implicit else ""
             return f"{indent}{implicit}{sep}{explicit}\n{children}"
-        return f"{indent}{diff.color()}{diff.content}\n"
+        return f"{indent}{self._colorize(diff.color(), diff.content)}\n"
 
     def _output_val(self, key, val, default_handler=stringify):
         return self.val_handlers.get(key, default_handler)(val.content)
 
     def _output_implicit(self, key, val):
         if isinstance(val, ReplaceDiffNode):
-            return f"{self._output_implicit(key, val.old)}{COLOR_RESET}->{self._output_implicit(key, val.new)}"
-        return f"{val.color()}{self._output_val(key, val)}"
+            return f"{self._output_implicit(key, val.old)}->{self._output_implicit(key, val.new)}"
+        return self._colorize(val.color(), self._output_val(key, val))
 
     def _output_explicit(self, key, val, replacement=False):
         # don't output key twice
         prefix = "" if replacement else stringify(key) + ":"
         if isinstance(val, ReplaceDiffNode):
-            return f"{COLOR_RESET}{prefix}{self._output_explicit(key, val.old, True)}{COLOR_RESET}->{self._output_explicit(key, val.new, True)}"
-        return f"{val.color()}{prefix}{self._output_val(key, val)}"
+            return f"{prefix}{self._output_explicit(key, val.old, True)}->{self._output_explicit(key, val.new, True)}"
+        return self._colorize(val.color(), prefix + self._output_val(key, val))
 
     def _output_children(self, key, children, indent):
         if isinstance(children, ReplaceDiffNode):
             return self._output_children(key, children.old, indent) + self._output_children(key, children.new, indent)
 
         if is_children(children):
-            return f'{indent} {children.color()}{key}:\n{self._diff_to_string(children, indent+"  ")}'
+            return (
+                f'{indent} {self._colorize(children.color(), key + ":")}\n{self._diff_to_string(children, indent+"  ")}'
+            )
         else:  # Scalar may get classified as children (e.g when array was replaced with string)
-            return f'{indent} {children.color()}{key}: {self._diff_to_string(children, "")}'
+            return f'{indent} {self._colorize(children.color(), key + ":")}: {self._diff_to_string(children, "")}'
 
 
 class DictDiffToHtml:
