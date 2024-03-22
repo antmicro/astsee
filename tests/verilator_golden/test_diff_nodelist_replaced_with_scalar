@@ -1,4 +1,4 @@
 NETLIST "$root" a:0 (B)
  [31mmodulesp:[39m
    [31mMODULE[39m [31m"serial_adder"[39m [31md:15[39m [31m(E)[39m
- [32mmodulesp:[39m: [32mUNLINKED[39m
+ [32mmodulesp:[39m [32mUNLINKED[39m
