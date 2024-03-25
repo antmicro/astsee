@@ -125,7 +125,10 @@ class HtmlHighlighter(pygments.formatters.HtmlFormatter):  # pylint: disable=may
         lines_cnt = sum((is_source_line for is_source_line, _ in source))
         idx_width = len(str(lines_cnt))
 
-        yield 0, '<div class="code-block"><pre>'
+        yield (
+            0,
+            f'<div class="code-block" style="text-indent: calc({idx_width}ch + 2*{DictDiffToHtml.LINENOS_SIDE_PADDING}) hanging each-line;"><pre>',
+        )
         for is_source_line, line in source:
             if is_source_line:
                 i += 1

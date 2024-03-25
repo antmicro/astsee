@@ -8,8 +8,7 @@
     box-sizing: border-box;
     border: solid 1px black;
     .linenos {
-        border-right: solid 1px silver;
-        border-top: solid 1px silver;
+        padding: 0 5px 0 5px;
     }
     .chunk {
       content-visibility: auto;
@@ -92,10 +91,10 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 a.backref {
     text-decoration: none;
     font-weight: bold;
-    span { background-color: #F0F8FF; }
+    span { color: #1C01CE; }
 }
 a { color: inherit; }
-:target {
+:target:not(.backref) {
     background-color: gold;
 }
 body {
@@ -143,7 +142,6 @@ body {
 .linenos {
     user-select: none;
     display: inline-block;
-    padding: 0 0 0 0;
     text-align: right;
 }
 .linenos::selection {
@@ -203,7 +201,7 @@ function selectFileFragment(name, firstRow, firstCol, lastRow, endCol) {
 <div class="pane y-scrollable">
 
 
-<div class="code-block"><pre><div class="chunk"><span class="linenos" style="width:3ch;">1</span>NETLIST &quot;$root&quot; a:0 constPoolp:(D), delaySchedulerp:UNLINKED, dollarUnitPkgp:UNLINKED, dpiExportTriggerp:UNLINKED, evalNbap:UNLINKED, evalp:UNLINKED, nbaEventTriggerp:UNLINKED, nbaEventp:UNLINKED, stdPackagep:UNLINKED, timeprecision:1ps, timeunit:1ps, topScopep:UNLINKED, typeTablep:(C)
+<div class="code-block" style="text-indent: calc(3ch + 10px) hanging each-line;"><pre><span class="linenos" style="width:3ch;">1</span>NETLIST &quot;$root&quot; a:0 constPoolp:(D), delaySchedulerp:UNLINKED, dollarUnitPkgp:UNLINKED, dpiExportTriggerp:UNLINKED, evalNbap:UNLINKED, evalp:UNLINKED, nbaEventTriggerp:UNLINKED, nbaEventp:UNLINKED, stdPackagep:UNLINKED, timeprecision:1ps, timeunit:1ps, topScopep:UNLINKED, typeTablep:(C)
 <span class="linenos" style="width:3ch;">2</span> modulesp:
 <span class="linenos" style="width:3ch;">3</span>   MODULE &quot;serial_adder&quot; d:15 level:2, origName:serial_adder, timeunit:1ps
 <span class="linenos" style="width:3ch;">4</span>    stmtsp:

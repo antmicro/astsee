@@ -8,8 +8,7 @@
     box-sizing: border-box;
     border: solid 1px black;
     .linenos {
-        border-right: solid 1px silver;
-        border-top: solid 1px silver;
+        padding: 0 5px 0 5px;
     }
     .chunk {
       content-visibility: auto;
@@ -92,10 +91,10 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 a.backref {
     text-decoration: none;
     font-weight: bold;
-    span { background-color: #F0F8FF; }
+    span { color: #1C01CE; }
 }
 a { color: inherit; }
-:target {
+:target:not(.backref) {
     background-color: gold;
 }
 body {
@@ -143,7 +142,6 @@ body {
 .linenos {
     user-select: none;
     display: inline-block;
-    padding: 0 0 0 0;
     text-align: right;
 }
 .linenos::selection {
@@ -203,7 +201,7 @@ function selectFileFragment(name, firstRow, firstCol, lastRow, endCol) {
 <div class="pane y-scrollable">
 
 
-<div class="code-block"><pre><div class="chunk"><span class="linenos" style="width:3ch;">1</span>NETLIST &quot;$root&quot; &lt;built-in&gt; <span id="(B)">(B)</span> constPoolp:<a href="#(D)">(D)</a>, delaySchedulerp:<a href="#UNLINKED">UNLINKED</a>, dollarUnitPkgp:<a href="#UNLINKED">UNLINKED</a>, dpiExportTriggerp:<a href="#UNLINKED">UNLINKED</a>, evalNbap:<a href="#UNLINKED">UNLINKED</a>, evalp:<a href="#UNLINKED">UNLINKED</a>, nbaEventTriggerp:<a href="#UNLINKED">UNLINKED</a>, nbaEventp:<a href="#UNLINKED">UNLINKED</a>, stdPackagep:<a href="#UNLINKED">UNLINKED</a>, timeprecision:1ps, timeunit:1ps, topScopep:<a href="#UNLINKED">UNLINKED</a>, typeTablep:<a href="#(C)">(C)</a>
+<div class="code-block" style="text-indent: calc(3ch + 10px) hanging each-line;"><pre><span class="linenos" style="width:3ch;">1</span>NETLIST &quot;$root&quot; &lt;built-in&gt; <span id="(B)">(B)</span> constPoolp:<a href="#(D)">(D)</a>, delaySchedulerp:<a href="#UNLINKED">UNLINKED</a>, dollarUnitPkgp:<a href="#UNLINKED">UNLINKED</a>, dpiExportTriggerp:<a href="#UNLINKED">UNLINKED</a>, evalNbap:<a href="#UNLINKED">UNLINKED</a>, evalp:<a href="#UNLINKED">UNLINKED</a>, nbaEventTriggerp:<a href="#UNLINKED">UNLINKED</a>, nbaEventp:<a href="#UNLINKED">UNLINKED</a>, stdPackagep:<a href="#UNLINKED">UNLINKED</a>, timeprecision:1ps, timeunit:1ps, topScopep:<a href="#UNLINKED">UNLINKED</a>, typeTablep:<a href="#(C)">(C)</a>
 <span class="linenos" style="width:3ch;">2</span> modulesp:
 <span class="linenos" style="width:3ch;">3</span>   MODULE &quot;serial_adder&quot; <a id="back-test1.sv-15" href="#test1.sv-15" onclick="return selectFileFragment('test1.sv',15,8,15,20)">test1.sv-15</a> <span id="(E)">(E)</span> level:2, origName:serial_adder, timeunit:1ps
 <span class="linenos" style="width:3ch;">4</span>    stmtsp:
@@ -719,10 +717,10 @@ function selectFileFragment(name, firstRow, firstCol, lastRow, endCol) {
 <button type="button" onclick="showtab('test1.sv')">test1.sv</button>
 </div>
 <div class="tabs">
-<div class="tab y-scrollable" id="<verilated_std>"><div class="code-block"><div class="code-block"><pre><a id="&lt;verilated_std&gt;-1"><span class="linenos" style="width:1ch;">1</span></a><span class="c1">// placeholder file that mimics vetilated_std.sv</span>
+<div class="tab y-scrollable" id="<verilated_std>"><div class="code-block"><div class="code-block" style="text-indent: calc(1ch + 2*5px) hanging each-line;"><pre><a id="&lt;verilated_std&gt;-1"><span class="linenos" style="width:1ch;">1</span></a><span class="c1">// placeholder file that mimics vetilated_std.sv</span>
 </pre></div></div>
 </div>
-<div class="tab y-scrollable" id="test1.sv"><div class="code-block"><div class="code-block"><pre><a id="test1.sv-1"><span class="linenos" style="width:2ch;">1</span></a><span class="cm">/* used for generating test1* files</span>
+<div class="tab y-scrollable" id="test1.sv"><div class="code-block"><div class="code-block" style="text-indent: calc(2ch + 2*5px) hanging each-line;"><pre><a id="test1.sv-1"><span class="linenos" style="width:2ch;">1</span></a><span class="cm">/* used for generating test1* files</span>
 <a id="test1.sv-2"><span class="linenos" style="width:2ch;">2</span></a><span class="cm">$ verilator --lint-only --no-json-edit-nums --dump-tree-json test1.sv &amp;&amp; (cd obj_dir &amp;&amp; cp Vtest1*009*.json ../test1_a.tree.json &amp;&amp; cp Vtest1*012*.json ../test1_b.tree.json &amp;&amp; cp Vtest1.tree.meta.json ../test1.tree.meta.json) &amp;&amp; rm -rf obj_dir/Vtest* &amp;&amp; rmdir obj_dir</span>
 <a id="test1.sv-3"><span class="linenos" style="width:2ch;">3</span></a><span class="cm">*/</span>
 <a id="test1.sv-4"><span class="linenos" style="width:2ch;">4</span></a>

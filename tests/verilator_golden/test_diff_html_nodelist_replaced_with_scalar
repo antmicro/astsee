@@ -8,8 +8,7 @@
     box-sizing: border-box;
     border: solid 1px black;
     .linenos {
-        border-right: solid 1px silver;
-        border-top: solid 1px silver;
+        padding: 0 5px 0 5px;
     }
     .chunk {
       content-visibility: auto;
@@ -92,10 +91,10 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 a.backref {
     text-decoration: none;
     font-weight: bold;
-    span { background-color: #F0F8FF; }
+    span { color: #1C01CE; }
 }
 a { color: inherit; }
-:target {
+:target:not(.backref) {
     background-color: gold;
 }
 body {
@@ -143,7 +142,6 @@ body {
 .linenos {
     user-select: none;
     display: inline-block;
-    padding: 0 0 0 0;
     text-align: right;
 }
 .linenos::selection {
@@ -203,7 +201,7 @@ function selectFileFragment(name, firstRow, firstCol, lastRow, endCol) {
 <div class="pane y-scrollable">
 
 
-<div class="code-block"><pre><div class="chunk"><span class="linenos" style="width:1ch;">1</span>NETLIST &quot;$root&quot; a:0 <span id="(B)">(B)</span>
+<div class="code-block" style="text-indent: calc(1ch + 10px) hanging each-line;"><pre><span class="linenos" style="width:1ch;">1</span>NETLIST &quot;$root&quot; a:0 <span id="(B)">(B)</span>
 <span class="linenos" style="width:1ch;">2</span> <span style="color:red;">modulesp:</span>
 <span class="linenos" style="width:1ch;">3</span>   <span style="color:red;">MODULE</span> <span style="color:red;">&quot;serial_adder&quot;</span> <span style="color:red;">d:15</span> <span style="color:red;"><span id="(E)">(E)</span></span>
 <span class="linenos" style="width:1ch;">4</span> <span style="color:green;">modulesp:</span> <span style="color:green;">UNLINKED</span>

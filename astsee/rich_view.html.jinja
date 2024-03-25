@@ -10,13 +10,13 @@ a.backref {
     text-decoration: none;
     font-weight: bold;
 {%- if dark %}
-    span { background-color: #458588; }
+    span { color: #94c6d4; }
 {%- else %}
-    span { background-color: #F0F8FF; }
+    span { color: #1C01CE; }
 {% endif -%}
 }
 a { color: inherit; }
-:target {
+:target:not(.backref) {
 {%- if dark %}
     background-color: #076678;
 {%- else %}
@@ -79,7 +79,6 @@ body {
 .linenos {
     user-select: none;
     display: inline-block;
-    padding: 0 0 0 0;
     text-align: right;
 }
 .linenos::selection {
