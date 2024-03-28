@@ -280,7 +280,7 @@ class DictDiff:
 
     def _diff_to_string(self, diff, indent):
         if isinstance(diff, OmittedNode):
-            return f'{indent}{self._colorize(diff.color(), "... * "+str(diff.content))}\n'
+            return f'{indent}{self._colorize(diff.color(), f"... * {diff.content}")}\n'
         if isinstance(diff, ReplaceDiffNode):
             return self._diff_to_string(diff.old, indent) + self._diff_to_string(diff.new, indent)
         if isinstance(diff.content, list):
@@ -319,10 +319,10 @@ class DictDiff:
 
         if is_children(children):
             return (
-                f'{indent} {self._colorize(children.color(), key + ":")}\n{self._diff_to_string(children, indent+"  ")}'
+                f'{indent} {self._colorize(children.color(), f"{key}:")}\n{self._diff_to_string(children, indent+"  ")}'
             )
         else:  # Scalar may get classified as children (e.g when array was replaced with string)
-            return f'{indent} {self._colorize(children.color(), key + ":")} {self._diff_to_string(children, "")}'
+            return f'{indent} {self._colorize(children.color(), f"{key}:")} {self._diff_to_string(children, "")}'
 
 
 class DictDiffToTerm(DictDiff):
