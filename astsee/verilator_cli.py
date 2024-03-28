@@ -150,7 +150,7 @@ class AstDiffToHtml:
         self.srcfiles = {}  # filename : set_of_referenced_lines
         val_handlers = {
             'editNum': (lambda v: html.escape(f'<e{html.escape(str(v))}>')),
-            'name': (lambda v: html.escape(f'"{stringify(v, quote_empty=0)}"')),
+            'name': (lambda v: "<b>" + html.escape(f'"{stringify(v, quote_empty=0)}"') + "</b>"),
             "addr": (lambda v: f'<span id="{html.escape(v)}">{html.escape(v)}</span>'),
             'loc': self.loc_handler,
         }  # yapf: disable
