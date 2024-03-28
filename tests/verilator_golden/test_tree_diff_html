@@ -137,10 +137,6 @@ body {
     display: flex;
     flex-flow: column nowrap;
 
-    .tabmenu {
-        display: flex;
-        flex-flow: row wrap;
-    }
     .tabs {
         height: 100%;
         position: relative;
@@ -177,7 +173,8 @@ body {
 <script>
 let topIdx = 1;
 
-function showtab(tabname) {
+function showtab(tabname, updateMenu=true) {
+  if (updateMenu) document.getElementById('tabmenu').value = tabname;
   document.getElementById(tabname).style.zIndex = ++topIdx;
 }
 function skipToChar(node, i) {
@@ -953,9 +950,9 @@ function selectFileFragment(name, firstRow, firstCol, lastRow, endCol) {
 </div>
 
 <div class="pane source-pane">
-<div class="tabmenu">
-<button type="button" onclick="showtab('test1.sv')">test1.sv</button>
-</div>
+<select id="tabmenu" onchange="showtab(this.options[this.selectedIndex].value, false)">
+<option value="test1.sv">test1.sv</option>
+</select>
 <div class="tabs">
 <div class="tab y-scrollable" id="test1.sv"><div class="code-block"><div class="code-block" style="text-indent: calc(2ch + 2*5px) hanging each-line;"><pre><a id="test1.sv-1"><span class="linenos" style="width:2ch;">1</span></a><span class="cm">/* used for generating test1* files</span>
 <a id="test1.sv-2"><span class="linenos" style="width:2ch;">2</span></a><span class="cm">$ verilator --lint-only --no-json-edit-nums --dump-tree-json test1.sv &amp;&amp; (cd obj_dir &amp;&amp; cp Vtest1*009*.json ../test1_a.tree.json &amp;&amp; cp Vtest1*012*.json ../test1_b.tree.json &amp;&amp; cp Vtest1.tree.meta.json ../test1.tree.meta.json) &amp;&amp; rm -rf obj_dir/Vtest* &amp;&amp; rmdir obj_dir</span>

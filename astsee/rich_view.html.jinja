@@ -46,10 +46,6 @@ body {
     display: flex;
     flex-flow: column nowrap;
 
-    .tabmenu {
-        display: flex;
-        flex-flow: row wrap;
-    }
     .tabs {
         height: 100%;
         position: relative;
@@ -98,11 +94,13 @@ body {
 </div>
 
 <div class="pane source-pane">
-<div class="tabmenu">
+{% if srcfiles-%}
+<select id="tabmenu" onchange="showtab(this.options[this.selectedIndex].value, false)">
 {% for fname in srcfiles-%}
-   <button type="button" onclick="showtab('{{fname}}')">{{fname}}</button>
+   <option value="{{fname}}">{{fname}}</option>
 {% endfor -%}
-</div>
+</select>
+{% endif -%}
 <div class="tabs">
 {% for fname in srcfiles-%}
   {{make_tab(fname)|safe}}

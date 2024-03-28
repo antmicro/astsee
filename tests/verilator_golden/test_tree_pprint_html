@@ -137,10 +137,6 @@ body {
     display: flex;
     flex-flow: column nowrap;
 
-    .tabmenu {
-        display: flex;
-        flex-flow: row wrap;
-    }
     .tabs {
         height: 100%;
         position: relative;
@@ -177,7 +173,8 @@ body {
 <script>
 let topIdx = 1;
 
-function showtab(tabname) {
+function showtab(tabname, updateMenu=true) {
+  if (updateMenu) document.getElementById('tabmenu').value = tabname;
   document.getElementById(tabname).style.zIndex = ++topIdx;
 }
 function skipToChar(node, i) {
@@ -736,10 +733,10 @@ function selectFileFragment(name, firstRow, firstCol, lastRow, endCol) {
 </div>
 
 <div class="pane source-pane">
-<div class="tabmenu">
-<button type="button" onclick="showtab('&lt;verilated_std&gt;')">&lt;verilated_std&gt;</button>
-<button type="button" onclick="showtab('test1.sv')">test1.sv</button>
-</div>
+<select id="tabmenu" onchange="showtab(this.options[this.selectedIndex].value, false)">
+<option value="&lt;verilated_std&gt;">&lt;verilated_std&gt;</option>
+<option value="test1.sv">test1.sv</option>
+</select>
 <div class="tabs">
 <div class="tab y-scrollable" id="<verilated_std>"><div class="code-block"><div class="code-block" style="text-indent: calc(1ch + 2*5px) hanging each-line;"><pre><a id="&lt;verilated_std&gt;-1"><span class="linenos" style="width:1ch;">1</span></a><span class="c1">// placeholder file that mimics vetilated_std.sv</span>
 </pre></div></div>
