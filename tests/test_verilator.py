@@ -50,6 +50,10 @@ def test_tree_diff_html(request):
     run(request, f"{IN_DIR}/test1_a.tree.json {IN_DIR}/test1_b.tree.json --html")
 
 
+def test_tree_diff_html_light(request):
+    run(request, f"{IN_DIR}/test1_a.tree.json {IN_DIR}/test1_b.tree.json --html --light")
+
+
 def test_tree_diff_html_filter_no_meta(request):
     # empty meta arg disables guessing of meta file path
     run(request, f'{IN_DIR}/test1_a.tree.json {IN_DIR}/test1_b.tree.json --html -d "ptrs" --meta ""')
