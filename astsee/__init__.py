@@ -419,7 +419,7 @@ class DictDiffToHtml:
                 f'{indent} {self._colorize(children.color(), key + ":")}\n{self._diff_to_string(children, indent+"  ")}'
             )
         else:  # Scalar may get classified as children (e.g when array was replaced with string)
-            return f'{indent} {self._colorize(children.color(), key + ":")}: {self._diff_to_string(children, "")}'
+            return f'{indent} {self._colorize(children.color(), key + ":")} {self._diff_to_string(children, "")}'
 
     def _output_implicit(self, key, val):
         if isinstance(val, ReplaceDiffNode):
