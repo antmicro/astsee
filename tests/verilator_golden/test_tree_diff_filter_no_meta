@@ -66,7 +66,7 @@
              [39mexprp:
                [31mSELBIT[39m->[32mSEL [39m"" [39md:25 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0]
                 [39mfromp:
-                  [39m... * 1
+                 [39m... * 1
                 [31mbitp:
                   [31mCONST [31m"?32?sh0" [31md:24
                 [32mlsbp:
@@ -77,7 +77,7 @@
              [39mexprp:
                [31mSELBIT[39m->[32mSEL [39m"" [39md:25 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0]
                 [39mfromp:
-                  [39m... * 1
+                 [39m... * 1
                 [31mbitp:
                   [31mCONST [31m"?32?sh0" [31md:24
                 [32mlsbp:
@@ -88,7 +88,7 @@
              [39mexprp:
                [31mSELBIT[39m->[32mSEL [39m"" [39md:25 [32mdeclElWidth:1[39m, [32mdeclRange:[8:0]
                 [39mfromp:
-                  [39m... * 1
+                 [39m... * 1
                 [31mbitp:
                   [31mCONST [31m"?32?sh0" [31md:24
                 [32mlsbp:
@@ -99,7 +99,7 @@
              [39mexprp:
                [31mSELBIT[39m->[32mSEL [39m"" [39md:25 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0]
                 [39mfromp:
-                  [39m... * 1
+                 [39m... * 1
                 [31mbitp:
                   [31mCONST [31m"?32?sh0" [31md:24
                 [32mlsbp:
@@ -110,7 +110,7 @@
              [39mexprp:
                [31mSELBIT[39m->[32mSEL [39m"" [39md:25 [32mdeclElWidth:1[39m, [32mdeclRange:[8:0]
                 [39mfromp:
-                  [39m... * 1
+                 [39m... * 1
                 [31mbitp:
                   [31mADD [31m"" [31md:25
                    [31mlhsp:
@@ -139,7 +139,7 @@
              [39mexprp:
                [31mSELBIT[39m->[32mSEL [39m"" [39md:25 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0]
                 [39mfromp:
-                  [39m... * 1
+                 [39m... * 1
                 [31mbitp:
                   [31mCONST [31m"?32?sh1" [31md:24
                 [32mlsbp:
@@ -150,7 +150,7 @@
              [39mexprp:
                [31mSELBIT[39m->[32mSEL [39m"" [39md:25 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0]
                 [39mfromp:
-                  [39m... * 1
+                 [39m... * 1
                 [31mbitp:
                   [31mCONST [31m"?32?sh1" [31md:24
                 [32mlsbp:
@@ -161,7 +161,7 @@
              [39mexprp:
                [31mSELBIT[39m->[32mSEL [39m"" [39md:25 [32mdeclElWidth:1[39m, [32mdeclRange:[8:0]
                 [39mfromp:
-                  [39m... * 1
+                 [39m... * 1
                 [31mbitp:
                   [31mCONST [31m"?32?sh1" [31md:24
                 [32mlsbp:
@@ -172,7 +172,7 @@
              [39mexprp:
                [31mSELBIT[39m->[32mSEL [39m"" [39md:25 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0]
                 [39mfromp:
-                  [39m... * 1
+                 [39m... * 1
                 [31mbitp:
                   [31mCONST [31m"?32?sh1" [31md:24
                 [32mlsbp:
@@ -183,7 +183,7 @@
              [39mexprp:
                [31mSELBIT[39m->[32mSEL [39m"" [39md:25 [32mdeclElWidth:1[39m, [32mdeclRange:[8:0]
                 [39mfromp:
-                  [39m... * 1
+                 [39m... * 1
                 [31mbitp:
                   [31mADD [31m"" [31md:25
                    [31mlhsp:
@@ -212,7 +212,7 @@
              [39mexprp:
                [31mSELBIT[39m->[32mSEL [39m"" [39md:25 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0]
                 [39mfromp:
-                  [39m... * 1
+                 [39m... * 1
                 [31mbitp:
                   [31mCONST [31m"?32?sh2" [31md:24
                 [32mlsbp:
@@ -223,7 +223,7 @@
              [39mexprp:
                [31mSELBIT[39m->[32mSEL [39m"" [39md:25 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0]
                 [39mfromp:
-                  [39m... * 1
+                 [39m... * 1
                 [31mbitp:
                   [31mCONST [31m"?32?sh2" [31md:24
                 [32mlsbp:
@@ -234,7 +234,7 @@
              [39mexprp:
                [31mSELBIT[39m->[32mSEL [39m"" [39md:25 [32mdeclElWidth:1[39m, [32mdeclRange:[8:0]
                 [39mfromp:
-                  [39m... * 1
+                 [39m... * 1
                 [31mbitp:
                   [31mCONST [31m"?32?sh2" [31md:24
                 [32mlsbp:
@@ -245,7 +245,7 @@
              [39mexprp:
                [31mSELBIT[39m->[32mSEL [39m"" [39md:25 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0]
                 [39mfromp:
-                  [39m... * 1
+                 [39m... * 1
                 [31mbitp:
                   [31mCONST [31m"?32?sh2" [31md:24
                 [32mlsbp:
@@ -256,7 +256,7 @@
              [39mexprp:
                [31mSELBIT[39m->[32mSEL [39m"" [39md:25 [32mdeclElWidth:1[39m, [32mdeclRange:[8:0]
                 [39mfromp:
-                  [39m... * 1
+                 [39m... * 1
                 [31mbitp:
                   [31mADD [31m"" [31md:25
                    [31mlhsp:
@@ -285,7 +285,7 @@
              [39mexprp:
                [31mSELBIT[39m->[32mSEL [39m"" [39md:25 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0]
                 [39mfromp:
-                  [39m... * 1
+                 [39m... * 1
                 [31mbitp:
                   [31mCONST [31m"?32?sh3" [31md:24
                 [32mlsbp:
@@ -296,7 +296,7 @@
              [39mexprp:
                [31mSELBIT[39m->[32mSEL [39m"" [39md:25 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0]
                 [39mfromp:
-                  [39m... * 1
+                 [39m... * 1
                 [31mbitp:
                   [31mCONST [31m"?32?sh3" [31md:24
                 [32mlsbp:
@@ -307,7 +307,7 @@
              [39mexprp:
                [31mSELBIT[39m->[32mSEL [39m"" [39md:25 [32mdeclElWidth:1[39m, [32mdeclRange:[8:0]
                 [39mfromp:
-                  [39m... * 1
+                 [39m... * 1
                 [31mbitp:
                   [31mCONST [31m"?32?sh3" [31md:24
                 [32mlsbp:
@@ -318,7 +318,7 @@
              [39mexprp:
                [31mSELBIT[39m->[32mSEL [39m"" [39md:25 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0]
                 [39mfromp:
-                  [39m... * 1
+                 [39m... * 1
                 [31mbitp:
                   [31mCONST [31m"?32?sh3" [31md:24
                 [32mlsbp:
@@ -329,7 +329,7 @@
              [39mexprp:
                [31mSELBIT[39m->[32mSEL [39m"" [39md:25 [32mdeclElWidth:1[39m, [32mdeclRange:[8:0]
                 [39mfromp:
-                  [39m... * 1
+                 [39m... * 1
                 [31mbitp:
                   [31mADD [31m"" [31md:25
                    [31mlhsp:
@@ -358,7 +358,7 @@
              [39mexprp:
                [31mSELBIT[39m->[32mSEL [39m"" [39md:25 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0]
                 [39mfromp:
-                  [39m... * 1
+                 [39m... * 1
                 [31mbitp:
                   [31mCONST [31m"?32?sh4" [31md:24
                 [32mlsbp:
@@ -369,7 +369,7 @@
              [39mexprp:
                [31mSELBIT[39m->[32mSEL [39m"" [39md:25 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0]
                 [39mfromp:
-                  [39m... * 1
+                 [39m... * 1
                 [31mbitp:
                   [31mCONST [31m"?32?sh4" [31md:24
                 [32mlsbp:
@@ -380,7 +380,7 @@
              [39mexprp:
                [31mSELBIT[39m->[32mSEL [39m"" [39md:25 [32mdeclElWidth:1[39m, [32mdeclRange:[8:0]
                 [39mfromp:
-                  [39m... * 1
+                 [39m... * 1
                 [31mbitp:
                   [31mCONST [31m"?32?sh4" [31md:24
                 [32mlsbp:
@@ -391,7 +391,7 @@
              [39mexprp:
                [31mSELBIT[39m->[32mSEL [39m"" [39md:25 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0]
                 [39mfromp:
-                  [39m... * 1
+                 [39m... * 1
                 [31mbitp:
                   [31mCONST [31m"?32?sh4" [31md:24
                 [32mlsbp:
@@ -402,7 +402,7 @@
              [39mexprp:
                [31mSELBIT[39m->[32mSEL [39m"" [39md:25 [32mdeclElWidth:1[39m, [32mdeclRange:[8:0]
                 [39mfromp:
-                  [39m... * 1
+                 [39m... * 1
                 [31mbitp:
                   [31mADD [31m"" [31md:25
                    [31mlhsp:
@@ -431,7 +431,7 @@
              [39mexprp:
                [31mSELBIT[39m->[32mSEL [39m"" [39md:25 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0]
                 [39mfromp:
-                  [39m... * 1
+                 [39m... * 1
                 [31mbitp:
                   [31mCONST [31m"?32?sh5" [31md:24
                 [32mlsbp:
@@ -442,7 +442,7 @@
              [39mexprp:
                [31mSELBIT[39m->[32mSEL [39m"" [39md:25 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0]
                 [39mfromp:
-                  [39m... * 1
+                 [39m... * 1
                 [31mbitp:
                   [31mCONST [31m"?32?sh5" [31md:24
                 [32mlsbp:
@@ -453,7 +453,7 @@
              [39mexprp:
                [31mSELBIT[39m->[32mSEL [39m"" [39md:25 [32mdeclElWidth:1[39m, [32mdeclRange:[8:0]
                 [39mfromp:
-                  [39m... * 1
+                 [39m... * 1
                 [31mbitp:
                   [31mCONST [31m"?32?sh5" [31md:24
                 [32mlsbp:
@@ -464,7 +464,7 @@
              [39mexprp:
                [31mSELBIT[39m->[32mSEL [39m"" [39md:25 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0]
                 [39mfromp:
-                  [39m... * 1
+                 [39m... * 1
                 [31mbitp:
                   [31mCONST [31m"?32?sh5" [31md:24
                 [32mlsbp:
@@ -475,7 +475,7 @@
              [39mexprp:
                [31mSELBIT[39m->[32mSEL [39m"" [39md:25 [32mdeclElWidth:1[39m, [32mdeclRange:[8:0]
                 [39mfromp:
-                  [39m... * 1
+                 [39m... * 1
                 [31mbitp:
                   [31mADD [31m"" [31md:25
                    [31mlhsp:
@@ -504,7 +504,7 @@
              [39mexprp:
                [31mSELBIT[39m->[32mSEL [39m"" [39md:25 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0]
                 [39mfromp:
-                  [39m... * 1
+                 [39m... * 1
                 [31mbitp:
                   [31mCONST [31m"?32?sh6" [31md:24
                 [32mlsbp:
@@ -515,7 +515,7 @@
              [39mexprp:
                [31mSELBIT[39m->[32mSEL [39m"" [39md:25 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0]
                 [39mfromp:
-                  [39m... * 1
+                 [39m... * 1
                 [31mbitp:
                   [31mCONST [31m"?32?sh6" [31md:24
                 [32mlsbp:
@@ -526,7 +526,7 @@
              [39mexprp:
                [31mSELBIT[39m->[32mSEL [39m"" [39md:25 [32mdeclElWidth:1[39m, [32mdeclRange:[8:0]
                 [39mfromp:
-                  [39m... * 1
+                 [39m... * 1
                 [31mbitp:
                   [31mCONST [31m"?32?sh6" [31md:24
                 [32mlsbp:
@@ -537,7 +537,7 @@
              [39mexprp:
                [31mSELBIT[39m->[32mSEL [39m"" [39md:25 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0]
                 [39mfromp:
-                  [39m... * 1
+                 [39m... * 1
                 [31mbitp:
                   [31mCONST [31m"?32?sh6" [31md:24
                 [32mlsbp:
@@ -548,7 +548,7 @@
              [39mexprp:
                [31mSELBIT[39m->[32mSEL [39m"" [39md:25 [32mdeclElWidth:1[39m, [32mdeclRange:[8:0]
                 [39mfromp:
-                  [39m... * 1
+                 [39m... * 1
                 [31mbitp:
                   [31mADD [31m"" [31md:25
                    [31mlhsp:
@@ -577,7 +577,7 @@
              [39mexprp:
                [31mSELBIT[39m->[32mSEL [39m"" [39md:25 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0]
                 [39mfromp:
-                  [39m... * 1
+                 [39m... * 1
                 [31mbitp:
                   [31mCONST [31m"?32?sh7" [31md:24
                 [32mlsbp:
@@ -588,7 +588,7 @@
              [39mexprp:
                [31mSELBIT[39m->[32mSEL [39m"" [39md:25 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0]
                 [39mfromp:
-                  [39m... * 1
+                 [39m... * 1
                 [31mbitp:
                   [31mCONST [31m"?32?sh7" [31md:24
                 [32mlsbp:
@@ -599,7 +599,7 @@
              [39mexprp:
                [31mSELBIT[39m->[32mSEL [39m"" [39md:25 [32mdeclElWidth:1[39m, [32mdeclRange:[8:0]
                 [39mfromp:
-                  [39m... * 1
+                 [39m... * 1
                 [31mbitp:
                   [31mCONST [31m"?32?sh7" [31md:24
                 [32mlsbp:
@@ -610,7 +610,7 @@
              [39mexprp:
                [31mSELBIT[39m->[32mSEL [39m"" [39md:25 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0]
                 [39mfromp:
-                  [39m... * 1
+                 [39m... * 1
                 [31mbitp:
                   [31mCONST [31m"?32?sh7" [31md:24
                 [32mlsbp:
@@ -621,7 +621,7 @@
              [39mexprp:
                [31mSELBIT[39m->[32mSEL [39m"" [39md:25 [32mdeclElWidth:1[39m, [32mdeclRange:[8:0]
                 [39mfromp:
-                  [39m... * 1
+                 [39m... * 1
                 [31mbitp:
                   [31mADD [31m"" [31md:25
                    [31mlhsp:
@@ -644,11 +644,11 @@
                   [32mCONST [32m"?32?h1" [32md:25
       [39mASSIGNW [39m"" [39md:28
        [39mrhsp:
-         [39m... * 1
+        [39m... * 1
        [39mlhsp:
          [31mSELBIT[39m->[32mSEL [39m"" [39md:28 [32mdeclElWidth:1[39m, [32mdeclRange:[8:0]
           [39mfromp:
-            [39m... * 1
+           [39m... * 1
           [31mbitp:
             [31mCONST [31m"?32?sh0" [31md:28
           [32mlsbp:
@@ -659,7 +659,7 @@
        [39mrhsp:
          [31mSELBIT[39m->[32mSEL [39m"" [39md:29 [32mdeclElWidth:1[39m, [32mdeclRange:[8:0]
           [39mfromp:
-            [39m... * 1
+           [39m... * 1
           [31mbitp:
             [31mSUB [31m"" [31md:29
              [31mlhsp:
@@ -681,7 +681,7 @@
           [32mwidthp:
             [32mCONST [32m"?32?h1" [32md:29
        [39mlhsp:
-         [39m... * 1
+        [39m... * 1
    [39mMODULE [39m"full_adder" [39md:5 [39mlevel:3[39m, [39morigName:full_adder[39m, [39mtimeunit:1ps
     [39mstmtsp:
       [39mVAR [39m"a" [39md:6 [39mattrClocker:UNKNOWN[39m, [39mdirection:INPUT[39m, [39mlifetime:NONE[39m, [39morigName:a[39m, [39msensIfacep:UNLINKED[39m, [39mvarType:PORT

@@ -1,0 +1,5 @@
+{"type":"NETLIST","name":"$root","addr":"(B)","loc":"a,0:0,0:0",
+ "modulesp": [
+  {"type":"MODULE","name":"serial_adder","addr":"(E)","loc":"d,15:8,15:20"
+  }]
+}
