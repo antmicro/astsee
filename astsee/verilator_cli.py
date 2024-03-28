@@ -99,7 +99,7 @@ parser.add_argument(
     action="store_true",
     dest="html_browser",
 )
-parser.add_argument("--dark", help="Use dark mode. Applicable with --html(b)", action="store_true")
+parser.add_argument("--light", help="Use light theme. Applicable with --html(b)", action="store_true")
 parser.add_argument(
     "--loglevel",
     default="warning",
@@ -316,7 +316,7 @@ def main(args=None):
     omit_intact = args.omit and args.newfile  # ommiting unmodified chunks does not make sense without diff
 
     if args.html or args.html_browser:
-        diff_to_str = AstDiffToHtml(omit_intact, split_fields, meta, args.dark)
+        diff_to_str = AstDiffToHtml(omit_intact, split_fields, meta, not args.light)
     else:
         loc_handler = partial(plaintext_loc_handler, meta=meta)
         val_handlers = {
