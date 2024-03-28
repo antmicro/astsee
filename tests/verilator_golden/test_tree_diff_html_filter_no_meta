@@ -109,10 +109,12 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 a.backref {
     text-decoration: none;
     font-weight: bold;
-    span { color: #94c6d4; }}
+    span { color: #94c6d4; }
+}
 a { color: inherit; }
 :target:not(.backref) {
-    background-color: #076678;}
+    background-color: #076678;
+}
 body {
     display: flex;
     flex-flow: row nowrap;
@@ -150,6 +152,7 @@ body {
         top: 0;
         left: 0;
         background: #332d37;
+
     }
     .tab:first-child {
         z-index: 1;

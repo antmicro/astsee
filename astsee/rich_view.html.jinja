@@ -11,7 +11,7 @@ a.backref {
     font-weight: bold;
 {%- if dark %}
     span { color: #94c6d4; }
-{%- else %}
+{% else %}
     span { color: #1C01CE; }
 {% endif -%}
 }
@@ -19,7 +19,7 @@ a { color: inherit; }
 :target:not(.backref) {
 {%- if dark %}
     background-color: #076678;
-{%- else %}
+{% else %}
     background-color: gold;
 {% endif -%}
 }
@@ -62,7 +62,7 @@ body {
         left: 0;
 {%- if dark %}
         background: #332d37;
-{%- else %}
+{% else %}
         background-color: white; /* we have to use some color here so it won't be transparent */
 {%- endif %}
     }
