@@ -154,13 +154,7 @@ class AstDiffToHtml:
             "addr": (lambda v: f'<span id="{html.escape(v)}">{html.escape(v)}</span>'),
             'loc': self.loc_handler,
         }  # yapf: disable
-        val_handlers.update(
-            {
-                k: (lambda v: f'<a href="#{html.escape(v)}">{html.escape(v)}</a>')
-                for k in meta["ptrFieldNames"]
-                if k != "addr"
-            }
-        )
+        val_handlers.update({k: self.format_ptr_link for k in meta["ptrFieldNames"] if k != "addr"})
         if dark:
             colors = {COLOR_RED: "#e74a3c", COLOR_GREEN: "#00af91"}
         else:
@@ -173,6 +167,12 @@ class AstDiffToHtml:
             js = f.read()
         globals_ = {"make_tab": self.make_tab, "extern_css": extern_css, "js": js, "dark": dark}
         self.template = self.diff_to_str_generic.make_html_tmpl("rich_view.html.jinja", globals_)
+
+    def format_ptr_link(self, ptr):
+        if ptr == "UNLINKED":
+            return "UNLINKED"
+        else:
+            return f'<a href="#{html.escape(ptr)}">{html.escape(ptr)}</a>'
 
     def resolve_path(self, file):
         # Try to find symbolic/relative (preferred) or absolute path of file.
