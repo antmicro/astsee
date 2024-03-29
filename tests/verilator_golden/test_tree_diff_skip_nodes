@@ -1,683 +1,683 @@
 NETLIST "$root" <built-in>:0 (B) constPoolp:(D), delaySchedulerp:UNLINKED, dollarUnitPkgp:UNLINKED, dpiExportTriggerp:UNLINKED, evalNbap:UNLINKED, evalp:UNLINKED, nbaEventTriggerp:UNLINKED, nbaEventp:UNLINKED, stdPackagep:UNLINKED, timeprecision:1ps, timeunit:1ps, topScopep:UNLINKED, typeTablep:(C)
  modulesp:
-   MODULE "serial_adder" test1.sv:15 (E) level:2, origName:serial_adder, timeunit:1ps
+   MODULE "serial_adder" .../test1.sv:7 (E) level:2, origName:serial_adder, timeunit:1ps
     stmtsp:
       ... * 1
-      VAR "a" test1.sv:16 (J) attrClocker:UNKNOWN, direction:INPUT, lifetime:NONE, origName:a, sensIfacep:UNLINKED, varType:PORT
+      VAR "a" .../test1.sv:8 (K) attrClocker:UNKNOWN, direction:INPUT, [32mdtypeName:logic[39m, dtypep:[31mUNLINKED[39m->[32m(L)[39m, lifetime:NONE, origName:a, sensIfacep:UNLINKED, varType:PORT
        [31mchildDTypep:[39m
-         [31mBASICDTYPE[39m [31m"logic"[39m [31mtest1.sv:16[39m [31m(K)[39m [31mkeyword:logic[39m
+         [31mBASICDTYPE[39m [31m"logic"[39m [31m.../test1.sv:8[39m [31m(L)[39m [31mdtypep:(L)[39m, [31mkeyword:logic[39m
           [31mrangep:[39m
-            [31mRANGE[39m [31m""[39m [31mtest1.sv:16[39m [31m(L)[39m
+            [31mRANGE[39m [31m""[39m [31m.../test1.sv:8[39m [31m(M)[39m
              [31mleftp:[39m
-               [31mSUB[39m [31m""[39m [31mtest1.sv:16[39m [31m(M)[39m
+               [31mSUB[39m [31m""[39m [31m.../test1.sv:8[39m [31m(N)[39m [31mdtypep:UNLINKED[39m
                 [31mlhsp:[39m
-                  [31mVARREF[39m [31m"WIDTH"[39m [31mtest1.sv:16[39m [31m(LF)[39m [31maccess:RD[39m, [31mclassOrPackagep:UNLINKED[39m, [31mvarScopep:UNLINKED[39m, [31mvarp:(F)[39m
+                  [31mVARREF[39m [31m"WIDTH"[39m [31m.../test1.sv:8[39m [31m(LF)[39m [31maccess:RD[39m, [31mclassOrPackagep:UNLINKED[39m, [31mdtypep:UNLINKED[39m, [31mvarScopep:UNLINKED[39m, [31mvarp:(F)[39m
                 [31mrhsp:[39m
-                  [31mCONST[39m [31m"?32?sh1"[39m [31mtest1.sv:16[39m [31m(O)[39m
+                  [31mCONST[39m [31m"?32?sh1"[39m [31m.../test1.sv:8[39m [31m(P)[39m [31mdtypep:(Q)[39m
              [31mrightp:[39m
-               [31mCONST[39m [31m"?32?sh0"[39m [31mtest1.sv:16[39m [31m(P)[39m
-      VAR "b" test1.sv:17 (R) attrClocker:UNKNOWN, direction:INPUT, lifetime:NONE, origName:b, sensIfacep:UNLINKED, varType:PORT
+               [31mCONST[39m [31m"?32?sh0"[39m [31m.../test1.sv:8[39m [31m(R)[39m [31mdtypep:(Q)[39m
+      VAR "b" .../test1.sv:9 (T) attrClocker:UNKNOWN, direction:INPUT, [32mdtypeName:logic[39m, dtypep:[31mUNLINKED[39m->[32m(U)[39m, lifetime:NONE, origName:b, sensIfacep:UNLINKED, varType:PORT
        [31mchildDTypep:[39m
-         [31mBASICDTYPE[39m [31m"logic"[39m [31mtest1.sv:17[39m [31m(S)[39m [31mkeyword:logic[39m
+         [31mBASICDTYPE[39m [31m"logic"[39m [31m.../test1.sv:9[39m [31m(U)[39m [31mdtypep:(U)[39m, [31mkeyword:logic[39m
           [31mrangep:[39m
-            [31mRANGE[39m [31m""[39m [31mtest1.sv:17[39m [31m(T)[39m
+            [31mRANGE[39m [31m""[39m [31m.../test1.sv:9[39m [31m(V)[39m
              [31mleftp:[39m
-               [31mSUB[39m [31m""[39m [31mtest1.sv:17[39m [31m(U)[39m
+               [31mSUB[39m [31m""[39m [31m.../test1.sv:9[39m [31m(W)[39m [31mdtypep:UNLINKED[39m
                 [31mlhsp:[39m
-                  [31mVARREF[39m [31m"WIDTH"[39m [31mtest1.sv:17[39m [31m(MF)[39m [31maccess:RD[39m, [31mclassOrPackagep:UNLINKED[39m, [31mvarScopep:UNLINKED[39m, [31mvarp:(F)[39m
+                  [31mVARREF[39m [31m"WIDTH"[39m [31m.../test1.sv:9[39m [31m(MF)[39m [31maccess:RD[39m, [31mclassOrPackagep:UNLINKED[39m, [31mdtypep:UNLINKED[39m, [31mvarScopep:UNLINKED[39m, [31mvarp:(F)[39m
                 [31mrhsp:[39m
-                  [31mCONST[39m [31m"?32?sh1"[39m [31mtest1.sv:17[39m [31m(W)[39m
+                  [31mCONST[39m [31m"?32?sh1"[39m [31m.../test1.sv:9[39m [31m(Y)[39m [31mdtypep:(Q)[39m
              [31mrightp:[39m
-               [31mCONST[39m [31m"?32?sh0"[39m [31mtest1.sv:17[39m [31m(X)[39m
-      VAR "cin" test1.sv:18 (Z) attrClocker:UNKNOWN, direction:INPUT, lifetime:NONE, origName:cin, sensIfacep:UNLINKED, varType:PORT
+               [31mCONST[39m [31m"?32?sh0"[39m [31m.../test1.sv:9[39m [31m(Z)[39m [31mdtypep:(Q)[39m
+      VAR "cin" .../test1.sv:10 (BB) attrClocker:UNKNOWN, direction:INPUT, [32mdtypeName:logic[39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m, lifetime:NONE, origName:cin, sensIfacep:UNLINKED, varType:PORT
        [31mchildDTypep:[39m
-         [31mBASICDTYPE[39m [31m"LOGIC_IMPLICIT"[39m [31mtest1.sv:18[39m [31m(AB)[39m [31mkeyword:LOGIC_IMPLICIT[39m
-      VAR "s" test1.sv:19 (CB) attrClocker:UNKNOWN, direction:OUTPUT, lifetime:NONE, origName:s, sensIfacep:UNLINKED, varType:PORT
+         [31mBASICDTYPE[39m [31m"LOGIC_IMPLICIT"[39m [31m.../test1.sv:10[39m [31m(CB)[39m [31mdtypep:(CB)[39m, [31mkeyword:LOGIC_IMPLICIT[39m
+      VAR "s" .../test1.sv:11 (EB) attrClocker:UNKNOWN, direction:OUTPUT, [32mdtypeName:logic[39m, dtypep:[31mUNLINKED[39m->[32m(FB)[39m, lifetime:NONE, origName:s, sensIfacep:UNLINKED, varType:PORT
        [31mchildDTypep:[39m
-         [31mBASICDTYPE[39m [31m"logic"[39m [31mtest1.sv:19[39m [31m(DB)[39m [31mkeyword:logic[39m
+         [31mBASICDTYPE[39m [31m"logic"[39m [31m.../test1.sv:11[39m [31m(FB)[39m [31mdtypep:(FB)[39m, [31mkeyword:logic[39m
           [31mrangep:[39m
-            [31mRANGE[39m [31m""[39m [31mtest1.sv:19[39m [31m(EB)[39m
+            [31mRANGE[39m [31m""[39m [31m.../test1.sv:11[39m [31m(GB)[39m
              [31mleftp:[39m
-               [31mSUB[39m [31m""[39m [31mtest1.sv:19[39m [31m(FB)[39m
+               [31mSUB[39m [31m""[39m [31m.../test1.sv:11[39m [31m(HB)[39m [31mdtypep:UNLINKED[39m
                 [31mlhsp:[39m
-                  [31mVARREF[39m [31m"WIDTH"[39m [31mtest1.sv:19[39m [31m(NF)[39m [31maccess:RD[39m, [31mclassOrPackagep:UNLINKED[39m, [31mvarScopep:UNLINKED[39m, [31mvarp:(F)[39m
+                  [31mVARREF[39m [31m"WIDTH"[39m [31m.../test1.sv:11[39m [31m(NF)[39m [31maccess:RD[39m, [31mclassOrPackagep:UNLINKED[39m, [31mdtypep:UNLINKED[39m, [31mvarScopep:UNLINKED[39m, [31mvarp:(F)[39m
                 [31mrhsp:[39m
-                  [31mCONST[39m [31m"?32?sh1"[39m [31mtest1.sv:19[39m [31m(HB)[39m
+                  [31mCONST[39m [31m"?32?sh1"[39m [31m.../test1.sv:11[39m [31m(JB)[39m [31mdtypep:(Q)[39m
              [31mrightp:[39m
-               [31mCONST[39m [31m"?32?sh0"[39m [31mtest1.sv:19[39m [31m(IB)[39m
-      VAR "cout" test1.sv:20 (KB) attrClocker:UNKNOWN, direction:OUTPUT, lifetime:NONE, origName:cout, sensIfacep:UNLINKED, varType:PORT
+               [31mCONST[39m [31m"?32?sh0"[39m [31m.../test1.sv:11[39m [31m(KB)[39m [31mdtypep:(Q)[39m
+      VAR "cout" .../test1.sv:12 (MB) attrClocker:UNKNOWN, direction:OUTPUT, [32mdtypeName:logic[39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m, lifetime:NONE, origName:cout, sensIfacep:UNLINKED, varType:PORT
        [31mchildDTypep:[39m
-         [31mBASICDTYPE[39m [31m"LOGIC_IMPLICIT"[39m [31mtest1.sv:20[39m [31m(LB)[39m [31mkeyword:LOGIC_IMPLICIT[39m
-      VAR "c" test1.sv:22 (MB) attrClocker:UNKNOWN, direction:NONE, lifetime:VSTATIC, origName:c, sensIfacep:UNLINKED, varType:WIRE
+         [31mBASICDTYPE[39m [31m"LOGIC_IMPLICIT"[39m [31m.../test1.sv:12[39m [31m(NB)[39m [31mdtypep:(NB)[39m, [31mkeyword:LOGIC_IMPLICIT[39m
+      VAR "c" .../test1.sv:14 (OB) attrClocker:UNKNOWN, direction:NONE, [32mdtypeName:logic[39m, dtypep:[31mUNLINKED[39m->[32m(PB)[39m, lifetime:VSTATIC, origName:c, sensIfacep:UNLINKED, varType:WIRE
        [31mchildDTypep:[39m
-         [31mBASICDTYPE[39m [31m"logic"[39m [31mtest1.sv:22[39m [31m(NB)[39m [31mkeyword:logic[39m
+         [31mBASICDTYPE[39m [31m"logic"[39m [31m.../test1.sv:14[39m [31m(PB)[39m [31mdtypep:(PB)[39m, [31mkeyword:logic[39m
           [31mrangep:[39m
-            [31mRANGE[39m [31m""[39m [31mtest1.sv:22[39m [31m(OB)[39m
+            [31mRANGE[39m [31m""[39m [31m.../test1.sv:14[39m [31m(QB)[39m
              [31mleftp:[39m
-               [31mVARREF[39m [31m"WIDTH"[39m [31mtest1.sv:22[39m [31m(OF)[39m [31maccess:RD[39m, [31mclassOrPackagep:UNLINKED[39m, [31mvarScopep:UNLINKED[39m, [31mvarp:(F)[39m
+               [31mVARREF[39m [31m"WIDTH"[39m [31m.../test1.sv:14[39m [31m(OF)[39m [31maccess:RD[39m, [31mclassOrPackagep:UNLINKED[39m, [31mdtypep:UNLINKED[39m, [31mvarScopep:UNLINKED[39m, [31mvarp:(F)[39m
              [31mrightp:[39m
-               [31mCONST[39m [31m"?32?sh0"[39m [31mtest1.sv:22[39m [31m(QB)[39m
+               [31mCONST[39m [31m"?32?sh0"[39m [31m.../test1.sv:14[39m [31m(SB)[39m [31mdtypep:(Q)[39m
       ... * 1
-      BEGIN "genblk1[0]" test1.sv:25 (TG) generate:True
+      BEGIN "genblk1[0]" .../test1.sv:17 (X) generate:True
        stmtsp:
-         CELL "fa" test1.sv:25 (UG) modp:(GC), origName:fa
+         CELL "fa" .../test1.sv:17 (TG) modp:(KC), origName:fa
           pinsp:
-            PIN "__pinNumber1" test1.sv:25 (VG) modPTypep:UNLINKED, modVarp:(RD)
+            PIN "__pinNumber1" .../test1.sv:17 (UG) modPTypep:UNLINKED, modVarp:(VD)
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" test1.sv:25 [31m(WG)[39m->[32m(FO)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [31m(VG)[39m->[32m(JN)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "a" .../test1.sv:17 (VE) access:RD, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(L)[39m, varScopep:UNLINKED, varp:(K)
                 [31mbitp:[39m
-                  [31mCONST[39m [31m"?32?sh0"[39m [31mtest1.sv:24[39m [31m(YG)[39m
+                  [31mCONST[39m [31m"?32?sh0"[39m [31m.../test1.sv:16[39m [31m(WG)[39m [31mdtypep:(Q)[39m
                 [32mlsbp:[39m
-                  [32mCONST[39m [32m"3'h0"[39m [32mtest1.sv:24[39m [32m(GO)[39m
+                  [32mCONST[39m [32m"3'h0"[39m [32m.../test1.sv:16[39m [32m(Y)[39m [32mdtypep:(KN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32mtest1.sv:25[39m [32m(HO)[39m
-            PIN "__pinNumber2" test1.sv:25 (ZG) modPTypep:UNLINKED, modVarp:(UD)
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m [32m(JB)[39m [32mdtypep:(HC)[39m
+            PIN "__pinNumber2" .../test1.sv:17 (XG) modPTypep:UNLINKED, modVarp:(YD)
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" test1.sv:25 [31m(AH)[39m->[32m(IO)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [31m(YG)[39m->[32m(LN)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "b" .../test1.sv:17 (PE) access:RD, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(U)[39m, varScopep:UNLINKED, varp:(T)
                 [31mbitp:[39m
-                  [31mCONST[39m [31m"?32?sh0"[39m [31mtest1.sv:24[39m [31m(CH)[39m
+                  [31mCONST[39m [31m"?32?sh0"[39m [31m.../test1.sv:16[39m [31m(QF)[39m [31mdtypep:(Q)[39m
                 [32mlsbp:[39m
-                  [32mCONST[39m [32m"3'h0"[39m [32mtest1.sv:24[39m [32m(JO)[39m
+                  [32mCONST[39m [32m"3'h0"[39m [32m.../test1.sv:16[39m [32m(MN)[39m [32mdtypep:(KN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32mtest1.sv:25[39m [32m(KO)[39m
-            PIN "__pinNumber3" test1.sv:25 (DH) modPTypep:UNLINKED, modVarp:(XD)
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m [32m(NN)[39m [32mdtypep:(HC)[39m
+            PIN "__pinNumber3" .../test1.sv:17 (ZG) modPTypep:UNLINKED, modVarp:(BE)
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" test1.sv:25 [31m(EH)[39m->[32m(LO)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[8:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [31m(AH)[39m->[32m(ON)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[8:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "c" .../test1.sv:17 (NE) access:RD, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(PB)[39m, varScopep:UNLINKED, varp:(OB)
                 [31mbitp:[39m
-                  [31mCONST[39m [31m"?32?sh0"[39m [31mtest1.sv:24[39m [31m(GH)[39m
+                  [31mCONST[39m [31m"?32?sh0"[39m [31m.../test1.sv:16[39m [31m(BH)[39m [31mdtypep:(Q)[39m
                 [32mlsbp:[39m
-                  [32mCONST[39m [32m"4'h0"[39m [32mtest1.sv:24[39m [32m(MO)[39m
+                  [32mCONST[39m [32m"4'h0"[39m [32m.../test1.sv:16[39m [32m(PN)[39m [32mdtypep:(QN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32mtest1.sv:25[39m [32m(NO)[39m
-            PIN "__pinNumber4" test1.sv:25 (HH) modPTypep:UNLINKED, modVarp:(AE)
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m [32m(RN)[39m [32mdtypep:(HC)[39m
+            PIN "__pinNumber4" .../test1.sv:17 (CH) modPTypep:UNLINKED, modVarp:(EE)
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" test1.sv:25 [31m(IH)[39m->[32m(OO)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [31m(DH)[39m->[32m(MF)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "s" .../test1.sv:17 (AF) access:WR, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(FB)[39m, varScopep:UNLINKED, varp:(EB)
                 [31mbitp:[39m
-                  [31mCONST[39m [31m"?32?sh0"[39m [31mtest1.sv:24[39m [31m(KH)[39m
+                  [31mCONST[39m [31m"?32?sh0"[39m [31m.../test1.sv:16[39m [31m(EH)[39m [31mdtypep:(Q)[39m
                 [32mlsbp:[39m
-                  [32mCONST[39m [32m"3'h0"[39m [32mtest1.sv:24[39m [32m(PO)[39m
+                  [32mCONST[39m [32m"3'h0"[39m [32m.../test1.sv:16[39m [32m(SN)[39m [32mdtypep:(KN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32mtest1.sv:25[39m [32m(QO)[39m
-            PIN "__pinNumber5" test1.sv:25 (LH) modPTypep:UNLINKED, modVarp:(DE)
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m [32m(TN)[39m [32mdtypep:(HC)[39m
+            PIN "__pinNumber5" .../test1.sv:17 (FH) modPTypep:UNLINKED, modVarp:(HE)
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" test1.sv:25 [31m(MH)[39m->[32m(RO)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[8:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [31m(GH)[39m->[32m(NF)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[8:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "c" .../test1.sv:17 (RB) access:WR, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(PB)[39m, varScopep:UNLINKED, varp:(OB)
                 [31mbitp:[39m
-                  [31mADD[39m [31m""[39m [31mtest1.sv:25[39m [31m(OH)[39m
+                  [31mADD[39m [31m""[39m [31m.../test1.sv:17[39m [31m(HH)[39m [31mdtypep:UNLINKED[39m
                    [31mlhsp:[39m
-                     [31mCONST[39m [31m"?32?sh0"[39m [31mtest1.sv:24[39m [31m(PH)[39m
+                     [31mCONST[39m [31m"?32?sh0"[39m [31m.../test1.sv:16[39m [31m(IH)[39m [31mdtypep:(Q)[39m
                    [31mrhsp:[39m
-                     [31mCONST[39m [31m"?32?sh1"[39m [31mtest1.sv:25[39m [31m(QH)[39m
+                     [31mCONST[39m [31m"?32?sh1"[39m [31m.../test1.sv:17[39m [31m(JH)[39m [31mdtypep:(Q)[39m
                 [32mlsbp:[39m
-                  [32mSEL[39m [32m""[39m [32mtest1.sv:25[39m [32m(SO)[39m
+                  [32mSEL[39m [32m""[39m [32m.../test1.sv:17[39m [32m(LF)[39m [32mdtypep:(QN)[39m
                    [32mfromp:[39m
-                     [32mADD[39m [32m""[39m [32mtest1.sv:25[39m [32m(OH)[39m
+                     [32mADD[39m [32m""[39m [32m.../test1.sv:17[39m [32m(HH)[39m [32mdtypep:(Q)[39m
                       [32mlhsp:[39m
-                        [32mCONST[39m [32m"?32?sh0"[39m [32mtest1.sv:24[39m [32m(PH)[39m
+                        [32mCONST[39m [32m"?32?sh0"[39m [32m.../test1.sv:16[39m [32m(IH)[39m [32mdtypep:(Q)[39m
                       [32mrhsp:[39m
-                        [32mCONST[39m [32m"?32?sh1"[39m [32mtest1.sv:25[39m [32m(QH)[39m
+                        [32mCONST[39m [32m"?32?sh1"[39m [32m.../test1.sv:17[39m [32m(JH)[39m [32mdtypep:(Q)[39m
                    [32mlsbp:[39m
-                     [32mCONST[39m [32m"32'h0"[39m [32mtest1.sv:25[39m [32m(TO)[39m
+                     [32mCONST[39m [32m"32'h0"[39m [32m.../test1.sv:17[39m [32m(UN)[39m [32mdtypep:(IN)[39m
                    [32mwidthp:[39m
-                     [32mCONST[39m [32m"32'h4"[39m [32mtest1.sv:25[39m [32m(UO)[39m
+                     [32mCONST[39m [32m"32'h4"[39m [32m.../test1.sv:17[39m [32m(VN)[39m [32mdtypep:(IN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32mtest1.sv:25[39m [32m(VO)[39m
-      BEGIN "genblk1[1]" test1.sv:25 (RH) generate:True
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m [32m(WN)[39m [32mdtypep:(HC)[39m
+      BEGIN "genblk1[1]" .../test1.sv:17 (TD) generate:True
        stmtsp:
-         CELL "fa" test1.sv:25 (SH) modp:(GC), origName:fa
+         CELL "fa" .../test1.sv:17 (KH) modp:(KC), origName:fa
           pinsp:
-            PIN "__pinNumber1" test1.sv:25 (TH) modPTypep:UNLINKED, modVarp:(RD)
+            PIN "__pinNumber1" .../test1.sv:17 (LH) modPTypep:UNLINKED, modVarp:(VD)
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" test1.sv:25 [31m(UH)[39m->[32m(WO)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [31m(MH)[39m->[32m(OF)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "a" .../test1.sv:17 (BF) access:RD, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(L)[39m, varScopep:UNLINKED, varp:(K)
                 [31mbitp:[39m
-                  [31mCONST[39m [31m"?32?sh1"[39m [31mtest1.sv:24[39m [31m(WH)[39m
+                  [31mCONST[39m [31m"?32?sh1"[39m [31m.../test1.sv:16[39m [31m(NH)[39m [31mdtypep:(Q)[39m
                 [32mlsbp:[39m
-                  [32mCONST[39m [32m"3'h1"[39m [32mtest1.sv:24[39m [32m(XO)[39m
+                  [32mCONST[39m [32m"3'h1"[39m [32m.../test1.sv:16[39m [32m(XN)[39m [32mdtypep:(KN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32mtest1.sv:25[39m [32m(YO)[39m
-            PIN "__pinNumber2" test1.sv:25 (XH) modPTypep:UNLINKED, modVarp:(UD)
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m [32m(YN)[39m [32mdtypep:(HC)[39m
+            PIN "__pinNumber2" .../test1.sv:17 (OH) modPTypep:UNLINKED, modVarp:(YD)
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" test1.sv:25 [31m(YH)[39m->[32m(ZO)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [31m(PH)[39m->[32m(ZN)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "b" .../test1.sv:17 (VC) access:RD, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(U)[39m, varScopep:UNLINKED, varp:(T)
                 [31mbitp:[39m
-                  [31mCONST[39m [31m"?32?sh1"[39m [31mtest1.sv:24[39m [31m(AI)[39m
+                  [31mCONST[39m [31m"?32?sh1"[39m [31m.../test1.sv:16[39m [31m(QH)[39m [31mdtypep:(Q)[39m
                 [32mlsbp:[39m
-                  [32mCONST[39m [32m"3'h1"[39m [32mtest1.sv:24[39m [32m(AP)[39m
+                  [32mCONST[39m [32m"3'h1"[39m [32m.../test1.sv:16[39m [32m(AO)[39m [32mdtypep:(KN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32mtest1.sv:25[39m [32m(BP)[39m
-            PIN "__pinNumber3" test1.sv:25 (BI) modPTypep:UNLINKED, modVarp:(XD)
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m [32m(BO)[39m [32mdtypep:(HC)[39m
+            PIN "__pinNumber3" .../test1.sv:17 (RH) modPTypep:UNLINKED, modVarp:(BE)
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" test1.sv:25 [31m(CI)[39m->[32m(CP)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[8:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [31m(SH)[39m->[32m(LC)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[8:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "c" .../test1.sv:17 (RC) access:RD, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(PB)[39m, varScopep:UNLINKED, varp:(OB)
                 [31mbitp:[39m
-                  [31mCONST[39m [31m"?32?sh1"[39m [31mtest1.sv:24[39m [31m(EI)[39m
+                  [31mCONST[39m [31m"?32?sh1"[39m [31m.../test1.sv:16[39m [31m(TH)[39m [31mdtypep:(Q)[39m
                 [32mlsbp:[39m
-                  [32mCONST[39m [32m"4'h1"[39m [32mtest1.sv:24[39m [32m(DP)[39m
+                  [32mCONST[39m [32m"4'h1"[39m [32m.../test1.sv:16[39m [32m(Z)[39m [32mdtypep:(QN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32mtest1.sv:25[39m [32m(EP)[39m
-            PIN "__pinNumber4" test1.sv:25 (FI) modPTypep:UNLINKED, modVarp:(AE)
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m [32m(PC)[39m [32mdtypep:(HC)[39m
+            PIN "__pinNumber4" .../test1.sv:17 (UH) modPTypep:UNLINKED, modVarp:(EE)
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" test1.sv:25 [31m(GI)[39m->[32m(FP)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [31m(VH)[39m->[32m(KB)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "s" .../test1.sv:17 (NC) access:WR, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(FB)[39m, varScopep:UNLINKED, varp:(EB)
                 [31mbitp:[39m
-                  [31mCONST[39m [31m"?32?sh1"[39m [31mtest1.sv:24[39m [31m(II)[39m
+                  [31mCONST[39m [31m"?32?sh1"[39m [31m.../test1.sv:16[39m [31m(WH)[39m [31mdtypep:(Q)[39m
                 [32mlsbp:[39m
-                  [32mCONST[39m [32m"3'h1"[39m [32mtest1.sv:24[39m [32m(GP)[39m
+                  [32mCONST[39m [32m"3'h1"[39m [32m.../test1.sv:16[39m [32m(CO)[39m [32mdtypep:(KN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32mtest1.sv:25[39m [32m(HP)[39m
-            PIN "__pinNumber5" test1.sv:25 (JI) modPTypep:UNLINKED, modVarp:(DE)
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m [32m(GC)[39m [32mdtypep:(HC)[39m
+            PIN "__pinNumber5" .../test1.sv:17 (XH) modPTypep:UNLINKED, modVarp:(HE)
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" test1.sv:25 [31m(KI)[39m->[32m(IP)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[8:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [31m(WC)[39m->[32m(SB)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[8:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "c" .../test1.sv:17 (FC) access:WR, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(PB)[39m, varScopep:UNLINKED, varp:(OB)
                 [31mbitp:[39m
-                  [31mADD[39m [31m""[39m [31mtest1.sv:25[39m [31m(MI)[39m
+                  [31mADD[39m [31m""[39m [31m.../test1.sv:17[39m [31m(ZC)[39m [31mdtypep:UNLINKED[39m
                    [31mlhsp:[39m
-                     [31mCONST[39m [31m"?32?sh1"[39m [31mtest1.sv:24[39m [31m(NI)[39m
+                     [31mCONST[39m [31m"?32?sh1"[39m [31m.../test1.sv:16[39m [31m(YH)[39m [31mdtypep:(Q)[39m
                    [31mrhsp:[39m
-                     [31mCONST[39m [31m"?32?sh1"[39m [31mtest1.sv:25[39m [31m(OI)[39m
+                     [31mCONST[39m [31m"?32?sh1"[39m [31m.../test1.sv:17[39m [31m(ZH)[39m [31mdtypep:(Q)[39m
                 [32mlsbp:[39m
-                  [32mSEL[39m [32m""[39m [32mtest1.sv:25[39m [32m(JP)[39m
+                  [32mSEL[39m [32m""[39m [32m.../test1.sv:17[39m [32m(DO)[39m [32mdtypep:(QN)[39m
                    [32mfromp:[39m
-                     [32mADD[39m [32m""[39m [32mtest1.sv:25[39m [32m(MI)[39m
+                     [32mADD[39m [32m""[39m [32m.../test1.sv:17[39m [32m(ZC)[39m [32mdtypep:(Q)[39m
                       [32mlhsp:[39m
-                        [32mCONST[39m [32m"?32?sh1"[39m [32mtest1.sv:24[39m [32m(NI)[39m
+                        [32mCONST[39m [32m"?32?sh1"[39m [32m.../test1.sv:16[39m [32m(YH)[39m [32mdtypep:(Q)[39m
                       [32mrhsp:[39m
-                        [32mCONST[39m [32m"?32?sh1"[39m [32mtest1.sv:25[39m [32m(OI)[39m
+                        [32mCONST[39m [32m"?32?sh1"[39m [32m.../test1.sv:17[39m [32m(ZH)[39m [32mdtypep:(Q)[39m
                    [32mlsbp:[39m
-                     [32mCONST[39m [32m"32'h0"[39m [32mtest1.sv:25[39m [32m(KP)[39m
+                     [32mCONST[39m [32m"32'h0"[39m [32m.../test1.sv:17[39m [32m(XC)[39m [32mdtypep:(IN)[39m
                    [32mwidthp:[39m
-                     [32mCONST[39m [32m"32'h4"[39m [32mtest1.sv:25[39m [32m(LP)[39m
+                     [32mCONST[39m [32m"32'h4"[39m [32m.../test1.sv:17[39m [32m(GD)[39m [32mdtypep:(IN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32mtest1.sv:25[39m [32m(MP)[39m
-      BEGIN "genblk1[2]" test1.sv:25 (PI) generate:True
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m [32m(BD)[39m [32mdtypep:(HC)[39m
+      BEGIN "genblk1[2]" .../test1.sv:17 (UD) generate:True
        stmtsp:
-         CELL "fa" test1.sv:25 (QI) modp:(GC), origName:fa
+         CELL "fa" .../test1.sv:17 (AI) modp:(KC), origName:fa
           pinsp:
-            PIN "__pinNumber1" test1.sv:25 (RI) modPTypep:UNLINKED, modVarp:(RD)
+            PIN "__pinNumber1" .../test1.sv:17 (S) modPTypep:UNLINKED, modVarp:(VD)
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" test1.sv:25 [31m(SI)[39m->[32m(NP)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [31m(BI)[39m->[32m(SF)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "a" .../test1.sv:17 (LD) access:RD, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(L)[39m, varScopep:UNLINKED, varp:(K)
                 [31mbitp:[39m
-                  [31mCONST[39m [31m"?32?sh2"[39m [31mtest1.sv:24[39m [31m(UI)[39m
+                  [31mCONST[39m [31m"?32?sh2"[39m [31m.../test1.sv:16[39m [31m(CI)[39m [31mdtypep:(FF)[39m
                 [32mlsbp:[39m
-                  [32mCONST[39m [32m"3'h2"[39m [32mtest1.sv:24[39m [32m(OP)[39m
+                  [32mCONST[39m [32m"3'h2"[39m [32m.../test1.sv:16[39m [32m(V)[39m [32mdtypep:(KN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32mtest1.sv:25[39m [32m(PP)[39m
-            PIN "__pinNumber2" test1.sv:25 (VI) modPTypep:UNLINKED, modVarp:(UD)
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m [32m(TC)[39m [32mdtypep:(HC)[39m
+            PIN "__pinNumber2" .../test1.sv:17 (DE) modPTypep:UNLINKED, modVarp:(YD)
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" test1.sv:25 [31m(WI)[39m->[32m(QP)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [31m(DI)[39m->[32m(M)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "b" .../test1.sv:17 (FD) access:RD, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(U)[39m, varScopep:UNLINKED, varp:(T)
                 [31mbitp:[39m
-                  [31mCONST[39m [31m"?32?sh2"[39m [31mtest1.sv:24[39m [31m(YI)[39m
+                  [31mCONST[39m [31m"?32?sh2"[39m [31m.../test1.sv:16[39m [31m(EI)[39m [31mdtypep:(FF)[39m
                 [32mlsbp:[39m
-                  [32mCONST[39m [32m"3'h2"[39m [32mtest1.sv:24[39m [32m(RP)[39m
+                  [32mCONST[39m [32m"3'h2"[39m [32m.../test1.sv:16[39m [32m(EO)[39m [32mdtypep:(KN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32mtest1.sv:25[39m [32m(SP)[39m
-            PIN "__pinNumber3" test1.sv:25 (ZI) modPTypep:UNLINKED, modVarp:(XD)
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m [32m(GB)[39m [32mdtypep:(HC)[39m
+            PIN "__pinNumber3" .../test1.sv:17 (FI) modPTypep:UNLINKED, modVarp:(BE)
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" test1.sv:25 [31m(AJ)[39m->[32m(TP)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[8:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [31m(GI)[39m->[32m(AH)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[8:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "c" .../test1.sv:17 (AE) access:RD, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(PB)[39m, varScopep:UNLINKED, varp:(OB)
                 [31mbitp:[39m
-                  [31mCONST[39m [31m"?32?sh2"[39m [31mtest1.sv:24[39m [31m(CJ)[39m
+                  [31mCONST[39m [31m"?32?sh2"[39m [31m.../test1.sv:16[39m [31m(HI)[39m [31mdtypep:(FF)[39m
                 [32mlsbp:[39m
-                  [32mCONST[39m [32m"4'h2"[39m [32mtest1.sv:24[39m [32m(UP)[39m
+                  [32mCONST[39m [32m"4'h2"[39m [32m.../test1.sv:16[39m [32m(FO)[39m [32mdtypep:(QN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32mtest1.sv:25[39m [32m(VP)[39m
-            PIN "__pinNumber4" test1.sv:25 (DJ) modPTypep:UNLINKED, modVarp:(AE)
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m [32m(GO)[39m [32mdtypep:(HC)[39m
+            PIN "__pinNumber4" .../test1.sv:17 (II) modPTypep:UNLINKED, modVarp:(EE)
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" test1.sv:25 [31m(EJ)[39m->[32m(WP)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [31m(JI)[39m->[32m(GI)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "s" .../test1.sv:17 (KI) access:WR, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(FB)[39m, varScopep:UNLINKED, varp:(EB)
                 [31mbitp:[39m
-                  [31mCONST[39m [31m"?32?sh2"[39m [31mtest1.sv:24[39m [31m(GJ)[39m
+                  [31mCONST[39m [31m"?32?sh2"[39m [31m.../test1.sv:16[39m [31m(LI)[39m [31mdtypep:(FF)[39m
                 [32mlsbp:[39m
-                  [32mCONST[39m [32m"3'h2"[39m [32mtest1.sv:24[39m [32m(XP)[39m
+                  [32mCONST[39m [32m"3'h2"[39m [32m.../test1.sv:16[39m [32m(R)[39m [32mdtypep:(KN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32mtest1.sv:25[39m [32m(YP)[39m
-            PIN "__pinNumber5" test1.sv:25 (HJ) modPTypep:UNLINKED, modVarp:(DE)
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m [32m(P)[39m [32mdtypep:(HC)[39m
+            PIN "__pinNumber5" .../test1.sv:17 (DB) modPTypep:UNLINKED, modVarp:(HE)
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" test1.sv:25 [31m(IJ)[39m->[32m(ZP)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[8:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [31m(MI)[39m->[32m(JI)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[8:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "c" .../test1.sv:17 (NI) access:WR, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(PB)[39m, varScopep:UNLINKED, varp:(OB)
                 [31mbitp:[39m
-                  [31mADD[39m [31m""[39m [31mtest1.sv:25[39m [31m(KJ)[39m
+                  [31mADD[39m [31m""[39m [31m.../test1.sv:17[39m [31m(OI)[39m [31mdtypep:UNLINKED[39m
                    [31mlhsp:[39m
-                     [31mCONST[39m [31m"?32?sh2"[39m [31mtest1.sv:24[39m [31m(LJ)[39m
+                     [31mCONST[39m [31m"?32?sh2"[39m [31m.../test1.sv:16[39m [31m(PI)[39m [31mdtypep:(FF)[39m
                    [31mrhsp:[39m
-                     [31mCONST[39m [31m"?32?sh1"[39m [31mtest1.sv:25[39m [31m(MJ)[39m
+                     [31mCONST[39m [31m"?32?sh1"[39m [31m.../test1.sv:17[39m [31m(QI)[39m [31mdtypep:(Q)[39m
                 [32mlsbp:[39m
-                  [32mSEL[39m [32m""[39m [32mtest1.sv:25[39m [32m(AQ)[39m
+                  [32mSEL[39m [32m""[39m [32m.../test1.sv:17[39m [32m(MI)[39m [32mdtypep:(QN)[39m
                    [32mfromp:[39m
-                     [32mADD[39m [32m""[39m [32mtest1.sv:25[39m [32m(KJ)[39m
+                     [32mADD[39m [32m""[39m [32m.../test1.sv:17[39m [32m(OI)[39m [32mdtypep:(FF)[39m
                       [32mlhsp:[39m
-                        [32mCONST[39m [32m"?32?sh2"[39m [32mtest1.sv:24[39m [32m(LJ)[39m
+                        [32mCONST[39m [32m"?32?sh2"[39m [32m.../test1.sv:16[39m [32m(PI)[39m [32mdtypep:(FF)[39m
                       [32mrhsp:[39m
-                        [32mCONST[39m [32m"?32?sh1"[39m [32mtest1.sv:25[39m [32m(MJ)[39m
+                        [32mCONST[39m [32m"?32?sh1"[39m [32m.../test1.sv:17[39m [32m(QI)[39m [32mdtypep:(Q)[39m
                    [32mlsbp:[39m
-                     [32mCONST[39m [32m"32'h0"[39m [32mtest1.sv:25[39m [32m(BQ)[39m
+                     [32mCONST[39m [32m"32'h0"[39m [32m.../test1.sv:17[39m [32m(HO)[39m [32mdtypep:(IN)[39m
                    [32mwidthp:[39m
-                     [32mCONST[39m [32m"32'h4"[39m [32mtest1.sv:25[39m [32m(CQ)[39m
+                     [32mCONST[39m [32m"32'h4"[39m [32m.../test1.sv:17[39m [32m(IO)[39m [32mdtypep:(IN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32mtest1.sv:25[39m [32m(DQ)[39m
-      BEGIN "genblk1[3]" test1.sv:25 (NJ) generate:True
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m [32m(IC)[39m [32mdtypep:(HC)[39m
+      BEGIN "genblk1[3]" .../test1.sv:17 (RI) generate:True
        stmtsp:
-         CELL "fa" test1.sv:25 (OJ) modp:(GC), origName:fa
+         CELL "fa" .../test1.sv:17 (SI) modp:(KC), origName:fa
           pinsp:
-            PIN "__pinNumber1" test1.sv:25 (PJ) modPTypep:UNLINKED, modVarp:(RD)
+            PIN "__pinNumber1" .../test1.sv:17 (TI) modPTypep:UNLINKED, modVarp:(VD)
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" test1.sv:25 [31m(QJ)[39m->[32m(EQ)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [31m(UI)[39m->[32m(ZB)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "a" .../test1.sv:17 (VI) access:RD, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(L)[39m, varScopep:UNLINKED, varp:(K)
                 [31mbitp:[39m
-                  [31mCONST[39m [31m"?32?sh3"[39m [31mtest1.sv:24[39m [31m(SJ)[39m
+                  [31mCONST[39m [31m"?32?sh3"[39m [31m.../test1.sv:16[39m [31m(WI)[39m [31mdtypep:(FF)[39m
                 [32mlsbp:[39m
-                  [32mCONST[39m [32m"3'h3"[39m [32mtest1.sv:24[39m [32m(FQ)[39m
+                  [32mCONST[39m [32m"3'h3"[39m [32m.../test1.sv:16[39m [32m(JO)[39m [32mdtypep:(KN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32mtest1.sv:25[39m [32m(GQ)[39m
-            PIN "__pinNumber2" test1.sv:25 (TJ) modPTypep:UNLINKED, modVarp:(UD)
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m [32m(KO)[39m [32mdtypep:(HC)[39m
+            PIN "__pinNumber2" .../test1.sv:17 (XI) modPTypep:UNLINKED, modVarp:(YD)
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" test1.sv:25 [31m(UJ)[39m->[32m(HQ)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [31m(YI)[39m->[32m(LO)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "b" .../test1.sv:17 (ZI) access:RD, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(U)[39m, varScopep:UNLINKED, varp:(T)
                 [31mbitp:[39m
-                  [31mCONST[39m [31m"?32?sh3"[39m [31mtest1.sv:24[39m [31m(WJ)[39m
+                  [31mCONST[39m [31m"?32?sh3"[39m [31m.../test1.sv:16[39m [31m(AJ)[39m [31mdtypep:(FF)[39m
                 [32mlsbp:[39m
-                  [32mCONST[39m [32m"3'h3"[39m [32mtest1.sv:24[39m [32m(IQ)[39m
+                  [32mCONST[39m [32m"3'h3"[39m [32m.../test1.sv:16[39m [32m(MO)[39m [32mdtypep:(KN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32mtest1.sv:25[39m [32m(JQ)[39m
-            PIN "__pinNumber3" test1.sv:25 (XJ) modPTypep:UNLINKED, modVarp:(XD)
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m [32m(NO)[39m [32mdtypep:(HC)[39m
+            PIN "__pinNumber3" .../test1.sv:17 (BJ) modPTypep:UNLINKED, modVarp:(BE)
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" test1.sv:25 [31m(YJ)[39m->[32m(KQ)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[8:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [31m(CJ)[39m->[32m(OO)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[8:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "c" .../test1.sv:17 (DJ) access:RD, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(PB)[39m, varScopep:UNLINKED, varp:(OB)
                 [31mbitp:[39m
-                  [31mCONST[39m [31m"?32?sh3"[39m [31mtest1.sv:24[39m [31m(AK)[39m
+                  [31mCONST[39m [31m"?32?sh3"[39m [31m.../test1.sv:16[39m [31m(EJ)[39m [31mdtypep:(FF)[39m
                 [32mlsbp:[39m
-                  [32mCONST[39m [32m"4'h3"[39m [32mtest1.sv:24[39m [32m(LQ)[39m
+                  [32mCONST[39m [32m"4'h3"[39m [32m.../test1.sv:16[39m [32m(PO)[39m [32mdtypep:(QN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32mtest1.sv:25[39m [32m(MQ)[39m
-            PIN "__pinNumber4" test1.sv:25 (BK) modPTypep:UNLINKED, modVarp:(AE)
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m [32m(QO)[39m [32mdtypep:(HC)[39m
+            PIN "__pinNumber4" .../test1.sv:17 (FJ) modPTypep:UNLINKED, modVarp:(EE)
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" test1.sv:25 [31m(CK)[39m->[32m(NQ)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [31m(GJ)[39m->[32m(CJ)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "s" .../test1.sv:17 (HJ) access:WR, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(FB)[39m, varScopep:UNLINKED, varp:(EB)
                 [31mbitp:[39m
-                  [31mCONST[39m [31m"?32?sh3"[39m [31mtest1.sv:24[39m [31m(EK)[39m
+                  [31mCONST[39m [31m"?32?sh3"[39m [31m.../test1.sv:16[39m [31m(IJ)[39m [31mdtypep:(FF)[39m
                 [32mlsbp:[39m
-                  [32mCONST[39m [32m"3'h3"[39m [32mtest1.sv:24[39m [32m(OQ)[39m
+                  [32mCONST[39m [32m"3'h3"[39m [32m.../test1.sv:16[39m [32m(RO)[39m [32mdtypep:(KN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32mtest1.sv:25[39m [32m(PQ)[39m
-            PIN "__pinNumber5" test1.sv:25 (FK) modPTypep:UNLINKED, modVarp:(DE)
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m [32m(SO)[39m [32mdtypep:(HC)[39m
+            PIN "__pinNumber5" .../test1.sv:17 (JJ) modPTypep:UNLINKED, modVarp:(HE)
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" test1.sv:25 [31m(GK)[39m->[32m(QQ)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[8:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [31m(KJ)[39m->[32m(TO)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[8:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "c" .../test1.sv:17 (LJ) access:WR, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(PB)[39m, varScopep:UNLINKED, varp:(OB)
                 [31mbitp:[39m
-                  [31mADD[39m [31m""[39m [31mtest1.sv:25[39m [31m(IK)[39m
+                  [31mADD[39m [31m""[39m [31m.../test1.sv:17[39m [31m(MJ)[39m [31mdtypep:UNLINKED[39m
                    [31mlhsp:[39m
-                     [31mCONST[39m [31m"?32?sh3"[39m [31mtest1.sv:24[39m [31m(JK)[39m
+                     [31mCONST[39m [31m"?32?sh3"[39m [31m.../test1.sv:16[39m [31m(NJ)[39m [31mdtypep:(FF)[39m
                    [31mrhsp:[39m
-                     [31mCONST[39m [31m"?32?sh1"[39m [31mtest1.sv:25[39m [31m(KK)[39m
+                     [31mCONST[39m [31m"?32?sh1"[39m [31m.../test1.sv:17[39m [31m(OJ)[39m [31mdtypep:(Q)[39m
                 [32mlsbp:[39m
-                  [32mSEL[39m [32m""[39m [32mtest1.sv:25[39m [32m(RQ)[39m
+                  [32mSEL[39m [32m""[39m [32m.../test1.sv:17[39m [32m(UO)[39m [32mdtypep:(QN)[39m
                    [32mfromp:[39m
-                     [32mADD[39m [32m""[39m [32mtest1.sv:25[39m [32m(IK)[39m
+                     [32mADD[39m [32m""[39m [32m.../test1.sv:17[39m [32m(MJ)[39m [32mdtypep:(FF)[39m
                       [32mlhsp:[39m
-                        [32mCONST[39m [32m"?32?sh3"[39m [32mtest1.sv:24[39m [32m(JK)[39m
+                        [32mCONST[39m [32m"?32?sh3"[39m [32m.../test1.sv:16[39m [32m(NJ)[39m [32mdtypep:(FF)[39m
                       [32mrhsp:[39m
-                        [32mCONST[39m [32m"?32?sh1"[39m [32mtest1.sv:25[39m [32m(KK)[39m
+                        [32mCONST[39m [32m"?32?sh1"[39m [32m.../test1.sv:17[39m [32m(OJ)[39m [32mdtypep:(Q)[39m
                    [32mlsbp:[39m
-                     [32mCONST[39m [32m"32'h0"[39m [32mtest1.sv:25[39m [32m(SQ)[39m
+                     [32mCONST[39m [32m"32'h0"[39m [32m.../test1.sv:17[39m [32m(VO)[39m [32mdtypep:(IN)[39m
                    [32mwidthp:[39m
-                     [32mCONST[39m [32m"32'h4"[39m [32mtest1.sv:25[39m [32m(TQ)[39m
+                     [32mCONST[39m [32m"32'h4"[39m [32m.../test1.sv:17[39m [32m(WO)[39m [32mdtypep:(IN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32mtest1.sv:25[39m [32m(UQ)[39m
-      BEGIN "genblk1[4]" test1.sv:25 (LK) generate:True
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m [32m(XO)[39m [32mdtypep:(HC)[39m
+      BEGIN "genblk1[4]" .../test1.sv:17 (PJ) generate:True
        stmtsp:
-         CELL "fa" test1.sv:25 (MK) modp:(GC), origName:fa
+         CELL "fa" .../test1.sv:17 (QJ) modp:(KC), origName:fa
           pinsp:
-            PIN "__pinNumber1" test1.sv:25 (NK) modPTypep:UNLINKED, modVarp:(RD)
+            PIN "__pinNumber1" .../test1.sv:17 (RJ) modPTypep:UNLINKED, modVarp:(VD)
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" test1.sv:25 [31m(OK)[39m->[32m(VQ)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [31m(SJ)[39m->[32m(YO)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "a" .../test1.sv:17 (TJ) access:RD, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(L)[39m, varScopep:UNLINKED, varp:(K)
                 [31mbitp:[39m
-                  [31mCONST[39m [31m"?32?sh4"[39m [31mtest1.sv:24[39m [31m(QK)[39m
+                  [31mCONST[39m [31m"?32?sh4"[39m [31m.../test1.sv:16[39m [31m(UJ)[39m [31mdtypep:(GF)[39m
                 [32mlsbp:[39m
-                  [32mCONST[39m [32m"3'h4"[39m [32mtest1.sv:24[39m [32m(WQ)[39m
+                  [32mCONST[39m [32m"3'h4"[39m [32m.../test1.sv:16[39m [32m(ZO)[39m [32mdtypep:(KN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32mtest1.sv:25[39m [32m(XQ)[39m
-            PIN "__pinNumber2" test1.sv:25 (RK) modPTypep:UNLINKED, modVarp:(UD)
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m [32m(AP)[39m [32mdtypep:(HC)[39m
+            PIN "__pinNumber2" .../test1.sv:17 (VJ) modPTypep:UNLINKED, modVarp:(YD)
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" test1.sv:25 [31m(SK)[39m->[32m(YQ)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [31m(WJ)[39m->[32m(BP)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "b" .../test1.sv:17 (XJ) access:RD, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(U)[39m, varScopep:UNLINKED, varp:(T)
                 [31mbitp:[39m
-                  [31mCONST[39m [31m"?32?sh4"[39m [31mtest1.sv:24[39m [31m(UK)[39m
+                  [31mCONST[39m [31m"?32?sh4"[39m [31m.../test1.sv:16[39m [31m(YJ)[39m [31mdtypep:(GF)[39m
                 [32mlsbp:[39m
-                  [32mCONST[39m [32m"3'h4"[39m [32mtest1.sv:24[39m [32m(ZQ)[39m
+                  [32mCONST[39m [32m"3'h4"[39m [32m.../test1.sv:16[39m [32m(CP)[39m [32mdtypep:(KN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32mtest1.sv:25[39m [32m(AR)[39m
-            PIN "__pinNumber3" test1.sv:25 (VK) modPTypep:UNLINKED, modVarp:(XD)
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m [32m(DP)[39m [32mdtypep:(HC)[39m
+            PIN "__pinNumber3" .../test1.sv:17 (ZJ) modPTypep:UNLINKED, modVarp:(BE)
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" test1.sv:25 [31m(WK)[39m->[32m(BR)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[8:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [31m(AK)[39m->[32m(EP)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[8:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "c" .../test1.sv:17 (BK) access:RD, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(PB)[39m, varScopep:UNLINKED, varp:(OB)
                 [31mbitp:[39m
-                  [31mCONST[39m [31m"?32?sh4"[39m [31mtest1.sv:24[39m [31m(YK)[39m
+                  [31mCONST[39m [31m"?32?sh4"[39m [31m.../test1.sv:16[39m [31m(CK)[39m [31mdtypep:(GF)[39m
                 [32mlsbp:[39m
-                  [32mCONST[39m [32m"4'h4"[39m [32mtest1.sv:24[39m [32m(CR)[39m
+                  [32mCONST[39m [32m"4'h4"[39m [32m.../test1.sv:16[39m [32m(FP)[39m [32mdtypep:(QN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32mtest1.sv:25[39m [32m(DR)[39m
-            PIN "__pinNumber4" test1.sv:25 (ZK) modPTypep:UNLINKED, modVarp:(AE)
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m [32m(GP)[39m [32mdtypep:(HC)[39m
+            PIN "__pinNumber4" .../test1.sv:17 (DK) modPTypep:UNLINKED, modVarp:(EE)
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" test1.sv:25 [31m(AL)[39m->[32m(ER)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [31m(EK)[39m->[32m(HP)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "s" .../test1.sv:17 (FK) access:WR, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(FB)[39m, varScopep:UNLINKED, varp:(EB)
                 [31mbitp:[39m
-                  [31mCONST[39m [31m"?32?sh4"[39m [31mtest1.sv:24[39m [31m(CL)[39m
+                  [31mCONST[39m [31m"?32?sh4"[39m [31m.../test1.sv:16[39m [31m(GK)[39m [31mdtypep:(GF)[39m
                 [32mlsbp:[39m
-                  [32mCONST[39m [32m"3'h4"[39m [32mtest1.sv:24[39m [32m(FR)[39m
+                  [32mCONST[39m [32m"3'h4"[39m [32m.../test1.sv:16[39m [32m(IP)[39m [32mdtypep:(KN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32mtest1.sv:25[39m [32m(GR)[39m
-            PIN "__pinNumber5" test1.sv:25 (DL) modPTypep:UNLINKED, modVarp:(DE)
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m [32m(JP)[39m [32mdtypep:(HC)[39m
+            PIN "__pinNumber5" .../test1.sv:17 (HK) modPTypep:UNLINKED, modVarp:(HE)
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" test1.sv:25 [31m(EL)[39m->[32m(HR)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[8:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [31m(IK)[39m->[32m(KP)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[8:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "c" .../test1.sv:17 (JK) access:WR, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(PB)[39m, varScopep:UNLINKED, varp:(OB)
                 [31mbitp:[39m
-                  [31mADD[39m [31m""[39m [31mtest1.sv:25[39m [31m(GL)[39m
+                  [31mADD[39m [31m""[39m [31m.../test1.sv:17[39m [31m(KK)[39m [31mdtypep:UNLINKED[39m
                    [31mlhsp:[39m
-                     [31mCONST[39m [31m"?32?sh4"[39m [31mtest1.sv:24[39m [31m(HL)[39m
+                     [31mCONST[39m [31m"?32?sh4"[39m [31m.../test1.sv:16[39m [31m(LK)[39m [31mdtypep:(GF)[39m
                    [31mrhsp:[39m
-                     [31mCONST[39m [31m"?32?sh1"[39m [31mtest1.sv:25[39m [31m(IL)[39m
+                     [31mCONST[39m [31m"?32?sh1"[39m [31m.../test1.sv:17[39m [31m(MK)[39m [31mdtypep:(Q)[39m
                 [32mlsbp:[39m
-                  [32mSEL[39m [32m""[39m [32mtest1.sv:25[39m [32m(IR)[39m
+                  [32mSEL[39m [32m""[39m [32m.../test1.sv:17[39m [32m(LP)[39m [32mdtypep:(QN)[39m
                    [32mfromp:[39m
-                     [32mADD[39m [32m""[39m [32mtest1.sv:25[39m [32m(GL)[39m
+                     [32mADD[39m [32m""[39m [32m.../test1.sv:17[39m [32m(KK)[39m [32mdtypep:(GF)[39m
                       [32mlhsp:[39m
-                        [32mCONST[39m [32m"?32?sh4"[39m [32mtest1.sv:24[39m [32m(HL)[39m
+                        [32mCONST[39m [32m"?32?sh4"[39m [32m.../test1.sv:16[39m [32m(LK)[39m [32mdtypep:(GF)[39m
                       [32mrhsp:[39m
-                        [32mCONST[39m [32m"?32?sh1"[39m [32mtest1.sv:25[39m [32m(IL)[39m
+                        [32mCONST[39m [32m"?32?sh1"[39m [32m.../test1.sv:17[39m [32m(MK)[39m [32mdtypep:(Q)[39m
                    [32mlsbp:[39m
-                     [32mCONST[39m [32m"32'h0"[39m [32mtest1.sv:25[39m [32m(JR)[39m
+                     [32mCONST[39m [32m"32'h0"[39m [32m.../test1.sv:17[39m [32m(MP)[39m [32mdtypep:(IN)[39m
                    [32mwidthp:[39m
-                     [32mCONST[39m [32m"32'h4"[39m [32mtest1.sv:25[39m [32m(KR)[39m
+                     [32mCONST[39m [32m"32'h4"[39m [32m.../test1.sv:17[39m [32m(NP)[39m [32mdtypep:(IN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32mtest1.sv:25[39m [32m(LR)[39m
-      BEGIN "genblk1[5]" test1.sv:25 (JL) generate:True
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m [32m(OP)[39m [32mdtypep:(HC)[39m
+      BEGIN "genblk1[5]" .../test1.sv:17 (NK) generate:True
        stmtsp:
-         CELL "fa" test1.sv:25 (KL) modp:(GC), origName:fa
+         CELL "fa" .../test1.sv:17 (OK) modp:(KC), origName:fa
           pinsp:
-            PIN "__pinNumber1" test1.sv:25 (LL) modPTypep:UNLINKED, modVarp:(RD)
+            PIN "__pinNumber1" .../test1.sv:17 (PK) modPTypep:UNLINKED, modVarp:(VD)
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" test1.sv:25 [31m(ML)[39m->[32m(MR)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [31m(QK)[39m->[32m(PP)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "a" .../test1.sv:17 (RK) access:RD, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(L)[39m, varScopep:UNLINKED, varp:(K)
                 [31mbitp:[39m
-                  [31mCONST[39m [31m"?32?sh5"[39m [31mtest1.sv:24[39m [31m(OL)[39m
+                  [31mCONST[39m [31m"?32?sh5"[39m [31m.../test1.sv:16[39m [31m(SK)[39m [31mdtypep:(GF)[39m
                 [32mlsbp:[39m
-                  [32mCONST[39m [32m"3'h5"[39m [32mtest1.sv:24[39m [32m(NR)[39m
+                  [32mCONST[39m [32m"3'h5"[39m [32m.../test1.sv:16[39m [32m(QP)[39m [32mdtypep:(KN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32mtest1.sv:25[39m [32m(OR)[39m
-            PIN "__pinNumber2" test1.sv:25 (PL) modPTypep:UNLINKED, modVarp:(UD)
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m [32m(RP)[39m [32mdtypep:(HC)[39m
+            PIN "__pinNumber2" .../test1.sv:17 (TK) modPTypep:UNLINKED, modVarp:(YD)
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" test1.sv:25 [31m(QL)[39m->[32m(PR)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [31m(UK)[39m->[32m(SP)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "b" .../test1.sv:17 (VK) access:RD, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(U)[39m, varScopep:UNLINKED, varp:(T)
                 [31mbitp:[39m
-                  [31mCONST[39m [31m"?32?sh5"[39m [31mtest1.sv:24[39m [31m(SL)[39m
+                  [31mCONST[39m [31m"?32?sh5"[39m [31m.../test1.sv:16[39m [31m(WK)[39m [31mdtypep:(GF)[39m
                 [32mlsbp:[39m
-                  [32mCONST[39m [32m"3'h5"[39m [32mtest1.sv:24[39m [32m(QR)[39m
+                  [32mCONST[39m [32m"3'h5"[39m [32m.../test1.sv:16[39m [32m(TP)[39m [32mdtypep:(KN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32mtest1.sv:25[39m [32m(RR)[39m
-            PIN "__pinNumber3" test1.sv:25 (TL) modPTypep:UNLINKED, modVarp:(XD)
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m [32m(UP)[39m [32mdtypep:(HC)[39m
+            PIN "__pinNumber3" .../test1.sv:17 (XK) modPTypep:UNLINKED, modVarp:(BE)
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" test1.sv:25 [31m(UL)[39m->[32m(SR)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[8:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [31m(YK)[39m->[32m(VP)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[8:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "c" .../test1.sv:17 (ZK) access:RD, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(PB)[39m, varScopep:UNLINKED, varp:(OB)
                 [31mbitp:[39m
-                  [31mCONST[39m [31m"?32?sh5"[39m [31mtest1.sv:24[39m [31m(WL)[39m
+                  [31mCONST[39m [31m"?32?sh5"[39m [31m.../test1.sv:16[39m [31m(AL)[39m [31mdtypep:(GF)[39m
                 [32mlsbp:[39m
-                  [32mCONST[39m [32m"4'h5"[39m [32mtest1.sv:24[39m [32m(TR)[39m
+                  [32mCONST[39m [32m"4'h5"[39m [32m.../test1.sv:16[39m [32m(WP)[39m [32mdtypep:(QN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32mtest1.sv:25[39m [32m(UR)[39m
-            PIN "__pinNumber4" test1.sv:25 (XL) modPTypep:UNLINKED, modVarp:(AE)
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m [32m(XP)[39m [32mdtypep:(HC)[39m
+            PIN "__pinNumber4" .../test1.sv:17 (BL) modPTypep:UNLINKED, modVarp:(EE)
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" test1.sv:25 [31m(YL)[39m->[32m(VR)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [31m(CL)[39m->[32m(YP)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "s" .../test1.sv:17 (DL) access:WR, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(FB)[39m, varScopep:UNLINKED, varp:(EB)
                 [31mbitp:[39m
-                  [31mCONST[39m [31m"?32?sh5"[39m [31mtest1.sv:24[39m [31m(AM)[39m
+                  [31mCONST[39m [31m"?32?sh5"[39m [31m.../test1.sv:16[39m [31m(EL)[39m [31mdtypep:(GF)[39m
                 [32mlsbp:[39m
-                  [32mCONST[39m [32m"3'h5"[39m [32mtest1.sv:24[39m [32m(WR)[39m
+                  [32mCONST[39m [32m"3'h5"[39m [32m.../test1.sv:16[39m [32m(ZP)[39m [32mdtypep:(KN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32mtest1.sv:25[39m [32m(XR)[39m
-            PIN "__pinNumber5" test1.sv:25 (BM) modPTypep:UNLINKED, modVarp:(DE)
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m [32m(AQ)[39m [32mdtypep:(HC)[39m
+            PIN "__pinNumber5" .../test1.sv:17 (FL) modPTypep:UNLINKED, modVarp:(HE)
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" test1.sv:25 [31m(CM)[39m->[32m(YR)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[8:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [31m(GL)[39m->[32m(BQ)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[8:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "c" .../test1.sv:17 (HL) access:WR, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(PB)[39m, varScopep:UNLINKED, varp:(OB)
                 [31mbitp:[39m
-                  [31mADD[39m [31m""[39m [31mtest1.sv:25[39m [31m(EM)[39m
+                  [31mADD[39m [31m""[39m [31m.../test1.sv:17[39m [31m(IL)[39m [31mdtypep:UNLINKED[39m
                    [31mlhsp:[39m
-                     [31mCONST[39m [31m"?32?sh5"[39m [31mtest1.sv:24[39m [31m(FM)[39m
+                     [31mCONST[39m [31m"?32?sh5"[39m [31m.../test1.sv:16[39m [31m(JL)[39m [31mdtypep:(GF)[39m
                    [31mrhsp:[39m
-                     [31mCONST[39m [31m"?32?sh1"[39m [31mtest1.sv:25[39m [31m(GM)[39m
+                     [31mCONST[39m [31m"?32?sh1"[39m [31m.../test1.sv:17[39m [31m(KL)[39m [31mdtypep:(Q)[39m
                 [32mlsbp:[39m
-                  [32mSEL[39m [32m""[39m [32mtest1.sv:25[39m [32m(ZR)[39m
+                  [32mSEL[39m [32m""[39m [32m.../test1.sv:17[39m [32m(CQ)[39m [32mdtypep:(QN)[39m
                    [32mfromp:[39m
-                     [32mADD[39m [32m""[39m [32mtest1.sv:25[39m [32m(EM)[39m
+                     [32mADD[39m [32m""[39m [32m.../test1.sv:17[39m [32m(IL)[39m [32mdtypep:(GF)[39m
                       [32mlhsp:[39m
-                        [32mCONST[39m [32m"?32?sh5"[39m [32mtest1.sv:24[39m [32m(FM)[39m
+                        [32mCONST[39m [32m"?32?sh5"[39m [32m.../test1.sv:16[39m [32m(JL)[39m [32mdtypep:(GF)[39m
                       [32mrhsp:[39m
-                        [32mCONST[39m [32m"?32?sh1"[39m [32mtest1.sv:25[39m [32m(GM)[39m
+                        [32mCONST[39m [32m"?32?sh1"[39m [32m.../test1.sv:17[39m [32m(KL)[39m [32mdtypep:(Q)[39m
                    [32mlsbp:[39m
-                     [32mCONST[39m [32m"32'h0"[39m [32mtest1.sv:25[39m [32m(AS)[39m
+                     [32mCONST[39m [32m"32'h0"[39m [32m.../test1.sv:17[39m [32m(DQ)[39m [32mdtypep:(IN)[39m
                    [32mwidthp:[39m
-                     [32mCONST[39m [32m"32'h4"[39m [32mtest1.sv:25[39m [32m(BS)[39m
+                     [32mCONST[39m [32m"32'h4"[39m [32m.../test1.sv:17[39m [32m(EQ)[39m [32mdtypep:(IN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32mtest1.sv:25[39m [32m(CS)[39m
-      BEGIN "genblk1[6]" test1.sv:25 (HM) generate:True
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m [32m(FQ)[39m [32mdtypep:(HC)[39m
+      BEGIN "genblk1[6]" .../test1.sv:17 (LL) generate:True
        stmtsp:
-         CELL "fa" test1.sv:25 (IM) modp:(GC), origName:fa
+         CELL "fa" .../test1.sv:17 (ML) modp:(KC), origName:fa
           pinsp:
-            PIN "__pinNumber1" test1.sv:25 (JM) modPTypep:UNLINKED, modVarp:(RD)
+            PIN "__pinNumber1" .../test1.sv:17 (NL) modPTypep:UNLINKED, modVarp:(VD)
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" test1.sv:25 [31m(KM)[39m->[32m(DS)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [31m(OL)[39m->[32m(GQ)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "a" .../test1.sv:17 (PL) access:RD, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(L)[39m, varScopep:UNLINKED, varp:(K)
                 [31mbitp:[39m
-                  [31mCONST[39m [31m"?32?sh6"[39m [31mtest1.sv:24[39m [31m(MM)[39m
+                  [31mCONST[39m [31m"?32?sh6"[39m [31m.../test1.sv:16[39m [31m(QL)[39m [31mdtypep:(GF)[39m
                 [32mlsbp:[39m
-                  [32mCONST[39m [32m"3'h6"[39m [32mtest1.sv:24[39m [32m(ES)[39m
+                  [32mCONST[39m [32m"3'h6"[39m [32m.../test1.sv:16[39m [32m(HQ)[39m [32mdtypep:(KN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32mtest1.sv:25[39m [32m(FS)[39m
-            PIN "__pinNumber2" test1.sv:25 (NM) modPTypep:UNLINKED, modVarp:(UD)
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m [32m(IQ)[39m [32mdtypep:(HC)[39m
+            PIN "__pinNumber2" .../test1.sv:17 (RL) modPTypep:UNLINKED, modVarp:(YD)
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" test1.sv:25 [31m(OM)[39m->[32m(GS)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [31m(SL)[39m->[32m(JQ)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "b" .../test1.sv:17 (TL) access:RD, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(U)[39m, varScopep:UNLINKED, varp:(T)
                 [31mbitp:[39m
-                  [31mCONST[39m [31m"?32?sh6"[39m [31mtest1.sv:24[39m [31m(QM)[39m
+                  [31mCONST[39m [31m"?32?sh6"[39m [31m.../test1.sv:16[39m [31m(UL)[39m [31mdtypep:(GF)[39m
                 [32mlsbp:[39m
-                  [32mCONST[39m [32m"3'h6"[39m [32mtest1.sv:24[39m [32m(HS)[39m
+                  [32mCONST[39m [32m"3'h6"[39m [32m.../test1.sv:16[39m [32m(KQ)[39m [32mdtypep:(KN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32mtest1.sv:25[39m [32m(IS)[39m
-            PIN "__pinNumber3" test1.sv:25 (RM) modPTypep:UNLINKED, modVarp:(XD)
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m [32m(LQ)[39m [32mdtypep:(HC)[39m
+            PIN "__pinNumber3" .../test1.sv:17 (VL) modPTypep:UNLINKED, modVarp:(BE)
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" test1.sv:25 [31m(SM)[39m->[32m(JS)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[8:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [31m(WL)[39m->[32m(MQ)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[8:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "c" .../test1.sv:17 (XL) access:RD, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(PB)[39m, varScopep:UNLINKED, varp:(OB)
                 [31mbitp:[39m
-                  [31mCONST[39m [31m"?32?sh6"[39m [31mtest1.sv:24[39m [31m(UM)[39m
+                  [31mCONST[39m [31m"?32?sh6"[39m [31m.../test1.sv:16[39m [31m(YL)[39m [31mdtypep:(GF)[39m
                 [32mlsbp:[39m
-                  [32mCONST[39m [32m"4'h6"[39m [32mtest1.sv:24[39m [32m(KS)[39m
+                  [32mCONST[39m [32m"4'h6"[39m [32m.../test1.sv:16[39m [32m(NQ)[39m [32mdtypep:(QN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32mtest1.sv:25[39m [32m(LS)[39m
-            PIN "__pinNumber4" test1.sv:25 (VM) modPTypep:UNLINKED, modVarp:(AE)
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m [32m(OQ)[39m [32mdtypep:(HC)[39m
+            PIN "__pinNumber4" .../test1.sv:17 (ZL) modPTypep:UNLINKED, modVarp:(EE)
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" test1.sv:25 [31m(WM)[39m->[32m(MS)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [31m(AM)[39m->[32m(PQ)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "s" .../test1.sv:17 (BM) access:WR, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(FB)[39m, varScopep:UNLINKED, varp:(EB)
                 [31mbitp:[39m
-                  [31mCONST[39m [31m"?32?sh6"[39m [31mtest1.sv:24[39m [31m(YM)[39m
+                  [31mCONST[39m [31m"?32?sh6"[39m [31m.../test1.sv:16[39m [31m(CM)[39m [31mdtypep:(GF)[39m
                 [32mlsbp:[39m
-                  [32mCONST[39m [32m"3'h6"[39m [32mtest1.sv:24[39m [32m(NS)[39m
+                  [32mCONST[39m [32m"3'h6"[39m [32m.../test1.sv:16[39m [32m(QQ)[39m [32mdtypep:(KN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32mtest1.sv:25[39m [32m(OS)[39m
-            PIN "__pinNumber5" test1.sv:25 (ZM) modPTypep:UNLINKED, modVarp:(DE)
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m [32m(RQ)[39m [32mdtypep:(HC)[39m
+            PIN "__pinNumber5" .../test1.sv:17 (DM) modPTypep:UNLINKED, modVarp:(HE)
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" test1.sv:25 [31m(AN)[39m->[32m(PS)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[8:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [31m(EM)[39m->[32m(SQ)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[8:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "c" .../test1.sv:17 (FM) access:WR, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(PB)[39m, varScopep:UNLINKED, varp:(OB)
                 [31mbitp:[39m
-                  [31mADD[39m [31m""[39m [31mtest1.sv:25[39m [31m(CN)[39m
+                  [31mADD[39m [31m""[39m [31m.../test1.sv:17[39m [31m(GM)[39m [31mdtypep:UNLINKED[39m
                    [31mlhsp:[39m
-                     [31mCONST[39m [31m"?32?sh6"[39m [31mtest1.sv:24[39m [31m(DN)[39m
+                     [31mCONST[39m [31m"?32?sh6"[39m [31m.../test1.sv:16[39m [31m(HM)[39m [31mdtypep:(GF)[39m
                    [31mrhsp:[39m
-                     [31mCONST[39m [31m"?32?sh1"[39m [31mtest1.sv:25[39m [31m(EN)[39m
+                     [31mCONST[39m [31m"?32?sh1"[39m [31m.../test1.sv:17[39m [31m(IM)[39m [31mdtypep:(Q)[39m
                 [32mlsbp:[39m
-                  [32mSEL[39m [32m""[39m [32mtest1.sv:25[39m [32m(QS)[39m
+                  [32mSEL[39m [32m""[39m [32m.../test1.sv:17[39m [32m(TQ)[39m [32mdtypep:(QN)[39m
                    [32mfromp:[39m
-                     [32mADD[39m [32m""[39m [32mtest1.sv:25[39m [32m(CN)[39m
+                     [32mADD[39m [32m""[39m [32m.../test1.sv:17[39m [32m(GM)[39m [32mdtypep:(GF)[39m
                       [32mlhsp:[39m
-                        [32mCONST[39m [32m"?32?sh6"[39m [32mtest1.sv:24[39m [32m(DN)[39m
+                        [32mCONST[39m [32m"?32?sh6"[39m [32m.../test1.sv:16[39m [32m(HM)[39m [32mdtypep:(GF)[39m
                       [32mrhsp:[39m
-                        [32mCONST[39m [32m"?32?sh1"[39m [32mtest1.sv:25[39m [32m(EN)[39m
+                        [32mCONST[39m [32m"?32?sh1"[39m [32m.../test1.sv:17[39m [32m(IM)[39m [32mdtypep:(Q)[39m
                    [32mlsbp:[39m
-                     [32mCONST[39m [32m"32'h0"[39m [32mtest1.sv:25[39m [32m(RS)[39m
+                     [32mCONST[39m [32m"32'h0"[39m [32m.../test1.sv:17[39m [32m(UQ)[39m [32mdtypep:(IN)[39m
                    [32mwidthp:[39m
-                     [32mCONST[39m [32m"32'h4"[39m [32mtest1.sv:25[39m [32m(SS)[39m
+                     [32mCONST[39m [32m"32'h4"[39m [32m.../test1.sv:17[39m [32m(VQ)[39m [32mdtypep:(IN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32mtest1.sv:25[39m [32m(TS)[39m
-      BEGIN "genblk1[7]" test1.sv:25 (FN) generate:True
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m [32m(WQ)[39m [32mdtypep:(HC)[39m
+      BEGIN "genblk1[7]" .../test1.sv:17 (JM) generate:True
        stmtsp:
-         CELL "fa" test1.sv:25 (GN) modp:(GC), origName:fa
+         CELL "fa" .../test1.sv:17 (KM) modp:(KC), origName:fa
           pinsp:
-            PIN "__pinNumber1" test1.sv:25 (HN) modPTypep:UNLINKED, modVarp:(RD)
+            PIN "__pinNumber1" .../test1.sv:17 (LM) modPTypep:UNLINKED, modVarp:(VD)
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" test1.sv:25 [31m(IN)[39m->[32m(US)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [31m(MM)[39m->[32m(XQ)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "a" .../test1.sv:17 (NM) access:RD, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(L)[39m, varScopep:UNLINKED, varp:(K)
                 [31mbitp:[39m
-                  [31mCONST[39m [31m"?32?sh7"[39m [31mtest1.sv:24[39m [31m(KN)[39m
+                  [31mCONST[39m [31m"?32?sh7"[39m [31m.../test1.sv:16[39m [31m(OM)[39m [31mdtypep:(GF)[39m
                 [32mlsbp:[39m
-                  [32mCONST[39m [32m"3'h7"[39m [32mtest1.sv:24[39m [32m(VS)[39m
+                  [32mCONST[39m [32m"3'h7"[39m [32m.../test1.sv:16[39m [32m(YQ)[39m [32mdtypep:(KN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32mtest1.sv:25[39m [32m(WS)[39m
-            PIN "__pinNumber2" test1.sv:25 (LN) modPTypep:UNLINKED, modVarp:(UD)
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m [32m(ZQ)[39m [32mdtypep:(HC)[39m
+            PIN "__pinNumber2" .../test1.sv:17 (PM) modPTypep:UNLINKED, modVarp:(YD)
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" test1.sv:25 [31m(MN)[39m->[32m(XS)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [31m(QM)[39m->[32m(MM)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "b" .../test1.sv:17 (RM) access:RD, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(U)[39m, varScopep:UNLINKED, varp:(T)
                 [31mbitp:[39m
-                  [31mCONST[39m [31m"?32?sh7"[39m [31mtest1.sv:24[39m [31m(ON)[39m
+                  [31mCONST[39m [31m"?32?sh7"[39m [31m.../test1.sv:16[39m [31m(SM)[39m [31mdtypep:(GF)[39m
                 [32mlsbp:[39m
-                  [32mCONST[39m [32m"3'h7"[39m [32mtest1.sv:24[39m [32m(YS)[39m
+                  [32mCONST[39m [32m"3'h7"[39m [32m.../test1.sv:16[39m [32m(AR)[39m [32mdtypep:(KN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32mtest1.sv:25[39m [32m(ZS)[39m
-            PIN "__pinNumber3" test1.sv:25 (PN) modPTypep:UNLINKED, modVarp:(XD)
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m [32m(BR)[39m [32mdtypep:(HC)[39m
+            PIN "__pinNumber3" .../test1.sv:17 (TM) modPTypep:UNLINKED, modVarp:(BE)
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" test1.sv:25 [31m(QN)[39m->[32m(AT)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[8:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [31m(UM)[39m->[32m(QM)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[8:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "c" .../test1.sv:17 (VM) access:RD, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(PB)[39m, varScopep:UNLINKED, varp:(OB)
                 [31mbitp:[39m
-                  [31mCONST[39m [31m"?32?sh7"[39m [31mtest1.sv:24[39m [31m(SN)[39m
+                  [31mCONST[39m [31m"?32?sh7"[39m [31m.../test1.sv:16[39m [31m(WM)[39m [31mdtypep:(GF)[39m
                 [32mlsbp:[39m
-                  [32mCONST[39m [32m"4'h7"[39m [32mtest1.sv:24[39m [32m(BT)[39m
+                  [32mCONST[39m [32m"4'h7"[39m [32m.../test1.sv:16[39m [32m(CR)[39m [32mdtypep:(QN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32mtest1.sv:25[39m [32m(CT)[39m
-            PIN "__pinNumber4" test1.sv:25 (TN) modPTypep:UNLINKED, modVarp:(AE)
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m [32m(DR)[39m [32mdtypep:(HC)[39m
+            PIN "__pinNumber4" .../test1.sv:17 (XM) modPTypep:UNLINKED, modVarp:(EE)
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" test1.sv:25 [31m(UN)[39m->[32m(DT)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [31m(YM)[39m->[32m(UM)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "s" .../test1.sv:17 (ZM) access:WR, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(FB)[39m, varScopep:UNLINKED, varp:(EB)
                 [31mbitp:[39m
-                  [31mCONST[39m [31m"?32?sh7"[39m [31mtest1.sv:24[39m [31m(WN)[39m
+                  [31mCONST[39m [31m"?32?sh7"[39m [31m.../test1.sv:16[39m [31m(AN)[39m [31mdtypep:(GF)[39m
                 [32mlsbp:[39m
-                  [32mCONST[39m [32m"3'h7"[39m [32mtest1.sv:24[39m [32m(ET)[39m
+                  [32mCONST[39m [32m"3'h7"[39m [32m.../test1.sv:16[39m [32m(ER)[39m [32mdtypep:(KN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32mtest1.sv:25[39m [32m(FT)[39m
-            PIN "__pinNumber5" test1.sv:25 (XN) modPTypep:UNLINKED, modVarp:(DE)
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m [32m(FR)[39m [32mdtypep:(HC)[39m
+            PIN "__pinNumber5" .../test1.sv:17 (BN) modPTypep:UNLINKED, modVarp:(HE)
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" test1.sv:25 [31m(YN)[39m->[32m(GT)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[8:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [31m(CN)[39m->[32m(YM)[39m [32mdeclElWidth:1[39m, [32mdeclRange:[8:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "c" .../test1.sv:17 (DN) access:WR, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(PB)[39m, varScopep:UNLINKED, varp:(OB)
                 [31mbitp:[39m
-                  [31mADD[39m [31m""[39m [31mtest1.sv:25[39m [31m(AO)[39m
+                  [31mADD[39m [31m""[39m [31m.../test1.sv:17[39m [31m(EN)[39m [31mdtypep:UNLINKED[39m
                    [31mlhsp:[39m
-                     [31mCONST[39m [31m"?32?sh7"[39m [31mtest1.sv:24[39m [31m(BO)[39m
+                     [31mCONST[39m [31m"?32?sh7"[39m [31m.../test1.sv:16[39m [31m(FN)[39m [31mdtypep:(GF)[39m
                    [31mrhsp:[39m
-                     [31mCONST[39m [31m"?32?sh1"[39m [31mtest1.sv:25[39m [31m(CO)[39m
+                     [31mCONST[39m [31m"?32?sh1"[39m [31m.../test1.sv:17[39m [31m(GN)[39m [31mdtypep:(Q)[39m
                 [32mlsbp:[39m
-                  [32mSEL[39m [32m""[39m [32mtest1.sv:25[39m [32m(HT)[39m
+                  [32mSEL[39m [32m""[39m [32m.../test1.sv:17[39m [32m(CN)[39m [32mdtypep:(QN)[39m
                    [32mfromp:[39m
-                     [32mADD[39m [32m""[39m [32mtest1.sv:25[39m [32m(AO)[39m
+                     [32mADD[39m [32m""[39m [32m.../test1.sv:17[39m [32m(EN)[39m [32mdtypep:(GF)[39m
                       [32mlhsp:[39m
-                        [32mCONST[39m [32m"?32?sh7"[39m [32mtest1.sv:24[39m [32m(BO)[39m
+                        [32mCONST[39m [32m"?32?sh7"[39m [32m.../test1.sv:16[39m [32m(FN)[39m [32mdtypep:(GF)[39m
                       [32mrhsp:[39m
-                        [32mCONST[39m [32m"?32?sh1"[39m [32mtest1.sv:25[39m [32m(CO)[39m
+                        [32mCONST[39m [32m"?32?sh1"[39m [32m.../test1.sv:17[39m [32m(GN)[39m [32mdtypep:(Q)[39m
                    [32mlsbp:[39m
-                     [32mCONST[39m [32m"32'h0"[39m [32mtest1.sv:25[39m [32m(IT)[39m
+                     [32mCONST[39m [32m"32'h0"[39m [32m.../test1.sv:17[39m [32m(GR)[39m [32mdtypep:(IN)[39m
                    [32mwidthp:[39m
-                     [32mCONST[39m [32m"32'h4"[39m [32mtest1.sv:25[39m [32m(JT)[39m
+                     [32mCONST[39m [32m"32'h4"[39m [32m.../test1.sv:17[39m [32m(HR)[39m [32mdtypep:(IN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32mtest1.sv:25[39m [32m(KT)[39m
-   MODULE "full_adder" test1.sv:5 (GC) level:3, origName:full_adder, timeunit:1ps
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m [32m(IR)[39m [32mdtypep:(HC)[39m
+   MODULE "full_adder" .../test1_submodule/full_adder.sv:1 (KC) level:3, origName:full_adder, timeunit:1ps
     stmtsp:
-      VAR "a" test1.sv:6 (RD) attrClocker:UNKNOWN, direction:INPUT, lifetime:NONE, origName:a, sensIfacep:UNLINKED, varType:PORT
+      VAR "a" .../test1_submodule/full_adder.sv:2 (VD) attrClocker:UNKNOWN, direction:INPUT, [32mdtypeName:logic[39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m, lifetime:NONE, origName:a, sensIfacep:UNLINKED, varType:PORT
        [31mchildDTypep:[39m
-         [31mBASICDTYPE[39m [31m"LOGIC_IMPLICIT"[39m [31mtest1.sv:6[39m [31m(SD)[39m [31mkeyword:LOGIC_IMPLICIT[39m
-      VAR "b" test1.sv:7 (UD) attrClocker:UNKNOWN, direction:INPUT, lifetime:NONE, origName:b, sensIfacep:UNLINKED, varType:PORT
+         [31mBASICDTYPE[39m [31m"LOGIC_IMPLICIT"[39m [31m.../test1_submodule/full_adder.sv:2[39m [31m(WD)[39m [31mdtypep:(WD)[39m, [31mkeyword:LOGIC_IMPLICIT[39m
+      VAR "b" .../test1_submodule/full_adder.sv:3 (YD) attrClocker:UNKNOWN, direction:INPUT, [32mdtypeName:logic[39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m, lifetime:NONE, origName:b, sensIfacep:UNLINKED, varType:PORT
        [31mchildDTypep:[39m
-         [31mBASICDTYPE[39m [31m"LOGIC_IMPLICIT"[39m [31mtest1.sv:7[39m [31m(VD)[39m [31mkeyword:LOGIC_IMPLICIT[39m
-      VAR "cin" test1.sv:8 (XD) attrClocker:UNKNOWN, direction:INPUT, lifetime:NONE, origName:cin, sensIfacep:UNLINKED, varType:PORT
+         [31mBASICDTYPE[39m [31m"LOGIC_IMPLICIT"[39m [31m.../test1_submodule/full_adder.sv:3[39m [31m(ZD)[39m [31mdtypep:(ZD)[39m, [31mkeyword:LOGIC_IMPLICIT[39m
+      VAR "cin" .../test1_submodule/full_adder.sv:4 (BE) attrClocker:UNKNOWN, direction:INPUT, [32mdtypeName:logic[39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m, lifetime:NONE, origName:cin, sensIfacep:UNLINKED, varType:PORT
        [31mchildDTypep:[39m
-         [31mBASICDTYPE[39m [31m"LOGIC_IMPLICIT"[39m [31mtest1.sv:8[39m [31m(YD)[39m [31mkeyword:LOGIC_IMPLICIT[39m
-      VAR "s" test1.sv:9 (AE) attrClocker:UNKNOWN, direction:OUTPUT, lifetime:NONE, origName:s, sensIfacep:UNLINKED, varType:PORT
+         [31mBASICDTYPE[39m [31m"LOGIC_IMPLICIT"[39m [31m.../test1_submodule/full_adder.sv:4[39m [31m(CE)[39m [31mdtypep:(CE)[39m, [31mkeyword:LOGIC_IMPLICIT[39m
+      VAR "s" .../test1_submodule/full_adder.sv:5 (EE) attrClocker:UNKNOWN, direction:OUTPUT, [32mdtypeName:logic[39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m, lifetime:NONE, origName:s, sensIfacep:UNLINKED, varType:PORT
        [31mchildDTypep:[39m
-         [31mBASICDTYPE[39m [31m"LOGIC_IMPLICIT"[39m [31mtest1.sv:9[39m [31m(BE)[39m [31mkeyword:LOGIC_IMPLICIT[39m
-      VAR "cout" test1.sv:10 (DE) attrClocker:UNKNOWN, direction:OUTPUT, lifetime:NONE, origName:cout, sensIfacep:UNLINKED, varType:PORT
+         [31mBASICDTYPE[39m [31m"LOGIC_IMPLICIT"[39m [31m.../test1_submodule/full_adder.sv:5[39m [31m(FE)[39m [31mdtypep:(FE)[39m, [31mkeyword:LOGIC_IMPLICIT[39m
+      VAR "cout" .../test1_submodule/full_adder.sv:6 (HE) attrClocker:UNKNOWN, direction:OUTPUT, [32mdtypeName:logic[39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m, lifetime:NONE, origName:cout, sensIfacep:UNLINKED, varType:PORT
        [31mchildDTypep:[39m
-         [31mBASICDTYPE[39m [31m"LOGIC_IMPLICIT"[39m [31mtest1.sv:10[39m [31m(EE)[39m [31mkeyword:LOGIC_IMPLICIT[39m
+         [31mBASICDTYPE[39m [31m"LOGIC_IMPLICIT"[39m [31m.../test1_submodule/full_adder.sv:6[39m [31m(IE)[39m [31mdtypep:(IE)[39m, [31mkeyword:LOGIC_IMPLICIT[39m
  miscsp:
-   TYPETABLE "" <built-in>:0 (C) constraintRefp:UNLINKED, emptyQueuep:UNLINKED, queueIndexp:UNLINKED, streamp:UNLINKED, voidp:(ZE)
+   TYPETABLE "" <built-in>:0 (C) constraintRefp:UNLINKED, emptyQueuep:UNLINKED, queueIndexp:UNLINKED, streamp:UNLINKED, voidp:(DF)
     typesp:
       ... * 10
-      BASICDTYPE "LOGIC_IMPLICIT" test1.sv:15 (G) generic:[31mFalse[39m->[32mTrue[39m, keyword:LOGIC_IMPLICIT
+      BASICDTYPE "LOGIC_IMPLICIT" .../test1.sv:7 (G) dtypep:(G), generic:[31mFalse[39m->[32mTrue[39m, keyword:LOGIC_IMPLICIT
       ... * 3
-      [32mBASICDTYPE[39m [32m"LOGIC_IMPLICIT"[39m [32mtest1.sv:6[39m [32m(SD)[39m [32mkeyword:LOGIC_IMPLICIT[39m
-      [32mBASICDTYPE[39m [32m"LOGIC_IMPLICIT"[39m [32mtest1.sv:7[39m [32m(VD)[39m [32mkeyword:LOGIC_IMPLICIT[39m
-      [32mBASICDTYPE[39m [32m"LOGIC_IMPLICIT"[39m [32mtest1.sv:8[39m [32m(YD)[39m [32mkeyword:LOGIC_IMPLICIT[39m
-      [32mBASICDTYPE[39m [32m"LOGIC_IMPLICIT"[39m [32mtest1.sv:9[39m [32m(BE)[39m [32mkeyword:LOGIC_IMPLICIT[39m
-      [32mBASICDTYPE[39m [32m"LOGIC_IMPLICIT"[39m [32mtest1.sv:10[39m [32m(EE)[39m [32mkeyword:LOGIC_IMPLICIT[39m
-      [32mBASICDTYPE[39m [32m"logic"[39m [32mtest1.sv:16[39m [32m(K)[39m [32mkeyword:logic[39m, [32mrange:7:0[39m
-      [32mBASICDTYPE[39m [32m"logic"[39m [32mtest1.sv:17[39m [32m(S)[39m [32mkeyword:logic[39m, [32mrange:7:0[39m
-      [32mBASICDTYPE[39m [32m"LOGIC_IMPLICIT"[39m [32mtest1.sv:18[39m [32m(AB)[39m [32mkeyword:LOGIC_IMPLICIT[39m
-      [32mBASICDTYPE[39m [32m"logic"[39m [32mtest1.sv:19[39m [32m(DB)[39m [32mkeyword:logic[39m, [32mrange:7:0[39m
-      [32mBASICDTYPE[39m [32m"LOGIC_IMPLICIT"[39m [32mtest1.sv:20[39m [32m(LB)[39m [32mkeyword:LOGIC_IMPLICIT[39m
-      [32mBASICDTYPE[39m [32m"logic"[39m [32mtest1.sv:22[39m [32m(NB)[39m [32mkeyword:logic[39m, [32mrange:8:0[39m
-      [32mBASICDTYPE[39m [32m"logic"[39m [32mtest1.sv:25[39m [32m(TT)[39m [32mgeneric:True[39m, [32mkeyword:logic[39m, [32mrange:2:0[39m
-      [32mBASICDTYPE[39m [32m"logic"[39m [32mtest1.sv:24[39m [32m(UT)[39m [32mgeneric:True[39m, [32mkeyword:logic[39m, [32mrange:2:0[39m
-      [32mBASICDTYPE[39m [32m"logic"[39m [32mtest1.sv:25[39m [32m(VT)[39m [32mgeneric:True[39m, [32mkeyword:logic[39m, [32mrange:3:0[39m
-      [32mBASICDTYPE[39m [32m"logic"[39m [32mtest1.sv:24[39m [32m(WT)[39m [32mgeneric:True[39m, [32mkeyword:logic[39m, [32mrange:3:0[39m
+      [32mBASICDTYPE[39m [32m"LOGIC_IMPLICIT"[39m [32m.../test1_submodule/full_adder.sv:2[39m [32m(WD)[39m [32mdtypep:(WD)[39m, [32mkeyword:LOGIC_IMPLICIT[39m
+      [32mBASICDTYPE[39m [32m"LOGIC_IMPLICIT"[39m [32m.../test1_submodule/full_adder.sv:3[39m [32m(ZD)[39m [32mdtypep:(ZD)[39m, [32mkeyword:LOGIC_IMPLICIT[39m
+      [32mBASICDTYPE[39m [32m"LOGIC_IMPLICIT"[39m [32m.../test1_submodule/full_adder.sv:4[39m [32m(CE)[39m [32mdtypep:(CE)[39m, [32mkeyword:LOGIC_IMPLICIT[39m
+      [32mBASICDTYPE[39m [32m"LOGIC_IMPLICIT"[39m [32m.../test1_submodule/full_adder.sv:5[39m [32m(FE)[39m [32mdtypep:(FE)[39m, [32mkeyword:LOGIC_IMPLICIT[39m
+      [32mBASICDTYPE[39m [32m"LOGIC_IMPLICIT"[39m [32m.../test1_submodule/full_adder.sv:6[39m [32m(IE)[39m [32mdtypep:(IE)[39m, [32mkeyword:LOGIC_IMPLICIT[39m
+      [32mBASICDTYPE[39m [32m"logic"[39m [32m.../test1.sv:8[39m [32m(L)[39m [32mdtypep:(L)[39m, [32mkeyword:logic[39m, [32mrange:7:0[39m
+      [32mBASICDTYPE[39m [32m"logic"[39m [32m.../test1.sv:9[39m [32m(U)[39m [32mdtypep:(U)[39m, [32mkeyword:logic[39m, [32mrange:7:0[39m
+      [32mBASICDTYPE[39m [32m"LOGIC_IMPLICIT"[39m [32m.../test1.sv:10[39m [32m(CB)[39m [32mdtypep:(CB)[39m, [32mkeyword:LOGIC_IMPLICIT[39m
+      [32mBASICDTYPE[39m [32m"logic"[39m [32m.../test1.sv:11[39m [32m(FB)[39m [32mdtypep:(FB)[39m, [32mkeyword:logic[39m, [32mrange:7:0[39m
+      [32mBASICDTYPE[39m [32m"LOGIC_IMPLICIT"[39m [32m.../test1.sv:12[39m [32m(NB)[39m [32mdtypep:(NB)[39m, [32mkeyword:LOGIC_IMPLICIT[39m
+      [32mBASICDTYPE[39m [32m"logic"[39m [32m.../test1.sv:14[39m [32m(PB)[39m [32mdtypep:(PB)[39m, [32mkeyword:logic[39m, [32mrange:8:0[39m
+      [32mBASICDTYPE[39m [32m"logic"[39m [32m.../test1.sv:17[39m [32m(KN)[39m [32mdtypep:(KN)[39m, [32mgeneric:True[39m, [32mkeyword:logic[39m, [32mrange:2:0[39m
+      [32mBASICDTYPE[39m [32m"logic"[39m [32m.../test1.sv:16[39m [32m(RR)[39m [32mdtypep:(RR)[39m, [32mgeneric:True[39m, [32mkeyword:logic[39m, [32mrange:2:0[39m
+      [32mBASICDTYPE[39m [32m"logic"[39m [32m.../test1.sv:17[39m [32m(QN)[39m [32mdtypep:(QN)[39m, [32mgeneric:True[39m, [32mkeyword:logic[39m, [32mrange:3:0[39m
+      [32mBASICDTYPE[39m [32m"logic"[39m [32m.../test1.sv:16[39m [32m(SR)[39m [32mdtypep:(SR)[39m, [32mgeneric:True[39m, [32mkeyword:logic[39m, [32mrange:3:0[39m
    ... * 1

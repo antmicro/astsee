@@ -147,7 +147,7 @@ class AstDiffToHtml:
     def __init__(self, omit_intact, split_fields, meta, dark):
         self.meta = meta
         self.dark = dark
-        self.srcfiles = {}  # filename : set_of_referenced_lines
+        self.referenced_lines = {}  # filename : set_of_referenced_lines
         val_handlers = {
             'editNum': (lambda v: html.escape(f'<e{html.escape(str(v))}>')),
             'name': (lambda v: "<b>" + html.escape(f'"{stringify(v, quote_empty=0)}"') + "</b>"),
@@ -174,28 +174,6 @@ class AstDiffToHtml:
         else:
             return f'<a href="#{html.escape(ptr)}">{html.escape(ptr)}</a>'
 
-    def resolve_path(self, file):
-        # Try to find symbolic/relative (preferred) or absolute path of file.
-        # Returns tuple (found, path)
-        #
-        # NOTE: susceptible to TOCTOU, but it should not be a problem for us
-        sym_path = file["filename"]
-        abs_path = file["realpath"]
-
-        if sym_path in ("<built-in>", "<command-line>"):  # not a file
-            return False, sym_path
-        if os.path.exists(sym_path):
-            return True, sym_path
-        if os.path.exists(abs_path):
-            return True, abs_path
-
-        if sym_path == "<verilated_std>" and "VERILATOR_ROOT" in os.environ:
-            log.warning("'%s' not found, falling back to $VERILATOR_ROOT/include/verilated_std.sv", abs_path)
-            abs_path = os.path.join(os.environ["VERILATOR_ROOT"], "include", "verilated_std.sv")
-
-        log.warning("'%s' nor '%s' not found, skipping. cwd: {os.getcwd()}", sym_path, abs_path)
-        return False, sym_path
-
     def loc_handler(self, loc):
         """print location field as link to relevant line and save filename in self.srcfiles for later processing"""
         id_, begin, end = loc.split(",")
@@ -204,25 +182,28 @@ class AstDiffToHtml:
         if id_ not in self.meta["files"]:
             return f"{html.escape(id_)}:{html.escape(begin_row)}"
 
-        found, path = self.resolve_path(self.meta["files"][id_])
-        if not found:
-            if path in ("<built-in>", "<command-line>"):
-                return html.escape(path)  # not a file. row/col location is also irrelevant
+        file = self.meta["files"][id_]
+        realpath = file["realpath"]
+        short_loc = f"{file['truncated_html']}-{html.escape(begin_row)}"
+
+        if not file["found"]:
+            if realpath in ("<built-in>", "<command-line>"):
+                return html.escape(realpath)  # not a file. row/col location is also irrelevant
             else:
-                return html.escape(loc)
+                return short_loc  # FIXME: examine
         else:
-            self.srcfiles.setdefault(path, set())
-            onclick = f"return selectFileFragment('{html.escape(path)}',{int(begin_row)},{int(begin_col)},{int(end_row)},{int(end_col)})"
-            short_loc = f"{html.escape(path)}-{html.escape(begin_row)}"
-            if begin_row not in self.srcfiles[path]:
-                self.srcfiles[path].add(int(begin_row))
-                return f'<a id="back-{short_loc}" href="#{short_loc}" onclick="{onclick}">{short_loc}</a>'
-            return f'<a href="#{short_loc}" onclick="{onclick}">{short_loc}</a>'
+            self.referenced_lines.setdefault(realpath, set())
+            onclick = f"return selectFileFragment('{html.escape(realpath)}',{int(begin_row)},{int(begin_col)},{int(end_row)},{int(end_col)})"
+            long_loc = f"{html.escape(realpath)}-{html.escape(begin_row)}"
+            if begin_row not in self.referenced_lines[realpath]:
+                self.referenced_lines[realpath].add(int(begin_row))
+                return f'<a id="back-{long_loc}" href="#{long_loc}" onclick="{onclick}">{short_loc}</a>'
+            return f'<a href="#{long_loc}" onclick="{onclick}">{short_loc}</a>'
 
     def diff_to_string(self, tree):
-        self.srcfiles.clear()
+        self.referenced_lines.clear()
         diff = self.diff_to_str_generic.diff_to_string(tree)
-        return self.template.render({"diff": diff, "srcfiles": sorted(self.srcfiles)})
+        return self.template.render({"diff": diff, "srcfiles": sorted(self.referenced_lines)})
 
     def make_tab(self, fname):
         """load file into line-numbered tab"""
@@ -231,7 +212,7 @@ class AstDiffToHtml:
             with open(fname, encoding="utf-8") as f:
                 verilog_lex = pygments.lexers.VerilogLexer()  # pylint: disable=maybe-no-member
                 rows = pygments.highlight(
-                    f.read(), verilog_lex, HtmlHighlighter(self.dark, self.srcfiles[fname], fname)
+                    f.read(), verilog_lex, HtmlHighlighter(self.dark, self.referenced_lines[fname], fname)
                 )
             return f'<div class="tab y-scrollable" id="{fname}">{rows}</div>'
         except FileNotFoundError:
@@ -239,9 +220,72 @@ class AstDiffToHtml:
             return ""
 
 
+def truncate_path(path, abs_prefix, rel_prefix):
+    if abs_prefix and path.startswith(abs_prefix):
+        truncated = "/..." + path[len(abs_prefix) :]
+        truncated_html = f'<span title="{html.escape(path)}">{html.escape(truncated)}</span>'
+    elif rel_prefix and path.startswith(rel_prefix):
+        truncated = "..." + path[len(rel_prefix) :]
+        truncated_html = f'<span title="{html.escape(path)}">{html.escape(truncated)}</span>'
+    else:
+        truncated = path
+        truncated_html = html.escape(truncated)
+
+    return truncated, truncated_html
+
+
+def resolve_path(file):
+    # Try to find symbolic/relative (preferred) or absolute path of file.
+    # Returns tuple (found, path)
+    #
+    # NOTE: susceptible to TOCTOU, but it should not be a problem for us
+    sym_path = file["filename"]
+    abs_path = file["realpath"]
+
+    if sym_path in ("<built-in>", "<command-line>"):  # not a file
+        return False, sym_path
+    if os.path.exists(sym_path):
+        return True, sym_path
+    if os.path.exists(abs_path):
+        return True, abs_path
+
+    if sym_path == "<verilated_std>" and "VERILATOR_ROOT" in os.environ:
+        log.warning("'%s' not found, falling back to $VERILATOR_ROOT/include/verilated_std.sv", abs_path)
+        abs_path = os.path.join(os.environ["VERILATOR_ROOT"], "include", "verilated_std.sv")
+
+    log.warning("'%s' nor '%s' not found, skipping. cwd: {os.getcwd()}", sym_path, abs_path)
+    return False, sym_path
+
+
+def preprocess_paths(meta):
+    abs_paths = []
+    rel_paths = []
+    for f in meta["files"].values():
+        f["found"], f["realpath"] = resolve_path(f)
+        if f["filename"] in ("<built-in>", "<command-line>", "<verilated_std>"):
+            # we skip <built-in> and <command-line> as they are not real files
+            # we skip <verilated_std> from calculating common prefix, as it is very likely that
+            # it is stored in different place (so it would artificially shorten trucated fragment)
+            continue
+        if os.path.isabs(f["realpath"]):
+            abs_paths.append(f["realpath"])
+        else:
+            rel_paths.append(f["realpath"])
+
+    abs_path_prefix = os.path.commonpath(abs_paths) if len(abs_paths) > 1 else ""
+    rel_path_prefix = os.path.commonpath(rel_paths) if len(rel_paths) > 1 else ""
+
+    for file in meta["files"].values():
+        file["truncated"], file["truncated_html"] = truncate_path(file["realpath"], abs_path_prefix, rel_path_prefix)
+
+
 def load_meta(path):
     try:
-        return json.load(open(path, encoding="utf-8"))
+        with open(path, encoding="utf-8") as file:
+            meta = json.load(file)
+            preprocess_paths(meta)
+            return meta
+
     except FileNotFoundError:
         log.warning("meta file not found. Some features may not work")
         return {"files": {}, "pointers": {}, "ptrFieldNames": [
@@ -279,7 +323,7 @@ def plaintext_loc_handler(loc, meta):
     id_, begin, _ = loc.split(",")
     line = begin.split(":")[0]
     if id_ in meta["files"]:
-        return f'{meta["files"][id_]["filename"]}:{line}'
+        return f'{meta["files"][id_]["truncated"]}:{line}'
     else:
         return f"{id_}:{line}"
 
