@@ -225,7 +225,7 @@ function selectFileFragment(name, firstRow, firstCol, lastRow, endCol) {
 <div class="pane y-scrollable">
 
 
-<div class="code-block" style="text-indent: calc(1ch + 10px) hanging each-line;"><pre><span class="linenos" style="width:1ch;">1</span>NETLIST &quot;$root&quot; a:0 <span id="(B)">(B)</span>
+<div class="code-block" style="text-indent: calc(1ch + 10px) hanging each-line;"><pre><div class="chunk"><span class="linenos" style="width:1ch;">1</span>NETLIST &quot;$root&quot; a:0 <span id="(B)">(B)</span>
 <span class="linenos" style="width:1ch;">2</span> <span style="color:#e74a3c;">modulesp:</span>
 <span class="linenos" style="width:1ch;">3</span>   <span style="color:#e74a3c;">MODULE</span> <span style="color:#e74a3c;">&quot;serial_adder&quot;</span> <span style="color:#e74a3c;">d:15</span> <span style="color:#e74a3c;"><span id="(E)">(E)</span></span>
 <span class="linenos" style="width:1ch;">4</span> <span style="color:#00af91;">modulesp:</span> <span style="color:#00af91;">UNLINKED</span>
