@@ -110,11 +110,16 @@ body {
     height: 100vh;
     border: solid 1px black;
     box-sizing: border-box;
-    flex: 0 0 50%;
+}
+.ast-pane {
+    resize: horizontal;
+    width: 66.6%;
 }
 .source-pane {
     display: flex;
     flex-flow: column nowrap;
+    flex-grow: 1;
+    width: 33.3%;
 
     .tabs {
         height: 100%;
@@ -195,7 +200,7 @@ function selectFileFragment(name, firstRow, firstCol, lastRow, endCol) {
 </head>
 <body>
 
-<div class="pane y-scrollable">
+<div class="pane ast-pane y-scrollable">
 
 
 <div class="code-block" style="text-indent: calc(3ch + 10px) hanging each-line;"><pre><div class="chunk"><span class="linenos" style="width:3ch;">1</span>NETLIST <b>&quot;$root&quot;</b> &lt;built-in&gt; <span id="(B)">(B)</span> constPoolp:<a href="#(D)">(D)</a>, delaySchedulerp:UNLINKED, dollarUnitPkgp:UNLINKED, dpiExportTriggerp:UNLINKED, evalNbap:UNLINKED, evalp:UNLINKED, nbaEventTriggerp:UNLINKED, nbaEventp:UNLINKED, stdPackagep:UNLINKED, timeprecision:1ps, timeunit:1ps, topScopep:UNLINKED, typeTablep:<a href="#(C)">(C)</a>
