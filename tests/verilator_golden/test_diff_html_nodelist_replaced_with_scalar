@@ -169,7 +169,7 @@ body {
     text-align: right;
 }
 .linenos::selection {
-    /* work around imperfect behaviour of "user-select:none" in firefox: programmatically
+    /* work around imperfect behaviour of "user-select:none" in Firefox: programmatically
     selected element would still be highlighted (even though it would be ignored by ctrl+c) */
     background-color: transparent;
 }

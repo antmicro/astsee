@@ -30,7 +30,7 @@ from astsee import (
 
 
 def split_ast_fields(ast, omit_false_flags):
-    """split and sort ast fields"""
+    """split and sort AST fields"""
     implicit = [(k, ast.pop(k)) for k in ("type", "name", "loc", "addr", "editNum") if k in ast]
     children = [(k, v) for k, v in ast.items() if is_children(v)]
     for k, v in children:
@@ -175,10 +175,10 @@ class AstDiffToHtml:
         self.template = self.diff_to_str_generic.make_html_tmpl("rich_view.html.jinja", globals_)
 
     def resolve_path(self, file):
-        # Try to find symbolic/relative (prefered) or absolute path of file.
+        # Try to find symbolic/relative (preferred) or absolute path of file.
         # Returns tuple (found, path)
         #
-        # NOTE: supsectible to TOCTOU, but it should not be a problem for us
+        # NOTE: susceptible to TOCTOU, but it should not be a problem for us
         sym_path = file["filename"]
         abs_path = file["realpath"]
 
@@ -207,7 +207,7 @@ class AstDiffToHtml:
         found, path = self.resolve_path(self.meta["files"][id_])
         if not found:
             if path in ("<built-in>", "<command-line>"):
-                return html.escape(path)  # not a file. row/col location is also irrevelant
+                return html.escape(path)  # not a file. row/col location is also irrelevant
             else:
                 return html.escape(loc)
         else:
@@ -225,7 +225,7 @@ class AstDiffToHtml:
         return self.template.render({"diff": diff, "srcfiles": sorted(self.srcfiles)})
 
     def make_tab(self, fname):
-        """load file into linenumbered tab"""
+        """load file into line-numbered tab"""
         rows = ""
         try:
             with open(fname, encoding="utf-8") as f:
@@ -245,7 +245,7 @@ def load_meta(path):
     except FileNotFoundError:
         log.warning("meta file not found. Some features may not work")
         return {"files": {}, "pointers": {}, "ptrFieldNames": [
-        # when meta not found, we default to hardcoded (likely outdated) list of ptr fields
+        # when meta not found, we default to hardcoded (likely outdated) list of pointer fields
         "abovep", "addr", "blockp", "cellp", "classOrPackageNodep", "classp",
         "cpkgp", "declp", "dtp", "ftaskp", "funcp", "ifacep", "itemp", "labelp",
         "modp", "modVarp", "packagep", "pkgp", "scopep", "sensesp", "subDTypep",
@@ -255,7 +255,7 @@ def load_meta(path):
 
 def guess_meta_path(args):
     def match(name):
-        # Yeah, this is a bit overengineered scheme, but it should work
+        # Yeah, this is a bit overengineered, but it should work
         # even if you have multiple meta files in same dir
         common = os.path.commonprefix([os.path.abspath(name), os.path.abspath(args.file)])
         if not common:
@@ -293,7 +293,7 @@ def main(args=None):
         guess_meta_path(args)
 
     meta = load_meta(args.meta)
-    # allow for suplying alternative implementation like gojq
+    # allow for supplying an alternative implementation like gojq
     jq_bin = os.environ.get("VERILATOR_JQ", "jq")
 
     jq_funcs = """
@@ -313,7 +313,7 @@ def main(args=None):
         args.jq_query = f"ast_walk(select({args.skip_nodes} | not) | del({args.del_list}))"
 
     split_fields = partial(split_ast_fields, omit_false_flags=args.omit)
-    omit_intact = args.omit and args.newfile  # ommiting unmodified chunks does not make sense without diff
+    omit_intact = args.omit and args.newfile  # omitting unmodified chunks does not make sense without diff
 
     if args.html or args.html_browser:
         diff_to_str = AstDiffToHtml(omit_intact, split_fields, meta, not args.light)
@@ -331,7 +331,7 @@ def main(args=None):
     if not args.newfile:  # don't diff, just pretty print
         # passing tree marked as unchanged to colorizer can be abused to just pretty print it
         tree = IntactNode(*load_jsons_([args.file]))
-    else:  # both files suplied, diff
+    else:  # both files supplied, diff
         tree = make_diff(*load_jsons_([args.file, args.newfile]))
 
     if args.html_browser:
