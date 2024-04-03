@@ -59,3 +59,17 @@ readme-test:
 	diff <(tuttest README.md verilator-pretty-print-output) actual-verilator-pretty-print-output --color=always && \
 	# cleanup \
 	rm -rf "$$TMPDIR"
+
+.PHONY: clean
+clean:
+	rm -rf astsee.egg-info build
+
+.PHONY: install-test
+install-test: clean
+	if echo -e "0.15\n$$(pipx --version)" | sort --version-sort --check=quiet; then \
+		pipx install . --force; \
+	else \
+		pipx install astsee --spec . --force; \
+	fi
+	cd tests/verilator_in && astsee_verilator --html test1_a.tree.json test1_b.tree.json > /dev/null
+

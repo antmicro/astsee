@@ -22,3 +22,13 @@ jobs:
           python3 -m venv venv/ && source venv/bin/activate && pip install --upgrade pip && pip install '.[dev]'
       - name: Run tests
         run: source venv/bin/activate && make
+
+  install-test:
+    runs-on: ubuntu-20.04
+    env:
+      FORCE_COLOR: 1
+      CLICOLOR_FORCE: 1
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run install test
+        run: make install-test

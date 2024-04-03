@@ -23,3 +23,17 @@ test-and-lint:
     - python3 -m venv venv/ && source venv/bin/activate && pip install --upgrade pip
     - pip install '.[dev]'
     - make
+
+install-test:
+  image: "d2s://external/docker/ubuntu:20.04"
+  tags: ['ace-x86_64']
+  variables:
+    SCALENODE_CPU: 1
+    SCALENODE_RAM: 2048
+    # CI makes some programs think that they are writing to pipe, so they switch ansi escapes off
+    # Some of them respect one of these vars for disabling this behaviour
+    FORCE_COLOR: 1
+    CLICOLOR_FORCE: 1
+  script:
+    - apt-get -qqy update && apt-get -qqy --no-install-recommends install jq python3 python3-venv pipx make
+    - PATH="$HOME/.local/bin:$PATH" make install-test
