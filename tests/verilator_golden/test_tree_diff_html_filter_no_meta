@@ -137,10 +137,6 @@ body {
     display: flex;
     flex-flow: column nowrap;
 
-    .tabmenu {
-        display: flex;
-        flex-flow: row wrap;
-    }
     .tabs {
         height: 100%;
         position: relative;
@@ -177,7 +173,8 @@ body {
 <script>
 let topIdx = 1;
 
-function showtab(tabname) {
+function showtab(tabname, updateMenu=true) {
+  if (updateMenu) document.getElementById('tabmenu').value = tabname;
   document.getElementById(tabname).style.zIndex = ++topIdx;
 }
 function skipToChar(node, i) {
@@ -953,8 +950,6 @@ function selectFileFragment(name, firstRow, firstCol, lastRow, endCol) {
 </div>
 
 <div class="pane source-pane">
-<div class="tabmenu">
-</div>
 <div class="tabs">
 </div>
 </div>

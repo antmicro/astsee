@@ -1,6 +1,7 @@
 let topIdx = 1;
 
-function showtab(tabname) {
+function showtab(tabname, updateMenu=true) {
+  if (updateMenu) document.getElementById('tabmenu').value = tabname;
   document.getElementById(tabname).style.zIndex = ++topIdx;
 }
 function skipToChar(node, i) {
