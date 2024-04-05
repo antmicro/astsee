@@ -10,11 +10,11 @@
 {% endif -%}
 {% set lines = diff | length %}
 {% set idx_width = lines | string | length %}
-<div class="code-block" style="text-indent: calc({{idx_width}}ch + 10px) hanging each-line;"><pre>
+<div class="code-block" style="text-indent: calc({{idx_width}}ch + 10px) hanging each-line;"><pre><div class="chunk">
 {%- for row in diff -%}
-   {% if loop.index is divisibleby CHUNK_SIZE -%}
-     </div> <div class="chunk">
-   {% endif -%}
+   {%- if loop.index is divisibleby CHUNK_SIZE -%}
+     </div><div class="chunk">
+   {%- endif -%}
    <span class="linenos" style="width:{{idx_width}}ch;">{{loop.index}}</span>{{row|safe}}
 {% endfor -%}
 </div></pre></div>

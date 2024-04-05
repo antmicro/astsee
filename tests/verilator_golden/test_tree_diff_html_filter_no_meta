@@ -225,7 +225,7 @@ function selectFileFragment(name, firstRow, firstCol, lastRow, endCol) {
 <div class="pane y-scrollable">
 
 
-<div class="code-block" style="text-indent: calc(3ch + 10px) hanging each-line;"><pre><span class="linenos" style="width:3ch;">1</span>NETLIST &quot;$root&quot; a:0 constPoolp:(D), delaySchedulerp:UNLINKED, dollarUnitPkgp:UNLINKED, dpiExportTriggerp:UNLINKED, evalNbap:UNLINKED, evalp:UNLINKED, nbaEventTriggerp:UNLINKED, nbaEventp:UNLINKED, stdPackagep:UNLINKED, timeprecision:1ps, timeunit:1ps, topScopep:UNLINKED, typeTablep:(C)
+<div class="code-block" style="text-indent: calc(3ch + 10px) hanging each-line;"><pre><div class="chunk"><span class="linenos" style="width:3ch;">1</span>NETLIST &quot;$root&quot; a:0 constPoolp:(D), delaySchedulerp:UNLINKED, dollarUnitPkgp:UNLINKED, dpiExportTriggerp:UNLINKED, evalNbap:UNLINKED, evalp:UNLINKED, nbaEventTriggerp:UNLINKED, nbaEventp:UNLINKED, stdPackagep:UNLINKED, timeprecision:1ps, timeunit:1ps, topScopep:UNLINKED, typeTablep:(C)
 <span class="linenos" style="width:3ch;">2</span> modulesp:
 <span class="linenos" style="width:3ch;">3</span>   MODULE &quot;serial_adder&quot; d:15 level:2, origName:serial_adder, timeunit:1ps
 <span class="linenos" style="width:3ch;">4</span>    stmtsp:
