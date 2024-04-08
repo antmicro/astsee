@@ -86,6 +86,15 @@ astsee a.json b.json
 
 ![astsee a.json b.json](img/generic_diff_ab.png)
 
+There is also an option to generate HTML instead of ANSI text:
+
+```sh
+astsee a.json b.json --html > diff.html
+firefox diff.html
+```
+
+![astsee a.json b.json --html](img/generic_diff_ab_html.png)
+
 To see all available options:
 
 ```sh
@@ -106,6 +115,46 @@ Or clone the repository, `cd` to it, and run:
 ```sh
 pipx install .
 ```
+
+As of now, `astsee` depends on `jq` being accessible in `PATH`.
+
+On Ubuntu or Debian, you can install it with
+```sh
+apt install jq
+```
+
+## Verilator mode
+Astsee provides a separate mode for interpreting Verilator AST dumps:
+<!-- name="verilator-pretty-print" -->
+```sh
+astsee_verilator tests/verilator_in/test1_a.tree.json | head -n 10 # head for brevity
+```
+
+<!-- name="verilator-pretty-print-output" -->
+```
+NETLIST "$root" <built-in>:0 (B) constPoolp:(D), delaySchedulerp:UNLINKED, dollarUnitPkgp:UNLINKED, dpiExportTriggerp:UNLINKED, evalNbap:UNLINKED, evalp:UNLINKED, nbaEventTriggerp:UNLINKED, nbaEventp:UNLINKED, stdPackagep:UNLINKED, timeprecision:1ps, timeunit:1ps, topScopep:UNLINKED, typeTablep:(C)
+ modulesp:
+   MODULE "serial_adder" test1.sv:15 (E) level:2, origName:serial_adder, timeunit:1ps
+    stmtsp:
+      VAR "WIDTH" test1.sv:15 (F) attrClocker:UNKNOWN, direction:NONE, lifetime:VSTATIC, origName:WIDTH, sensIfacep:UNLINKED, varType:GPARAM
+       valuep:
+         CONST "?32?sh8" test1.sv:15 (H)
+      VAR "a" test1.sv:16 (J) attrClocker:UNKNOWN, direction:INPUT, lifetime:NONE, origName:a, sensIfacep:UNLINKED, varType:PORT
+       childDTypep:
+         BASICDTYPE "logic" test1.sv:16 (K) keyword:logic
+```
+
+For brevity, some common fields like `type` or `name` are printed without the key.
+
+The `--html` option provides rich features such as jumping between corresponding AST nodes and source lines:
+```sh
+astsee_verilator tests/verilator_in/test1_a.tree.json --html > foo.html
+firefox foo.html
+# Or to open generated file directly in browser:
+astsee_verilator tests/verilator_in/test1_a.tree.json --htmlb
+```
+
+![astsee_verilator --html](img/verilator_html_pprint.png)
 
 ## Dev install
 
@@ -131,6 +180,8 @@ in project root. To update tests:
 
 ```sh
 pytest --golden
+# or
+ASTSEE_UPDATE_GOLDEN=1 pytest
 ```
 
 ## Make
