@@ -34,7 +34,7 @@ parser_group.add_argument(
 def main(args=None):
     if args is None:
         args = parser.parse_args()
-    omit_intact = args.omit and args.newfile  # ommiting unmodified chunks does not make sense without diff
+    omit_intact = args.omit and args.newfile  # omitting unmodified chunks does not make sense without diff
 
     if args.html:
         diff_to_str = DictDiffToHtml(omit_intact)
@@ -48,7 +48,7 @@ def main(args=None):
     if not args.newfile:  # don't diff, just pretty print
         # passing tree marked as unchanged to colorizer can be abused to just pretty print it
         tree = IntactNode(*load_jsons_([args.file]))
-    else:  # both files suplied, diff
+    else:  # both files supplied, diff
         tree = make_diff(*load_jsons_([args.file, args.newfile]))
 
     print(diff_to_str.diff_to_string(tree), end="")

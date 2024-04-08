@@ -21,7 +21,7 @@ def is_scalar(obj):
 
 
 def stringify(x, quote_empty=True):
-    """Return x as string with "special chars" escaped. For sake of readilibity we return empty strings as '""' rather than '' (unless quote_empty==False)"""
+    """Return x as string with "special chars" escaped. For sake of readability we return empty strings as '""' rather than '' (unless quote_empty==False)"""
     x = str(x).encode("unicode_escape").decode("utf-8")
     if x or not quote_empty:
         return x
@@ -34,7 +34,7 @@ class DiffNode:
         self.content = content
 
     def dict_it(self, omit=0):
-        """iterator that propagates diff markers and optionaly omits uninteresting nodes"""
+        """iterator that propagates diff markers and optionally omits uninteresting nodes"""
         for key, subnode in self.content.items():
             subnode = self.propagate(subnode)
             if omit and subnode.shouldOmit():
@@ -45,7 +45,7 @@ class DiffNode:
             yield key, subnode
 
     def list_it(self, omit=0):
-        """iterator that propagates diff markers and optionaly omits uninteresting nodes"""
+        """iterator that propagates diff markers and optionally omits uninteresting nodes"""
         if omit:
             yield from self.list_omit_it()
         else:
@@ -88,11 +88,11 @@ class DiffNode:
 
 
 class ParentOfModified(DiffNode):
-    """Node that has modified descendands"""
+    """Node that has modified descendants"""
 
 
 class IntactNode(DiffNode):
-    """Node that is common beetween old and new jsons"""
+    """Node that is common between old and new JSONs"""
 
     def shouldOmit(self):
         return not is_scalar(self.content)
@@ -100,7 +100,7 @@ class IntactNode(DiffNode):
 
 class OmittedNode(IntactNode):
     """Intact node that has been omitted. As adjacent nodes are often collapsed together,
-    count of omisions is stored in self.content"""
+    count of omissions is stored in self.content"""
 
 
 class DelDiffNode(DiffNode):
@@ -138,7 +138,7 @@ def make_diff(old, new):
     """
 
     def get_node(node, path):
-        """Given path (list of keys/indexes) of node, traverse tree, tag visted nodes as not leaves
+        """Given path (list of keys/indexes) of node, traverse tree, tag visited nodes as not leaves
         and return tuple with direct parent of wanted node, and its index/key in that parent"""
         for p in path[:-1]:
             if not isinstance(node.content[p], ParentOfModified):
@@ -166,9 +166,9 @@ def make_diff(old, new):
 
 
 class BasicDiffToTerm:
-    """class for producing pretty representation of dif, colored with ansi escapes.
-    Input may contain lists, dicts and scalars (can be potentialy extended in future to user defined types)
-    Output looks like simplified json with each record on its own line (for more condensed output see DictDiffToTerm/DictDiffToHtml).
+    """class for producing pretty representation of diff, colored with ANSI escapes.
+    Input may contain lists, dicts and scalars (can be potentially extended in future to user defined types)
+    Output looks like simplified JSON with each record on its own line (for more condensed output see DictDiffToTerm/DictDiffToHtml).
     """
 
     def __init__(self, omit_intact):
@@ -178,13 +178,13 @@ class BasicDiffToTerm:
 
     def diff_to_string(self, diff):
         if isinstance(diff, IntactNode):
-            # remove unnecessary ansi escape flood from unmodified tree
+            # remove unnecessary ANSI escape flood from unmodified tree
             return self._diff_to_string(diff).replace(COLOR_RESET, "")
         else:
             return self._diff_to_string(diff) + COLOR_RESET
 
     def _diff_to_string(self, diff, indent="", key_prefix=""):
-        """Return pretty representation of json diff."""
+        """Return pretty representation of JSON diff."""
         if isinstance(diff, ReplaceDiffNode):
             if is_scalar(diff.old.content) and is_scalar(diff.new.content):
                 return f"{diff.colsym()}{COLOR_RESET}{indent}{key_prefix}{diff.old.color()}{stringify(diff.old.content)}{COLOR_RESET} -> {diff.new.color()}{stringify(diff.new.content)}\n"
@@ -244,7 +244,7 @@ class DictDiff:
        implicit_fields explicit_fields
        ...
 
-    Explicit fields are printed as key:value, wheras implicit ones are printed by
+    Explicit fields are printed as key:value, whereas implicit ones are printed by
     value only (useful for common "positional" fields).
 
     By default:
@@ -252,7 +252,7 @@ class DictDiff:
      - every list is assumed to hold dicts (or nothing)
      - every list or dict is assumed to be child
 
-    Behaviour can be customized by suplying custom split_fields() method and val_handlers dict
+    Behaviour can be customized by supplying custom split_fields() method and val_handlers dict
 
     Addition and Deletion is signaled with colors, and replacement is: `deletion_of_old->addition_of_new`
     Color handling shall be implemented in _colorize() method of child class
@@ -260,10 +260,10 @@ class DictDiff:
 
     def __init__(self, omit_intact, val_handlers=None, split_fields=None):
         """
-        - if omit_intact is set then chunks of unchaned non-scalars are emitted as "... * <count of omissions>".
+        - if omit_intact is set then chunks of unchanged non-scalars are emitted as "... * <count of omissions>".
         - val_handlers, if specified, should be dict that maps key into custom value formatter: {key: value_formatter(value_content)}.
           As of now, only implicit and explicit fields can be handled this way.
-        - split_fields(), if specified, should be func that turns dict into tuple: (implicit, explicit, children) where
+        - split_fields(), if specified, should be function that turns dict into tuple: (implicit, explicit, children) where
           each group is list of (key,value) pairs. See default_split_fields for example.
         """
         self.omit_intact = (
@@ -326,7 +326,7 @@ class DictDiff:
 
 
 class DictDiffToTerm(DictDiff):
-    """class for producing pretty representation of dict diff, colored with ansi escapes. For more thorough description see DictDiff"""
+    """class for producing pretty representation of dict diff, colored with ANSI escapes. For more thorough description see DictDiff"""
 
     def _colorize(self, color, text):
         if color == COLOR_RESET:
@@ -336,14 +336,14 @@ class DictDiffToTerm(DictDiff):
 
 
 class DictDiffToHtml(DictDiff):
-    """like DictDiffToTerm but output is formated as linenumbered html rather than ansi escapes text
+    """like DictDiffToTerm but output is formatted as line-numbered html rather than ANSI escapes text
     By default result is standalone html page with styles.
-    If `embeddable` flag set, then diff_to_string() returns only "code-block" without css and other boilerplate.
+    If `embeddable` flag set, then diff_to_string() returns only "code-block" without CSS and other boilerplate.
 
     Format of code-table:
     <div class="code-block">
     <pre>
-    <div class="chunk> # lines are splited into smaller chunks for perf reasons
+    <div class="chunk> # lines are split into smaller chunks for performance reasons
     <span class="th">1</span>first line
     <span class="th">2</span>second line
     ...lines...
@@ -414,7 +414,7 @@ class DictDiffToHtml(DictDiff):
 
 
 def load_jsons(files, jq_query, jq_bin="jq", jq_funcs=""):
-    """Load jsons and return them as array.
+    """Load JSONs and return them as array.
     If jq_query is not empty, files are preprocessed with jq
     For sake of performance, preprocessing is done in parallel"""
     # pylint: disable=consider-using-with
