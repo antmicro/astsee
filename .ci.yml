@@ -35,5 +35,6 @@ install-test:
     FORCE_COLOR: 1
     CLICOLOR_FORCE: 1
   script:
-    - apt-get -qqy update && apt-get -qqy --no-install-recommends install jq python3 python3-venv pipx make
+    - apt-get -qqy update && apt-get -qqy --no-install-recommends install jq python3 python3-venv pipx git make
+    - pipx install tuttest --spec git+https://github.com/antmicro/tuttest
     - PATH="$HOME/.local/bin:$PATH" make install-test

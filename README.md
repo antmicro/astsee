@@ -111,7 +111,7 @@ pipx install git+https://github.com/antmicro/astsee
 
 Or clone the repository, `cd` to it, and run:
 
-<!-- name="install" -->
+<!-- name="install-pipx" -->
 ```sh
 pipx install .
 ```
@@ -120,8 +120,9 @@ To install as a library, you need to create a virtual environment and install it
 
 <!-- name="install-venv" -->
 ```sh
-virtualenv astsee-venv
-source astsee-venv/bin/activate
+venvdir=$(mktemp -d)
+python3 -m venv "$venvdir"
+source "$venvdir/bin/activate"
 pip install .
 ```
 
