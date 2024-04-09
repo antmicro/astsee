@@ -203,7 +203,7 @@ function selectFileFragment(name, firstRow, firstCol, lastRow, endCol) {
 <div class="pane ast-pane y-scrollable">
 
 
-<div class="code-block" style="text-indent: calc(3ch + 10px) hanging each-line;"><pre><div class="chunk"><span class="linenos" style="width:3ch;">1</span>NETLIST <b>&quot;$root&quot;</b> &lt;built-in&gt; <span id="(B)">(B)</span> constPoolp:<a href="#(D)">(D)</a>, delaySchedulerp:UNLINKED, dollarUnitPkgp:UNLINKED, dpiExportTriggerp:UNLINKED, evalNbap:UNLINKED, evalp:UNLINKED, nbaEventTriggerp:UNLINKED, nbaEventp:UNLINKED, stdPackagep:UNLINKED, timeprecision:1ps, timeunit:1ps, topScopep:UNLINKED, typeTablep:<a href="#(C)">(C)</a>
+<div class="code-block" style="text-indent: calc(3ch + 10px) hanging each-line;"><pre><div class="chunk"><span class="linenos" style="width:3ch;">1</span>NETLIST <b>&quot;$root&quot;</b> &lt;built-in&gt;-0 <span id="(B)">(B)</span> constPoolp:<a href="#(D)">(D)</a>, delaySchedulerp:UNLINKED, dollarUnitPkgp:UNLINKED, dpiExportTriggerp:UNLINKED, evalNbap:UNLINKED, evalp:UNLINKED, nbaEventTriggerp:UNLINKED, nbaEventp:UNLINKED, stdPackagep:UNLINKED, timeprecision:1ps, timeunit:1ps, topScopep:UNLINKED, typeTablep:<a href="#(C)">(C)</a>
 <span class="linenos" style="width:3ch;">2</span> modulesp:
 <span class="linenos" style="width:3ch;">3</span>   MODULE <b>&quot;serial_adder&quot;</b> <a id="back-test1/test1.sv-7" href="#test1/test1.sv-7" onclick="return selectFileFragment('test1/test1.sv',7,8,7,20)"><span title="test1/test1.sv">.../test1.sv</span>-7</a> <span id="(E)">(E)</span> level:2, origName:serial_adder, timeunit:1ps
 <span class="linenos" style="width:3ch;">4</span>    stmtsp:
@@ -943,7 +943,7 @@ function selectFileFragment(name, firstRow, firstCol, lastRow, endCol) {
 <span class="linenos" style="width:3ch;">738</span>       lhsp:
 <span class="linenos" style="width:3ch;">739</span>         VARREF <b>&quot;cout&quot;</b> <a id="back-test1/test1_submodule/full_adder.sv-8" href="#test1/test1_submodule/full_adder.sv-8" onclick="return selectFileFragment('test1/test1_submodule/full_adder.sv',8,12,8,16)"><span title="test1/test1_submodule/full_adder.sv">.../test1_submodule/full_adder.sv</span>-8</a> <span id="(SG)">(SG)</span> access:WR, classOrPackagep:UNLINKED, dtypep:<span style="color:red;">UNLINKED</span>-><span style="color:green;"><a href="#(AC)">(AC)</a></span>, varScopep:UNLINKED, varp:<a href="#(HE)">(HE)</a>
 <span class="linenos" style="width:3ch;">740</span> miscsp:
-<span class="linenos" style="width:3ch;">741</span>   TYPETABLE <b>&quot;&quot;</b> &lt;built-in&gt; <span id="(C)">(C)</span> constraintRefp:UNLINKED, emptyQueuep:UNLINKED, queueIndexp:UNLINKED, streamp:UNLINKED, voidp:<a href="#(DF)">(DF)</a>
+<span class="linenos" style="width:3ch;">741</span>   TYPETABLE <b>&quot;&quot;</b> &lt;built-in&gt;-0 <span id="(C)">(C)</span> constraintRefp:UNLINKED, emptyQueuep:UNLINKED, queueIndexp:UNLINKED, streamp:UNLINKED, voidp:<a href="#(DF)">(DF)</a>
 <span class="linenos" style="width:3ch;">742</span>    typesp:
 <span class="linenos" style="width:3ch;">743</span>      ... * 10
 <span class="linenos" style="width:3ch;">744</span>      BASICDTYPE <b>&quot;LOGIC_IMPLICIT&quot;</b> <a id="back-test1/test1.sv-7" href="#test1/test1.sv-7" onclick="return selectFileFragment('test1/test1.sv',7,23,7,28)"><span title="test1/test1.sv">.../test1.sv</span>-7</a> <span id="(G)">(G)</span> dtypep:<a href="#(G)">(G)</a>, generic:<span style="color:red;">False</span>-><span style="color:green;">True</span>, keyword:LOGIC_IMPLICIT

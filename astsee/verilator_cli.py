@@ -6,6 +6,7 @@ import html
 import json
 import logging as log
 import os
+import re
 import webbrowser
 from functools import partial
 from tempfile import NamedTemporaryFile
@@ -176,29 +177,25 @@ class AstDiffToHtml:
 
     def loc_handler(self, loc):
         """print location field as link to relevant line and save filename in self.srcfiles for later processing"""
-        id_, begin, end = loc.split(",")
-        (begin_row, begin_col), (end_row, end_col) = begin.split(":"), end.split(":")
+        id_, begin_row, begin_col, end_row, end_col = re.split("[:,]", loc)
 
         if id_ not in self.meta["files"]:
             return f"{html.escape(id_)}:{html.escape(begin_row)}"
 
         file = self.meta["files"][id_]
         realpath = file["realpath"]
-        short_loc = f"{file['truncated_html']}-{html.escape(begin_row)}"
+        link_loc = f"{html.escape(realpath)}-{html.escape(begin_row)}"
+        display_loc = f"{file['truncated_html']}-{html.escape(begin_row)}"
 
         if not file["found"]:
-            if realpath in ("<built-in>", "<command-line>"):
-                return html.escape(realpath)  # not a file. row/col location is also irrelevant
-            else:
-                return short_loc  # FIXME: examine
+            return display_loc
         else:
             self.referenced_lines.setdefault(realpath, set())
             onclick = f"return selectFileFragment('{html.escape(realpath)}',{int(begin_row)},{int(begin_col)},{int(end_row)},{int(end_col)})"
-            long_loc = f"{html.escape(realpath)}-{html.escape(begin_row)}"
             if begin_row not in self.referenced_lines[realpath]:
                 self.referenced_lines[realpath].add(int(begin_row))
-                return f'<a id="back-{long_loc}" href="#{long_loc}" onclick="{onclick}">{short_loc}</a>'
-            return f'<a href="#{long_loc}" onclick="{onclick}">{short_loc}</a>'
+                return f'<a id="back-{link_loc}" href="#{link_loc}" onclick="{onclick}">{display_loc}</a>'
+            return f'<a href="#{link_loc}" onclick="{onclick}">{display_loc}</a>'
 
     def diff_to_string(self, tree):
         self.referenced_lines.clear()
