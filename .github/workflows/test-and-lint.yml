@@ -30,5 +30,7 @@ jobs:
       CLICOLOR_FORCE: 1
     steps:
       - uses: actions/checkout@v3
+      - name: Install tuttest
+        run: pipx install git+https://github.com/antmicro/tuttest
       - name: Run install test
         run: make install-test
