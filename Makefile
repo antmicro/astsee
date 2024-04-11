@@ -59,3 +59,26 @@ readme-test:
 	diff <(tuttest README.md verilator-pretty-print-output) actual-verilator-pretty-print-output --color=always && \
 	# cleanup \
 	rm -rf "$$TMPDIR"
+
+.PHONY: clean
+clean:
+	rm -rf astsee.egg-info build
+
+.PHONY: install-venv-test
+install-venv-test: clean
+	tuttest README.md install-venv | cat - <(echo "python -c 'import astsee'") | bash
+
+.PHONY: install-pipx-test
+install-pipx-test: clean
+	export PIPX_HOME=$$(mktemp -d) && \
+	export PIPX_BIN_DIR=$$PIPX_HOME/bin && \
+	PATH=$$PIPX_BIN_DIR:$$PATH && \
+	if echo -e "0.15\n$$(pipx --version)" | sort --version-sort --check=quiet; then \
+		tuttest README.md install-pipx | bash -o pipefail; \
+	else \
+		pipx install astsee --spec .; \
+	fi && \
+	cd tests/verilator_in && astsee_verilator --html test1_a.tree.json test1_b.tree.json > /dev/null
+
+.PHONY: install-test
+install-test: install-pipx-test install-venv-test

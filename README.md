@@ -103,7 +103,7 @@ astsee --help
 
 ## Installation and usage
 
-To install, run:
+To install as an app, run:
 
 ```sh
 pipx install git+https://github.com/antmicro/astsee
@@ -111,9 +111,19 @@ pipx install git+https://github.com/antmicro/astsee
 
 Or clone the repository, `cd` to it, and run:
 
-<!-- name="install" -->
+<!-- name="install-pipx" -->
 ```sh
 pipx install .
+```
+
+To install as a library, you need to create a virtual environment and install it there:
+
+<!-- name="install-venv" -->
+```sh
+venvdir=$(mktemp -d)
+python3 -m venv "$venvdir"
+source "$venvdir/bin/activate"
+pip install .
 ```
 
 As of now, `astsee` depends on `jq` being accessible in `PATH`.

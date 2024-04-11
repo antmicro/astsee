@@ -23,6 +23,9 @@ astsee_verilator = "astsee.verilator_cli:main"
 [tool.setuptools]
 packages = ["astsee"]
 
+[tool.setuptools.package-data]
+astsee = ["*.jinja", "*.js"]
+
 [tool.pytest.ini_options]
 pythonpath = ["."]
 testpaths = ["tests/"]
