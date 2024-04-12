@@ -137,21 +137,22 @@ apt install jq
 Astsee provides a separate mode for interpreting Verilator AST dumps:
 <!-- name="verilator-pretty-print" -->
 ```sh
-astsee_verilator tests/verilator_in/test1_a.tree.json | head -n 10 # head for brevity
+cd tests/verilator_in/
+astsee_verilator test1_a.tree.json | head -n 10 # head for brevity
 ```
 
 <!-- name="verilator-pretty-print-output" -->
 ```
 NETLIST "$root" <built-in>:0 (B) constPoolp:(D), delaySchedulerp:UNLINKED, dollarUnitPkgp:UNLINKED, dpiExportTriggerp:UNLINKED, evalNbap:UNLINKED, evalp:UNLINKED, nbaEventTriggerp:UNLINKED, nbaEventp:UNLINKED, stdPackagep:UNLINKED, timeprecision:1ps, timeunit:1ps, topScopep:UNLINKED, typeTablep:(C)
  modulesp:
-   MODULE "serial_adder" test1.sv:15 (E) level:2, origName:serial_adder, timeunit:1ps
+   MODULE "serial_adder" .../test1.sv:7 (E) level:2, origName:serial_adder, timeunit:1ps
     stmtsp:
-      VAR "WIDTH" test1.sv:15 (F) attrClocker:UNKNOWN, direction:NONE, lifetime:VSTATIC, origName:WIDTH, sensIfacep:UNLINKED, varType:GPARAM
+      VAR "WIDTH" .../test1.sv:7 (F) attrClocker:UNKNOWN, direction:NONE, dtypeName:logic, dtypep:(I), isGParam:True, isParam:True, lifetime:VSTATIC, origName:WIDTH, sensIfacep:UNLINKED, varType:GPARAM
        valuep:
-         CONST "?32?sh8" test1.sv:15 (H)
-      VAR "a" test1.sv:16 (J) attrClocker:UNKNOWN, direction:INPUT, lifetime:NONE, origName:a, sensIfacep:UNLINKED, varType:PORT
+         CONST "?32?sh8" .../test1.sv:7 (H) dtypep:(I)
+      VAR "a" .../test1.sv:8 (K) attrClocker:UNKNOWN, direction:INPUT, dtypep:UNLINKED, lifetime:NONE, origName:a, sensIfacep:UNLINKED, varType:PORT
        childDTypep:
-         BASICDTYPE "logic" test1.sv:16 (K) keyword:logic
+         BASICDTYPE "logic" .../test1.sv:8 (L) dtypep:(L), keyword:logic
 ```
 
 For brevity, some common fields like `type` or `name` are printed without the key.
