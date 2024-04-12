@@ -40,11 +40,16 @@ body {
     height: 100vh;
     border: solid 1px black;
     box-sizing: border-box;
-    flex: 0 0 50%;
+}
+.ast-pane {
+    resize: horizontal;
+    width: 66.6%;
 }
 .source-pane {
     display: flex;
     flex-flow: column nowrap;
+    flex-grow: 1;
+    width: 33.3%;
 
     .tabs {
         height: 100%;
@@ -89,7 +94,7 @@ body {
 </head>
 <body>
 
-<div class="pane y-scrollable">
+<div class="pane ast-pane y-scrollable">
 {{diff|safe}}
 </div>
 

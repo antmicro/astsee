@@ -1,724 +1,761 @@
 NETLIST "$root" a:0 constPoolp:(D), delaySchedulerp:UNLINKED, dollarUnitPkgp:UNLINKED, dpiExportTriggerp:UNLINKED, evalNbap:UNLINKED, evalp:UNLINKED, nbaEventTriggerp:UNLINKED, nbaEventp:UNLINKED, stdPackagep:UNLINKED, timeprecision:1ps, timeunit:1ps, topScopep:UNLINKED, typeTablep:(C)
  modulesp:
-   MODULE "serial_adder" d:15 level:2, origName:serial_adder, timeunit:1ps
+   MODULE "serial_adder" d:7 level:2, origName:serial_adder, timeunit:1ps
     stmtsp:
       ... * 1
-      VAR "a" d:16 attrClocker:UNKNOWN, direction:INPUT, lifetime:NONE, origName:a, sensIfacep:UNLINKED, varType:PORT
+      VAR "a" d:8 attrClocker:UNKNOWN, direction:INPUT, [32mdtypeName:logic[39m, dtypep:[31mUNLINKED[39m->[32m(L)[39m, lifetime:NONE, origName:a, sensIfacep:UNLINKED, varType:PORT
        [31mchildDTypep:[39m
-         [31mBASICDTYPE[39m [31m"logic"[39m [31md:16[39m [31mkeyword:logic[39m
+         [31mBASICDTYPE[39m [31m"logic"[39m [31md:8[39m [31mdtypep:(L)[39m, [31mkeyword:logic[39m
           [31mrangep:[39m
-            [31mRANGE[39m [31m""[39m [31md:16[39m
+            [31mRANGE[39m [31m""[39m [31md:8[39m
              [31mleftp:[39m
-               [31mSUB[39m [31m""[39m [31md:16[39m
+               [31mSUB[39m [31m""[39m [31md:8[39m [31mdtypep:UNLINKED[39m
                 [31mlhsp:[39m
-                  [31mVARREF[39m [31m"WIDTH"[39m [31md:16[39m [31maccess:RD[39m, [31mclassOrPackagep:UNLINKED[39m
+                  [31mVARREF[39m [31m"WIDTH"[39m [31md:8[39m [31maccess:RD[39m, [31mclassOrPackagep:UNLINKED[39m, [31mdtypep:UNLINKED[39m
                 [31mrhsp:[39m
-                  [31mCONST[39m [31m"?32?sh1"[39m [31md:16[39m
+                  [31mCONST[39m [31m"?32?sh1"[39m [31md:8[39m [31mdtypep:(Q)[39m
              [31mrightp:[39m
-               [31mCONST[39m [31m"?32?sh0"[39m [31md:16[39m
-      VAR "b" d:17 attrClocker:UNKNOWN, direction:INPUT, lifetime:NONE, origName:b, sensIfacep:UNLINKED, varType:PORT
+               [31mCONST[39m [31m"?32?sh0"[39m [31md:8[39m [31mdtypep:(Q)[39m
+      VAR "b" d:9 attrClocker:UNKNOWN, direction:INPUT, [32mdtypeName:logic[39m, dtypep:[31mUNLINKED[39m->[32m(U)[39m, lifetime:NONE, origName:b, sensIfacep:UNLINKED, varType:PORT
        [31mchildDTypep:[39m
-         [31mBASICDTYPE[39m [31m"logic"[39m [31md:17[39m [31mkeyword:logic[39m
+         [31mBASICDTYPE[39m [31m"logic"[39m [31md:9[39m [31mdtypep:(U)[39m, [31mkeyword:logic[39m
           [31mrangep:[39m
-            [31mRANGE[39m [31m""[39m [31md:17[39m
+            [31mRANGE[39m [31m""[39m [31md:9[39m
              [31mleftp:[39m
-               [31mSUB[39m [31m""[39m [31md:17[39m
+               [31mSUB[39m [31m""[39m [31md:9[39m [31mdtypep:UNLINKED[39m
                 [31mlhsp:[39m
-                  [31mVARREF[39m [31m"WIDTH"[39m [31md:17[39m [31maccess:RD[39m, [31mclassOrPackagep:UNLINKED[39m
+                  [31mVARREF[39m [31m"WIDTH"[39m [31md:9[39m [31maccess:RD[39m, [31mclassOrPackagep:UNLINKED[39m, [31mdtypep:UNLINKED[39m
                 [31mrhsp:[39m
-                  [31mCONST[39m [31m"?32?sh1"[39m [31md:17[39m
+                  [31mCONST[39m [31m"?32?sh1"[39m [31md:9[39m [31mdtypep:(Q)[39m
              [31mrightp:[39m
-               [31mCONST[39m [31m"?32?sh0"[39m [31md:17[39m
-      VAR "cin" d:18 attrClocker:UNKNOWN, direction:INPUT, lifetime:NONE, origName:cin, sensIfacep:UNLINKED, varType:PORT
+               [31mCONST[39m [31m"?32?sh0"[39m [31md:9[39m [31mdtypep:(Q)[39m
+      VAR "cin" d:10 attrClocker:UNKNOWN, direction:INPUT, [32mdtypeName:logic[39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m, lifetime:NONE, origName:cin, sensIfacep:UNLINKED, varType:PORT
        [31mchildDTypep:[39m
-         [31mBASICDTYPE[39m [31m"LOGIC_IMPLICIT"[39m [31md:18[39m [31mkeyword:LOGIC_IMPLICIT[39m
-      VAR "s" d:19 attrClocker:UNKNOWN, direction:OUTPUT, lifetime:NONE, origName:s, sensIfacep:UNLINKED, varType:PORT
+         [31mBASICDTYPE[39m [31m"LOGIC_IMPLICIT"[39m [31md:10[39m [31mdtypep:(CB)[39m, [31mkeyword:LOGIC_IMPLICIT[39m
+      VAR "s" d:11 attrClocker:UNKNOWN, direction:OUTPUT, [32mdtypeName:logic[39m, dtypep:[31mUNLINKED[39m->[32m(FB)[39m, lifetime:NONE, origName:s, sensIfacep:UNLINKED, varType:PORT
        [31mchildDTypep:[39m
-         [31mBASICDTYPE[39m [31m"logic"[39m [31md:19[39m [31mkeyword:logic[39m
+         [31mBASICDTYPE[39m [31m"logic"[39m [31md:11[39m [31mdtypep:(FB)[39m, [31mkeyword:logic[39m
           [31mrangep:[39m
-            [31mRANGE[39m [31m""[39m [31md:19[39m
+            [31mRANGE[39m [31m""[39m [31md:11[39m
              [31mleftp:[39m
-               [31mSUB[39m [31m""[39m [31md:19[39m
+               [31mSUB[39m [31m""[39m [31md:11[39m [31mdtypep:UNLINKED[39m
                 [31mlhsp:[39m
-                  [31mVARREF[39m [31m"WIDTH"[39m [31md:19[39m [31maccess:RD[39m, [31mclassOrPackagep:UNLINKED[39m
+                  [31mVARREF[39m [31m"WIDTH"[39m [31md:11[39m [31maccess:RD[39m, [31mclassOrPackagep:UNLINKED[39m, [31mdtypep:UNLINKED[39m
                 [31mrhsp:[39m
-                  [31mCONST[39m [31m"?32?sh1"[39m [31md:19[39m
+                  [31mCONST[39m [31m"?32?sh1"[39m [31md:11[39m [31mdtypep:(Q)[39m
              [31mrightp:[39m
-               [31mCONST[39m [31m"?32?sh0"[39m [31md:19[39m
-      VAR "cout" d:20 attrClocker:UNKNOWN, direction:OUTPUT, lifetime:NONE, origName:cout, sensIfacep:UNLINKED, varType:PORT
+               [31mCONST[39m [31m"?32?sh0"[39m [31md:11[39m [31mdtypep:(Q)[39m
+      VAR "cout" d:12 attrClocker:UNKNOWN, direction:OUTPUT, [32mdtypeName:logic[39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m, lifetime:NONE, origName:cout, sensIfacep:UNLINKED, varType:PORT
        [31mchildDTypep:[39m
-         [31mBASICDTYPE[39m [31m"LOGIC_IMPLICIT"[39m [31md:20[39m [31mkeyword:LOGIC_IMPLICIT[39m
-      VAR "c" d:22 attrClocker:UNKNOWN, direction:NONE, lifetime:VSTATIC, origName:c, sensIfacep:UNLINKED, varType:WIRE
+         [31mBASICDTYPE[39m [31m"LOGIC_IMPLICIT"[39m [31md:12[39m [31mdtypep:(NB)[39m, [31mkeyword:LOGIC_IMPLICIT[39m
+      VAR "c" d:14 attrClocker:UNKNOWN, direction:NONE, [32mdtypeName:logic[39m, dtypep:[31mUNLINKED[39m->[32m(PB)[39m, lifetime:VSTATIC, origName:c, sensIfacep:UNLINKED, varType:WIRE
        [31mchildDTypep:[39m
-         [31mBASICDTYPE[39m [31m"logic"[39m [31md:22[39m [31mkeyword:logic[39m
+         [31mBASICDTYPE[39m [31m"logic"[39m [31md:14[39m [31mdtypep:(PB)[39m, [31mkeyword:logic[39m
           [31mrangep:[39m
-            [31mRANGE[39m [31m""[39m [31md:22[39m
+            [31mRANGE[39m [31m""[39m [31md:14[39m
              [31mleftp:[39m
-               [31mVARREF[39m [31m"WIDTH"[39m [31md:22[39m [31maccess:RD[39m, [31mclassOrPackagep:UNLINKED[39m
+               [31mVARREF[39m [31m"WIDTH"[39m [31md:14[39m [31maccess:RD[39m, [31mclassOrPackagep:UNLINKED[39m, [31mdtypep:UNLINKED[39m
              [31mrightp:[39m
-               [31mCONST[39m [31m"?32?sh0"[39m [31md:22[39m
+               [31mCONST[39m [31m"?32?sh0"[39m [31md:14[39m [31mdtypep:(Q)[39m
       ... * 1
-      BEGIN "genblk1[0]" d:25 generate:True
+      BEGIN "genblk1[0]" d:17 generate:True
        stmtsp:
-         CELL "fa" d:25 origName:fa
+         CELL "fa" d:17 origName:fa
           pinsp:
-            PIN "__pinNumber1" d:25 modPTypep:UNLINKED
+            PIN "__pinNumber1" d:17 modPTypep:UNLINKED
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" d:25 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" d:17 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "a" d:17 access:RD, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(L)[39m
                 [31mbitp:[39m
-                  [31mCONST[39m [31m"?32?sh0"[39m [31md:24[39m
+                  [31mCONST[39m [31m"?32?sh0"[39m [31md:16[39m [31mdtypep:(Q)[39m
                 [32mlsbp:[39m
-                  [32mCONST[39m [32m"3'h0"[39m [32md:24[39m
+                  [32mCONST[39m [32m"3'h0"[39m [32md:16[39m [32mdtypep:(KN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32md:25[39m
-            PIN "__pinNumber2" d:25 modPTypep:UNLINKED
+                  [32mCONST[39m [32m"?32?h1"[39m [32md:17[39m [32mdtypep:(HC)[39m
+            PIN "__pinNumber2" d:17 modPTypep:UNLINKED
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" d:25 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" d:17 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "b" d:17 access:RD, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(U)[39m
                 [31mbitp:[39m
-                  [31mCONST[39m [31m"?32?sh0"[39m [31md:24[39m
+                  [31mCONST[39m [31m"?32?sh0"[39m [31md:16[39m [31mdtypep:(Q)[39m
                 [32mlsbp:[39m
-                  [32mCONST[39m [32m"3'h0"[39m [32md:24[39m
+                  [32mCONST[39m [32m"3'h0"[39m [32md:16[39m [32mdtypep:(KN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32md:25[39m
-            PIN "__pinNumber3" d:25 modPTypep:UNLINKED
+                  [32mCONST[39m [32m"?32?h1"[39m [32md:17[39m [32mdtypep:(HC)[39m
+            PIN "__pinNumber3" d:17 modPTypep:UNLINKED
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" d:25 [32mdeclElWidth:1[39m, [32mdeclRange:[8:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" d:17 [32mdeclElWidth:1[39m, [32mdeclRange:[8:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "c" d:17 access:RD, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(PB)[39m
                 [31mbitp:[39m
-                  [31mCONST[39m [31m"?32?sh0"[39m [31md:24[39m
+                  [31mCONST[39m [31m"?32?sh0"[39m [31md:16[39m [31mdtypep:(Q)[39m
                 [32mlsbp:[39m
-                  [32mCONST[39m [32m"4'h0"[39m [32md:24[39m
+                  [32mCONST[39m [32m"4'h0"[39m [32md:16[39m [32mdtypep:(QN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32md:25[39m
-            PIN "__pinNumber4" d:25 modPTypep:UNLINKED
+                  [32mCONST[39m [32m"?32?h1"[39m [32md:17[39m [32mdtypep:(HC)[39m
+            PIN "__pinNumber4" d:17 modPTypep:UNLINKED
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" d:25 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" d:17 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "s" d:17 access:WR, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(FB)[39m
                 [31mbitp:[39m
-                  [31mCONST[39m [31m"?32?sh0"[39m [31md:24[39m
+                  [31mCONST[39m [31m"?32?sh0"[39m [31md:16[39m [31mdtypep:(Q)[39m
                 [32mlsbp:[39m
-                  [32mCONST[39m [32m"3'h0"[39m [32md:24[39m
+                  [32mCONST[39m [32m"3'h0"[39m [32md:16[39m [32mdtypep:(KN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32md:25[39m
-            PIN "__pinNumber5" d:25 modPTypep:UNLINKED
+                  [32mCONST[39m [32m"?32?h1"[39m [32md:17[39m [32mdtypep:(HC)[39m
+            PIN "__pinNumber5" d:17 modPTypep:UNLINKED
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" d:25 [32mdeclElWidth:1[39m, [32mdeclRange:[8:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" d:17 [32mdeclElWidth:1[39m, [32mdeclRange:[8:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "c" d:17 access:WR, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(PB)[39m
                 [31mbitp:[39m
-                  [31mADD[39m [31m""[39m [31md:25[39m
+                  [31mADD[39m [31m""[39m [31md:17[39m [31mdtypep:UNLINKED[39m
                    [31mlhsp:[39m
-                     [31mCONST[39m [31m"?32?sh0"[39m [31md:24[39m
+                     [31mCONST[39m [31m"?32?sh0"[39m [31md:16[39m [31mdtypep:(Q)[39m
                    [31mrhsp:[39m
-                     [31mCONST[39m [31m"?32?sh1"[39m [31md:25[39m
+                     [31mCONST[39m [31m"?32?sh1"[39m [31md:17[39m [31mdtypep:(Q)[39m
                 [32mlsbp:[39m
-                  [32mSEL[39m [32m""[39m [32md:25[39m
+                  [32mSEL[39m [32m""[39m [32md:17[39m [32mdtypep:(QN)[39m
                    [32mfromp:[39m
-                     [32mADD[39m [32m""[39m [32md:25[39m
+                     [32mADD[39m [32m""[39m [32md:17[39m [32mdtypep:(Q)[39m
                       [32mlhsp:[39m
-                        [32mCONST[39m [32m"?32?sh0"[39m [32md:24[39m
+                        [32mCONST[39m [32m"?32?sh0"[39m [32md:16[39m [32mdtypep:(Q)[39m
                       [32mrhsp:[39m
-                        [32mCONST[39m [32m"?32?sh1"[39m [32md:25[39m
+                        [32mCONST[39m [32m"?32?sh1"[39m [32md:17[39m [32mdtypep:(Q)[39m
                    [32mlsbp:[39m
-                     [32mCONST[39m [32m"32'h0"[39m [32md:25[39m
+                     [32mCONST[39m [32m"32'h0"[39m [32md:17[39m [32mdtypep:(IN)[39m
                    [32mwidthp:[39m
-                     [32mCONST[39m [32m"32'h4"[39m [32md:25[39m
+                     [32mCONST[39m [32m"32'h4"[39m [32md:17[39m [32mdtypep:(IN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32md:25[39m
-      BEGIN "genblk1[1]" d:25 generate:True
+                  [32mCONST[39m [32m"?32?h1"[39m [32md:17[39m [32mdtypep:(HC)[39m
+      BEGIN "genblk1[1]" d:17 generate:True
        stmtsp:
-         CELL "fa" d:25 origName:fa
+         CELL "fa" d:17 origName:fa
           pinsp:
-            PIN "__pinNumber1" d:25 modPTypep:UNLINKED
+            PIN "__pinNumber1" d:17 modPTypep:UNLINKED
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" d:25 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" d:17 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "a" d:17 access:RD, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(L)[39m
                 [31mbitp:[39m
-                  [31mCONST[39m [31m"?32?sh1"[39m [31md:24[39m
+                  [31mCONST[39m [31m"?32?sh1"[39m [31md:16[39m [31mdtypep:(Q)[39m
                 [32mlsbp:[39m
-                  [32mCONST[39m [32m"3'h1"[39m [32md:24[39m
+                  [32mCONST[39m [32m"3'h1"[39m [32md:16[39m [32mdtypep:(KN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32md:25[39m
-            PIN "__pinNumber2" d:25 modPTypep:UNLINKED
+                  [32mCONST[39m [32m"?32?h1"[39m [32md:17[39m [32mdtypep:(HC)[39m
+            PIN "__pinNumber2" d:17 modPTypep:UNLINKED
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" d:25 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" d:17 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "b" d:17 access:RD, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(U)[39m
                 [31mbitp:[39m
-                  [31mCONST[39m [31m"?32?sh1"[39m [31md:24[39m
+                  [31mCONST[39m [31m"?32?sh1"[39m [31md:16[39m [31mdtypep:(Q)[39m
                 [32mlsbp:[39m
-                  [32mCONST[39m [32m"3'h1"[39m [32md:24[39m
+                  [32mCONST[39m [32m"3'h1"[39m [32md:16[39m [32mdtypep:(KN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32md:25[39m
-            PIN "__pinNumber3" d:25 modPTypep:UNLINKED
+                  [32mCONST[39m [32m"?32?h1"[39m [32md:17[39m [32mdtypep:(HC)[39m
+            PIN "__pinNumber3" d:17 modPTypep:UNLINKED
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" d:25 [32mdeclElWidth:1[39m, [32mdeclRange:[8:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" d:17 [32mdeclElWidth:1[39m, [32mdeclRange:[8:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "c" d:17 access:RD, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(PB)[39m
                 [31mbitp:[39m
-                  [31mCONST[39m [31m"?32?sh1"[39m [31md:24[39m
+                  [31mCONST[39m [31m"?32?sh1"[39m [31md:16[39m [31mdtypep:(Q)[39m
                 [32mlsbp:[39m
-                  [32mCONST[39m [32m"4'h1"[39m [32md:24[39m
+                  [32mCONST[39m [32m"4'h1"[39m [32md:16[39m [32mdtypep:(QN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32md:25[39m
-            PIN "__pinNumber4" d:25 modPTypep:UNLINKED
+                  [32mCONST[39m [32m"?32?h1"[39m [32md:17[39m [32mdtypep:(HC)[39m
+            PIN "__pinNumber4" d:17 modPTypep:UNLINKED
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" d:25 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" d:17 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "s" d:17 access:WR, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(FB)[39m
                 [31mbitp:[39m
-                  [31mCONST[39m [31m"?32?sh1"[39m [31md:24[39m
+                  [31mCONST[39m [31m"?32?sh1"[39m [31md:16[39m [31mdtypep:(Q)[39m
                 [32mlsbp:[39m
-                  [32mCONST[39m [32m"3'h1"[39m [32md:24[39m
+                  [32mCONST[39m [32m"3'h1"[39m [32md:16[39m [32mdtypep:(KN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32md:25[39m
-            PIN "__pinNumber5" d:25 modPTypep:UNLINKED
+                  [32mCONST[39m [32m"?32?h1"[39m [32md:17[39m [32mdtypep:(HC)[39m
+            PIN "__pinNumber5" d:17 modPTypep:UNLINKED
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" d:25 [32mdeclElWidth:1[39m, [32mdeclRange:[8:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" d:17 [32mdeclElWidth:1[39m, [32mdeclRange:[8:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "c" d:17 access:WR, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(PB)[39m
                 [31mbitp:[39m
-                  [31mADD[39m [31m""[39m [31md:25[39m
+                  [31mADD[39m [31m""[39m [31md:17[39m [31mdtypep:UNLINKED[39m
                    [31mlhsp:[39m
-                     [31mCONST[39m [31m"?32?sh1"[39m [31md:24[39m
+                     [31mCONST[39m [31m"?32?sh1"[39m [31md:16[39m [31mdtypep:(Q)[39m
                    [31mrhsp:[39m
-                     [31mCONST[39m [31m"?32?sh1"[39m [31md:25[39m
+                     [31mCONST[39m [31m"?32?sh1"[39m [31md:17[39m [31mdtypep:(Q)[39m
                 [32mlsbp:[39m
-                  [32mSEL[39m [32m""[39m [32md:25[39m
+                  [32mSEL[39m [32m""[39m [32md:17[39m [32mdtypep:(QN)[39m
                    [32mfromp:[39m
-                     [32mADD[39m [32m""[39m [32md:25[39m
+                     [32mADD[39m [32m""[39m [32md:17[39m [32mdtypep:(Q)[39m
                       [32mlhsp:[39m
-                        [32mCONST[39m [32m"?32?sh1"[39m [32md:24[39m
+                        [32mCONST[39m [32m"?32?sh1"[39m [32md:16[39m [32mdtypep:(Q)[39m
                       [32mrhsp:[39m
-                        [32mCONST[39m [32m"?32?sh1"[39m [32md:25[39m
+                        [32mCONST[39m [32m"?32?sh1"[39m [32md:17[39m [32mdtypep:(Q)[39m
                    [32mlsbp:[39m
-                     [32mCONST[39m [32m"32'h0"[39m [32md:25[39m
+                     [32mCONST[39m [32m"32'h0"[39m [32md:17[39m [32mdtypep:(IN)[39m
                    [32mwidthp:[39m
-                     [32mCONST[39m [32m"32'h4"[39m [32md:25[39m
+                     [32mCONST[39m [32m"32'h4"[39m [32md:17[39m [32mdtypep:(IN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32md:25[39m
-      BEGIN "genblk1[2]" d:25 generate:True
+                  [32mCONST[39m [32m"?32?h1"[39m [32md:17[39m [32mdtypep:(HC)[39m
+      BEGIN "genblk1[2]" d:17 generate:True
        stmtsp:
-         CELL "fa" d:25 origName:fa
+         CELL "fa" d:17 origName:fa
           pinsp:
-            PIN "__pinNumber1" d:25 modPTypep:UNLINKED
+            PIN "__pinNumber1" d:17 modPTypep:UNLINKED
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" d:25 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" d:17 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "a" d:17 access:RD, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(L)[39m
                 [31mbitp:[39m
-                  [31mCONST[39m [31m"?32?sh2"[39m [31md:24[39m
+                  [31mCONST[39m [31m"?32?sh2"[39m [31md:16[39m [31mdtypep:(FF)[39m
                 [32mlsbp:[39m
-                  [32mCONST[39m [32m"3'h2"[39m [32md:24[39m
+                  [32mCONST[39m [32m"3'h2"[39m [32md:16[39m [32mdtypep:(KN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32md:25[39m
-            PIN "__pinNumber2" d:25 modPTypep:UNLINKED
+                  [32mCONST[39m [32m"?32?h1"[39m [32md:17[39m [32mdtypep:(HC)[39m
+            PIN "__pinNumber2" d:17 modPTypep:UNLINKED
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" d:25 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" d:17 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "b" d:17 access:RD, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(U)[39m
                 [31mbitp:[39m
-                  [31mCONST[39m [31m"?32?sh2"[39m [31md:24[39m
+                  [31mCONST[39m [31m"?32?sh2"[39m [31md:16[39m [31mdtypep:(FF)[39m
                 [32mlsbp:[39m
-                  [32mCONST[39m [32m"3'h2"[39m [32md:24[39m
+                  [32mCONST[39m [32m"3'h2"[39m [32md:16[39m [32mdtypep:(KN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32md:25[39m
-            PIN "__pinNumber3" d:25 modPTypep:UNLINKED
+                  [32mCONST[39m [32m"?32?h1"[39m [32md:17[39m [32mdtypep:(HC)[39m
+            PIN "__pinNumber3" d:17 modPTypep:UNLINKED
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" d:25 [32mdeclElWidth:1[39m, [32mdeclRange:[8:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" d:17 [32mdeclElWidth:1[39m, [32mdeclRange:[8:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "c" d:17 access:RD, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(PB)[39m
                 [31mbitp:[39m
-                  [31mCONST[39m [31m"?32?sh2"[39m [31md:24[39m
+                  [31mCONST[39m [31m"?32?sh2"[39m [31md:16[39m [31mdtypep:(FF)[39m
                 [32mlsbp:[39m
-                  [32mCONST[39m [32m"4'h2"[39m [32md:24[39m
+                  [32mCONST[39m [32m"4'h2"[39m [32md:16[39m [32mdtypep:(QN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32md:25[39m
-            PIN "__pinNumber4" d:25 modPTypep:UNLINKED
+                  [32mCONST[39m [32m"?32?h1"[39m [32md:17[39m [32mdtypep:(HC)[39m
+            PIN "__pinNumber4" d:17 modPTypep:UNLINKED
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" d:25 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" d:17 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "s" d:17 access:WR, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(FB)[39m
                 [31mbitp:[39m
-                  [31mCONST[39m [31m"?32?sh2"[39m [31md:24[39m
+                  [31mCONST[39m [31m"?32?sh2"[39m [31md:16[39m [31mdtypep:(FF)[39m
                 [32mlsbp:[39m
-                  [32mCONST[39m [32m"3'h2"[39m [32md:24[39m
+                  [32mCONST[39m [32m"3'h2"[39m [32md:16[39m [32mdtypep:(KN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32md:25[39m
-            PIN "__pinNumber5" d:25 modPTypep:UNLINKED
+                  [32mCONST[39m [32m"?32?h1"[39m [32md:17[39m [32mdtypep:(HC)[39m
+            PIN "__pinNumber5" d:17 modPTypep:UNLINKED
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" d:25 [32mdeclElWidth:1[39m, [32mdeclRange:[8:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" d:17 [32mdeclElWidth:1[39m, [32mdeclRange:[8:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "c" d:17 access:WR, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(PB)[39m
                 [31mbitp:[39m
-                  [31mADD[39m [31m""[39m [31md:25[39m
+                  [31mADD[39m [31m""[39m [31md:17[39m [31mdtypep:UNLINKED[39m
                    [31mlhsp:[39m
-                     [31mCONST[39m [31m"?32?sh2"[39m [31md:24[39m
+                     [31mCONST[39m [31m"?32?sh2"[39m [31md:16[39m [31mdtypep:(FF)[39m
                    [31mrhsp:[39m
-                     [31mCONST[39m [31m"?32?sh1"[39m [31md:25[39m
+                     [31mCONST[39m [31m"?32?sh1"[39m [31md:17[39m [31mdtypep:(Q)[39m
                 [32mlsbp:[39m
-                  [32mSEL[39m [32m""[39m [32md:25[39m
+                  [32mSEL[39m [32m""[39m [32md:17[39m [32mdtypep:(QN)[39m
                    [32mfromp:[39m
-                     [32mADD[39m [32m""[39m [32md:25[39m
+                     [32mADD[39m [32m""[39m [32md:17[39m [32mdtypep:(FF)[39m
                       [32mlhsp:[39m
-                        [32mCONST[39m [32m"?32?sh2"[39m [32md:24[39m
+                        [32mCONST[39m [32m"?32?sh2"[39m [32md:16[39m [32mdtypep:(FF)[39m
                       [32mrhsp:[39m
-                        [32mCONST[39m [32m"?32?sh1"[39m [32md:25[39m
+                        [32mCONST[39m [32m"?32?sh1"[39m [32md:17[39m [32mdtypep:(Q)[39m
                    [32mlsbp:[39m
-                     [32mCONST[39m [32m"32'h0"[39m [32md:25[39m
+                     [32mCONST[39m [32m"32'h0"[39m [32md:17[39m [32mdtypep:(IN)[39m
                    [32mwidthp:[39m
-                     [32mCONST[39m [32m"32'h4"[39m [32md:25[39m
+                     [32mCONST[39m [32m"32'h4"[39m [32md:17[39m [32mdtypep:(IN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32md:25[39m
-      BEGIN "genblk1[3]" d:25 generate:True
+                  [32mCONST[39m [32m"?32?h1"[39m [32md:17[39m [32mdtypep:(HC)[39m
+      BEGIN "genblk1[3]" d:17 generate:True
        stmtsp:
-         CELL "fa" d:25 origName:fa
+         CELL "fa" d:17 origName:fa
           pinsp:
-            PIN "__pinNumber1" d:25 modPTypep:UNLINKED
+            PIN "__pinNumber1" d:17 modPTypep:UNLINKED
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" d:25 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" d:17 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "a" d:17 access:RD, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(L)[39m
                 [31mbitp:[39m
-                  [31mCONST[39m [31m"?32?sh3"[39m [31md:24[39m
+                  [31mCONST[39m [31m"?32?sh3"[39m [31md:16[39m [31mdtypep:(FF)[39m
                 [32mlsbp:[39m
-                  [32mCONST[39m [32m"3'h3"[39m [32md:24[39m
+                  [32mCONST[39m [32m"3'h3"[39m [32md:16[39m [32mdtypep:(KN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32md:25[39m
-            PIN "__pinNumber2" d:25 modPTypep:UNLINKED
+                  [32mCONST[39m [32m"?32?h1"[39m [32md:17[39m [32mdtypep:(HC)[39m
+            PIN "__pinNumber2" d:17 modPTypep:UNLINKED
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" d:25 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" d:17 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "b" d:17 access:RD, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(U)[39m
                 [31mbitp:[39m
-                  [31mCONST[39m [31m"?32?sh3"[39m [31md:24[39m
+                  [31mCONST[39m [31m"?32?sh3"[39m [31md:16[39m [31mdtypep:(FF)[39m
                 [32mlsbp:[39m
-                  [32mCONST[39m [32m"3'h3"[39m [32md:24[39m
+                  [32mCONST[39m [32m"3'h3"[39m [32md:16[39m [32mdtypep:(KN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32md:25[39m
-            PIN "__pinNumber3" d:25 modPTypep:UNLINKED
+                  [32mCONST[39m [32m"?32?h1"[39m [32md:17[39m [32mdtypep:(HC)[39m
+            PIN "__pinNumber3" d:17 modPTypep:UNLINKED
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" d:25 [32mdeclElWidth:1[39m, [32mdeclRange:[8:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" d:17 [32mdeclElWidth:1[39m, [32mdeclRange:[8:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "c" d:17 access:RD, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(PB)[39m
                 [31mbitp:[39m
-                  [31mCONST[39m [31m"?32?sh3"[39m [31md:24[39m
+                  [31mCONST[39m [31m"?32?sh3"[39m [31md:16[39m [31mdtypep:(FF)[39m
                 [32mlsbp:[39m
-                  [32mCONST[39m [32m"4'h3"[39m [32md:24[39m
+                  [32mCONST[39m [32m"4'h3"[39m [32md:16[39m [32mdtypep:(QN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32md:25[39m
-            PIN "__pinNumber4" d:25 modPTypep:UNLINKED
+                  [32mCONST[39m [32m"?32?h1"[39m [32md:17[39m [32mdtypep:(HC)[39m
+            PIN "__pinNumber4" d:17 modPTypep:UNLINKED
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" d:25 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" d:17 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "s" d:17 access:WR, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(FB)[39m
                 [31mbitp:[39m
-                  [31mCONST[39m [31m"?32?sh3"[39m [31md:24[39m
+                  [31mCONST[39m [31m"?32?sh3"[39m [31md:16[39m [31mdtypep:(FF)[39m
                 [32mlsbp:[39m
-                  [32mCONST[39m [32m"3'h3"[39m [32md:24[39m
+                  [32mCONST[39m [32m"3'h3"[39m [32md:16[39m [32mdtypep:(KN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32md:25[39m
-            PIN "__pinNumber5" d:25 modPTypep:UNLINKED
+                  [32mCONST[39m [32m"?32?h1"[39m [32md:17[39m [32mdtypep:(HC)[39m
+            PIN "__pinNumber5" d:17 modPTypep:UNLINKED
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" d:25 [32mdeclElWidth:1[39m, [32mdeclRange:[8:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" d:17 [32mdeclElWidth:1[39m, [32mdeclRange:[8:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "c" d:17 access:WR, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(PB)[39m
                 [31mbitp:[39m
-                  [31mADD[39m [31m""[39m [31md:25[39m
+                  [31mADD[39m [31m""[39m [31md:17[39m [31mdtypep:UNLINKED[39m
                    [31mlhsp:[39m
-                     [31mCONST[39m [31m"?32?sh3"[39m [31md:24[39m
+                     [31mCONST[39m [31m"?32?sh3"[39m [31md:16[39m [31mdtypep:(FF)[39m
                    [31mrhsp:[39m
-                     [31mCONST[39m [31m"?32?sh1"[39m [31md:25[39m
+                     [31mCONST[39m [31m"?32?sh1"[39m [31md:17[39m [31mdtypep:(Q)[39m
                 [32mlsbp:[39m
-                  [32mSEL[39m [32m""[39m [32md:25[39m
+                  [32mSEL[39m [32m""[39m [32md:17[39m [32mdtypep:(QN)[39m
                    [32mfromp:[39m
-                     [32mADD[39m [32m""[39m [32md:25[39m
+                     [32mADD[39m [32m""[39m [32md:17[39m [32mdtypep:(FF)[39m
                       [32mlhsp:[39m
-                        [32mCONST[39m [32m"?32?sh3"[39m [32md:24[39m
+                        [32mCONST[39m [32m"?32?sh3"[39m [32md:16[39m [32mdtypep:(FF)[39m
                       [32mrhsp:[39m
-                        [32mCONST[39m [32m"?32?sh1"[39m [32md:25[39m
+                        [32mCONST[39m [32m"?32?sh1"[39m [32md:17[39m [32mdtypep:(Q)[39m
                    [32mlsbp:[39m
-                     [32mCONST[39m [32m"32'h0"[39m [32md:25[39m
+                     [32mCONST[39m [32m"32'h0"[39m [32md:17[39m [32mdtypep:(IN)[39m
                    [32mwidthp:[39m
-                     [32mCONST[39m [32m"32'h4"[39m [32md:25[39m
+                     [32mCONST[39m [32m"32'h4"[39m [32md:17[39m [32mdtypep:(IN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32md:25[39m
-      BEGIN "genblk1[4]" d:25 generate:True
+                  [32mCONST[39m [32m"?32?h1"[39m [32md:17[39m [32mdtypep:(HC)[39m
+      BEGIN "genblk1[4]" d:17 generate:True
        stmtsp:
-         CELL "fa" d:25 origName:fa
+         CELL "fa" d:17 origName:fa
           pinsp:
-            PIN "__pinNumber1" d:25 modPTypep:UNLINKED
+            PIN "__pinNumber1" d:17 modPTypep:UNLINKED
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" d:25 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" d:17 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "a" d:17 access:RD, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(L)[39m
                 [31mbitp:[39m
-                  [31mCONST[39m [31m"?32?sh4"[39m [31md:24[39m
+                  [31mCONST[39m [31m"?32?sh4"[39m [31md:16[39m [31mdtypep:(GF)[39m
                 [32mlsbp:[39m
-                  [32mCONST[39m [32m"3'h4"[39m [32md:24[39m
+                  [32mCONST[39m [32m"3'h4"[39m [32md:16[39m [32mdtypep:(KN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32md:25[39m
-            PIN "__pinNumber2" d:25 modPTypep:UNLINKED
+                  [32mCONST[39m [32m"?32?h1"[39m [32md:17[39m [32mdtypep:(HC)[39m
+            PIN "__pinNumber2" d:17 modPTypep:UNLINKED
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" d:25 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" d:17 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "b" d:17 access:RD, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(U)[39m
                 [31mbitp:[39m
-                  [31mCONST[39m [31m"?32?sh4"[39m [31md:24[39m
+                  [31mCONST[39m [31m"?32?sh4"[39m [31md:16[39m [31mdtypep:(GF)[39m
                 [32mlsbp:[39m
-                  [32mCONST[39m [32m"3'h4"[39m [32md:24[39m
+                  [32mCONST[39m [32m"3'h4"[39m [32md:16[39m [32mdtypep:(KN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32md:25[39m
-            PIN "__pinNumber3" d:25 modPTypep:UNLINKED
+                  [32mCONST[39m [32m"?32?h1"[39m [32md:17[39m [32mdtypep:(HC)[39m
+            PIN "__pinNumber3" d:17 modPTypep:UNLINKED
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" d:25 [32mdeclElWidth:1[39m, [32mdeclRange:[8:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" d:17 [32mdeclElWidth:1[39m, [32mdeclRange:[8:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "c" d:17 access:RD, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(PB)[39m
                 [31mbitp:[39m
-                  [31mCONST[39m [31m"?32?sh4"[39m [31md:24[39m
+                  [31mCONST[39m [31m"?32?sh4"[39m [31md:16[39m [31mdtypep:(GF)[39m
                 [32mlsbp:[39m
-                  [32mCONST[39m [32m"4'h4"[39m [32md:24[39m
+                  [32mCONST[39m [32m"4'h4"[39m [32md:16[39m [32mdtypep:(QN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32md:25[39m
-            PIN "__pinNumber4" d:25 modPTypep:UNLINKED
+                  [32mCONST[39m [32m"?32?h1"[39m [32md:17[39m [32mdtypep:(HC)[39m
+            PIN "__pinNumber4" d:17 modPTypep:UNLINKED
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" d:25 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" d:17 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "s" d:17 access:WR, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(FB)[39m
                 [31mbitp:[39m
-                  [31mCONST[39m [31m"?32?sh4"[39m [31md:24[39m
+                  [31mCONST[39m [31m"?32?sh4"[39m [31md:16[39m [31mdtypep:(GF)[39m
                 [32mlsbp:[39m
-                  [32mCONST[39m [32m"3'h4"[39m [32md:24[39m
+                  [32mCONST[39m [32m"3'h4"[39m [32md:16[39m [32mdtypep:(KN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32md:25[39m
-            PIN "__pinNumber5" d:25 modPTypep:UNLINKED
+                  [32mCONST[39m [32m"?32?h1"[39m [32md:17[39m [32mdtypep:(HC)[39m
+            PIN "__pinNumber5" d:17 modPTypep:UNLINKED
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" d:25 [32mdeclElWidth:1[39m, [32mdeclRange:[8:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" d:17 [32mdeclElWidth:1[39m, [32mdeclRange:[8:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "c" d:17 access:WR, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(PB)[39m
                 [31mbitp:[39m
-                  [31mADD[39m [31m""[39m [31md:25[39m
+                  [31mADD[39m [31m""[39m [31md:17[39m [31mdtypep:UNLINKED[39m
                    [31mlhsp:[39m
-                     [31mCONST[39m [31m"?32?sh4"[39m [31md:24[39m
+                     [31mCONST[39m [31m"?32?sh4"[39m [31md:16[39m [31mdtypep:(GF)[39m
                    [31mrhsp:[39m
-                     [31mCONST[39m [31m"?32?sh1"[39m [31md:25[39m
+                     [31mCONST[39m [31m"?32?sh1"[39m [31md:17[39m [31mdtypep:(Q)[39m
                 [32mlsbp:[39m
-                  [32mSEL[39m [32m""[39m [32md:25[39m
+                  [32mSEL[39m [32m""[39m [32md:17[39m [32mdtypep:(QN)[39m
                    [32mfromp:[39m
-                     [32mADD[39m [32m""[39m [32md:25[39m
+                     [32mADD[39m [32m""[39m [32md:17[39m [32mdtypep:(GF)[39m
                       [32mlhsp:[39m
-                        [32mCONST[39m [32m"?32?sh4"[39m [32md:24[39m
+                        [32mCONST[39m [32m"?32?sh4"[39m [32md:16[39m [32mdtypep:(GF)[39m
                       [32mrhsp:[39m
-                        [32mCONST[39m [32m"?32?sh1"[39m [32md:25[39m
+                        [32mCONST[39m [32m"?32?sh1"[39m [32md:17[39m [32mdtypep:(Q)[39m
                    [32mlsbp:[39m
-                     [32mCONST[39m [32m"32'h0"[39m [32md:25[39m
+                     [32mCONST[39m [32m"32'h0"[39m [32md:17[39m [32mdtypep:(IN)[39m
                    [32mwidthp:[39m
-                     [32mCONST[39m [32m"32'h4"[39m [32md:25[39m
+                     [32mCONST[39m [32m"32'h4"[39m [32md:17[39m [32mdtypep:(IN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32md:25[39m
-      BEGIN "genblk1[5]" d:25 generate:True
+                  [32mCONST[39m [32m"?32?h1"[39m [32md:17[39m [32mdtypep:(HC)[39m
+      BEGIN "genblk1[5]" d:17 generate:True
        stmtsp:
-         CELL "fa" d:25 origName:fa
+         CELL "fa" d:17 origName:fa
           pinsp:
-            PIN "__pinNumber1" d:25 modPTypep:UNLINKED
+            PIN "__pinNumber1" d:17 modPTypep:UNLINKED
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" d:25 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" d:17 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "a" d:17 access:RD, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(L)[39m
                 [31mbitp:[39m
-                  [31mCONST[39m [31m"?32?sh5"[39m [31md:24[39m
+                  [31mCONST[39m [31m"?32?sh5"[39m [31md:16[39m [31mdtypep:(GF)[39m
                 [32mlsbp:[39m
-                  [32mCONST[39m [32m"3'h5"[39m [32md:24[39m
+                  [32mCONST[39m [32m"3'h5"[39m [32md:16[39m [32mdtypep:(KN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32md:25[39m
-            PIN "__pinNumber2" d:25 modPTypep:UNLINKED
+                  [32mCONST[39m [32m"?32?h1"[39m [32md:17[39m [32mdtypep:(HC)[39m
+            PIN "__pinNumber2" d:17 modPTypep:UNLINKED
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" d:25 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" d:17 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "b" d:17 access:RD, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(U)[39m
                 [31mbitp:[39m
-                  [31mCONST[39m [31m"?32?sh5"[39m [31md:24[39m
+                  [31mCONST[39m [31m"?32?sh5"[39m [31md:16[39m [31mdtypep:(GF)[39m
                 [32mlsbp:[39m
-                  [32mCONST[39m [32m"3'h5"[39m [32md:24[39m
+                  [32mCONST[39m [32m"3'h5"[39m [32md:16[39m [32mdtypep:(KN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32md:25[39m
-            PIN "__pinNumber3" d:25 modPTypep:UNLINKED
+                  [32mCONST[39m [32m"?32?h1"[39m [32md:17[39m [32mdtypep:(HC)[39m
+            PIN "__pinNumber3" d:17 modPTypep:UNLINKED
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" d:25 [32mdeclElWidth:1[39m, [32mdeclRange:[8:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" d:17 [32mdeclElWidth:1[39m, [32mdeclRange:[8:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "c" d:17 access:RD, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(PB)[39m
                 [31mbitp:[39m
-                  [31mCONST[39m [31m"?32?sh5"[39m [31md:24[39m
+                  [31mCONST[39m [31m"?32?sh5"[39m [31md:16[39m [31mdtypep:(GF)[39m
                 [32mlsbp:[39m
-                  [32mCONST[39m [32m"4'h5"[39m [32md:24[39m
+                  [32mCONST[39m [32m"4'h5"[39m [32md:16[39m [32mdtypep:(QN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32md:25[39m
-            PIN "__pinNumber4" d:25 modPTypep:UNLINKED
+                  [32mCONST[39m [32m"?32?h1"[39m [32md:17[39m [32mdtypep:(HC)[39m
+            PIN "__pinNumber4" d:17 modPTypep:UNLINKED
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" d:25 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" d:17 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "s" d:17 access:WR, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(FB)[39m
                 [31mbitp:[39m
-                  [31mCONST[39m [31m"?32?sh5"[39m [31md:24[39m
+                  [31mCONST[39m [31m"?32?sh5"[39m [31md:16[39m [31mdtypep:(GF)[39m
                 [32mlsbp:[39m
-                  [32mCONST[39m [32m"3'h5"[39m [32md:24[39m
+                  [32mCONST[39m [32m"3'h5"[39m [32md:16[39m [32mdtypep:(KN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32md:25[39m
-            PIN "__pinNumber5" d:25 modPTypep:UNLINKED
+                  [32mCONST[39m [32m"?32?h1"[39m [32md:17[39m [32mdtypep:(HC)[39m
+            PIN "__pinNumber5" d:17 modPTypep:UNLINKED
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" d:25 [32mdeclElWidth:1[39m, [32mdeclRange:[8:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" d:17 [32mdeclElWidth:1[39m, [32mdeclRange:[8:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "c" d:17 access:WR, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(PB)[39m
                 [31mbitp:[39m
-                  [31mADD[39m [31m""[39m [31md:25[39m
+                  [31mADD[39m [31m""[39m [31md:17[39m [31mdtypep:UNLINKED[39m
                    [31mlhsp:[39m
-                     [31mCONST[39m [31m"?32?sh5"[39m [31md:24[39m
+                     [31mCONST[39m [31m"?32?sh5"[39m [31md:16[39m [31mdtypep:(GF)[39m
                    [31mrhsp:[39m
-                     [31mCONST[39m [31m"?32?sh1"[39m [31md:25[39m
+                     [31mCONST[39m [31m"?32?sh1"[39m [31md:17[39m [31mdtypep:(Q)[39m
                 [32mlsbp:[39m
-                  [32mSEL[39m [32m""[39m [32md:25[39m
+                  [32mSEL[39m [32m""[39m [32md:17[39m [32mdtypep:(QN)[39m
                    [32mfromp:[39m
-                     [32mADD[39m [32m""[39m [32md:25[39m
+                     [32mADD[39m [32m""[39m [32md:17[39m [32mdtypep:(GF)[39m
                       [32mlhsp:[39m
-                        [32mCONST[39m [32m"?32?sh5"[39m [32md:24[39m
+                        [32mCONST[39m [32m"?32?sh5"[39m [32md:16[39m [32mdtypep:(GF)[39m
                       [32mrhsp:[39m
-                        [32mCONST[39m [32m"?32?sh1"[39m [32md:25[39m
+                        [32mCONST[39m [32m"?32?sh1"[39m [32md:17[39m [32mdtypep:(Q)[39m
                    [32mlsbp:[39m
-                     [32mCONST[39m [32m"32'h0"[39m [32md:25[39m
+                     [32mCONST[39m [32m"32'h0"[39m [32md:17[39m [32mdtypep:(IN)[39m
                    [32mwidthp:[39m
-                     [32mCONST[39m [32m"32'h4"[39m [32md:25[39m
+                     [32mCONST[39m [32m"32'h4"[39m [32md:17[39m [32mdtypep:(IN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32md:25[39m
-      BEGIN "genblk1[6]" d:25 generate:True
+                  [32mCONST[39m [32m"?32?h1"[39m [32md:17[39m [32mdtypep:(HC)[39m
+      BEGIN "genblk1[6]" d:17 generate:True
        stmtsp:
-         CELL "fa" d:25 origName:fa
+         CELL "fa" d:17 origName:fa
           pinsp:
-            PIN "__pinNumber1" d:25 modPTypep:UNLINKED
+            PIN "__pinNumber1" d:17 modPTypep:UNLINKED
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" d:25 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" d:17 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "a" d:17 access:RD, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(L)[39m
                 [31mbitp:[39m
-                  [31mCONST[39m [31m"?32?sh6"[39m [31md:24[39m
+                  [31mCONST[39m [31m"?32?sh6"[39m [31md:16[39m [31mdtypep:(GF)[39m
                 [32mlsbp:[39m
-                  [32mCONST[39m [32m"3'h6"[39m [32md:24[39m
+                  [32mCONST[39m [32m"3'h6"[39m [32md:16[39m [32mdtypep:(KN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32md:25[39m
-            PIN "__pinNumber2" d:25 modPTypep:UNLINKED
+                  [32mCONST[39m [32m"?32?h1"[39m [32md:17[39m [32mdtypep:(HC)[39m
+            PIN "__pinNumber2" d:17 modPTypep:UNLINKED
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" d:25 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" d:17 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "b" d:17 access:RD, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(U)[39m
                 [31mbitp:[39m
-                  [31mCONST[39m [31m"?32?sh6"[39m [31md:24[39m
+                  [31mCONST[39m [31m"?32?sh6"[39m [31md:16[39m [31mdtypep:(GF)[39m
                 [32mlsbp:[39m
-                  [32mCONST[39m [32m"3'h6"[39m [32md:24[39m
+                  [32mCONST[39m [32m"3'h6"[39m [32md:16[39m [32mdtypep:(KN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32md:25[39m
-            PIN "__pinNumber3" d:25 modPTypep:UNLINKED
+                  [32mCONST[39m [32m"?32?h1"[39m [32md:17[39m [32mdtypep:(HC)[39m
+            PIN "__pinNumber3" d:17 modPTypep:UNLINKED
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" d:25 [32mdeclElWidth:1[39m, [32mdeclRange:[8:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" d:17 [32mdeclElWidth:1[39m, [32mdeclRange:[8:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "c" d:17 access:RD, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(PB)[39m
                 [31mbitp:[39m
-                  [31mCONST[39m [31m"?32?sh6"[39m [31md:24[39m
+                  [31mCONST[39m [31m"?32?sh6"[39m [31md:16[39m [31mdtypep:(GF)[39m
                 [32mlsbp:[39m
-                  [32mCONST[39m [32m"4'h6"[39m [32md:24[39m
+                  [32mCONST[39m [32m"4'h6"[39m [32md:16[39m [32mdtypep:(QN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32md:25[39m
-            PIN "__pinNumber4" d:25 modPTypep:UNLINKED
+                  [32mCONST[39m [32m"?32?h1"[39m [32md:17[39m [32mdtypep:(HC)[39m
+            PIN "__pinNumber4" d:17 modPTypep:UNLINKED
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" d:25 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" d:17 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "s" d:17 access:WR, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(FB)[39m
                 [31mbitp:[39m
-                  [31mCONST[39m [31m"?32?sh6"[39m [31md:24[39m
+                  [31mCONST[39m [31m"?32?sh6"[39m [31md:16[39m [31mdtypep:(GF)[39m
                 [32mlsbp:[39m
-                  [32mCONST[39m [32m"3'h6"[39m [32md:24[39m
+                  [32mCONST[39m [32m"3'h6"[39m [32md:16[39m [32mdtypep:(KN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32md:25[39m
-            PIN "__pinNumber5" d:25 modPTypep:UNLINKED
+                  [32mCONST[39m [32m"?32?h1"[39m [32md:17[39m [32mdtypep:(HC)[39m
+            PIN "__pinNumber5" d:17 modPTypep:UNLINKED
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" d:25 [32mdeclElWidth:1[39m, [32mdeclRange:[8:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" d:17 [32mdeclElWidth:1[39m, [32mdeclRange:[8:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "c" d:17 access:WR, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(PB)[39m
                 [31mbitp:[39m
-                  [31mADD[39m [31m""[39m [31md:25[39m
+                  [31mADD[39m [31m""[39m [31md:17[39m [31mdtypep:UNLINKED[39m
                    [31mlhsp:[39m
-                     [31mCONST[39m [31m"?32?sh6"[39m [31md:24[39m
+                     [31mCONST[39m [31m"?32?sh6"[39m [31md:16[39m [31mdtypep:(GF)[39m
                    [31mrhsp:[39m
-                     [31mCONST[39m [31m"?32?sh1"[39m [31md:25[39m
+                     [31mCONST[39m [31m"?32?sh1"[39m [31md:17[39m [31mdtypep:(Q)[39m
                 [32mlsbp:[39m
-                  [32mSEL[39m [32m""[39m [32md:25[39m
+                  [32mSEL[39m [32m""[39m [32md:17[39m [32mdtypep:(QN)[39m
                    [32mfromp:[39m
-                     [32mADD[39m [32m""[39m [32md:25[39m
+                     [32mADD[39m [32m""[39m [32md:17[39m [32mdtypep:(GF)[39m
                       [32mlhsp:[39m
-                        [32mCONST[39m [32m"?32?sh6"[39m [32md:24[39m
+                        [32mCONST[39m [32m"?32?sh6"[39m [32md:16[39m [32mdtypep:(GF)[39m
                       [32mrhsp:[39m
-                        [32mCONST[39m [32m"?32?sh1"[39m [32md:25[39m
+                        [32mCONST[39m [32m"?32?sh1"[39m [32md:17[39m [32mdtypep:(Q)[39m
                    [32mlsbp:[39m
-                     [32mCONST[39m [32m"32'h0"[39m [32md:25[39m
+                     [32mCONST[39m [32m"32'h0"[39m [32md:17[39m [32mdtypep:(IN)[39m
                    [32mwidthp:[39m
-                     [32mCONST[39m [32m"32'h4"[39m [32md:25[39m
+                     [32mCONST[39m [32m"32'h4"[39m [32md:17[39m [32mdtypep:(IN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32md:25[39m
-      BEGIN "genblk1[7]" d:25 generate:True
+                  [32mCONST[39m [32m"?32?h1"[39m [32md:17[39m [32mdtypep:(HC)[39m
+      BEGIN "genblk1[7]" d:17 generate:True
        stmtsp:
-         CELL "fa" d:25 origName:fa
+         CELL "fa" d:17 origName:fa
           pinsp:
-            PIN "__pinNumber1" d:25 modPTypep:UNLINKED
+            PIN "__pinNumber1" d:17 modPTypep:UNLINKED
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" d:25 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" d:17 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "a" d:17 access:RD, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(L)[39m
                 [31mbitp:[39m
-                  [31mCONST[39m [31m"?32?sh7"[39m [31md:24[39m
+                  [31mCONST[39m [31m"?32?sh7"[39m [31md:16[39m [31mdtypep:(GF)[39m
                 [32mlsbp:[39m
-                  [32mCONST[39m [32m"3'h7"[39m [32md:24[39m
+                  [32mCONST[39m [32m"3'h7"[39m [32md:16[39m [32mdtypep:(KN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32md:25[39m
-            PIN "__pinNumber2" d:25 modPTypep:UNLINKED
+                  [32mCONST[39m [32m"?32?h1"[39m [32md:17[39m [32mdtypep:(HC)[39m
+            PIN "__pinNumber2" d:17 modPTypep:UNLINKED
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" d:25 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" d:17 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "b" d:17 access:RD, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(U)[39m
                 [31mbitp:[39m
-                  [31mCONST[39m [31m"?32?sh7"[39m [31md:24[39m
+                  [31mCONST[39m [31m"?32?sh7"[39m [31md:16[39m [31mdtypep:(GF)[39m
                 [32mlsbp:[39m
-                  [32mCONST[39m [32m"3'h7"[39m [32md:24[39m
+                  [32mCONST[39m [32m"3'h7"[39m [32md:16[39m [32mdtypep:(KN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32md:25[39m
-            PIN "__pinNumber3" d:25 modPTypep:UNLINKED
+                  [32mCONST[39m [32m"?32?h1"[39m [32md:17[39m [32mdtypep:(HC)[39m
+            PIN "__pinNumber3" d:17 modPTypep:UNLINKED
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" d:25 [32mdeclElWidth:1[39m, [32mdeclRange:[8:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" d:17 [32mdeclElWidth:1[39m, [32mdeclRange:[8:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "c" d:17 access:RD, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(PB)[39m
                 [31mbitp:[39m
-                  [31mCONST[39m [31m"?32?sh7"[39m [31md:24[39m
+                  [31mCONST[39m [31m"?32?sh7"[39m [31md:16[39m [31mdtypep:(GF)[39m
                 [32mlsbp:[39m
-                  [32mCONST[39m [32m"4'h7"[39m [32md:24[39m
+                  [32mCONST[39m [32m"4'h7"[39m [32md:16[39m [32mdtypep:(QN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32md:25[39m
-            PIN "__pinNumber4" d:25 modPTypep:UNLINKED
+                  [32mCONST[39m [32m"?32?h1"[39m [32md:17[39m [32mdtypep:(HC)[39m
+            PIN "__pinNumber4" d:17 modPTypep:UNLINKED
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" d:25 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" d:17 [32mdeclElWidth:1[39m, [32mdeclRange:[7:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "s" d:17 access:WR, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(FB)[39m
                 [31mbitp:[39m
-                  [31mCONST[39m [31m"?32?sh7"[39m [31md:24[39m
+                  [31mCONST[39m [31m"?32?sh7"[39m [31md:16[39m [31mdtypep:(GF)[39m
                 [32mlsbp:[39m
-                  [32mCONST[39m [32m"3'h7"[39m [32md:24[39m
+                  [32mCONST[39m [32m"3'h7"[39m [32md:16[39m [32mdtypep:(KN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32md:25[39m
-            PIN "__pinNumber5" d:25 modPTypep:UNLINKED
+                  [32mCONST[39m [32m"?32?h1"[39m [32md:17[39m [32mdtypep:(HC)[39m
+            PIN "__pinNumber5" d:17 modPTypep:UNLINKED
              exprp:
-               [31mSELBIT[39m->[32mSEL[39m "" d:25 [32mdeclElWidth:1[39m, [32mdeclRange:[8:0][39m
+               [31mSELBIT[39m->[32mSEL[39m "" d:17 [32mdeclElWidth:1[39m, [32mdeclRange:[8:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
                 fromp:
-                 ... * 1
+                  VARREF "c" d:17 access:WR, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(PB)[39m
                 [31mbitp:[39m
-                  [31mADD[39m [31m""[39m [31md:25[39m
+                  [31mADD[39m [31m""[39m [31md:17[39m [31mdtypep:UNLINKED[39m
                    [31mlhsp:[39m
-                     [31mCONST[39m [31m"?32?sh7"[39m [31md:24[39m
+                     [31mCONST[39m [31m"?32?sh7"[39m [31md:16[39m [31mdtypep:(GF)[39m
                    [31mrhsp:[39m
-                     [31mCONST[39m [31m"?32?sh1"[39m [31md:25[39m
+                     [31mCONST[39m [31m"?32?sh1"[39m [31md:17[39m [31mdtypep:(Q)[39m
                 [32mlsbp:[39m
-                  [32mSEL[39m [32m""[39m [32md:25[39m
+                  [32mSEL[39m [32m""[39m [32md:17[39m [32mdtypep:(QN)[39m
                    [32mfromp:[39m
-                     [32mADD[39m [32m""[39m [32md:25[39m
+                     [32mADD[39m [32m""[39m [32md:17[39m [32mdtypep:(GF)[39m
                       [32mlhsp:[39m
-                        [32mCONST[39m [32m"?32?sh7"[39m [32md:24[39m
+                        [32mCONST[39m [32m"?32?sh7"[39m [32md:16[39m [32mdtypep:(GF)[39m
                       [32mrhsp:[39m
-                        [32mCONST[39m [32m"?32?sh1"[39m [32md:25[39m
+                        [32mCONST[39m [32m"?32?sh1"[39m [32md:17[39m [32mdtypep:(Q)[39m
                    [32mlsbp:[39m
-                     [32mCONST[39m [32m"32'h0"[39m [32md:25[39m
+                     [32mCONST[39m [32m"32'h0"[39m [32md:17[39m [32mdtypep:(IN)[39m
                    [32mwidthp:[39m
-                     [32mCONST[39m [32m"32'h4"[39m [32md:25[39m
+                     [32mCONST[39m [32m"32'h4"[39m [32md:17[39m [32mdtypep:(IN)[39m
                 [32mwidthp:[39m
-                  [32mCONST[39m [32m"?32?h1"[39m [32md:25[39m
-      ASSIGNW "" d:28
+                  [32mCONST[39m [32m"?32?h1"[39m [32md:17[39m [32mdtypep:(HC)[39m
+      ASSIGNW "" d:20 dtypep:[31mUNLINKED[39m->[32m(AC)[39m
        rhsp:
-        ... * 1
+         VARREF "cin" d:20 access:RD, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
        lhsp:
-         [31mSELBIT[39m->[32mSEL[39m "" d:28 [32mdeclElWidth:1[39m, [32mdeclRange:[8:0][39m
+         [31mSELBIT[39m->[32mSEL[39m "" d:20 [32mdeclElWidth:1[39m, [32mdeclRange:[8:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
           fromp:
-           ... * 1
+            VARREF "c" d:20 access:WR, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(PB)[39m
           [31mbitp:[39m
-            [31mCONST[39m [31m"?32?sh0"[39m [31md:28[39m
+            [31mCONST[39m [31m"?32?sh0"[39m [31md:20[39m [31mdtypep:(Q)[39m
           [32mlsbp:[39m
-            [32mCONST[39m [32m"4'h0"[39m [32md:28[39m
+            [32mCONST[39m [32m"4'h0"[39m [32md:20[39m [32mdtypep:(QN)[39m
           [32mwidthp:[39m
-            [32mCONST[39m [32m"?32?h1"[39m [32md:28[39m
-      ASSIGNW "" d:29
+            [32mCONST[39m [32m"?32?h1"[39m [32md:20[39m [32mdtypep:(HC)[39m
+      ASSIGNW "" d:21 dtypep:[31mUNLINKED[39m->[32m(AC)[39m
        rhsp:
-         [31mSELBIT[39m->[32mSEL[39m "" d:29 [32mdeclElWidth:1[39m, [32mdeclRange:[8:0][39m
+         [31mSELBIT[39m->[32mSEL[39m "" d:21 [32mdeclElWidth:1[39m, [32mdeclRange:[8:0][39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
           fromp:
-           ... * 1
+            VARREF "c" d:21 access:RD, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(PB)[39m
           [31mbitp:[39m
-            [31mSUB[39m [31m""[39m [31md:29[39m
+            [31mSUB[39m [31m""[39m [31md:21[39m [31mdtypep:UNLINKED[39m
              [31mlhsp:[39m
-               [31mVARREF[39m [31m"WIDTH"[39m [31md:29[39m [31maccess:RD[39m, [31mclassOrPackagep:UNLINKED[39m
+               [31mVARREF[39m [31m"WIDTH"[39m [31md:21[39m [31maccess:RD[39m, [31mclassOrPackagep:UNLINKED[39m, [31mdtypep:UNLINKED[39m
              [31mrhsp:[39m
-               [31mCONST[39m [31m"?32?sh1"[39m [31md:29[39m
+               [31mCONST[39m [31m"?32?sh1"[39m [31md:21[39m [31mdtypep:(Q)[39m
           [32mlsbp:[39m
-            [32mSEL[39m [32m""[39m [32md:29[39m
+            [32mSEL[39m [32m""[39m [32md:21[39m [32mdtypep:(QN)[39m
              [32mfromp:[39m
-               [32mSUB[39m [32m""[39m [32md:29[39m
+               [32mSUB[39m [32m""[39m [32md:21[39m [32mdtypep:(I)[39m
                 [32mlhsp:[39m
-                  [32mVARREF[39m [32m"WIDTH"[39m [32md:29[39m [32maccess:RD[39m, [32mclassOrPackagep:UNLINKED[39m
+                  [32mVARREF[39m [32m"WIDTH"[39m [32md:21[39m [32maccess:RD[39m, [32mclassOrPackagep:UNLINKED[39m, [32mdtypep:(I)[39m
                 [32mrhsp:[39m
-                  [32mCONST[39m [32m"?32?sh1"[39m [32md:29[39m
+                  [32mCONST[39m [32m"?32?sh1"[39m [32md:21[39m [32mdtypep:(Q)[39m
              [32mlsbp:[39m
-               [32mCONST[39m [32m"32'h0"[39m [32md:29[39m
+               [32mCONST[39m [32m"32'h0"[39m [32md:21[39m [32mdtypep:(IN)[39m
              [32mwidthp:[39m
-               [32mCONST[39m [32m"32'h4"[39m [32md:29[39m
+               [32mCONST[39m [32m"32'h4"[39m [32md:21[39m [32mdtypep:(IN)[39m
           [32mwidthp:[39m
-            [32mCONST[39m [32m"?32?h1"[39m [32md:29[39m
+            [32mCONST[39m [32m"?32?h1"[39m [32md:21[39m [32mdtypep:(HC)[39m
        lhsp:
-        ... * 1
-   MODULE "full_adder" d:5 level:3, origName:full_adder, timeunit:1ps
+         VARREF "cout" d:21 access:WR, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
+   MODULE "full_adder" e:1 level:3, origName:full_adder, timeunit:1ps
     stmtsp:
-      VAR "a" d:6 attrClocker:UNKNOWN, direction:INPUT, lifetime:NONE, origName:a, sensIfacep:UNLINKED, varType:PORT
+      VAR "a" e:2 attrClocker:UNKNOWN, direction:INPUT, [32mdtypeName:logic[39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m, lifetime:NONE, origName:a, sensIfacep:UNLINKED, varType:PORT
        [31mchildDTypep:[39m
-         [31mBASICDTYPE[39m [31m"LOGIC_IMPLICIT"[39m [31md:6[39m [31mkeyword:LOGIC_IMPLICIT[39m
-      VAR "b" d:7 attrClocker:UNKNOWN, direction:INPUT, lifetime:NONE, origName:b, sensIfacep:UNLINKED, varType:PORT
+         [31mBASICDTYPE[39m [31m"LOGIC_IMPLICIT"[39m [31me:2[39m [31mdtypep:(WD)[39m, [31mkeyword:LOGIC_IMPLICIT[39m
+      VAR "b" e:3 attrClocker:UNKNOWN, direction:INPUT, [32mdtypeName:logic[39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m, lifetime:NONE, origName:b, sensIfacep:UNLINKED, varType:PORT
        [31mchildDTypep:[39m
-         [31mBASICDTYPE[39m [31m"LOGIC_IMPLICIT"[39m [31md:7[39m [31mkeyword:LOGIC_IMPLICIT[39m
-      VAR "cin" d:8 attrClocker:UNKNOWN, direction:INPUT, lifetime:NONE, origName:cin, sensIfacep:UNLINKED, varType:PORT
+         [31mBASICDTYPE[39m [31m"LOGIC_IMPLICIT"[39m [31me:3[39m [31mdtypep:(ZD)[39m, [31mkeyword:LOGIC_IMPLICIT[39m
+      VAR "cin" e:4 attrClocker:UNKNOWN, direction:INPUT, [32mdtypeName:logic[39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m, lifetime:NONE, origName:cin, sensIfacep:UNLINKED, varType:PORT
        [31mchildDTypep:[39m
-         [31mBASICDTYPE[39m [31m"LOGIC_IMPLICIT"[39m [31md:8[39m [31mkeyword:LOGIC_IMPLICIT[39m
-      VAR "s" d:9 attrClocker:UNKNOWN, direction:OUTPUT, lifetime:NONE, origName:s, sensIfacep:UNLINKED, varType:PORT
+         [31mBASICDTYPE[39m [31m"LOGIC_IMPLICIT"[39m [31me:4[39m [31mdtypep:(CE)[39m, [31mkeyword:LOGIC_IMPLICIT[39m
+      VAR "s" e:5 attrClocker:UNKNOWN, direction:OUTPUT, [32mdtypeName:logic[39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m, lifetime:NONE, origName:s, sensIfacep:UNLINKED, varType:PORT
        [31mchildDTypep:[39m
-         [31mBASICDTYPE[39m [31m"LOGIC_IMPLICIT"[39m [31md:9[39m [31mkeyword:LOGIC_IMPLICIT[39m
-      VAR "cout" d:10 attrClocker:UNKNOWN, direction:OUTPUT, lifetime:NONE, origName:cout, sensIfacep:UNLINKED, varType:PORT
+         [31mBASICDTYPE[39m [31m"LOGIC_IMPLICIT"[39m [31me:5[39m [31mdtypep:(FE)[39m, [31mkeyword:LOGIC_IMPLICIT[39m
+      VAR "cout" e:6 attrClocker:UNKNOWN, direction:OUTPUT, [32mdtypeName:logic[39m, dtypep:[31mUNLINKED[39m->[32m(AC)[39m, lifetime:NONE, origName:cout, sensIfacep:UNLINKED, varType:PORT
        [31mchildDTypep:[39m
-         [31mBASICDTYPE[39m [31m"LOGIC_IMPLICIT"[39m [31md:10[39m [31mkeyword:LOGIC_IMPLICIT[39m
-      ... * 2
+         [31mBASICDTYPE[39m [31m"LOGIC_IMPLICIT"[39m [31me:6[39m [31mdtypep:(IE)[39m, [31mkeyword:LOGIC_IMPLICIT[39m
+      ASSIGNW "" e:7 dtypep:[31mUNLINKED[39m->[32m(AC)[39m
+       rhsp:
+         XOR "" e:7 dtypep:[31mUNLINKED[39m->[32m(AC)[39m
+          lhsp:
+            XOR "" e:7 dtypep:[31mUNLINKED[39m->[32m(AC)[39m
+             lhsp:
+               VARREF "a" e:7 access:RD, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
+             rhsp:
+               VARREF "b" e:7 access:RD, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
+          rhsp:
+            VARREF "cin" e:7 access:RD, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
+       lhsp:
+         VARREF "s" e:7 access:WR, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
+      ASSIGNW "" e:8 dtypep:[31mUNLINKED[39m->[32m(AC)[39m
+       rhsp:
+         OR "" e:8 dtypep:[31mUNLINKED[39m->[32m(AC)[39m
+          lhsp:
+            OR "" e:8 dtypep:[31mUNLINKED[39m->[32m(AC)[39m
+             lhsp:
+               AND "" e:8 dtypep:[31mUNLINKED[39m->[32m(AC)[39m
+                lhsp:
+                  VARREF "a" e:8 access:RD, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
+                rhsp:
+                  VARREF "b" e:8 access:RD, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
+             rhsp:
+               AND "" e:8 dtypep:[31mUNLINKED[39m->[32m(AC)[39m
+                lhsp:
+                  VARREF "b" e:8 access:RD, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
+                rhsp:
+                  VARREF "cin" e:8 access:RD, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
+          rhsp:
+            AND "" e:8 dtypep:[31mUNLINKED[39m->[32m(AC)[39m
+             lhsp:
+               VARREF "a" e:8 access:RD, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
+             rhsp:
+               VARREF "cin" e:8 access:RD, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
+       lhsp:
+         VARREF "cout" e:8 access:WR, classOrPackagep:UNLINKED, dtypep:[31mUNLINKED[39m->[32m(AC)[39m
  miscsp:
-   TYPETABLE "" a:0 constraintRefp:UNLINKED, emptyQueuep:UNLINKED, queueIndexp:UNLINKED, streamp:UNLINKED, voidp:(ZE)
+   TYPETABLE "" a:0 constraintRefp:UNLINKED, emptyQueuep:UNLINKED, queueIndexp:UNLINKED, streamp:UNLINKED, voidp:(DF)
     typesp:
       ... * 10
-      BASICDTYPE "LOGIC_IMPLICIT" d:15 generic:[31mFalse[39m->[32mTrue[39m, keyword:LOGIC_IMPLICIT
+      BASICDTYPE "LOGIC_IMPLICIT" d:7 dtypep:(G), generic:[31mFalse[39m->[32mTrue[39m, keyword:LOGIC_IMPLICIT
       ... * 3
-      [32mBASICDTYPE[39m [32m"LOGIC_IMPLICIT"[39m [32md:6[39m [32mkeyword:LOGIC_IMPLICIT[39m
-      [32mBASICDTYPE[39m [32m"LOGIC_IMPLICIT"[39m [32md:7[39m [32mkeyword:LOGIC_IMPLICIT[39m
-      [32mBASICDTYPE[39m [32m"LOGIC_IMPLICIT"[39m [32md:8[39m [32mkeyword:LOGIC_IMPLICIT[39m
-      [32mBASICDTYPE[39m [32m"LOGIC_IMPLICIT"[39m [32md:9[39m [32mkeyword:LOGIC_IMPLICIT[39m
-      [32mBASICDTYPE[39m [32m"LOGIC_IMPLICIT"[39m [32md:10[39m [32mkeyword:LOGIC_IMPLICIT[39m
-      [32mBASICDTYPE[39m [32m"logic"[39m [32md:16[39m [32mkeyword:logic[39m, [32mrange:7:0[39m
-      [32mBASICDTYPE[39m [32m"logic"[39m [32md:17[39m [32mkeyword:logic[39m, [32mrange:7:0[39m
-      [32mBASICDTYPE[39m [32m"LOGIC_IMPLICIT"[39m [32md:18[39m [32mkeyword:LOGIC_IMPLICIT[39m
-      [32mBASICDTYPE[39m [32m"logic"[39m [32md:19[39m [32mkeyword:logic[39m, [32mrange:7:0[39m
-      [32mBASICDTYPE[39m [32m"LOGIC_IMPLICIT"[39m [32md:20[39m [32mkeyword:LOGIC_IMPLICIT[39m
-      [32mBASICDTYPE[39m [32m"logic"[39m [32md:22[39m [32mkeyword:logic[39m, [32mrange:8:0[39m
-      [32mBASICDTYPE[39m [32m"logic"[39m [32md:25[39m [32mgeneric:True[39m, [32mkeyword:logic[39m, [32mrange:2:0[39m
-      [32mBASICDTYPE[39m [32m"logic"[39m [32md:24[39m [32mgeneric:True[39m, [32mkeyword:logic[39m, [32mrange:2:0[39m
-      [32mBASICDTYPE[39m [32m"logic"[39m [32md:25[39m [32mgeneric:True[39m, [32mkeyword:logic[39m, [32mrange:3:0[39m
-      [32mBASICDTYPE[39m [32m"logic"[39m [32md:24[39m [32mgeneric:True[39m, [32mkeyword:logic[39m, [32mrange:3:0[39m
+      [32mBASICDTYPE[39m [32m"LOGIC_IMPLICIT"[39m [32me:2[39m [32mdtypep:(WD)[39m, [32mkeyword:LOGIC_IMPLICIT[39m
+      [32mBASICDTYPE[39m [32m"LOGIC_IMPLICIT"[39m [32me:3[39m [32mdtypep:(ZD)[39m, [32mkeyword:LOGIC_IMPLICIT[39m
+      [32mBASICDTYPE[39m [32m"LOGIC_IMPLICIT"[39m [32me:4[39m [32mdtypep:(CE)[39m, [32mkeyword:LOGIC_IMPLICIT[39m
+      [32mBASICDTYPE[39m [32m"LOGIC_IMPLICIT"[39m [32me:5[39m [32mdtypep:(FE)[39m, [32mkeyword:LOGIC_IMPLICIT[39m
+      [32mBASICDTYPE[39m [32m"LOGIC_IMPLICIT"[39m [32me:6[39m [32mdtypep:(IE)[39m, [32mkeyword:LOGIC_IMPLICIT[39m
+      [32mBASICDTYPE[39m [32m"logic"[39m [32md:8[39m [32mdtypep:(L)[39m, [32mkeyword:logic[39m, [32mrange:7:0[39m
+      [32mBASICDTYPE[39m [32m"logic"[39m [32md:9[39m [32mdtypep:(U)[39m, [32mkeyword:logic[39m, [32mrange:7:0[39m
+      [32mBASICDTYPE[39m [32m"LOGIC_IMPLICIT"[39m [32md:10[39m [32mdtypep:(CB)[39m, [32mkeyword:LOGIC_IMPLICIT[39m
+      [32mBASICDTYPE[39m [32m"logic"[39m [32md:11[39m [32mdtypep:(FB)[39m, [32mkeyword:logic[39m, [32mrange:7:0[39m
+      [32mBASICDTYPE[39m [32m"LOGIC_IMPLICIT"[39m [32md:12[39m [32mdtypep:(NB)[39m, [32mkeyword:LOGIC_IMPLICIT[39m
+      [32mBASICDTYPE[39m [32m"logic"[39m [32md:14[39m [32mdtypep:(PB)[39m, [32mkeyword:logic[39m, [32mrange:8:0[39m
+      [32mBASICDTYPE[39m [32m"logic"[39m [32md:17[39m [32mdtypep:(KN)[39m, [32mgeneric:True[39m, [32mkeyword:logic[39m, [32mrange:2:0[39m
+      [32mBASICDTYPE[39m [32m"logic"[39m [32md:16[39m [32mdtypep:(RR)[39m, [32mgeneric:True[39m, [32mkeyword:logic[39m, [32mrange:2:0[39m
+      [32mBASICDTYPE[39m [32m"logic"[39m [32md:17[39m [32mdtypep:(QN)[39m, [32mgeneric:True[39m, [32mkeyword:logic[39m, [32mrange:3:0[39m
+      [32mBASICDTYPE[39m [32m"logic"[39m [32md:16[39m [32mdtypep:(SR)[39m, [32mgeneric:True[39m, [32mkeyword:logic[39m, [32mrange:3:0[39m
    ... * 1
