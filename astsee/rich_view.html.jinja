@@ -45,6 +45,14 @@ body {
     resize: horizontal;
     width: 66.6%;
 }
+{% if dark -%}
+select {
+    outline: none;
+    border: solid 1px black;
+    background: #332d37;
+    color: #e6edf3;
+}
+{% endif -%}
 .source-pane {
     display: flex;
     flex-flow: column nowrap;
