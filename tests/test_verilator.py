@@ -16,6 +16,8 @@ os.chdir(IN_DIR)  # html tests rely on relative paths
 
 def run(request, args):
     test_name = request.node.name
+    if "_html" in test_name:
+        test_name += ".html"
     with open(f"{OUT_DIR}/{test_name}", "w+", encoding="utf-8") as out, redirect_stdout(out):
         vastsee.main(vastsee.parser.parse_args(shlex.split(args)))
     update_golden = request.config.option.golden or "ASTSEE_UPDATE_GOLDEN" in os.environ
