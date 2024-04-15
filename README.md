@@ -138,7 +138,7 @@ Astsee provides a separate mode for interpreting Verilator AST dumps:
 <!-- name="verilator-pretty-print" -->
 ```sh
 cd tests/verilator_in/
-astsee_verilator test1_a.tree.json | head -n 10 # head for brevity
+astsee_verilator test1_a.tree.json | awk 'NR<=10' # for brevity, 10 first lines only
 ```
 
 <!-- name="verilator-pretty-print-output" -->
