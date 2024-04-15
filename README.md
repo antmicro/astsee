@@ -149,7 +149,7 @@ NETLIST "$root" <built-in>:0 (B) constPoolp:(D), delaySchedulerp:UNLINKED, dolla
     stmtsp:
       VAR "WIDTH" .../test1.sv:7 (F) attrClocker:UNKNOWN, direction:NONE, dtypeName:logic, dtypep:(I), isGParam:True, isParam:True, lifetime:VSTATIC, origName:WIDTH, sensIfacep:UNLINKED, varType:GPARAM
        valuep:
-         CONST "?32?sh8" .../test1.sv:7 (H) dtypep:(I)
+         CONST "?32?sh20" .../test1.sv:7 (H) dtypep:(I)
       VAR "a" .../test1.sv:8 (K) attrClocker:UNKNOWN, direction:INPUT, dtypep:UNLINKED, lifetime:NONE, origName:a, sensIfacep:UNLINKED, varType:PORT
        childDTypep:
          BASICDTYPE "logic" .../test1.sv:8 (L) dtypep:(L), keyword:logic
