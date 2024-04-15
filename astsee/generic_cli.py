@@ -37,11 +37,11 @@ def main(args=None):
     omit_intact = args.omit and args.newfile  # omitting unmodified chunks does not make sense without diff
 
     if args.html:
-        diff_to_str = DictDiffToHtml(omit_intact)
+        diff_to_str = DictDiffToHtml(omit_intact=omit_intact)
     elif args.basic:
-        diff_to_str = BasicDiffToTerm(omit_intact)
+        diff_to_str = BasicDiffToTerm(omit_intact=omit_intact)
     else:
-        diff_to_str = DictDiffToTerm(omit_intact)
+        diff_to_str = DictDiffToTerm(omit_intact=omit_intact)
 
     load_jsons_ = partial(load_jsons, jq_query=args.jq_query)
 
