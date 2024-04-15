@@ -359,8 +359,6 @@ class DictDiffToHtml(DictDiff):
     CSS = textwrap.dedent(
         """\
     .code-block {
-        box-sizing: border-box;
-        border: solid 1px black;
         .linenos {
             padding: 0 %s 0 %s;
         }
