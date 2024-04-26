@@ -15,6 +15,8 @@ IN_DIR = TEST_DIR + "/generic_in"
 
 def run(request, args):
     test_name = request.node.name
+    if "_html" in test_name:
+        test_name += ".html"
     with open(f"{OUT_DIR}/{test_name}", "w+", encoding="utf-8") as out, redirect_stdout(out):
         astsee.main(astsee.parser.parse_args(shlex.split(args)))
     assert_golden(test_name, request.config.option.golden, OUT_DIR, GOLD_DIR)

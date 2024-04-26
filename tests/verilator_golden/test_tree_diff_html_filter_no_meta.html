@@ -5,8 +5,6 @@
 <style>
 /* Shared CSS */
 .code-block {
-    box-sizing: border-box;
-    border: solid 1px black;
     .linenos {
         padding: 0 5px 0 5px;
     }
@@ -129,12 +127,18 @@ body {
 }
 .pane {
     height: 100vh;
-    border: solid 1px black;
+    border: solid 2px black;
     box-sizing: border-box;
 }
 .ast-pane {
     resize: horizontal;
     width: 66.6%;
+}
+select {
+    outline: none;
+    border: solid 1px black;
+    background: #332d37;
+    color: #e6edf3;
 }
 .source-pane {
     display: flex;
@@ -159,10 +163,14 @@ body {
         z-index: 1;
     }
 }
+.code-block {
+    border-top: solid 1px black;
+    border-bottom: solid 1px black;
+}
 
 .code-block { background: #332d37; }
 .y-scrollable {
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 .linenos {
     user-select: none;
@@ -173,6 +181,19 @@ body {
     /* work around imperfect behaviour of "user-select:none" in Firefox: programmatically
     selected element would still be highlighted (even though it would be ignored by ctrl+c) */
     background-color: transparent;
+}
+
+/* convert fat chromium scrollbar into firefox-like thin one */
+::-webkit-scrollbar {
+    width: 4px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: grey;
+    border-radius: 20px;
+    border: transparent;
+}
+::-webkit-resizer {
+    background-color: grey;
 }
 </style>
 <script>
