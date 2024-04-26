@@ -145,7 +145,12 @@ class HtmlHighlighter(pygments.formatters.HtmlFormatter):  # pylint: disable=may
 
 
 class AstDiffToHtml:
-    def __init__(self, omit_intact, split_fields, meta, dark):
+    def __init__(self, meta, dark=True, **generic_diff_to_html_kwargs):
+        """
+        Args other than `meta` and `dark` are handled by DictDiffToHtml.
+        Args that are known to be safely overridable: `omit_intact` and `split_fields`.
+        Other ones may or may not work, as AstDiffToHtml sets some of them itself.
+        """
         self.meta = meta
         self.dark = dark
         self.referenced_lines = {}  # filename : set_of_referenced_lines
@@ -161,7 +166,7 @@ class AstDiffToHtml:
         else:
             colors = None
         self.diff_to_str_generic = DictDiffToHtml(
-            omit_intact, val_handlers, split_fields, embeddable=True, colors=colors
+            embeddable=True, colors=colors, val_handlers=val_handlers, **generic_diff_to_html_kwargs
         )
         extern_css = DictDiffToHtml.CSS + HtmlHighlighter(dark).get_style_defs(".code-block")
         with open(f"{os.path.dirname(__file__)}/rich_view.js", encoding="utf-8") as f:
@@ -357,7 +362,7 @@ def main(args=None):
     omit_intact = args.omit and args.newfile  # omitting unmodified chunks does not make sense without diff
 
     if args.html or args.html_browser:
-        diff_to_str = AstDiffToHtml(omit_intact, split_fields, meta, not args.light)
+        diff_to_str = AstDiffToHtml(omit_intact=omit_intact, split_fields=split_fields, meta=meta, dark=not args.light)
     else:
         loc_handler = partial(plaintext_loc_handler, meta=meta)
         val_handlers = {
@@ -365,7 +370,7 @@ def main(args=None):
             "name": (lambda v: f'"{stringify(v, quote_empty=0)}"'),
             "loc": loc_handler,
         }
-        diff_to_str = DictDiffToTerm(omit_intact, val_handlers, split_fields)
+        diff_to_str = DictDiffToTerm(omit_intact=omit_intact, val_handlers=val_handlers, split_fields=split_fields)
 
     load_jsons_ = partial(load_jsons, jq_bin=jq_bin, jq_funcs=jq_funcs, jq_query=args.jq_query)
 

@@ -258,7 +258,7 @@ class DictDiff:
     Color handling shall be implemented in _colorize() method of child class
     """
 
-    def __init__(self, omit_intact, val_handlers=None, split_fields=None):
+    def __init__(self, omit_intact=False, val_handlers=None, split_fields=None):
         """
         - if omit_intact is set then chunks of unchanged non-scalars are emitted as "... * <count of omissions>".
         - val_handlers, if specified, should be dict that maps key into custom value formatter: {key: value_formatter(value_content)}.
@@ -339,6 +339,8 @@ class DictDiffToHtml(DictDiff):
     """like DictDiffToTerm but output is formatted as line-numbered html rather than ANSI escapes text
     By default result is standalone html page with styles.
     If `embeddable` flag set, then diff_to_string() returns only "code-block" without CSS and other boilerplate.
+    `colors` dict can be used to set COLOR_RED and COLOR_GREEN to custom hues
+    Other consturctor args are passed verbatim to DictDiff
 
     Format of code-table:
     <div class="code-block">
@@ -378,8 +380,8 @@ class DictDiffToHtml(DictDiff):
     CHUNK_SIZE = 1000
 
     # pylint: disable=too-many-arguments
-    def __init__(self, omit_intact, val_handlers=None, split_fields=None, embeddable=False, colors=None):
-        super().__init__(omit_intact, val_handlers, split_fields)
+    def __init__(self, embeddable=False, colors=None, **dict_diff_kwargs):
+        super().__init__(**dict_diff_kwargs)
         self.embeddable = embeddable
         if colors is None:
             self.colors = {COLOR_RED: "red", COLOR_GREEN: "green"}
