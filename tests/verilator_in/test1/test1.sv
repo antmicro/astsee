@@ -4,7 +4,7 @@ $ verilator --lint-only --no-json-edit-nums --dump-tree-json test1/test1.sv && (
 
 `include "test1/test1_submodule/full_adder.sv"
 
-module serial_adder #(WIDTH=8) (
+module serial_adder #(WIDTH=32) (
         input  [WIDTH-1:0] a,
         input  [WIDTH-1:0] b,
         input  cin,

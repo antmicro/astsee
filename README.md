@@ -138,7 +138,7 @@ Astsee provides a separate mode for interpreting Verilator AST dumps:
 <!-- name="verilator-pretty-print" -->
 ```sh
 cd tests/verilator_in/
-astsee_verilator test1_a.tree.json | head -n 10 # head for brevity
+astsee_verilator test1_a.tree.json | awk 'NR<=10' # for brevity, 10 first lines only
 ```
 
 <!-- name="verilator-pretty-print-output" -->
@@ -149,7 +149,7 @@ NETLIST "$root" <built-in>:0 (B) constPoolp:(D), delaySchedulerp:UNLINKED, dolla
     stmtsp:
       VAR "WIDTH" .../test1.sv:7 (F) attrClocker:UNKNOWN, direction:NONE, dtypeName:logic, dtypep:(I), isGParam:True, isParam:True, lifetime:VSTATIC, origName:WIDTH, sensIfacep:UNLINKED, varType:GPARAM
        valuep:
-         CONST "?32?sh8" .../test1.sv:7 (H) dtypep:(I)
+         CONST "?32?sh20" .../test1.sv:7 (H) dtypep:(I)
       VAR "a" .../test1.sv:8 (K) attrClocker:UNKNOWN, direction:INPUT, dtypep:UNLINKED, lifetime:NONE, origName:a, sensIfacep:UNLINKED, varType:PORT
        childDTypep:
          BASICDTYPE "logic" .../test1.sv:8 (L) dtypep:(L), keyword:logic
