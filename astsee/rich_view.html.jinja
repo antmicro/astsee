@@ -37,28 +37,11 @@ body {
 {% endif -%}
 }
 .pane {
+    display: flex;
+    flex-flow: column nowrap;
     height: 100vh;
     border: solid 2px black;
     box-sizing: border-box;
-}
-.ast-pane {
-    resize: horizontal;
-    width: 66.6%;
-}
-{% if dark -%}
-select {
-    outline: none;
-    border: solid 1px black;
-    background: #332d37;
-    color: #e6edf3;
-}
-{% endif -%}
-.source-pane {
-    display: flex;
-    flex-flow: column nowrap;
-    flex-grow: 1;
-    width: 33.3%;
-
     .tabs {
         height: 100%;
         position: relative;
@@ -79,6 +62,23 @@ select {
         z-index: 1;
     }
 }
+.ast-pane {
+    resize: horizontal;
+    overflow: auto;
+    width: 66.6%;
+}
+.source-pane {
+    flex-grow: 1;
+    width: 33.3%;
+}
+{% if dark -%}
+select {
+    outline: none;
+    border: solid 1px black;
+    background: #332d37;
+    color: #e6edf3;
+}
+{% endif -%}
 .code-block {
     border-top: solid 1px black;
     border-bottom: solid 1px black;
@@ -109,9 +109,6 @@ select {
     border-radius: 20px;
     border: transparent;
 }
-::-webkit-resizer {
-    background-color: grey;
-}
 </style>
 <script>
 {{js|safe-}}
@@ -119,13 +116,25 @@ select {
 </head>
 <body>
 
-<div class="pane ast-pane y-scrollable">
-{{diff|safe}}
+<!--<div class="pane ast-pane y-scrollable">-->
+<div class="pane ast-pane">
+{% if diffs | length > 1 -%}
+<select id="ast-tabmenu" onchange="showtab(this.options[this.selectedIndex].value, false, 'ast-tabmenu')">
+{% for name in diffs.keys() -%}
+   <option value="{{name|safe}}">{{name|safe}}</option>
+{% endfor -%}
+</select>
+{% endif -%}
+<div class="tabs">
+{% for name, diff in diffs.items() -%}
+   <div class="tab y-scrollable" id="{{name|safe}}">{{diff|safe}}</div>
+{% endfor -%}
+</div>
 </div>
 
 <div class="pane source-pane">
 {% if srcfiles-%}
-<select id="tabmenu" onchange="showtab(this.options[this.selectedIndex].value, false)">
+<select id="src-tabmenu" onchange="showtab(this.options[this.selectedIndex].value, false)">
 {% for fname in srcfiles-%}
    <option value="{{fname}}">{{fname}}</option>
 {% endfor -%}

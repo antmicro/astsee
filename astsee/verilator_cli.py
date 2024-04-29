@@ -10,6 +10,7 @@ import re
 import sys
 import webbrowser
 from functools import partial
+from itertools import pairwise
 from tempfile import NamedTemporaryFile
 
 import pygments
@@ -92,6 +93,13 @@ parser.add_argument(
     default=None,
     dest="meta",
 )
+parser.add_argument(
+    "--timeline",
+    help="Produce html that includes diffs beetween consecutive stages."
+    "As files to diff/pretty print are extracted from tree.meta.json, `file` param should point to it and `newfile` should be left unspecified"
+    "By default implies --html but you can still specify --htmlb",
+    action="store_true",
+)
 parser.add_argument("file", help=".tree.json file to pretty print (or diff)")
 parser.add_argument("newfile", nargs="?", help="optional new version of .tree.json file (enables diff)", default=None)
 parser.add_argument(
@@ -139,7 +147,8 @@ class HtmlHighlighter(pygments.formatters.HtmlFormatter):  # pylint: disable=may
                 line_id = f"{html.escape(self.fname)}-{i}"
                 span = f'<span class="linenos" style="width:{idx_width}ch;">{i}</span>'
                 if i in self.backref_lines:
-                    line_prefix = f'<a id="{line_id}" class="backref" href="#back-{line_id}">{span}</a>'
+                    onclick = f"return gotoClassInAst('back-{line_id}')"
+                    line_prefix = f'<a id="{line_id}" class="backref" href="#" onclick="{onclick}">{span}</a>'
                 else:
                     line_prefix = f'<a id="{line_id}">{span}</a>'
                 line = f"{line_prefix}{line}"
@@ -160,7 +169,7 @@ class AstDiffToHtml:
         val_handlers = {
             'editNum': (lambda v: html.escape(f'<e{html.escape(str(v))}>')),
             'name': (lambda v: "<b>" + html.escape(f'"{stringify(v, quote_empty=0)}"') + "</b>"),
-            "addr": (lambda v: f'<span id="{html.escape(v)}">{html.escape(v)}</span>'),
+            "addr": (lambda v: f'<span class="{html.escape(v)}">{html.escape(v)}</span>'),
             'loc': self.loc_handler,
         }  # yapf: disable
         val_handlers.update({k: self.format_ptr_link for k in meta["ptrFieldNames"] if k != "addr"})
@@ -181,7 +190,8 @@ class AstDiffToHtml:
         if ptr == "UNLINKED":
             return "UNLINKED"
         else:
-            return f'<a href="#{html.escape(ptr)}">{html.escape(ptr)}</a>'
+            onclick = f"return gotoClassInAst('{html.escape(ptr)}')"
+            return f'<a href="#{html.escape(ptr)}" onclick="{onclick}">{html.escape(ptr)}</a>'
 
     def loc_handler(self, loc):
         """print location field as link to relevant line and save filename in self.srcfiles for later processing"""
@@ -199,16 +209,33 @@ class AstDiffToHtml:
             return display_loc
         else:
             self.referenced_lines.setdefault(realpath, set())
+            self.referenced_lines[realpath].add(int(begin_row))
             onclick = f"return selectFileFragment('{html.escape(realpath)}',{int(begin_row)},{int(begin_col)},{int(end_row)},{int(end_col)})"
-            if begin_row not in self.referenced_lines[realpath]:
-                self.referenced_lines[realpath].add(int(begin_row))
-                return f'<a id="back-{link_loc}" href="#{link_loc}" onclick="{onclick}">{display_loc}</a>'
-            return f'<a href="#{link_loc}" onclick="{onclick}">{display_loc}</a>'
+            return f'<a class="back-{link_loc}" href="#{link_loc}" onclick="{onclick}">{display_loc}</a>'
+
+    def timeline(self, load_jsons_):
+        if "dumpedFiles" not in self.meta:
+            log.critical('suplied meta file does not have "dumpedFiles" field, required for --timeline to work')
+            sys.exit(1)
+        paths = []
+        for i in self.meta["dumpedFiles"]:
+            found, path = resolve_path(i)
+            if not found:
+                log.warning('%s file not found, skipping from timeline')
+                continue
+            paths.append(path)
+
+        files = zip(paths, load_jsons_(paths))
+        diffs = {}
+        for (old_path, old), (new_path, new) in pairwise(files):
+            tree = make_diff(old, new)
+            diffs[html.escape(f"{old_path} -> {new_path}")] = self.diff_to_str_generic.diff_to_string(tree)
+        return self.template.render({"diffs": diffs, "srcfiles": sorted(self.referenced_lines)})
 
     def diff_to_string(self, tree):
         self.referenced_lines.clear()
         diff = self.diff_to_str_generic.diff_to_string(tree)
-        return self.template.render({"diff": diff, "srcfiles": sorted(self.referenced_lines)})
+        return self.template.render({"diffs": {"placeholder_name": diff}, "srcfiles": sorted(self.referenced_lines)})
 
     def make_tab(self, fname):
         """load file into line-numbered tab"""
@@ -338,6 +365,12 @@ def main(args=None):
     if args is None:
         args = parser.parse_args()
     log.basicConfig(level=args.loglevel.upper())
+    if args.timeline:
+        args.meta = args.file
+        args.html = True
+    if args.timeline and args.meta is None:
+        log.critical("meta file must be provided for --timeline to work ")
+        sys.exit(1)
     if args.meta is None:
         guess_meta_path(args)
 
@@ -400,18 +433,22 @@ def main(args=None):
         }
         diff_to_str = DictDiffToTerm(omit_intact=omit_intact, val_handlers=val_handlers, split_fields=split_fields)
 
-    if not args.newfile:  # don't diff, just pretty print
+    load_jsons_ = partial(load_jsons, jq_bin=jq_bin, jq_funcs=jq_funcs, jq_query=args.jq_query)
+
+    if args.timeline:
+        out = diff_to_str.timeline(load_jsons_)
+    elif not args.newfile:  # don't diff, just pretty print
         # passing tree marked as unchanged to colorizer can be abused to just pretty print it
-        tree = IntactNode(*load_jsons_([args.file]))
+        out = diff_to_str.diff_to_string(IntactNode(*load_jsons_([args.file])))
     else:  # both files supplied, diff
-        tree = make_diff(*load_jsons_([args.file, args.newfile]))
+        out = diff_to_str.diff_to_string(make_diff(*load_jsons_([args.file, args.newfile])))
 
     if args.html_browser:
-        with NamedTemporaryFile("w", delete=False, suffix=".html") as out:
-            out.write(diff_to_str.diff_to_string(tree))
-            webbrowser.open(f"file://{out.name}")
+        with NamedTemporaryFile("w", delete=False, suffix=".html") as out_file:
+            out_file.write(out)
+            webbrowser.open(f"file://{out_file.name}")
     else:
-        print(diff_to_str.diff_to_string(tree), end="")
+        print(out, end="")
 
 
 if __name__ == "__main__":

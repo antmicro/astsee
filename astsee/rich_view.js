@@ -1,9 +1,26 @@
 let topIdx = 1;
+let astTab = null; // we don't set it at start to avoid race (js may start before content load)
+let gotoIdx = 0; // idx for producing unique ids for gotoClassInAst()
 
-function showtab(tabname, updateMenu=true) {
-  if (updateMenu) document.getElementById('tabmenu').value = tabname;
-  document.getElementById(tabname).style.zIndex = ++topIdx;
+function showtab(tabname, updateMenu=true, tabmenuId='src-tabmenu') {
+  if (updateMenu) document.getElementById(tabmenuId).value = tabname;
+  tab = document.getElementById(tabname);
+  if (tabmenuId == 'ast-tabmenu') astTab = tab;
+  tab.style.zIndex = ++topIdx;
 }
+
+/* exported gotoClassInAst */
+function gotoClassInAst(cls) {
+// go to first occurence of class inside curent AST tab (emulate link to id)
+  if (astTab == null) astTab = document.querySelector('.ast-pane .tab'); // first tab is default one
+  const elem = astTab.getElementsByClassName(cls)[0];
+  if (!elem.hasAttribute('id')) { // if no id already, assign arbitrary one
+    elem.id = 'goto-idx-' + (gotoIdx++);
+  }
+  window.location.href = '#' + elem.id;
+  return false; // prevent default action (going to href) of <a href="..." onclick=goto...">
+}
+
 function skipToChar(node, i) {
   // Skip to node that contains ith character.
   // Returns node, and char index relative to found node

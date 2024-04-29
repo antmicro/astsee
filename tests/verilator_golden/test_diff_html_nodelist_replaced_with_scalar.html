@@ -126,26 +126,11 @@ body {
     color: #e6edf3;
 }
 .pane {
+    display: flex;
+    flex-flow: column nowrap;
     height: 100vh;
     border: solid 2px black;
     box-sizing: border-box;
-}
-.ast-pane {
-    resize: horizontal;
-    width: 66.6%;
-}
-select {
-    outline: none;
-    border: solid 1px black;
-    background: #332d37;
-    color: #e6edf3;
-}
-.source-pane {
-    display: flex;
-    flex-flow: column nowrap;
-    flex-grow: 1;
-    width: 33.3%;
-
     .tabs {
         height: 100%;
         position: relative;
@@ -162,6 +147,21 @@ select {
     .tab:first-child {
         z-index: 1;
     }
+}
+.ast-pane {
+    resize: horizontal;
+    overflow: auto;
+    width: 66.6%;
+}
+.source-pane {
+    flex-grow: 1;
+    width: 33.3%;
+}
+select {
+    outline: none;
+    border: solid 1px black;
+    background: #332d37;
+    color: #e6edf3;
 }
 .code-block {
     border-top: solid 1px black;
@@ -192,17 +192,31 @@ select {
     border-radius: 20px;
     border: transparent;
 }
-::-webkit-resizer {
-    background-color: grey;
-}
 </style>
 <script>
 let topIdx = 1;
+let astTab = null; // we don't set it at start to avoid race (js may start before content load)
+let gotoIdx = 0; // idx for producing unique ids for gotoClassInAst()
 
-function showtab(tabname, updateMenu=true) {
-  if (updateMenu) document.getElementById('tabmenu').value = tabname;
-  document.getElementById(tabname).style.zIndex = ++topIdx;
+function showtab(tabname, updateMenu=true, tabmenuId='src-tabmenu') {
+  if (updateMenu) document.getElementById(tabmenuId).value = tabname;
+  tab = document.getElementById(tabname);
+  if (tabmenuId == 'ast-tabmenu') astTab = tab;
+  tab.style.zIndex = ++topIdx;
 }
+
+/* exported gotoClassInAst */
+function gotoClassInAst(cls) {
+// go to first occurence of class inside curent AST tab (emulate link to id)
+  if (astTab == null) astTab = document.querySelector('.ast-pane .tab'); // first tab is default one
+  const elem = astTab.getElementsByClassName(cls)[0];
+  if (!elem.hasAttribute('id')) { // if no id already, assign arbitrary one
+    elem.id = 'goto-idx-' + (gotoIdx++);
+  }
+  window.location.href = '#' + elem.id;
+  return false; // prevent default action (going to href) of <a href="..." onclick=goto...">
+}
+
 function skipToChar(node, i) {
   // Skip to node that contains ith character.
   // Returns node, and char index relative to found node
@@ -245,14 +259,17 @@ function selectFileFragment(name, firstRow, firstCol, lastRow, endCol) {
 </head>
 <body>
 
-<div class="pane ast-pane y-scrollable">
+<!--<div class="pane ast-pane y-scrollable">-->
+<div class="pane ast-pane">
+<div class="tabs">
+<div class="tab y-scrollable" id="placeholder_name">
 
-
-<div class="code-block" style="text-indent: calc(1ch + 10px) hanging each-line;"><pre><div class="chunk"><span class="linenos" style="width:1ch;">1</span>NETLIST <b>&quot;$root&quot;</b> a:0 <span id="(B)">(B)</span>
+<div class="code-block" style="text-indent: calc(1ch + 10px) hanging each-line;"><pre><div class="chunk"><span class="linenos" style="width:1ch;">1</span>NETLIST <b>&quot;$root&quot;</b> a:0 <span class="(B)">(B)</span>
 <span class="linenos" style="width:1ch;">2</span> <span style="color:#e74a3c;">modulesp:</span>
-<span class="linenos" style="width:1ch;">3</span>   <span style="color:#e74a3c;">MODULE</span> <span style="color:#e74a3c;"><b>&quot;serial_adder&quot;</b></span> <span style="color:#e74a3c;">d:15</span> <span style="color:#e74a3c;"><span id="(E)">(E)</span></span>
+<span class="linenos" style="width:1ch;">3</span>   <span style="color:#e74a3c;">MODULE</span> <span style="color:#e74a3c;"><b>&quot;serial_adder&quot;</b></span> <span style="color:#e74a3c;">d:15</span> <span style="color:#e74a3c;"><span class="(E)">(E)</span></span>
 <span class="linenos" style="width:1ch;">4</span> <span style="color:#00af91;">modulesp:</span> <span style="color:#00af91;">UNLINKED</span>
-</div></pre></div>
+</div></pre></div></div>
+</div>
 </div>
 
 <div class="pane source-pane">
