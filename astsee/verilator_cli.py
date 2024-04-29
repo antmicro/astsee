@@ -13,6 +13,7 @@ from functools import partial
 from itertools import pairwise
 from tempfile import NamedTemporaryFile
 
+import multiprocess
 import pygments
 import pygments.formatters
 import pygments.lexers
@@ -183,8 +184,7 @@ class AstDiffToHtml:
         extern_css = DictDiffToHtml.CSS + HtmlHighlighter(dark).get_style_defs(".code-block")
         with open(f"{os.path.dirname(__file__)}/rich_view.js", encoding="utf-8") as f:
             js = f.read()
-        globals_ = {"make_tab": self.make_tab, "extern_css": extern_css, "js": js, "dark": dark}
-        self.template = self.diff_to_str_generic.make_html_tmpl("rich_view.html.jinja", globals_)
+        self.template_globals = {"make_tab": self.make_tab, "extern_css": extern_css, "js": js, "dark": dark}
 
     def format_ptr_link(self, ptr):
         if ptr == "UNLINKED":
@@ -213,7 +213,7 @@ class AstDiffToHtml:
             onclick = f"return selectFileFragment('{html.escape(realpath)}',{int(begin_row)},{int(begin_col)},{int(end_row)},{int(end_col)})"
             return f'<a class="back-{link_loc}" href="#{link_loc}" onclick="{onclick}">{display_loc}</a>'
 
-    def timeline(self, load_jsons_):
+    def timeline(self, load_jsons_):  # pylint: disable=too-many-locals
         if "dumpedFiles" not in self.meta:
             log.critical('suplied meta file does not have "dumpedFiles" field, required for --timeline to work')
             sys.exit(1)
@@ -222,7 +222,7 @@ class AstDiffToHtml:
         for i in self.meta["dumpedFiles"]:
             found, path = resolve_path(i)
             if not found:
-                log.warning('%s file not found, skipping from timeline')
+                log.warning("%s file not found, skipping from timeline")
                 continue
 
             if i["editCnt"] == old_edit_cnt:
@@ -231,17 +231,40 @@ class AstDiffToHtml:
                 old_edit_cnt = i["editCnt"]
                 paths.append(path)
 
-        files = zip(paths, load_jsons_(paths))
-        diffs = {}
-        for (old_path, old), (new_path, new) in pairwise(files):
-            tree = make_diff(old, new)
-            diffs[html.escape(f"{old_path} -> {new_path}")] = self.diff_to_str_generic.diff_to_string(tree)
-        return self.template.render({"diffs": diffs, "srcfiles": sorted(self.referenced_lines)})
+        with multiprocess.Pool() as pool:  # pylint: disable=maybe-no-member
+            # SIDENOTE: For some reason `multiprocess` and `multiprocessing` insist on serializing and passing
+            # everything used in child processes (code and input) through IPC. I get that it might make sense
+            # in case of windows that does not have fork(), but it seems like unnecessary work
+            diffs = pool.map(lambda pair: self.diff_to_string_partial(make_diff(*pair)), pairwise(load_jsons_(paths)))
+
+        def merge(dest, src):
+            """merge referenced lines (dicts of sets)"""
+            for k, v in src.items():
+                if k not in dest:
+                    dest[k] = v
+                else:
+                    dest[k].update(v)
+
+        diffs_d = {}
+        for (old_path, new_path), (referenced_lines, diff) in zip(pairwise(paths), diffs):
+            merge(self.referenced_lines, referenced_lines)
+            diffs_d[html.escape(f"{old_path} -> {new_path}")] = diff
+
+        template = self.diff_to_str_generic.make_html_tmpl("rich_view.html.jinja", self.template_globals)
+        return template.render({"diffs": diffs_d, "srcfiles": sorted(self.referenced_lines)})
 
     def diff_to_string(self, tree):
         self.referenced_lines.clear()
         diff = self.diff_to_str_generic.diff_to_string(tree)
-        return self.template.render({"diffs": {"placeholder_name": diff}, "srcfiles": sorted(self.referenced_lines)})
+        template = self.diff_to_str_generic.make_html_tmpl("rich_view.html.jinja", self.template_globals)
+        return template.render({"diffs": {"placeholder_name": diff}, "srcfiles": sorted(self.referenced_lines)})
+
+    def diff_to_string_partial(self, tree):
+        """stringize AST, but instead of feeeding it directly into template,
+        return it alongside list of referenced files/lines"""
+        self.referenced_lines.clear()
+        diff = self.diff_to_str_generic.diff_to_string(tree)
+        return self.referenced_lines, diff
 
     def make_tab(self, fname):
         """load file into line-numbered tab"""
