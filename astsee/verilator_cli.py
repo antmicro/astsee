@@ -218,12 +218,18 @@ class AstDiffToHtml:
             log.critical('suplied meta file does not have "dumpedFiles" field, required for --timeline to work')
             sys.exit(1)
         paths = []
+        old_edit_cnt = None
         for i in self.meta["dumpedFiles"]:
             found, path = resolve_path(i)
             if not found:
                 log.warning('%s file not found, skipping from timeline')
                 continue
-            paths.append(path)
+
+            if i["editCnt"] == old_edit_cnt:
+                log.info("skipping dump with same editCnt: %s", path)
+            else:
+                old_edit_cnt = i["editCnt"]
+                paths.append(path)
 
         files = zip(paths, load_jsons_(paths))
         diffs = {}
