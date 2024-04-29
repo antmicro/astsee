@@ -5,10 +5,8 @@ import os
 import subprocess
 import sys
 import textwrap
-from itertools import chain
 
 import jinja2
-from deepdiff import DeepDiff
 
 COLOR_RESET = "\u001b[39m"
 COLOR_RED = "\u001b[31m"
@@ -132,37 +130,58 @@ class ReplaceDiffNode(DiffNode):
         return "~"
 
 
+def make_diff_dict(old, new):
+    intact = True
+    for k, old_val in old.items():
+        if k not in new:
+            old[k] = DelDiffNode(old_val)
+        else:
+            old[k] = make_diff(old_val, new[k])
+        intact &= isinstance(old[k], IntactNode)
+
+    for k, new_val in new.items():
+        if k not in old:
+            old[k] = AddDiffNode(new_val)
+            intact = False
+
+    if intact:
+        return IntactNode(old)
+    else:
+        return ParentOfModified(old)
+
+
+def make_diff_list(old, new):
+    intact = len(old) == len(new)
+    for i in range(min(len(old), len(new))):
+        old[i] = make_diff(old[i], new[i])
+        intact &= isinstance(old[i], IntactNode)
+
+    for i in range(len(new), len(old)):
+        old[i] = DelDiffNode(old[i])
+    for i in range(len(old), len(new)):
+        old.append(AddDiffNode(new[i]))
+
+    if intact:
+        return IntactNode(old)
+    else:
+        return ParentOfModified(old)
+
+
 def make_diff(old, new):
     """Diff @old and @new and return result as DiffNode.
     Note: this function do not tag every node, so separate propagation of tags is needed (see DiffNode.list_it() and DiffNode.dict_it())
     """
-
-    def get_node(node, path):
-        """Given path (list of keys/indexes) of node, traverse tree, tag visited nodes as not leaves
-        and return tuple with direct parent of wanted node, and its index/key in that parent"""
-        for p in path[:-1]:
-            if not isinstance(node.content[p], ParentOfModified):
-                node.content[p] = ParentOfModified(node.content[p])
-            node = node.content[p]
-        return node.content, path[-1]
-
-    ddiff = DeepDiff(old, new, view="tree")
-    root = ParentOfModified(old)
-    for item in chain(ddiff.get("dictionary_item_removed", ()), ddiff.get("iterable_item_removed", ())):
-        parent, key = get_node(root, item.path(output_format="list"))
-        parent[key] = DelDiffNode(item.t1)
-    for item in ddiff.get("dictionary_item_added", ()):
-        parent, key = get_node(root, item.path(output_format="list"))
-        parent[key] = AddDiffNode(item.t2)
-    for item in ddiff.get("iterable_item_added", ()):
-        parent, idx = get_node(root, item.path(output_format="list"))
-        parent.insert(idx, AddDiffNode(item.t2))
-    for item in chain(ddiff.get("values_changed", ()), ddiff.get("type_changes", ())):
-        assert item.path(output_format="list"), "direct replacement of root node is unimplemented"
-        parent, key = get_node(root, item.path(output_format="list"))
-        parent[key] = ReplaceDiffNode(item.t1, item.t2)
-
-    return root
+    if isinstance(old, type(new)):
+        if isinstance(old, dict):
+            return make_diff_dict(old, new)
+        elif isinstance(old, list):
+            return make_diff_list(old, new)
+        elif old != new:
+            return ReplaceDiffNode(old, new)
+        else:
+            return IntactNode(old)
+    else:  # we allow for basic types only, so if types differ, values differ too
+        return ReplaceDiffNode(old, new)
 
 
 class BasicDiffToTerm:
