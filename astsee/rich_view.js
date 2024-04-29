@@ -7,6 +7,7 @@ function showtab(tabname, updateMenu=true, tabmenuId='src-tabmenu') {
   tab = document.getElementById(tabname);
   if (tabmenuId == 'ast-tabmenu') astTab = tab;
   tab.style.zIndex = ++topIdx;
+  tab.style.display = 'block';
 }
 
 /* exported gotoClassInAst */

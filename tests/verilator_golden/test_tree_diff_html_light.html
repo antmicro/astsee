@@ -115,6 +115,7 @@ body {
         position: relative;
     }
     .tab {
+        display: none; /* while we use z-index for hiding/showing tabs, making them display:none by default makes it snappier */
         position: absolute;
         height: 100%;
         width: 100%;
@@ -124,6 +125,7 @@ body {
     }
     .tab:first-child {
         z-index: 1;
+        display: block !important;
     }
 }
 .ast-pane {
@@ -173,6 +175,7 @@ function showtab(tabname, updateMenu=true, tabmenuId='src-tabmenu') {
   tab = document.getElementById(tabname);
   if (tabmenuId == 'ast-tabmenu') astTab = tab;
   tab.style.zIndex = ++topIdx;
+  tab.style.display = 'block';
 }
 
 /* exported gotoClassInAst */
