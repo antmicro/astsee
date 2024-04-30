@@ -344,19 +344,29 @@ def main(args=None):
 
     jq_funcs = """
     # Apply f to each AST node (assume that something is a node if and only if it is object)
-    def ast_walk(f): walk(if type == "object" then f else . end);
-    def empty_ops: .[] | select(type=="array" and length==0);"""
+    def ast_walk(f):
+        # 0-ary recursive helper, weird but common jq opt
+        # (see https://github.com/jqlang/jq/blob/ed8f7154f4e3e0a8b01e6778de2633aabbb623f8/src/builtin.jq#L249)
+        def w:
+            if type == "object"
+            then f | map_values(w)
+            elif type == "array"
+            then select(. != []) | map(w)
+            else .
+            end
+            ;
+        w;
+    """
     if meta["ptrFieldNames"]:
         jq_funcs += "def ptrs:" + ",".join("." + field for field in meta["ptrFieldNames"]) + ";"
     else:
         jq_funcs += "def ptrs: empty;"
 
     if not args.jq_query:
-        if not args.del_list:
-            args.del_list = "empty_ops"
+        if args.del_list:
+            args.jq_query = f"ast_walk(select({args.skip_nodes} | not) | del({args.del_list}))"
         else:
-            args.del_list += ",empty_ops"
-        args.jq_query = f"ast_walk(select({args.skip_nodes} | not) | del({args.del_list}))"
+            args.jq_query = f"ast_walk(select({args.skip_nodes} | not))"
 
     split_fields = partial(split_ast_fields, omit_false_flags=args.omit)
     omit_intact = args.omit and args.newfile  # omitting unmodified chunks does not make sense without diff
