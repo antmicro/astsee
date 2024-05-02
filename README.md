@@ -209,8 +209,3 @@ in project root. To auto-apply linter/formatter fixes, run:
 make autofix
 ```
 
-## Known limitations/bugs
-
-- Arrays of scalars or arrays of array work only in `--basic` mode
-- Diff doesn't support direct replacement of root node
-- `astsee_verilator --html` tests are unstable due to usage of Python's `set`
