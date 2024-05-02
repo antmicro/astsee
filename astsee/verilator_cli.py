@@ -348,14 +348,12 @@ def main(args=None):
         # 0-ary recursive helper, weird but common jq opt
         # (see https://github.com/jqlang/jq/blob/ed8f7154f4e3e0a8b01e6778de2633aabbb623f8/src/builtin.jq#L249)
         def w:
-            if type == "object"
-            then f | map_values(w)
-            elif type == "array"
-            then select(. != []) | map(w)
+            if type == "array"
+            then select(. != []) | map(f | map_values(w))
             else .
             end
             ;
-        w;
+        f|map_values(w);
     """
     if meta["ptrFieldNames"]:
         jq_funcs += "def ptrs:" + ",".join("." + field for field in meta["ptrFieldNames"]) + ";"
