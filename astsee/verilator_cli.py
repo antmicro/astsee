@@ -10,7 +10,6 @@ import re
 import sys
 import webbrowser
 from functools import partial
-from itertools import pairwise
 from tempfile import NamedTemporaryFile
 
 import multiprocess
@@ -279,6 +278,16 @@ class AstDiffToHtml:
         except FileNotFoundError:
             log.warning("file '%s' not found, skipping", fname)
             return ""
+
+
+def pairwise(iterable):
+    # polyfill for itertools.pairwise() (avaible since 3.10)
+    # pairwise('ABCDEFG') → AB BC CD DE EF FG
+    iterator = iter(iterable)
+    a = next(iterator, None)
+    for b in iterator:
+        yield a, b
+        a = b
 
 
 def truncate_path(path, abs_prefix, rel_prefix):
