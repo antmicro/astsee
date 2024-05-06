@@ -21,7 +21,6 @@ from astsee import (
     DictDiffToTerm,
     IntactNode,
     ReplaceDiffNode,
-    is_children,
     load_jsons,
     make_diff,
     stringify,
@@ -33,7 +32,7 @@ from astsee import (
 def split_ast_fields(ast, omit_false_flags):
     """split and sort AST fields"""
     implicit = [(k, ast.pop(k)) for k in ("type", "name", "loc", "addr", "editNum") if k in ast]
-    children = [(k, v) for k, v in ast.items() if is_children(v)]
+    children = [(k, v) for k, v in ast.items() if v.is_container()]
     for k, v in children:
         del ast[k]
 

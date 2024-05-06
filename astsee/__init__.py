@@ -67,13 +67,13 @@ class DiffNode:
         return False
 
     def propagate(self, child):
-        if isinstance(child, DiffNode):
-            return child  # already tagged, no need to propagate
-        if isinstance(self, DelDiffNode):
-            return DelDiffNode(child)
-        if isinstance(self, AddDiffNode):
-            return AddDiffNode(child)
-        return IntactNode(child)
+        if not isinstance(child, DiffNode):
+            return IntactNode(child)
+        return child
+
+    def is_container(self):
+        """return true if looks like container"""
+        return isinstance(self.content, (list, dict))
 
     def color(self):
         return COLOR_RESET
@@ -88,6 +88,9 @@ class DiffNode:
 class ParentOfModified(DiffNode):
     """Node that has modified descendants"""
 
+    def is_container(self):
+        return True  # parent is obviously container
+
 
 class IntactNode(DiffNode):
     """Node that is common between old and new JSONs"""
@@ -100,10 +103,16 @@ class OmittedNode(IntactNode):
     """Intact node that has been omitted. As adjacent nodes are often collapsed together,
     count of omissions is stored in self.content"""
 
+    def is_container(self):
+        return True  # only containers are turned into OmittedNode
+
 
 class DelDiffNode(DiffNode):
     def color(self):
         return COLOR_RED
+
+    def propagate(self, child):
+        return DelDiffNode(child)
 
     def symbol(self):
         return "-"
@@ -112,6 +121,9 @@ class DelDiffNode(DiffNode):
 class AddDiffNode(DiffNode):
     def color(self):
         return COLOR_GREEN
+
+    def propagate(self, child):
+        return AddDiffNode(child)
 
     def symbol(self):
         return "+"
@@ -122,6 +134,9 @@ class ReplaceDiffNode(DiffNode):
         # pylint: disable=super-init-not-called
         self.old = DelDiffNode(old)
         self.new = AddDiffNode(new)
+
+    def is_container(self):
+        return isinstance(self.old.content, (list, dict)) or isinstance(self.new.content, (list, dict))
 
     def color(self):
         return COLOR_YELLOW
@@ -227,19 +242,10 @@ class BasicDiffToTerm:
         return f"{diff.colsym()}{indent}{key_prefix}{s}\n"
 
 
-def is_children(x):
-    """return true if x looks like container"""
-    if isinstance(x, OmittedNode):
-        return True  # only containers are turned into OmittedNode
-    if isinstance(x, ReplaceDiffNode):
-        return isinstance(x.old.content, (list, dict)) or isinstance(x.new.content, (list, dict))
-    return isinstance(x.content, (list, dict))
-
-
 def default_split_fields(diff):
     implicit = []
-    explicit = sorted([(k, v) for k, v in diff.items() if not is_children(v)])
-    children = sorted([(k, v) for k, v in diff.items() if is_children(v)])
+    explicit = sorted([(k, v) for k, v in diff.items() if not v.is_container()])
+    children = sorted([(k, v) for k, v in diff.items() if v.is_container()])
     return implicit, explicit, children
 
 
@@ -322,12 +328,12 @@ class DictDiff:
 
     def _output_children(self, key, children, indent):
         if isinstance(children, ReplaceDiffNode):
-            return f"{self._output_children(key, children.old, indent)}{self._output_children(key, children.new, indent)}"
-
-        if is_children(children):
             return (
-                f'{indent} {self._colorize(children.color(), f"{key}:")}\n{self._diff_to_string(children, f"{indent}  ")}'
+                f"{self._output_children(key, children.old, indent)}{self._output_children(key, children.new, indent)}"
             )
+
+        if children.is_container():
+            return f'{indent} {self._colorize(children.color(), f"{key}:")}\n{self._diff_to_string(children, f"{indent}  ")}'
         else:  # Scalar may get classified as children (e.g when array was replaced with string)
             return f'{indent} {self._colorize(children.color(), f"{key}:")} {self._diff_to_string(children, "")}'
 
