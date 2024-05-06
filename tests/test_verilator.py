@@ -2,7 +2,6 @@ import os
 import shlex
 from contextlib import redirect_stdout
 
-import pytest
 from testutils import assert_golden
 
 from astsee import verilator_cli as vastsee
@@ -78,6 +77,5 @@ def test_pprint_nested_empty_arr(request):
     run(request, f"{IN_DIR}/nested_empty_arr.json")
 
 
-@pytest.mark.xfail(reason="unimplemented")
 def test_diff_change_root_type(request):
-    run(request, f"{IN_DIR}/empty_arr.json {IN_DIR}/empty_dict.json")
+    run(request, f"{IN_DIR}/small_arr.json {IN_DIR}/small_dict.json")
