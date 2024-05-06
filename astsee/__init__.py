@@ -200,7 +200,7 @@ class BasicDiffToTerm:
             # remove unnecessary ANSI escape flood from unmodified tree
             return self._diff_to_string(diff).replace(COLOR_RESET, "")
         else:
-            return self._diff_to_string(diff) + COLOR_RESET
+            return f"{self._diff_to_string(diff)}{COLOR_RESET}"
 
     def _diff_to_string(self, diff, indent="", key_prefix=""):
         """Return pretty representation of JSON diff."""
@@ -208,32 +208,20 @@ class BasicDiffToTerm:
             if is_scalar(diff.old.content) and is_scalar(diff.new.content):
                 return f"{diff.colsym()}{COLOR_RESET}{indent}{key_prefix}{diff.old.color()}{stringify(diff.old.content)}{COLOR_RESET} -> {diff.new.color()}{stringify(diff.new.content)}\n"
             else:
-                return self._diff_to_string(diff.old, indent, key_prefix) + self._diff_to_string(
-                    diff.new, indent, key_prefix
-                )
-        subindent = indent + "  "
+                return f"{self._diff_to_string(diff.old, indent, key_prefix)}{self._diff_to_string(diff.new, indent, key_prefix)}"
+        subindent = f"{indent}  "
 
         if isinstance(diff, OmittedNode):
-            s = "... * " + str(diff.content)
+            s = f"... * {str(diff.content)}"
         elif isinstance(diff.content, list):
-            s = (
-                "[\n"
-                + "".join(self._diff_to_string(subnode, subindent, "") for subnode in diff.list_it(self.omit_intact))
-                + diff.colsym()
-                + indent
-                + "]"
-            )
+            s = "".join(self._diff_to_string(subnode, subindent, "") for subnode in diff.list_it(self.omit_intact))
+            s = f"[\n{s}{diff.colsym()}{indent}]"
         elif isinstance(diff.content, dict):
-            s = (
-                "{\n"
-                + "".join(
-                    self._diff_to_string(subnode, subindent, subkey + ": ")
-                    for subkey, subnode in diff.dict_it(self.omit_intact)
-                )
-                + diff.colsym()
-                + indent
-                + "}"
+            s = "".join(
+                self._diff_to_string(subnode, subindent, subkey + ": ")
+                for subkey, subnode in diff.dict_it(self.omit_intact)
             )
+            s = f"{{\n{s}{diff.colsym()}{indent}}}"
         else:
             s = stringify(diff.content)
         return f"{diff.colsym()}{indent}{key_prefix}{s}\n"
@@ -305,7 +293,7 @@ class DictDiff:
         if isinstance(diff.content, list):
             s = ""
             for child in diff.list_it(self.omit_intact):
-                s += self._diff_to_string(child, indent + " ")
+                s += self._diff_to_string(child, f"{indent} ")
             return s
         if isinstance(diff.content, dict):
             diff = dict(diff.dict_it(self.omit_intact))
@@ -327,18 +315,18 @@ class DictDiff:
 
     def _output_explicit(self, key, val, replacement=False):
         # don't output key twice
-        prefix = "" if replacement else stringify(key) + ":"
+        prefix = "" if replacement else f"{stringify(key)}:"
         if isinstance(val, ReplaceDiffNode):
             return f"{prefix}{self._output_explicit(key, val.old, True)}->{self._output_explicit(key, val.new, True)}"
         return self._colorize(val.color(), prefix + self._output_val(key, val))
 
     def _output_children(self, key, children, indent):
         if isinstance(children, ReplaceDiffNode):
-            return self._output_children(key, children.old, indent) + self._output_children(key, children.new, indent)
+            return f"{self._output_children(key, children.old, indent)}{self._output_children(key, children.new, indent)}"
 
         if is_children(children):
             return (
-                f'{indent} {self._colorize(children.color(), f"{key}:")}\n{self._diff_to_string(children, indent+"  ")}'
+                f'{indent} {self._colorize(children.color(), f"{key}:")}\n{self._diff_to_string(children, f"{indent}  ")}'
             )
         else:  # Scalar may get classified as children (e.g when array was replaced with string)
             return f'{indent} {self._colorize(children.color(), f"{key}:")} {self._diff_to_string(children, "")}'
