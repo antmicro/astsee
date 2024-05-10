@@ -425,14 +425,16 @@ class DictDiffToHtml(DictDiff):
             loader=jinja2.FileSystemLoader(os.path.dirname(__file__)), autoescape=True
         ).get_template(name, globals=globals_)
 
-
 def load_jsons(files, jq_query, jq_bin="jq", jq_funcs=""):
     """Load JSONs and return them as array.
     If jq_query is not empty, files are preprocessed with jq
     For sake of performance, preprocessing is done in parallel"""
     # pylint: disable=consider-using-with
+
     if not jq_query:
-        return [json.load(open(f, encoding="utf-8")) for f in files]
+        def empty_arr_remover(obj):
+            return {k:v for k,v in obj.items() if v != []}
+        return [json.load(open(f, encoding="utf-8"), object_hook=empty_arr_remover) for f in files]
 
     procs = []
     for file in files:

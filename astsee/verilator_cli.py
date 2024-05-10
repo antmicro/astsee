@@ -51,9 +51,7 @@ parser = argparse.ArgumentParser(
     description="pretty print AST json and do optional filtering/diff",
     epilog="""predefined jq functions:
  - ast_walk(f)  apply f to each node (assume that every and only node has op1 field)
- - empty_ops    match all empty op arrays
  - ptrs         match all known pointer fields (like "addr", "varp", "modp" etc.)
- By default (i.e. unless --jq is used), ast_walk(select(<stuff passed to --skip-nodes> | not) | del(empty_ops, <stuff passed to -d>)) is called
 
 examples:
  $ %(prog)s dump.tree.json # pretty print
@@ -72,14 +70,13 @@ VERILATOR_JQ env-var can be used to supply alternative jq impl (like gojq)
 parser.add_argument(
     "-v", "--verbose", help='print everything (i.e don\'t omit "uninteresting" data)', action="store_false", dest="omit"
 )
-parser_group = parser.add_mutually_exclusive_group()
-parser_group.add_argument(
+parser.add_argument(
     "-d", "--del-fields", help="delete fields matched by the given jq query", default="", dest="del_list"
 )
-parser_group.add_argument(
-    "--skip-nodes", help="Skip AST nodes matched by the given jq query", default="false", dest="skip_nodes"
+parser.add_argument(
+    "--skip-nodes", help="Skip AST nodes matched by the given jq query", default="", dest="skip_nodes"
 )
-parser_group.add_argument("--jq", help="preprocess file(s) with given jq query", default="", dest="jq_query")
+parser.add_argument("--jq", help="preprocess file(s) with given jq query. Incompatible with -d and --skip-nodes", default="", dest="jq_query")
 parser.add_argument(
     "--meta",
     help="path to .tree.meta.json used for resolving ids and identifying ptr fields.\n"
@@ -360,10 +357,15 @@ def main(args=None):
         jq_funcs += "def ptrs: empty;"
 
     if not args.jq_query:
-        if args.del_list:
+        if args.skip_nodes and args.del_list:
             args.jq_query = f"ast_walk(select({args.skip_nodes} | not) | del({args.del_list}))"
-        else:
+        elif args.skip_nodes:
             args.jq_query = f"ast_walk(select({args.skip_nodes} | not))"
+        elif args.del_list:
+            args.jq_query = f"ast_walk(del({args.del_list}))"
+    elif args.skip_nodes or args.del_list:
+        log.critical("--jq is incompatible with --del-fields and --skip-nodes")
+        exit(1)
 
     split_fields = partial(split_ast_fields, omit_false_flags=args.omit)
     omit_intact = args.omit and args.newfile  # omitting unmodified chunks does not make sense without diff
