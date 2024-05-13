@@ -234,7 +234,7 @@ class AstDiffToHtml:
             # SIDENOTE: For some reason `multiprocess` and `multiprocessing` insist on serializing and passing
             # everything used in child processes (code and input) through IPC. I get that it might make sense
             # in case of windows that does not have fork(), but it seems like unnecessary work
-            diffs = pool.map(lambda pair: self.diff_to_string_partial(make_diff(*pair)), pairwise(load_jsons_(paths)))
+            diffs = pool.map(lambda pair: self.diff_to_string_partial(make_diff(*load_jsons_(pair))), pairwise(paths))
 
         def merge(dest, src):
             """merge referenced lines (dicts of sets)"""
