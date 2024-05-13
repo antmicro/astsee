@@ -67,13 +67,13 @@ class DiffNode:
         return False
 
     def propagate(self, child):
-        if isinstance(child, DiffNode):
-            return child  # already tagged, no need to propagate
-        if isinstance(self, DelDiffNode):
-            return DelDiffNode(child)
-        if isinstance(self, AddDiffNode):
-            return AddDiffNode(child)
-        return IntactNode(child)
+        if not isinstance(child, DiffNode):
+            return IntactNode(child)
+        return child
+
+    def is_container(self):
+        """return true if looks like container"""
+        return isinstance(self.content, (list, dict))
 
     def color(self):
         return COLOR_RESET
@@ -88,6 +88,9 @@ class DiffNode:
 class ParentOfModified(DiffNode):
     """Node that has modified descendants"""
 
+    def is_container(self):
+        return True  # parent is obviously container
+
 
 class IntactNode(DiffNode):
     """Node that is common between old and new JSONs"""
@@ -100,10 +103,16 @@ class OmittedNode(IntactNode):
     """Intact node that has been omitted. As adjacent nodes are often collapsed together,
     count of omissions is stored in self.content"""
 
+    def is_container(self):
+        return True  # only containers are turned into OmittedNode
+
 
 class DelDiffNode(DiffNode):
     def color(self):
         return COLOR_RED
+
+    def propagate(self, child):
+        return DelDiffNode(child)
 
     def symbol(self):
         return "-"
@@ -112,6 +121,9 @@ class DelDiffNode(DiffNode):
 class AddDiffNode(DiffNode):
     def color(self):
         return COLOR_GREEN
+
+    def propagate(self, child):
+        return AddDiffNode(child)
 
     def symbol(self):
         return "+"
@@ -122,6 +134,9 @@ class ReplaceDiffNode(DiffNode):
         # pylint: disable=super-init-not-called
         self.old = DelDiffNode(old)
         self.new = AddDiffNode(new)
+
+    def is_container(self):
+        return isinstance(self.old.content, (list, dict)) or isinstance(self.new.content, (list, dict))
 
     def color(self):
         return COLOR_YELLOW
@@ -200,7 +215,7 @@ class BasicDiffToTerm:
             # remove unnecessary ANSI escape flood from unmodified tree
             return self._diff_to_string(diff).replace(COLOR_RESET, "")
         else:
-            return self._diff_to_string(diff) + COLOR_RESET
+            return f"{self._diff_to_string(diff)}{COLOR_RESET}"
 
     def _diff_to_string(self, diff, indent="", key_prefix=""):
         """Return pretty representation of JSON diff."""
@@ -208,50 +223,29 @@ class BasicDiffToTerm:
             if is_scalar(diff.old.content) and is_scalar(diff.new.content):
                 return f"{diff.colsym()}{COLOR_RESET}{indent}{key_prefix}{diff.old.color()}{stringify(diff.old.content)}{COLOR_RESET} -> {diff.new.color()}{stringify(diff.new.content)}\n"
             else:
-                return self._diff_to_string(diff.old, indent, key_prefix) + self._diff_to_string(
-                    diff.new, indent, key_prefix
-                )
-        subindent = indent + "  "
+                return f"{self._diff_to_string(diff.old, indent, key_prefix)}{self._diff_to_string(diff.new, indent, key_prefix)}"
+        subindent = f"{indent}  "
 
         if isinstance(diff, OmittedNode):
-            s = "... * " + str(diff.content)
+            s = f"... * {str(diff.content)}"
         elif isinstance(diff.content, list):
-            s = (
-                "[\n"
-                + "".join(self._diff_to_string(subnode, subindent, "") for subnode in diff.list_it(self.omit_intact))
-                + diff.colsym()
-                + indent
-                + "]"
-            )
+            s = "".join(self._diff_to_string(subnode, subindent, "") for subnode in diff.list_it(self.omit_intact))
+            s = f"[\n{s}{diff.colsym()}{indent}]"
         elif isinstance(diff.content, dict):
-            s = (
-                "{\n"
-                + "".join(
-                    self._diff_to_string(subnode, subindent, subkey + ": ")
-                    for subkey, subnode in diff.dict_it(self.omit_intact)
-                )
-                + diff.colsym()
-                + indent
-                + "}"
+            s = "".join(
+                self._diff_to_string(subnode, subindent, subkey + ": ")
+                for subkey, subnode in diff.dict_it(self.omit_intact)
             )
+            s = f"{{\n{s}{diff.colsym()}{indent}}}"
         else:
             s = stringify(diff.content)
         return f"{diff.colsym()}{indent}{key_prefix}{s}\n"
 
 
-def is_children(x):
-    """return true if x looks like container"""
-    if isinstance(x, OmittedNode):
-        return True  # only containers are turned into OmittedNode
-    if isinstance(x, ReplaceDiffNode):
-        return isinstance(x.old.content, (list, dict)) or isinstance(x.new.content, (list, dict))
-    return isinstance(x.content, (list, dict))
-
-
 def default_split_fields(diff):
     implicit = []
-    explicit = sorted([(k, v) for k, v in diff.items() if not is_children(v)])
-    children = sorted([(k, v) for k, v in diff.items() if is_children(v)])
+    explicit = sorted([(k, v) for k, v in diff.items() if not v.is_container()])
+    children = sorted([(k, v) for k, v in diff.items() if v.is_container()])
     return implicit, explicit, children
 
 
@@ -305,7 +299,7 @@ class DictDiff:
         if isinstance(diff.content, list):
             s = ""
             for child in diff.list_it(self.omit_intact):
-                s += self._diff_to_string(child, indent + " ")
+                s += self._diff_to_string(child, f"{indent} ")
             return s
         if isinstance(diff.content, dict):
             diff = dict(diff.dict_it(self.omit_intact))
@@ -327,19 +321,19 @@ class DictDiff:
 
     def _output_explicit(self, key, val, replacement=False):
         # don't output key twice
-        prefix = "" if replacement else stringify(key) + ":"
+        prefix = "" if replacement else f"{stringify(key)}:"
         if isinstance(val, ReplaceDiffNode):
             return f"{prefix}{self._output_explicit(key, val.old, True)}->{self._output_explicit(key, val.new, True)}"
         return self._colorize(val.color(), prefix + self._output_val(key, val))
 
     def _output_children(self, key, children, indent):
         if isinstance(children, ReplaceDiffNode):
-            return self._output_children(key, children.old, indent) + self._output_children(key, children.new, indent)
-
-        if is_children(children):
             return (
-                f'{indent} {self._colorize(children.color(), f"{key}:")}\n{self._diff_to_string(children, indent+"  ")}'
+                f"{self._output_children(key, children.old, indent)}{self._output_children(key, children.new, indent)}"
             )
+
+        if children.is_container():
+            return f'{indent} {self._colorize(children.color(), f"{key}:")}\n{self._diff_to_string(children, f"{indent}  ")}'
         else:  # Scalar may get classified as children (e.g when array was replaced with string)
             return f'{indent} {self._colorize(children.color(), f"{key}:")} {self._diff_to_string(children, "")}'
 
@@ -437,8 +431,13 @@ def load_jsons(files, jq_query, jq_bin="jq", jq_funcs=""):
     If jq_query is not empty, files are preprocessed with jq
     For sake of performance, preprocessing is done in parallel"""
     # pylint: disable=consider-using-with
+
     if not jq_query:
-        return [json.load(open(f, encoding="utf-8")) for f in files]
+
+        def empty_arr_remover(obj):
+            return {k: v for k, v in obj.items() if v != []}
+
+        return [json.load(open(f, encoding="utf-8"), object_hook=empty_arr_remover) for f in files]
 
     procs = []
     for file in files:
