@@ -404,21 +404,35 @@ def plaintext_loc_handler(loc, meta):
         return f"{id_}:{line}"
 
 
-def main(args=None):
-    # pylint: disable=too-many-branches
-    if args is None:
-        args = parser.parse_args()
+def preprocess_args(args):
     log.basicConfig(level=args.loglevel.upper())
+
     if args.timeline:
-        args.meta = args.file
         args.html = True
-    if args.timeline and args.meta is None:
-        log.critical("meta file must be provided for --timeline to work ")
-        sys.exit(1)
-    if args.meta is None:
+        args.meta = args.file
+        if args.meta is None:
+            log.critical("meta file must be provided for --timeline to work ")
+            sys.exit(1)
+    elif args.meta is None:
         guess_meta_path(args)
 
+    if args.jq_query and (args.skip_nodes or args.del_list):
+        log.critical("--jq is incompatible with --del-fields and --skip-nodes")
+        sys.exit(1)
+    elif args.skip_nodes and args.del_list:
+        args.jq_query = f"ast_walk(select({args.skip_nodes} | not) | del({args.del_list}))"
+    elif args.skip_nodes:
+        args.jq_query = f"ast_walk(select({args.skip_nodes} | not))"
+    elif args.del_list:
+        args.jq_query = f"ast_walk(del({args.del_list}))"
+
+
+def main(args=None):
+    if args is None:
+        args = parser.parse_args()
+    preprocess_args(args)
     meta = load_meta(args.meta)
+
     # allow for supplying an alternative implementation like gojq
     jq_bin = os.environ.get("VERILATOR_JQ", "jq")
 
@@ -436,16 +450,7 @@ def main(args=None):
         f|map_values(w);
     """
 
-    if not args.jq_query:
-        if args.skip_nodes and args.del_list:
-            args.jq_query = f"ast_walk(select({args.skip_nodes} | not) | del({args.del_list}))"
-        elif args.skip_nodes:
-            args.jq_query = f"ast_walk(select({args.skip_nodes} | not))"
-        elif args.del_list:
-            args.jq_query = f"ast_walk(del({args.del_list}))"
-    elif args.skip_nodes or args.del_list:
-        log.critical("--jq is incompatible with --del-fields and --skip-nodes")
-        sys.exit(1)
+    load_jsons_ = partial(load_jsons, jq_bin=jq_bin, jq_funcs=jq_funcs, jq_query=args.jq_query)
 
     if args.del_ptrs:
 
@@ -476,8 +481,6 @@ def main(args=None):
             "loc": loc_handler,
         }
         diff_to_str = DictDiffToTerm(omit_intact=omit_intact, val_handlers=val_handlers, split_fields=split_fields)
-
-    load_jsons_ = partial(load_jsons, jq_bin=jq_bin, jq_funcs=jq_funcs, jq_query=args.jq_query)
 
     if args.html_browser:
         outfile = NamedTemporaryFile("w", delete=False, suffix=".html")
