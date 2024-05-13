@@ -7,6 +7,7 @@ import json
 import logging as log
 import os
 import re
+import sys
 import webbrowser
 from functools import partial
 from tempfile import NamedTemporaryFile
@@ -73,10 +74,13 @@ parser.add_argument(
 parser.add_argument(
     "-d", "--del-fields", help="delete fields matched by the given jq query", default="", dest="del_list"
 )
+parser.add_argument("--skip-nodes", help="Skip AST nodes matched by the given jq query", default="", dest="skip_nodes")
 parser.add_argument(
-    "--skip-nodes", help="Skip AST nodes matched by the given jq query", default="", dest="skip_nodes"
+    "--jq",
+    help="preprocess file(s) with given jq query. Incompatible with -d and --skip-nodes",
+    default="",
+    dest="jq_query",
 )
-parser.add_argument("--jq", help="preprocess file(s) with given jq query. Incompatible with -d and --skip-nodes", default="", dest="jq_query")
 parser.add_argument(
     "--meta",
     help="path to .tree.meta.json used for resolving ids and identifying ptr fields.\n"
@@ -365,7 +369,7 @@ def main(args=None):
             args.jq_query = f"ast_walk(del({args.del_list}))"
     elif args.skip_nodes or args.del_list:
         log.critical("--jq is incompatible with --del-fields and --skip-nodes")
-        exit(1)
+        sys.exit(1)
 
     split_fields = partial(split_ast_fields, omit_false_flags=args.omit)
     omit_intact = args.omit and args.newfile  # omitting unmodified chunks does not make sense without diff
