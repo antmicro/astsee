@@ -212,7 +212,7 @@ class AstDiffToHtml:
             onclick = f"return selectFileFragment('{html.escape(realpath)}',{int(begin_row)},{int(begin_col)},{int(end_row)},{int(end_col)})"
             return f'<a class="back-{link_loc}" href="#{link_loc}" onclick="{onclick}">{display_loc}</a>'
 
-    def timeline(self, load_jsons_):  # pylint: disable=too-many-locals
+    def timeline(self, load_jsons_, outfile):  # pylint: disable=too-many-locals
         if "dumpedFiles" not in self.meta:
             log.critical('suplied meta file does not have "dumpedFiles" field, required for --timeline to work')
             sys.exit(1)
@@ -250,13 +250,19 @@ class AstDiffToHtml:
             diffs_d[html.escape(f"{old_path} -> {new_path}")] = diff
 
         template = self.diff_to_str_generic.make_html_tmpl("rich_view.html.jinja", self.template_globals)
-        return template.render({"diffs": diffs_d, "srcfiles": sorted(self.referenced_lines)})
+        template.stream({"diffs": diffs_d, "srcfiles": sorted(self.referenced_lines)}).dump(outfile)
 
     def diff_to_string(self, tree):
         self.referenced_lines.clear()
         diff = self.diff_to_str_generic.diff_to_string(tree)
         template = self.diff_to_str_generic.make_html_tmpl("rich_view.html.jinja", self.template_globals)
         return template.render({"diffs": {"placeholder_name": diff}, "srcfiles": sorted(self.referenced_lines)})
+
+    def diff_to_file(self, tree, outfile):
+        self.referenced_lines.clear()
+        diff = self.diff_to_str_generic.diff_to_string(tree)
+        template = self.diff_to_str_generic.make_html_tmpl("rich_view.html.jinja", self.template_globals)
+        template.stream({"diffs": {"placeholder_name": diff}, "srcfiles": sorted(self.referenced_lines)}).dump(outfile)
 
     def diff_to_string_partial(self, tree):
         """stringize AST, but instead of feeeding it directly into template,
@@ -473,20 +479,23 @@ def main(args=None):
 
     load_jsons_ = partial(load_jsons, jq_bin=jq_bin, jq_funcs=jq_funcs, jq_query=args.jq_query)
 
-    if args.timeline:
-        out = diff_to_str.timeline(load_jsons_)
-    elif not args.newfile:  # don't diff, just pretty print
-        # passing tree marked as unchanged to colorizer can be abused to just pretty print it
-        out = diff_to_str.diff_to_string(IntactNode(*load_jsons_([args.file])))
-    else:  # both files supplied, diff
-        out = diff_to_str.diff_to_string(make_diff(*load_jsons_([args.file, args.newfile])))
+    if args.html_browser:
+        outfile = NamedTemporaryFile("w", delete=False, suffix=".html")
+    else:
+        # stdout handle, that we can pass to `with` without consequences (thanks to closefd=False)
+        outfile = open(sys.stdout.fileno(), "w", closefd=False, encoding="utf-8")
+
+    with outfile as outfile:
+        if args.timeline:
+            diff_to_str.timeline(load_jsons_, outfile)
+        elif not args.newfile:  # don't diff, just pretty print
+            # passing tree marked as unchanged to colorizer can be abused to just pretty print it
+            diff_to_str.diff_to_file(IntactNode(*load_jsons_([args.file])), outfile)
+        else:  # both files supplied, diff
+            diff_to_str.diff_to_file(make_diff(*load_jsons_([args.file, args.newfile])), outfile)
 
     if args.html_browser:
-        with NamedTemporaryFile("w", delete=False, suffix=".html") as out_file:
-            out_file.write(out)
-            webbrowser.open(f"file://{out_file.name}")
-    else:
-        print(out, end="")
+        webbrowser.open(f"file://{outfile.name}")
 
 
 if __name__ == "__main__":
