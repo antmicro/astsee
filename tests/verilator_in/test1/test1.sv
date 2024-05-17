@@ -1,6 +1,6 @@
 /* used for generating test1* files. Go to verilator_in/ dir and do
-$ verilator --lint-only --no-json-edit-nums --dump-tree-json test1/test1.sv && (cd obj_dir && cp Vtest1*009*.json ../test1_a.tree.json && cp Vtest1*012*.json ../test1_b.tree.json && cp Vtest1.tree.meta.json ../test1.tree.meta.json) && rm -rf obj_dir/Vtest* && rmdir obj_dir
-*/
+$ verilator --lint-only --no-json-edit-nums --dump-tree-json -Mdir test1_obj_dir test1/test1.sv && (cd test1_obj_dir && ls -Q *.tree.json | grep -xv '"Vtest1_\(001\|006\|007\|009\|012\)_.*\.tree\.json"' | xargs rm)
+(we remove majority of .tree.json to avoid bloating repo)*/
 
 `include "test1/test1_submodule/full_adder.sv"
 

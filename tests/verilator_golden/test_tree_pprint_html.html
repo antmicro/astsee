@@ -1823,8 +1823,8 @@ function selectFileFragment(name, firstRow, firstCol, lastRow, endCol) {
 </pre></div></div>
 </div>
 <div class="tab y-scrollable" id="test1/test1.sv"><div class="code-block"><div class="code-block" style="text-indent: calc(2ch + 2*5px) hanging each-line;"><pre><a id="test1/test1.sv-1"><span class="linenos" style="width:2ch;">1</span></a><span class="cm">/* used for generating test1* files. Go to verilator_in/ dir and do</span>
-<a id="test1/test1.sv-2"><span class="linenos" style="width:2ch;">2</span></a><span class="cm">$ verilator --lint-only --no-json-edit-nums --dump-tree-json test1/test1.sv &amp;&amp; (cd obj_dir &amp;&amp; cp Vtest1*009*.json ../test1_a.tree.json &amp;&amp; cp Vtest1*012*.json ../test1_b.tree.json &amp;&amp; cp Vtest1.tree.meta.json ../test1.tree.meta.json) &amp;&amp; rm -rf obj_dir/Vtest* &amp;&amp; rmdir obj_dir</span>
-<a id="test1/test1.sv-3"><span class="linenos" style="width:2ch;">3</span></a><span class="cm">*/</span>
+<a id="test1/test1.sv-2"><span class="linenos" style="width:2ch;">2</span></a><span class="cm">$ verilator --lint-only --no-json-edit-nums --dump-tree-json -Mdir test1_obj_dir test1/test1.sv &amp;&amp; (cd test1_obj_dir &amp;&amp; ls -Q *.tree.json | grep -xv &#39;&quot;Vtest1_\(001\|006\|007\|009\|012\)_.*\.tree\.json&quot;&#39; | xargs rm)</span>
+<a id="test1/test1.sv-3"><span class="linenos" style="width:2ch;">3</span></a><span class="cm">(we remove majority of .tree.json to avoid bloating repo)*/</span>
 <a id="test1/test1.sv-4"><span class="linenos" style="width:2ch;">4</span></a>
 <a id="test1/test1.sv-5"><span class="linenos" style="width:2ch;">5</span></a><span class="no">`include</span><span class="w"> </span><span class="s">&quot;test1/test1_submodule/full_adder.sv&quot;</span>
 <a id="test1/test1.sv-6"><span class="linenos" style="width:2ch;">6</span></a>

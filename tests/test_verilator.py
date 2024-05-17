@@ -65,6 +65,14 @@ def test_tree_diff_html_filter_no_meta(request):
     run(request, f'{IN_DIR}/test1_a.tree.json {IN_DIR}/test1_b.tree.json --html --del-ptrs --meta ""')
 
 
+def test_html_timeline_diff(request):
+    run(request, f"--timeline-diff {IN_DIR}/test1_obj_dir/Vtest1.tree.meta.json")
+
+
+def test_html_timeline_full(request):
+    run(request, f"--timeline-full {IN_DIR}/test1_obj_dir/Vtest1.tree.meta.json")
+
+
 def test_pprint_dict_with_one_scalar(request):
     run(request, f"{IN_DIR}/dict_with_one_scalar.json")
 
