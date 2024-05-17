@@ -120,16 +120,18 @@ select {
 
 <!--<div class="pane ast-pane y-scrollable">-->
 <div class="pane ast-pane">
-{% if diffs | length > 1 -%}
+{% if asts | length > 1 -%}
 <select id="ast-tabmenu" onchange="showtab(this.options[this.selectedIndex].value, false, 'ast-tabmenu')">
-{% for name in diffs.keys() -%}
-   <option value="{{name|safe}}">{{name|safe}}</option>
+{% for ast in asts -%}
+   {%- set name = ast.0 -%}
+   <option value="{{name}}">{{name}}</option>
 {% endfor -%}
 </select>
 {% endif -%}
 <div class="tabs">
-{% for name, diff in diffs.items() -%}
-   <div class="tab y-scrollable" id="{{name|safe}}">{{diff|safe}}</div>
+{% for ast in asts -%}
+   {%- set name, content = ast.0, ast.1 -%}
+   <div class="tab y-scrollable" id="{{name}}">{{content|safe}}</div>
 {% endfor -%}
 </div>
 </div>

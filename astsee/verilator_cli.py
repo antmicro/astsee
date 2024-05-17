@@ -11,6 +11,7 @@ import sys
 import webbrowser
 from functools import partial
 from tempfile import NamedTemporaryFile
+from itertools import chain, zip_longest
 
 import multiprocess
 import pygments
@@ -93,12 +94,23 @@ parser.add_argument(
     default=None,
     dest="meta",
 )
-parser.add_argument(
-    "--timeline",
-    help="Produce html that includes diffs beetween consecutive stages."
-    "As files to diff/pretty print are extracted from tree.meta.json, `file` param should point to it and `newfile` should be left unspecified"
+timeline_args = parser.add_argument_group(
+    title="--timeline-(diff|pprint|full)",
+    description='Produce html that includes "timeline" of consecutive stages. As files to diff/pretty print are extracted\n'
+    "from tree.meta.json, `file` param should point to it and `newfile` should be left unspecified\n"
     "By default implies --html but you can still specify --htmlb",
+)
+timeline_args.add_argument(
+    "--timeline-diff", help="Include diffs of consecutive stages", action="store_true", dest="timeline_diff"
+)
+timeline_args.add_argument(
+    "--timeline-pprint", help="Pretty print each stage", action="store_true", dest="timeline_pprint"
+)
+timeline_args.add_argument(
+    "--timeline-full",
+    help="Combination of --timeline-diff --timeline-pprint",
     action="store_true",
+    dest="timeline_full",
 )
 parser.add_argument("file", help=".tree.json file to pretty print (or diff)")
 parser.add_argument("newfile", nargs="?", help="optional new version of .tree.json file (enables diff)", default=None)
@@ -212,7 +224,7 @@ class AstDiffToHtml:
             onclick = f"return selectFileFragment('{html.escape(realpath)}',{int(begin_row)},{int(begin_col)},{int(end_row)},{int(end_col)})"
             return f'<a class="back-{link_loc}" href="#{link_loc}" onclick="{onclick}">{display_loc}</a>'
 
-    def timeline(self, load_jsons_, outfile):  # pylint: disable=too-many-locals
+    def timeline(self, load_jsons_, outfile, do_diff, do_pprint):  # pylint: disable=too-many-locals
         if "dumpedFiles" not in self.meta:
             log.critical('suplied meta file does not have "dumpedFiles" field, required for --timeline to work')
             sys.exit(1)
@@ -230,11 +242,13 @@ class AstDiffToHtml:
                 old_edit_cnt = i["editCnt"]
                 paths.append(path)
 
-        with multiprocess.Pool() as pool:  # pylint: disable=maybe-no-member
-            # SIDENOTE: For some reason `multiprocess` and `multiprocessing` insist on serializing and passing
-            # everything used in child processes (code and input) through IPC. I get that it might make sense
-            # in case of windows that does not have fork(), but it seems like unnecessary work
-            diffs = pool.map(lambda pair: self.diff_to_string_partial(make_diff(*load_jsons_(pair))), pairwise(paths))
+        def do_partial_diff(old_path, new_path):
+            referenced_lines, diff = self.diff_to_string_partial(make_diff(*load_jsons_([old_path, new_path])))
+            return f"{old_path} -> {new_path}", referenced_lines, diff
+
+        def do_partial_pprint(path):
+            referenced_lines, diff = self.diff_to_string_partial(IntactNode(*load_jsons_([path])))
+            return path, referenced_lines, diff
 
         def merge(dest, src):
             """merge referenced lines (dicts of sets)"""
@@ -244,25 +258,38 @@ class AstDiffToHtml:
                 else:
                     dest[k].update(v)
 
-        diffs_d = {}
-        for (old_path, new_path), (referenced_lines, diff) in zip(pairwise(paths), diffs):
-            merge(self.referenced_lines, referenced_lines)
-            diffs_d[html.escape(f"{old_path} -> {new_path}")] = diff
+        with multiprocess.Pool() as pool:  # pylint: disable=maybe-no-member
+            # SIDENOTE: For some reason `multiprocess` and `multiprocessing` insist on serializing and passing
+            # everything used in child processes (code and input) through IPC. I get that it might make sense
+            # in case of windows that does not have fork(), but it seems like unnecessary work
+            diffs = {}
+            pprints = {}
+            if do_diff:
+                for name, referenced_lines, ast in pool.starmap(do_partial_diff, pairwise(paths)):
+                    merge(self.referenced_lines, referenced_lines)
+                    diffs[name] = ast
+            if do_pprint:
+                for name, referenced_lines, ast in pool.map(do_partial_pprint, paths):
+                    merge(self.referenced_lines, referenced_lines)
+                    pprints[name] = ast
+
+        # interleave diffs and pprints
+        asts = [x for x in chain.from_iterable(zip_longest(pprints.items(), diffs.items())) if x is not None]
 
         template = self.diff_to_str_generic.make_html_tmpl("rich_view.html.jinja", self.template_globals)
-        template.stream({"diffs": diffs_d, "srcfiles": sorted(self.referenced_lines)}).dump(outfile)
+        template.stream({"asts": asts, "srcfiles": sorted(self.referenced_lines)}).dump(outfile)
 
     def diff_to_string(self, tree):
         self.referenced_lines.clear()
         diff = self.diff_to_str_generic.diff_to_string(tree)
         template = self.diff_to_str_generic.make_html_tmpl("rich_view.html.jinja", self.template_globals)
-        return template.render({"diffs": {"placeholder_name": diff}, "srcfiles": sorted(self.referenced_lines)})
+        return template.render({"asts": [("placeholder_name", diff)], "srcfiles": sorted(self.referenced_lines)})
 
     def diff_to_file(self, tree, outfile):
         self.referenced_lines.clear()
         diff = self.diff_to_str_generic.diff_to_string(tree)
         template = self.diff_to_str_generic.make_html_tmpl("rich_view.html.jinja", self.template_globals)
-        template.stream({"diffs": {"placeholder_name": diff}, "srcfiles": sorted(self.referenced_lines)}).dump(outfile)
+        template.stream({"asts": [("placeholder_name", diff)], "srcfiles": sorted(self.referenced_lines)}).dump(outfile)
 
     def diff_to_string_partial(self, tree):
         """stringize AST, but instead of feeeding it directly into template,
@@ -407,11 +434,15 @@ def plaintext_loc_handler(loc, meta):
 def preprocess_args(args):
     log.basicConfig(level=args.loglevel.upper())
 
-    if args.timeline:
+    if args.timeline_full:
+        args.timeline_pprint = True
+        args.timeline_diff = True
+
+    if args.timeline_pprint or args.timeline_diff:
         args.html = True
         args.meta = args.file
         if args.meta is None:
-            log.critical("meta file must be provided for --timeline to work ")
+            log.critical("meta file must be provided for timeline to work")
             sys.exit(1)
     elif args.meta is None:
         guess_meta_path(args)
@@ -489,8 +520,8 @@ def main(args=None):
         outfile = open(sys.stdout.fileno(), "w", closefd=False, encoding="utf-8")
 
     with outfile as outfile:
-        if args.timeline:
-            diff_to_str.timeline(load_jsons_, outfile)
+        if args.timeline_diff or args.timeline_pprint:
+            diff_to_str.timeline(load_jsons_, outfile, args.timeline_diff, args.timeline_pprint)
         elif not args.newfile:  # don't diff, just pretty print
             # passing tree marked as unchanged to colorizer can be abused to just pretty print it
             diff_to_str.diff_to_file(IntactNode(*load_jsons_([args.file])), outfile)
