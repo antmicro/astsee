@@ -247,6 +247,8 @@ class AstDiffToHtml:
             return f"{old_path} -> {new_path}", referenced_lines, diff
 
         def do_partial_pprint(path):
+            self.diff_to_str_generic.omit_intact = False  # omitting unmodified chunks does not make sense without diff
+            # NOTE: since this method runs in child process we can modify fields without "global" consequences
             referenced_lines, diff = self.diff_to_string_partial(IntactNode(*load_jsons_([path])))
             return path, referenced_lines, diff
 
@@ -500,7 +502,9 @@ def main(args=None):
     )
 
     split_fields = partial(split_ast_fields, omit_false_flags=args.omit)
-    omit_intact = args.omit and args.newfile  # omitting unmodified chunks does not make sense without diff
+    omit_intact = args.omit and (
+        args.newfile or args.timeline_diff or args.timeline_full
+    )  # omitting unmodified chunks does not make sense without diff
 
     if args.html or args.html_browser:
         diff_to_str = AstDiffToHtml(omit_intact=omit_intact, split_fields=split_fields, meta=meta, dark=not args.light)
