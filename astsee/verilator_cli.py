@@ -517,13 +517,7 @@ def main(args=None):
         }
         diff_to_str = DictDiffToTerm(omit_intact=omit_intact, val_handlers=val_handlers, split_fields=split_fields)
 
-    if args.html_browser:
-        outfile = NamedTemporaryFile("w", delete=False, suffix=".html")
-    else:
-        # stdout handle, that we can pass to `with` without consequences (thanks to closefd=False)
-        outfile = open(sys.stdout.fileno(), "w", closefd=False, encoding="utf-8")
-
-    with outfile as outfile:
+    def diff_to_file(outfile):
         if args.timeline_diff or args.timeline_pprint:
             diff_to_str.timeline(load_jsons_, outfile, args.timeline_diff, args.timeline_pprint)
         elif not args.newfile:  # don't diff, just pretty print
@@ -533,7 +527,12 @@ def main(args=None):
             diff_to_str.diff_to_file(make_diff(*load_jsons_([args.file, args.newfile])), outfile)
 
     if args.html_browser:
-        webbrowser.open(f"file://{outfile.name}")
+        with NamedTemporaryFile("w", delete=False, suffix=".html") as outfile:
+            diff_to_file(outfile)
+            if args.html_browser:
+                webbrowser.open(f"file://{outfile.name}")
+    else:
+        diff_to_file(sys.stdout)
 
 
 if __name__ == "__main__":
