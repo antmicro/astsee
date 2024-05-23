@@ -52,14 +52,13 @@ parser = argparse.ArgumentParser(
     description="pretty print AST json and do optional filtering/diff",
     epilog="""predefined jq functions:
  - ast_walk(f)  apply f to each node (assume that every and only node has op1 field)
- - ptrs         match all known pointer fields (like "addr", "varp", "modp" etc.)
 
 examples:
  $ %(prog)s dump.tree.json # pretty print
  $ %(prog)s -d '.file' dump.tree.json # remove "file" fields
  $ %(prog)s -d '.file' 1.tree.json 2.tree.json # remove "file" fields and do diff
  $ %(prog)s -d '.file, .editNum' 1.tree.json # remove "file" and "editNum" fields
- $ %(prog)s -d 'ptrs' 1.tree.json # remove all pointer fields (note lack of dot before func name)
+ $ %(prog)s --del-ptrs 1.tree.json # remove all pointer fields
  $ %(prog)s --skip-nodes '.type=="ASSIGNW"' 1.tree.json # remove nodes of type ASSIGNW
  $ %(prog)s --skip-nodes '.loc | split(",") | .[0]=="d"' 1.tree.json # remove nodes located in file with id "d"
 
@@ -73,6 +72,9 @@ parser.add_argument(
 )
 parser.add_argument(
     "-d", "--del-fields", help="delete fields matched by the given jq query", default="", dest="del_list"
+)
+parser.add_argument(
+    "--del-ptrs", help="delete fields that seem to hold pointer", default="", action="store_true", dest="del_ptrs"
 )
 parser.add_argument("--skip-nodes", help="Skip AST nodes matched by the given jq query", default="", dest="skip_nodes")
 parser.add_argument(
@@ -355,10 +357,6 @@ def main(args=None):
             ;
         f|map_values(w);
     """
-    if meta["ptrFieldNames"]:
-        jq_funcs += "def ptrs:" + ",".join("." + field for field in meta["ptrFieldNames"]) + ";"
-    else:
-        jq_funcs += "def ptrs: empty;"
 
     if not args.jq_query:
         if args.skip_nodes and args.del_list:
@@ -370,6 +368,22 @@ def main(args=None):
     elif args.skip_nodes or args.del_list:
         log.critical("--jq is incompatible with --del-fields and --skip-nodes")
         sys.exit(1)
+
+    if args.del_ptrs:
+
+        def should_skip_field(k, v):
+            return v == [] or (k in meta["ptrFieldNames"] and isinstance(v, str))
+
+        def json_object_hook(obj):
+            return {k: v for k, v in obj.items() if not should_skip_field(k, v)}
+    else:
+
+        def json_object_hook(obj):
+            return {k: v for k, v in obj.items() if v != []}
+
+    load_jsons_ = partial(
+        load_jsons, jq_bin=jq_bin, jq_funcs=jq_funcs, jq_query=args.jq_query, object_hook=json_object_hook
+    )
 
     split_fields = partial(split_ast_fields, omit_false_flags=args.omit)
     omit_intact = args.omit and args.newfile  # omitting unmodified chunks does not make sense without diff
@@ -384,8 +398,6 @@ def main(args=None):
             "loc": loc_handler,
         }
         diff_to_str = DictDiffToTerm(omit_intact=omit_intact, val_handlers=val_handlers, split_fields=split_fields)
-
-    load_jsons_ = partial(load_jsons, jq_bin=jq_bin, jq_funcs=jq_funcs, jq_query=args.jq_query)
 
     if not args.newfile:  # don't diff, just pretty print
         # passing tree marked as unchanged to colorizer can be abused to just pretty print it
