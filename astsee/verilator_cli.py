@@ -97,9 +97,9 @@ parser.add_argument(
 )
 timeline_args = parser.add_argument_group(
     title="--timeline-(diff|pprint|full)",
-    description='Produce html that includes "timeline" of consecutive stages. As files to diff/pretty print are extracted\n'
-    "from tree.meta.json, `file` param should point to it and `newfile` should be left unspecified\n"
-    "By default implies --html but you can still specify --htmlb",
+    description='Produce html that includes "timeline" of consecutive stages.\n'
+    "`file` param should point to .tree.meta.json, that is expected to be inside obj_dir alongside stage-numbered .tree.json files.\n"
+    "Stages that didn't introduce any change are skipped from timeline. By default implies --html but you can still specify --htmlb",
 )
 timeline_args.add_argument(
     "--timeline-diff", help="Include diffs of consecutive stages", action="store_true", dest="timeline_diff"
@@ -226,6 +226,14 @@ class AstDiffToHtml:
             return f'<a class="back-{link_loc}" href="#{link_loc}" onclick="{onclick}">{display_loc}</a>'
 
     def timeline(self, load_jsons_, outfile, do_diff, do_pprint):  # pylint: disable=too-many-locals
+        """
+        generate timeline from `meta["timelineFiles"]` (have to be populated beforehand by `gather_timeline_files()`)
+
+        `load_jsons_()` should be a function that takes array of filenames, and returns parsed jsons
+
+        `do_diff` and `do_pprint` are configuration bools. If both are true, then diffs and pprints are interleaved
+        """
+
         def do_partial_diff(old_path, new_path):
             referenced_lines, diff = self.diff_to_string_partial(make_diff(*load_jsons_([old_path, new_path])))
             return f"{old_path} -> {new_path}", referenced_lines, diff
@@ -447,6 +455,7 @@ def preprocess_args(args):
 
 
 def gather_timeline_files(obj_dir):
+    """Go through numbered .tree.json files in obj_dir, and return them in alphanumeric order"""
     paths = []
     predecessor_path = None
     # requiring occurence of three consecutive digits is used as heuristic to skip non-stage dumps
