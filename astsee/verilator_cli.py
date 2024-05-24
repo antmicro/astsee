@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # pylint: disable=line-too-long,invalid-name,multiple-statements,missing-function-docstring,missing-class-docstring,missing-module-docstring,no-else-return,too-few-public-methods
 import argparse
+import filecmp
 import glob
 import html
 import json
@@ -225,23 +226,6 @@ class AstDiffToHtml:
             return f'<a class="back-{link_loc}" href="#{link_loc}" onclick="{onclick}">{display_loc}</a>'
 
     def timeline(self, load_jsons_, outfile, do_diff, do_pprint):  # pylint: disable=too-many-locals
-        if "dumpedFiles" not in self.meta:
-            log.critical('suplied meta file does not have "dumpedFiles" field, required for --timeline to work')
-            sys.exit(1)
-        paths = []
-        old_edit_cnt = None
-        for i in self.meta["dumpedFiles"]:
-            found, path = resolve_path(i)
-            if not found:
-                log.warning("%s file not found, skipping from timeline")
-                continue
-
-            if i["editCnt"] == old_edit_cnt:
-                log.info("skipping dump with same editCnt: %s", path)
-            else:
-                old_edit_cnt = i["editCnt"]
-                paths.append(path)
-
         def do_partial_diff(old_path, new_path):
             referenced_lines, diff = self.diff_to_string_partial(make_diff(*load_jsons_([old_path, new_path])))
             return f"{old_path} -> {new_path}", referenced_lines, diff
@@ -267,11 +251,11 @@ class AstDiffToHtml:
             diffs = {}
             pprints = {}
             if do_diff:
-                for name, referenced_lines, ast in pool.starmap(do_partial_diff, pairwise(paths)):
+                for name, referenced_lines, ast in pool.starmap(do_partial_diff, pairwise(self.meta["timelineFiles"])):
                     merge(self.referenced_lines, referenced_lines)
                     diffs[name] = ast
             if do_pprint:
-                for name, referenced_lines, ast in pool.map(do_partial_pprint, paths):
+                for name, referenced_lines, ast in pool.map(do_partial_pprint, self.meta["timelineFiles"]):
                     merge(self.referenced_lines, referenced_lines)
                     pprints[name] = ast
 
@@ -384,11 +368,13 @@ def preprocess_paths(meta):
         file["truncated"], file["truncated_html"] = truncate_path(file["realpath"], abs_path_prefix, rel_path_prefix)
 
 
-def load_meta(path):
+def load_meta(path, timeline=False):
     try:
         with open(path, encoding="utf-8") as file:
             meta = json.load(file)
             preprocess_paths(meta)
+            if timeline:
+                meta["timelineFiles"] = gather_timeline_files(os.path.dirname(path))
             return meta
 
     except FileNotFoundError:
@@ -460,11 +446,27 @@ def preprocess_args(args):
         args.jq_query = f"ast_walk(del({args.del_list}))"
 
 
+def gather_timeline_files(obj_dir):
+    paths = []
+    predecessor_path = None
+    # requiring occurence of three consecutive digits is used as heuristic to skip non-stage dumps
+    # (e.g. output of --json-only) that would mess dump ordering
+    pattern = os.path.join(glob.escape(obj_dir), "*[0-9][0-9][0-9]*.tree.json")
+    for path in sorted(glob.glob(pattern)):
+        path = os.path.relpath(path)
+        if predecessor_path and filecmp.cmp(predecessor_path, path, shallow=False):
+            log.info("skipping dump with unchanged content: %s", path)
+        else:
+            paths.append(path)
+            predecessor_path = path
+    return paths
+
+
 def main(args=None):
     if args is None:
         args = parser.parse_args()
     preprocess_args(args)
-    meta = load_meta(args.meta)
+    meta = load_meta(args.meta, args.timeline_diff or args.timeline_pprint)
 
     # allow for supplying an alternative implementation like gojq
     jq_bin = os.environ.get("VERILATOR_JQ", "jq")
