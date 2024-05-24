@@ -35,6 +35,10 @@ def test_tree_diff_filter(request):
     run(request, f'{IN_DIR}/test1_a.tree.json {IN_DIR}/test1_b.tree.json -d ".editNum"')
 
 
+def test_tree_diff_filter2(request):
+    run(request, f'{IN_DIR}/test1_a.tree.json {IN_DIR}/test1_b.tree.json -d ".editNum" --del-ptrs')
+
+
 def test_tree_diff_filter_no_meta(request):
     # empty meta arg disables guessing of meta file path
     run(request, f'{IN_DIR}/test1_a.tree.json {IN_DIR}/test1_b.tree.json --del-ptrs --meta ""')
