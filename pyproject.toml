@@ -17,7 +17,8 @@ requires-python = ">=3.8"
 dev = ["pytest", "tuttest @ git+https://github.com/antmicro/tuttest#egg=tuttest", "ruff>=0.2.2", "isort>=5.13.2", "pylint>=3.1.0"]
 
 [project.scripts]
-astsee = "astsee.generic_cli:main"
+astsee = "astsee.global_cli:main"
+astsee_json = "astsee.generic_cli:main"
 astsee_verilator = "astsee.verilator_cli:main"
 
 [tool.setuptools]

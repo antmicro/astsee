@@ -49,6 +49,7 @@ def split_ast_fields(ast, omit_false_flags):
 
 
 parser = argparse.ArgumentParser(
+    prog="astsee verilator",
     description="pretty print AST json and do optional filtering/diff",
     epilog="""predefined jq functions:
  - ast_walk(f)  apply f to each node (assume that every and only node has op1 field)
