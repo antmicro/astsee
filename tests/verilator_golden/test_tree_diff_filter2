@@ -1,0 +1,2476 @@
+NETLIST "$root" <built-in>:0 timeprecision:1ps, timeunit:1ps
+ modulesp:
+   MODULE "serial_adder" .../test1.sv:7 level:2, origName:serial_adder, timeunit:1ps
+    stmtsp:
+      ... * 1
+      VAR "a" .../test1.sv:8 attrClocker:UNKNOWN, direction:INPUT, [32mdtypeName:logic[39m, lifetime:NONE, origName:a, varType:PORT
+       [31mchildDTypep:[39m
+         [31mBASICDTYPE[39m [31m"logic"[39m [31m.../test1.sv:8[39m [31mkeyword:logic[39m
+          [31mrangep:[39m
+            [31mRANGE[39m [31m""[39m [31m.../test1.sv:8[39m
+             [31mleftp:[39m
+               [31mSUB[39m [31m""[39m [31m.../test1.sv:8[39m
+                [31mlhsp:[39m
+                  [31mVARREF[39m [31m"WIDTH"[39m [31m.../test1.sv:8[39m [31maccess:RD[39m
+                [31mrhsp:[39m
+                  [31mCONST[39m [31m"?32?sh1"[39m [31m.../test1.sv:8[39m
+             [31mrightp:[39m
+               [31mCONST[39m [31m"?32?sh0"[39m [31m.../test1.sv:8[39m
+      VAR "b" .../test1.sv:9 attrClocker:UNKNOWN, direction:INPUT, [32mdtypeName:logic[39m, lifetime:NONE, origName:b, varType:PORT
+       [31mchildDTypep:[39m
+         [31mBASICDTYPE[39m [31m"logic"[39m [31m.../test1.sv:9[39m [31mkeyword:logic[39m
+          [31mrangep:[39m
+            [31mRANGE[39m [31m""[39m [31m.../test1.sv:9[39m
+             [31mleftp:[39m
+               [31mSUB[39m [31m""[39m [31m.../test1.sv:9[39m
+                [31mlhsp:[39m
+                  [31mVARREF[39m [31m"WIDTH"[39m [31m.../test1.sv:9[39m [31maccess:RD[39m
+                [31mrhsp:[39m
+                  [31mCONST[39m [31m"?32?sh1"[39m [31m.../test1.sv:9[39m
+             [31mrightp:[39m
+               [31mCONST[39m [31m"?32?sh0"[39m [31m.../test1.sv:9[39m
+      VAR "cin" .../test1.sv:10 attrClocker:UNKNOWN, direction:INPUT, [32mdtypeName:logic[39m, lifetime:NONE, origName:cin, varType:PORT
+       [31mchildDTypep:[39m
+         [31mBASICDTYPE[39m [31m"LOGIC_IMPLICIT"[39m [31m.../test1.sv:10[39m [31mkeyword:LOGIC_IMPLICIT[39m
+      VAR "s" .../test1.sv:11 attrClocker:UNKNOWN, direction:OUTPUT, [32mdtypeName:logic[39m, lifetime:NONE, origName:s, varType:PORT
+       [31mchildDTypep:[39m
+         [31mBASICDTYPE[39m [31m"logic"[39m [31m.../test1.sv:11[39m [31mkeyword:logic[39m
+          [31mrangep:[39m
+            [31mRANGE[39m [31m""[39m [31m.../test1.sv:11[39m
+             [31mleftp:[39m
+               [31mSUB[39m [31m""[39m [31m.../test1.sv:11[39m
+                [31mlhsp:[39m
+                  [31mVARREF[39m [31m"WIDTH"[39m [31m.../test1.sv:11[39m [31maccess:RD[39m
+                [31mrhsp:[39m
+                  [31mCONST[39m [31m"?32?sh1"[39m [31m.../test1.sv:11[39m
+             [31mrightp:[39m
+               [31mCONST[39m [31m"?32?sh0"[39m [31m.../test1.sv:11[39m
+      VAR "cout" .../test1.sv:12 attrClocker:UNKNOWN, direction:OUTPUT, [32mdtypeName:logic[39m, lifetime:NONE, origName:cout, varType:PORT
+       [31mchildDTypep:[39m
+         [31mBASICDTYPE[39m [31m"LOGIC_IMPLICIT"[39m [31m.../test1.sv:12[39m [31mkeyword:LOGIC_IMPLICIT[39m
+      VAR "c" .../test1.sv:14 attrClocker:UNKNOWN, direction:NONE, [32mdtypeName:logic[39m, lifetime:VSTATIC, origName:c, varType:WIRE
+       [31mchildDTypep:[39m
+         [31mBASICDTYPE[39m [31m"logic"[39m [31m.../test1.sv:14[39m [31mkeyword:logic[39m
+          [31mrangep:[39m
+            [31mRANGE[39m [31m""[39m [31m.../test1.sv:14[39m
+             [31mleftp:[39m
+               [31mVARREF[39m [31m"WIDTH"[39m [31m.../test1.sv:14[39m [31maccess:RD[39m
+             [31mrightp:[39m
+               [31mCONST[39m [31m"?32?sh0"[39m [31m.../test1.sv:14[39m
+      ... * 1
+      BEGIN "genblk1[0]" .../test1.sv:17 generate:True
+       stmtsp:
+         CELL "fa" .../test1.sv:17 origName:fa
+          pinsp:
+            PIN "__pinNumber1" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh0"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h0"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber2" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh0"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h0"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber3" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[32:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh0"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"6'h0"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber4" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh0"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h0"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber5" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[32:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mADD[39m [31m""[39m [31m.../test1.sv:17[39m
+                   [31mlhsp:[39m
+                     [31mCONST[39m [31m"?32?sh0"[39m [31m.../test1.sv:16[39m
+                   [31mrhsp:[39m
+                     [31mCONST[39m [31m"?32?sh1"[39m [31m.../test1.sv:17[39m
+                [32mlsbp:[39m
+                  [32mSEL[39m [32m""[39m [32m.../test1.sv:17[39m
+                   [32mfromp:[39m
+                     [32mADD[39m [32m""[39m [32m.../test1.sv:17[39m
+                      [32mlhsp:[39m
+                        [32mCONST[39m [32m"?32?sh0"[39m [32m.../test1.sv:16[39m
+                      [32mrhsp:[39m
+                        [32mCONST[39m [32m"?32?sh1"[39m [32m.../test1.sv:17[39m
+                   [32mlsbp:[39m
+                     [32mCONST[39m [32m"32'h0"[39m [32m.../test1.sv:17[39m
+                   [32mwidthp:[39m
+                     [32mCONST[39m [32m"32'h6"[39m [32m.../test1.sv:17[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+      BEGIN "genblk1[1]" .../test1.sv:17 generate:True
+       stmtsp:
+         CELL "fa" .../test1.sv:17 origName:fa
+          pinsp:
+            PIN "__pinNumber1" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh1"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h1"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber2" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh1"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h1"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber3" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[32:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh1"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"6'h1"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber4" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh1"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h1"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber5" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[32:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mADD[39m [31m""[39m [31m.../test1.sv:17[39m
+                   [31mlhsp:[39m
+                     [31mCONST[39m [31m"?32?sh1"[39m [31m.../test1.sv:16[39m
+                   [31mrhsp:[39m
+                     [31mCONST[39m [31m"?32?sh1"[39m [31m.../test1.sv:17[39m
+                [32mlsbp:[39m
+                  [32mSEL[39m [32m""[39m [32m.../test1.sv:17[39m
+                   [32mfromp:[39m
+                     [32mADD[39m [32m""[39m [32m.../test1.sv:17[39m
+                      [32mlhsp:[39m
+                        [32mCONST[39m [32m"?32?sh1"[39m [32m.../test1.sv:16[39m
+                      [32mrhsp:[39m
+                        [32mCONST[39m [32m"?32?sh1"[39m [32m.../test1.sv:17[39m
+                   [32mlsbp:[39m
+                     [32mCONST[39m [32m"32'h0"[39m [32m.../test1.sv:17[39m
+                   [32mwidthp:[39m
+                     [32mCONST[39m [32m"32'h6"[39m [32m.../test1.sv:17[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+      BEGIN "genblk1[2]" .../test1.sv:17 generate:True
+       stmtsp:
+         CELL "fa" .../test1.sv:17 origName:fa
+          pinsp:
+            PIN "__pinNumber1" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh2"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h2"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber2" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh2"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h2"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber3" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[32:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh2"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"6'h2"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber4" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh2"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h2"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber5" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[32:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mADD[39m [31m""[39m [31m.../test1.sv:17[39m
+                   [31mlhsp:[39m
+                     [31mCONST[39m [31m"?32?sh2"[39m [31m.../test1.sv:16[39m
+                   [31mrhsp:[39m
+                     [31mCONST[39m [31m"?32?sh1"[39m [31m.../test1.sv:17[39m
+                [32mlsbp:[39m
+                  [32mSEL[39m [32m""[39m [32m.../test1.sv:17[39m
+                   [32mfromp:[39m
+                     [32mADD[39m [32m""[39m [32m.../test1.sv:17[39m
+                      [32mlhsp:[39m
+                        [32mCONST[39m [32m"?32?sh2"[39m [32m.../test1.sv:16[39m
+                      [32mrhsp:[39m
+                        [32mCONST[39m [32m"?32?sh1"[39m [32m.../test1.sv:17[39m
+                   [32mlsbp:[39m
+                     [32mCONST[39m [32m"32'h0"[39m [32m.../test1.sv:17[39m
+                   [32mwidthp:[39m
+                     [32mCONST[39m [32m"32'h6"[39m [32m.../test1.sv:17[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+      BEGIN "genblk1[3]" .../test1.sv:17 generate:True
+       stmtsp:
+         CELL "fa" .../test1.sv:17 origName:fa
+          pinsp:
+            PIN "__pinNumber1" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh3"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h3"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber2" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh3"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h3"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber3" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[32:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh3"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"6'h3"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber4" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh3"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h3"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber5" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[32:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mADD[39m [31m""[39m [31m.../test1.sv:17[39m
+                   [31mlhsp:[39m
+                     [31mCONST[39m [31m"?32?sh3"[39m [31m.../test1.sv:16[39m
+                   [31mrhsp:[39m
+                     [31mCONST[39m [31m"?32?sh1"[39m [31m.../test1.sv:17[39m
+                [32mlsbp:[39m
+                  [32mSEL[39m [32m""[39m [32m.../test1.sv:17[39m
+                   [32mfromp:[39m
+                     [32mADD[39m [32m""[39m [32m.../test1.sv:17[39m
+                      [32mlhsp:[39m
+                        [32mCONST[39m [32m"?32?sh3"[39m [32m.../test1.sv:16[39m
+                      [32mrhsp:[39m
+                        [32mCONST[39m [32m"?32?sh1"[39m [32m.../test1.sv:17[39m
+                   [32mlsbp:[39m
+                     [32mCONST[39m [32m"32'h0"[39m [32m.../test1.sv:17[39m
+                   [32mwidthp:[39m
+                     [32mCONST[39m [32m"32'h6"[39m [32m.../test1.sv:17[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+      BEGIN "genblk1[4]" .../test1.sv:17 generate:True
+       stmtsp:
+         CELL "fa" .../test1.sv:17 origName:fa
+          pinsp:
+            PIN "__pinNumber1" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh4"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h4"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber2" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh4"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h4"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber3" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[32:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh4"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"6'h4"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber4" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh4"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h4"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber5" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[32:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mADD[39m [31m""[39m [31m.../test1.sv:17[39m
+                   [31mlhsp:[39m
+                     [31mCONST[39m [31m"?32?sh4"[39m [31m.../test1.sv:16[39m
+                   [31mrhsp:[39m
+                     [31mCONST[39m [31m"?32?sh1"[39m [31m.../test1.sv:17[39m
+                [32mlsbp:[39m
+                  [32mSEL[39m [32m""[39m [32m.../test1.sv:17[39m
+                   [32mfromp:[39m
+                     [32mADD[39m [32m""[39m [32m.../test1.sv:17[39m
+                      [32mlhsp:[39m
+                        [32mCONST[39m [32m"?32?sh4"[39m [32m.../test1.sv:16[39m
+                      [32mrhsp:[39m
+                        [32mCONST[39m [32m"?32?sh1"[39m [32m.../test1.sv:17[39m
+                   [32mlsbp:[39m
+                     [32mCONST[39m [32m"32'h0"[39m [32m.../test1.sv:17[39m
+                   [32mwidthp:[39m
+                     [32mCONST[39m [32m"32'h6"[39m [32m.../test1.sv:17[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+      BEGIN "genblk1[5]" .../test1.sv:17 generate:True
+       stmtsp:
+         CELL "fa" .../test1.sv:17 origName:fa
+          pinsp:
+            PIN "__pinNumber1" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh5"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h5"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber2" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh5"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h5"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber3" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[32:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh5"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"6'h5"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber4" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh5"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h5"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber5" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[32:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mADD[39m [31m""[39m [31m.../test1.sv:17[39m
+                   [31mlhsp:[39m
+                     [31mCONST[39m [31m"?32?sh5"[39m [31m.../test1.sv:16[39m
+                   [31mrhsp:[39m
+                     [31mCONST[39m [31m"?32?sh1"[39m [31m.../test1.sv:17[39m
+                [32mlsbp:[39m
+                  [32mSEL[39m [32m""[39m [32m.../test1.sv:17[39m
+                   [32mfromp:[39m
+                     [32mADD[39m [32m""[39m [32m.../test1.sv:17[39m
+                      [32mlhsp:[39m
+                        [32mCONST[39m [32m"?32?sh5"[39m [32m.../test1.sv:16[39m
+                      [32mrhsp:[39m
+                        [32mCONST[39m [32m"?32?sh1"[39m [32m.../test1.sv:17[39m
+                   [32mlsbp:[39m
+                     [32mCONST[39m [32m"32'h0"[39m [32m.../test1.sv:17[39m
+                   [32mwidthp:[39m
+                     [32mCONST[39m [32m"32'h6"[39m [32m.../test1.sv:17[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+      BEGIN "genblk1[6]" .../test1.sv:17 generate:True
+       stmtsp:
+         CELL "fa" .../test1.sv:17 origName:fa
+          pinsp:
+            PIN "__pinNumber1" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh6"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h6"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber2" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh6"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h6"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber3" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[32:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh6"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"6'h6"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber4" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh6"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h6"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber5" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[32:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mADD[39m [31m""[39m [31m.../test1.sv:17[39m
+                   [31mlhsp:[39m
+                     [31mCONST[39m [31m"?32?sh6"[39m [31m.../test1.sv:16[39m
+                   [31mrhsp:[39m
+                     [31mCONST[39m [31m"?32?sh1"[39m [31m.../test1.sv:17[39m
+                [32mlsbp:[39m
+                  [32mSEL[39m [32m""[39m [32m.../test1.sv:17[39m
+                   [32mfromp:[39m
+                     [32mADD[39m [32m""[39m [32m.../test1.sv:17[39m
+                      [32mlhsp:[39m
+                        [32mCONST[39m [32m"?32?sh6"[39m [32m.../test1.sv:16[39m
+                      [32mrhsp:[39m
+                        [32mCONST[39m [32m"?32?sh1"[39m [32m.../test1.sv:17[39m
+                   [32mlsbp:[39m
+                     [32mCONST[39m [32m"32'h0"[39m [32m.../test1.sv:17[39m
+                   [32mwidthp:[39m
+                     [32mCONST[39m [32m"32'h6"[39m [32m.../test1.sv:17[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+      BEGIN "genblk1[7]" .../test1.sv:17 generate:True
+       stmtsp:
+         CELL "fa" .../test1.sv:17 origName:fa
+          pinsp:
+            PIN "__pinNumber1" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh7"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h7"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber2" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh7"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h7"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber3" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[32:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh7"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"6'h7"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber4" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh7"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h7"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber5" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[32:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mADD[39m [31m""[39m [31m.../test1.sv:17[39m
+                   [31mlhsp:[39m
+                     [31mCONST[39m [31m"?32?sh7"[39m [31m.../test1.sv:16[39m
+                   [31mrhsp:[39m
+                     [31mCONST[39m [31m"?32?sh1"[39m [31m.../test1.sv:17[39m
+                [32mlsbp:[39m
+                  [32mSEL[39m [32m""[39m [32m.../test1.sv:17[39m
+                   [32mfromp:[39m
+                     [32mADD[39m [32m""[39m [32m.../test1.sv:17[39m
+                      [32mlhsp:[39m
+                        [32mCONST[39m [32m"?32?sh7"[39m [32m.../test1.sv:16[39m
+                      [32mrhsp:[39m
+                        [32mCONST[39m [32m"?32?sh1"[39m [32m.../test1.sv:17[39m
+                   [32mlsbp:[39m
+                     [32mCONST[39m [32m"32'h0"[39m [32m.../test1.sv:17[39m
+                   [32mwidthp:[39m
+                     [32mCONST[39m [32m"32'h6"[39m [32m.../test1.sv:17[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+      BEGIN "genblk1[8]" .../test1.sv:17 generate:True
+       stmtsp:
+         CELL "fa" .../test1.sv:17 origName:fa
+          pinsp:
+            PIN "__pinNumber1" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh8"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h8"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber2" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh8"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h8"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber3" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[32:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh8"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"6'h8"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber4" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh8"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h8"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber5" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[32:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mADD[39m [31m""[39m [31m.../test1.sv:17[39m
+                   [31mlhsp:[39m
+                     [31mCONST[39m [31m"?32?sh8"[39m [31m.../test1.sv:16[39m
+                   [31mrhsp:[39m
+                     [31mCONST[39m [31m"?32?sh1"[39m [31m.../test1.sv:17[39m
+                [32mlsbp:[39m
+                  [32mSEL[39m [32m""[39m [32m.../test1.sv:17[39m
+                   [32mfromp:[39m
+                     [32mADD[39m [32m""[39m [32m.../test1.sv:17[39m
+                      [32mlhsp:[39m
+                        [32mCONST[39m [32m"?32?sh8"[39m [32m.../test1.sv:16[39m
+                      [32mrhsp:[39m
+                        [32mCONST[39m [32m"?32?sh1"[39m [32m.../test1.sv:17[39m
+                   [32mlsbp:[39m
+                     [32mCONST[39m [32m"32'h0"[39m [32m.../test1.sv:17[39m
+                   [32mwidthp:[39m
+                     [32mCONST[39m [32m"32'h6"[39m [32m.../test1.sv:17[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+      BEGIN "genblk1[9]" .../test1.sv:17 generate:True
+       stmtsp:
+         CELL "fa" .../test1.sv:17 origName:fa
+          pinsp:
+            PIN "__pinNumber1" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh9"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h9"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber2" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh9"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h9"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber3" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[32:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh9"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"6'h9"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber4" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh9"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h9"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber5" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[32:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mADD[39m [31m""[39m [31m.../test1.sv:17[39m
+                   [31mlhsp:[39m
+                     [31mCONST[39m [31m"?32?sh9"[39m [31m.../test1.sv:16[39m
+                   [31mrhsp:[39m
+                     [31mCONST[39m [31m"?32?sh1"[39m [31m.../test1.sv:17[39m
+                [32mlsbp:[39m
+                  [32mSEL[39m [32m""[39m [32m.../test1.sv:17[39m
+                   [32mfromp:[39m
+                     [32mADD[39m [32m""[39m [32m.../test1.sv:17[39m
+                      [32mlhsp:[39m
+                        [32mCONST[39m [32m"?32?sh9"[39m [32m.../test1.sv:16[39m
+                      [32mrhsp:[39m
+                        [32mCONST[39m [32m"?32?sh1"[39m [32m.../test1.sv:17[39m
+                   [32mlsbp:[39m
+                     [32mCONST[39m [32m"32'h0"[39m [32m.../test1.sv:17[39m
+                   [32mwidthp:[39m
+                     [32mCONST[39m [32m"32'h6"[39m [32m.../test1.sv:17[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+      BEGIN "genblk1[10]" .../test1.sv:17 generate:True
+       stmtsp:
+         CELL "fa" .../test1.sv:17 origName:fa
+          pinsp:
+            PIN "__pinNumber1" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sha"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'ha"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber2" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sha"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'ha"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber3" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[32:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sha"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"6'ha"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber4" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sha"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'ha"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber5" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[32:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mADD[39m [31m""[39m [31m.../test1.sv:17[39m
+                   [31mlhsp:[39m
+                     [31mCONST[39m [31m"?32?sha"[39m [31m.../test1.sv:16[39m
+                   [31mrhsp:[39m
+                     [31mCONST[39m [31m"?32?sh1"[39m [31m.../test1.sv:17[39m
+                [32mlsbp:[39m
+                  [32mSEL[39m [32m""[39m [32m.../test1.sv:17[39m
+                   [32mfromp:[39m
+                     [32mADD[39m [32m""[39m [32m.../test1.sv:17[39m
+                      [32mlhsp:[39m
+                        [32mCONST[39m [32m"?32?sha"[39m [32m.../test1.sv:16[39m
+                      [32mrhsp:[39m
+                        [32mCONST[39m [32m"?32?sh1"[39m [32m.../test1.sv:17[39m
+                   [32mlsbp:[39m
+                     [32mCONST[39m [32m"32'h0"[39m [32m.../test1.sv:17[39m
+                   [32mwidthp:[39m
+                     [32mCONST[39m [32m"32'h6"[39m [32m.../test1.sv:17[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+      BEGIN "genblk1[11]" .../test1.sv:17 generate:True
+       stmtsp:
+         CELL "fa" .../test1.sv:17 origName:fa
+          pinsp:
+            PIN "__pinNumber1" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?shb"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'hb"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber2" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?shb"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'hb"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber3" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[32:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?shb"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"6'hb"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber4" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?shb"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'hb"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber5" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[32:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mADD[39m [31m""[39m [31m.../test1.sv:17[39m
+                   [31mlhsp:[39m
+                     [31mCONST[39m [31m"?32?shb"[39m [31m.../test1.sv:16[39m
+                   [31mrhsp:[39m
+                     [31mCONST[39m [31m"?32?sh1"[39m [31m.../test1.sv:17[39m
+                [32mlsbp:[39m
+                  [32mSEL[39m [32m""[39m [32m.../test1.sv:17[39m
+                   [32mfromp:[39m
+                     [32mADD[39m [32m""[39m [32m.../test1.sv:17[39m
+                      [32mlhsp:[39m
+                        [32mCONST[39m [32m"?32?shb"[39m [32m.../test1.sv:16[39m
+                      [32mrhsp:[39m
+                        [32mCONST[39m [32m"?32?sh1"[39m [32m.../test1.sv:17[39m
+                   [32mlsbp:[39m
+                     [32mCONST[39m [32m"32'h0"[39m [32m.../test1.sv:17[39m
+                   [32mwidthp:[39m
+                     [32mCONST[39m [32m"32'h6"[39m [32m.../test1.sv:17[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+      BEGIN "genblk1[12]" .../test1.sv:17 generate:True
+       stmtsp:
+         CELL "fa" .../test1.sv:17 origName:fa
+          pinsp:
+            PIN "__pinNumber1" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?shc"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'hc"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber2" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?shc"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'hc"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber3" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[32:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?shc"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"6'hc"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber4" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?shc"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'hc"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber5" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[32:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mADD[39m [31m""[39m [31m.../test1.sv:17[39m
+                   [31mlhsp:[39m
+                     [31mCONST[39m [31m"?32?shc"[39m [31m.../test1.sv:16[39m
+                   [31mrhsp:[39m
+                     [31mCONST[39m [31m"?32?sh1"[39m [31m.../test1.sv:17[39m
+                [32mlsbp:[39m
+                  [32mSEL[39m [32m""[39m [32m.../test1.sv:17[39m
+                   [32mfromp:[39m
+                     [32mADD[39m [32m""[39m [32m.../test1.sv:17[39m
+                      [32mlhsp:[39m
+                        [32mCONST[39m [32m"?32?shc"[39m [32m.../test1.sv:16[39m
+                      [32mrhsp:[39m
+                        [32mCONST[39m [32m"?32?sh1"[39m [32m.../test1.sv:17[39m
+                   [32mlsbp:[39m
+                     [32mCONST[39m [32m"32'h0"[39m [32m.../test1.sv:17[39m
+                   [32mwidthp:[39m
+                     [32mCONST[39m [32m"32'h6"[39m [32m.../test1.sv:17[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+      BEGIN "genblk1[13]" .../test1.sv:17 generate:True
+       stmtsp:
+         CELL "fa" .../test1.sv:17 origName:fa
+          pinsp:
+            PIN "__pinNumber1" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?shd"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'hd"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber2" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?shd"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'hd"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber3" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[32:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?shd"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"6'hd"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber4" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?shd"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'hd"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber5" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[32:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mADD[39m [31m""[39m [31m.../test1.sv:17[39m
+                   [31mlhsp:[39m
+                     [31mCONST[39m [31m"?32?shd"[39m [31m.../test1.sv:16[39m
+                   [31mrhsp:[39m
+                     [31mCONST[39m [31m"?32?sh1"[39m [31m.../test1.sv:17[39m
+                [32mlsbp:[39m
+                  [32mSEL[39m [32m""[39m [32m.../test1.sv:17[39m
+                   [32mfromp:[39m
+                     [32mADD[39m [32m""[39m [32m.../test1.sv:17[39m
+                      [32mlhsp:[39m
+                        [32mCONST[39m [32m"?32?shd"[39m [32m.../test1.sv:16[39m
+                      [32mrhsp:[39m
+                        [32mCONST[39m [32m"?32?sh1"[39m [32m.../test1.sv:17[39m
+                   [32mlsbp:[39m
+                     [32mCONST[39m [32m"32'h0"[39m [32m.../test1.sv:17[39m
+                   [32mwidthp:[39m
+                     [32mCONST[39m [32m"32'h6"[39m [32m.../test1.sv:17[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+      BEGIN "genblk1[14]" .../test1.sv:17 generate:True
+       stmtsp:
+         CELL "fa" .../test1.sv:17 origName:fa
+          pinsp:
+            PIN "__pinNumber1" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?she"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'he"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber2" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?she"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'he"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber3" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[32:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?she"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"6'he"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber4" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?she"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'he"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber5" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[32:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mADD[39m [31m""[39m [31m.../test1.sv:17[39m
+                   [31mlhsp:[39m
+                     [31mCONST[39m [31m"?32?she"[39m [31m.../test1.sv:16[39m
+                   [31mrhsp:[39m
+                     [31mCONST[39m [31m"?32?sh1"[39m [31m.../test1.sv:17[39m
+                [32mlsbp:[39m
+                  [32mSEL[39m [32m""[39m [32m.../test1.sv:17[39m
+                   [32mfromp:[39m
+                     [32mADD[39m [32m""[39m [32m.../test1.sv:17[39m
+                      [32mlhsp:[39m
+                        [32mCONST[39m [32m"?32?she"[39m [32m.../test1.sv:16[39m
+                      [32mrhsp:[39m
+                        [32mCONST[39m [32m"?32?sh1"[39m [32m.../test1.sv:17[39m
+                   [32mlsbp:[39m
+                     [32mCONST[39m [32m"32'h0"[39m [32m.../test1.sv:17[39m
+                   [32mwidthp:[39m
+                     [32mCONST[39m [32m"32'h6"[39m [32m.../test1.sv:17[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+      BEGIN "genblk1[15]" .../test1.sv:17 generate:True
+       stmtsp:
+         CELL "fa" .../test1.sv:17 origName:fa
+          pinsp:
+            PIN "__pinNumber1" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?shf"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'hf"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber2" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?shf"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'hf"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber3" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[32:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?shf"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"6'hf"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber4" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?shf"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'hf"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber5" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[32:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mADD[39m [31m""[39m [31m.../test1.sv:17[39m
+                   [31mlhsp:[39m
+                     [31mCONST[39m [31m"?32?shf"[39m [31m.../test1.sv:16[39m
+                   [31mrhsp:[39m
+                     [31mCONST[39m [31m"?32?sh1"[39m [31m.../test1.sv:17[39m
+                [32mlsbp:[39m
+                  [32mSEL[39m [32m""[39m [32m.../test1.sv:17[39m
+                   [32mfromp:[39m
+                     [32mADD[39m [32m""[39m [32m.../test1.sv:17[39m
+                      [32mlhsp:[39m
+                        [32mCONST[39m [32m"?32?shf"[39m [32m.../test1.sv:16[39m
+                      [32mrhsp:[39m
+                        [32mCONST[39m [32m"?32?sh1"[39m [32m.../test1.sv:17[39m
+                   [32mlsbp:[39m
+                     [32mCONST[39m [32m"32'h0"[39m [32m.../test1.sv:17[39m
+                   [32mwidthp:[39m
+                     [32mCONST[39m [32m"32'h6"[39m [32m.../test1.sv:17[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+      BEGIN "genblk1[16]" .../test1.sv:17 generate:True
+       stmtsp:
+         CELL "fa" .../test1.sv:17 origName:fa
+          pinsp:
+            PIN "__pinNumber1" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh10"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h10"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber2" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh10"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h10"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber3" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[32:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh10"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"6'h10"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber4" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh10"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h10"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber5" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[32:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mADD[39m [31m""[39m [31m.../test1.sv:17[39m
+                   [31mlhsp:[39m
+                     [31mCONST[39m [31m"?32?sh10"[39m [31m.../test1.sv:16[39m
+                   [31mrhsp:[39m
+                     [31mCONST[39m [31m"?32?sh1"[39m [31m.../test1.sv:17[39m
+                [32mlsbp:[39m
+                  [32mSEL[39m [32m""[39m [32m.../test1.sv:17[39m
+                   [32mfromp:[39m
+                     [32mADD[39m [32m""[39m [32m.../test1.sv:17[39m
+                      [32mlhsp:[39m
+                        [32mCONST[39m [32m"?32?sh10"[39m [32m.../test1.sv:16[39m
+                      [32mrhsp:[39m
+                        [32mCONST[39m [32m"?32?sh1"[39m [32m.../test1.sv:17[39m
+                   [32mlsbp:[39m
+                     [32mCONST[39m [32m"32'h0"[39m [32m.../test1.sv:17[39m
+                   [32mwidthp:[39m
+                     [32mCONST[39m [32m"32'h6"[39m [32m.../test1.sv:17[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+      BEGIN "genblk1[17]" .../test1.sv:17 generate:True
+       stmtsp:
+         CELL "fa" .../test1.sv:17 origName:fa
+          pinsp:
+            PIN "__pinNumber1" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh11"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h11"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber2" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh11"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h11"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber3" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[32:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh11"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"6'h11"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber4" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh11"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h11"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber5" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[32:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mADD[39m [31m""[39m [31m.../test1.sv:17[39m
+                   [31mlhsp:[39m
+                     [31mCONST[39m [31m"?32?sh11"[39m [31m.../test1.sv:16[39m
+                   [31mrhsp:[39m
+                     [31mCONST[39m [31m"?32?sh1"[39m [31m.../test1.sv:17[39m
+                [32mlsbp:[39m
+                  [32mSEL[39m [32m""[39m [32m.../test1.sv:17[39m
+                   [32mfromp:[39m
+                     [32mADD[39m [32m""[39m [32m.../test1.sv:17[39m
+                      [32mlhsp:[39m
+                        [32mCONST[39m [32m"?32?sh11"[39m [32m.../test1.sv:16[39m
+                      [32mrhsp:[39m
+                        [32mCONST[39m [32m"?32?sh1"[39m [32m.../test1.sv:17[39m
+                   [32mlsbp:[39m
+                     [32mCONST[39m [32m"32'h0"[39m [32m.../test1.sv:17[39m
+                   [32mwidthp:[39m
+                     [32mCONST[39m [32m"32'h6"[39m [32m.../test1.sv:17[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+      BEGIN "genblk1[18]" .../test1.sv:17 generate:True
+       stmtsp:
+         CELL "fa" .../test1.sv:17 origName:fa
+          pinsp:
+            PIN "__pinNumber1" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh12"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h12"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber2" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh12"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h12"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber3" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[32:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh12"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"6'h12"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber4" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh12"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h12"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber5" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[32:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mADD[39m [31m""[39m [31m.../test1.sv:17[39m
+                   [31mlhsp:[39m
+                     [31mCONST[39m [31m"?32?sh12"[39m [31m.../test1.sv:16[39m
+                   [31mrhsp:[39m
+                     [31mCONST[39m [31m"?32?sh1"[39m [31m.../test1.sv:17[39m
+                [32mlsbp:[39m
+                  [32mSEL[39m [32m""[39m [32m.../test1.sv:17[39m
+                   [32mfromp:[39m
+                     [32mADD[39m [32m""[39m [32m.../test1.sv:17[39m
+                      [32mlhsp:[39m
+                        [32mCONST[39m [32m"?32?sh12"[39m [32m.../test1.sv:16[39m
+                      [32mrhsp:[39m
+                        [32mCONST[39m [32m"?32?sh1"[39m [32m.../test1.sv:17[39m
+                   [32mlsbp:[39m
+                     [32mCONST[39m [32m"32'h0"[39m [32m.../test1.sv:17[39m
+                   [32mwidthp:[39m
+                     [32mCONST[39m [32m"32'h6"[39m [32m.../test1.sv:17[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+      BEGIN "genblk1[19]" .../test1.sv:17 generate:True
+       stmtsp:
+         CELL "fa" .../test1.sv:17 origName:fa
+          pinsp:
+            PIN "__pinNumber1" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh13"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h13"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber2" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh13"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h13"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber3" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[32:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh13"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"6'h13"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber4" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh13"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h13"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber5" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[32:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mADD[39m [31m""[39m [31m.../test1.sv:17[39m
+                   [31mlhsp:[39m
+                     [31mCONST[39m [31m"?32?sh13"[39m [31m.../test1.sv:16[39m
+                   [31mrhsp:[39m
+                     [31mCONST[39m [31m"?32?sh1"[39m [31m.../test1.sv:17[39m
+                [32mlsbp:[39m
+                  [32mSEL[39m [32m""[39m [32m.../test1.sv:17[39m
+                   [32mfromp:[39m
+                     [32mADD[39m [32m""[39m [32m.../test1.sv:17[39m
+                      [32mlhsp:[39m
+                        [32mCONST[39m [32m"?32?sh13"[39m [32m.../test1.sv:16[39m
+                      [32mrhsp:[39m
+                        [32mCONST[39m [32m"?32?sh1"[39m [32m.../test1.sv:17[39m
+                   [32mlsbp:[39m
+                     [32mCONST[39m [32m"32'h0"[39m [32m.../test1.sv:17[39m
+                   [32mwidthp:[39m
+                     [32mCONST[39m [32m"32'h6"[39m [32m.../test1.sv:17[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+      BEGIN "genblk1[20]" .../test1.sv:17 generate:True
+       stmtsp:
+         CELL "fa" .../test1.sv:17 origName:fa
+          pinsp:
+            PIN "__pinNumber1" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh14"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h14"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber2" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh14"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h14"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber3" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[32:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh14"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"6'h14"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber4" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh14"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h14"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber5" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[32:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mADD[39m [31m""[39m [31m.../test1.sv:17[39m
+                   [31mlhsp:[39m
+                     [31mCONST[39m [31m"?32?sh14"[39m [31m.../test1.sv:16[39m
+                   [31mrhsp:[39m
+                     [31mCONST[39m [31m"?32?sh1"[39m [31m.../test1.sv:17[39m
+                [32mlsbp:[39m
+                  [32mSEL[39m [32m""[39m [32m.../test1.sv:17[39m
+                   [32mfromp:[39m
+                     [32mADD[39m [32m""[39m [32m.../test1.sv:17[39m
+                      [32mlhsp:[39m
+                        [32mCONST[39m [32m"?32?sh14"[39m [32m.../test1.sv:16[39m
+                      [32mrhsp:[39m
+                        [32mCONST[39m [32m"?32?sh1"[39m [32m.../test1.sv:17[39m
+                   [32mlsbp:[39m
+                     [32mCONST[39m [32m"32'h0"[39m [32m.../test1.sv:17[39m
+                   [32mwidthp:[39m
+                     [32mCONST[39m [32m"32'h6"[39m [32m.../test1.sv:17[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+      BEGIN "genblk1[21]" .../test1.sv:17 generate:True
+       stmtsp:
+         CELL "fa" .../test1.sv:17 origName:fa
+          pinsp:
+            PIN "__pinNumber1" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh15"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h15"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber2" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh15"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h15"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber3" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[32:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh15"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"6'h15"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber4" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh15"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h15"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber5" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[32:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mADD[39m [31m""[39m [31m.../test1.sv:17[39m
+                   [31mlhsp:[39m
+                     [31mCONST[39m [31m"?32?sh15"[39m [31m.../test1.sv:16[39m
+                   [31mrhsp:[39m
+                     [31mCONST[39m [31m"?32?sh1"[39m [31m.../test1.sv:17[39m
+                [32mlsbp:[39m
+                  [32mSEL[39m [32m""[39m [32m.../test1.sv:17[39m
+                   [32mfromp:[39m
+                     [32mADD[39m [32m""[39m [32m.../test1.sv:17[39m
+                      [32mlhsp:[39m
+                        [32mCONST[39m [32m"?32?sh15"[39m [32m.../test1.sv:16[39m
+                      [32mrhsp:[39m
+                        [32mCONST[39m [32m"?32?sh1"[39m [32m.../test1.sv:17[39m
+                   [32mlsbp:[39m
+                     [32mCONST[39m [32m"32'h0"[39m [32m.../test1.sv:17[39m
+                   [32mwidthp:[39m
+                     [32mCONST[39m [32m"32'h6"[39m [32m.../test1.sv:17[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+      BEGIN "genblk1[22]" .../test1.sv:17 generate:True
+       stmtsp:
+         CELL "fa" .../test1.sv:17 origName:fa
+          pinsp:
+            PIN "__pinNumber1" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh16"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h16"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber2" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh16"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h16"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber3" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[32:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh16"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"6'h16"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber4" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh16"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h16"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber5" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[32:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mADD[39m [31m""[39m [31m.../test1.sv:17[39m
+                   [31mlhsp:[39m
+                     [31mCONST[39m [31m"?32?sh16"[39m [31m.../test1.sv:16[39m
+                   [31mrhsp:[39m
+                     [31mCONST[39m [31m"?32?sh1"[39m [31m.../test1.sv:17[39m
+                [32mlsbp:[39m
+                  [32mSEL[39m [32m""[39m [32m.../test1.sv:17[39m
+                   [32mfromp:[39m
+                     [32mADD[39m [32m""[39m [32m.../test1.sv:17[39m
+                      [32mlhsp:[39m
+                        [32mCONST[39m [32m"?32?sh16"[39m [32m.../test1.sv:16[39m
+                      [32mrhsp:[39m
+                        [32mCONST[39m [32m"?32?sh1"[39m [32m.../test1.sv:17[39m
+                   [32mlsbp:[39m
+                     [32mCONST[39m [32m"32'h0"[39m [32m.../test1.sv:17[39m
+                   [32mwidthp:[39m
+                     [32mCONST[39m [32m"32'h6"[39m [32m.../test1.sv:17[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+      BEGIN "genblk1[23]" .../test1.sv:17 generate:True
+       stmtsp:
+         CELL "fa" .../test1.sv:17 origName:fa
+          pinsp:
+            PIN "__pinNumber1" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh17"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h17"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber2" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh17"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h17"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber3" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[32:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh17"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"6'h17"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber4" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh17"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h17"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber5" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[32:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mADD[39m [31m""[39m [31m.../test1.sv:17[39m
+                   [31mlhsp:[39m
+                     [31mCONST[39m [31m"?32?sh17"[39m [31m.../test1.sv:16[39m
+                   [31mrhsp:[39m
+                     [31mCONST[39m [31m"?32?sh1"[39m [31m.../test1.sv:17[39m
+                [32mlsbp:[39m
+                  [32mSEL[39m [32m""[39m [32m.../test1.sv:17[39m
+                   [32mfromp:[39m
+                     [32mADD[39m [32m""[39m [32m.../test1.sv:17[39m
+                      [32mlhsp:[39m
+                        [32mCONST[39m [32m"?32?sh17"[39m [32m.../test1.sv:16[39m
+                      [32mrhsp:[39m
+                        [32mCONST[39m [32m"?32?sh1"[39m [32m.../test1.sv:17[39m
+                   [32mlsbp:[39m
+                     [32mCONST[39m [32m"32'h0"[39m [32m.../test1.sv:17[39m
+                   [32mwidthp:[39m
+                     [32mCONST[39m [32m"32'h6"[39m [32m.../test1.sv:17[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+      BEGIN "genblk1[24]" .../test1.sv:17 generate:True
+       stmtsp:
+         CELL "fa" .../test1.sv:17 origName:fa
+          pinsp:
+            PIN "__pinNumber1" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh18"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h18"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber2" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh18"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h18"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber3" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[32:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh18"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"6'h18"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber4" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh18"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h18"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber5" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[32:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mADD[39m [31m""[39m [31m.../test1.sv:17[39m
+                   [31mlhsp:[39m
+                     [31mCONST[39m [31m"?32?sh18"[39m [31m.../test1.sv:16[39m
+                   [31mrhsp:[39m
+                     [31mCONST[39m [31m"?32?sh1"[39m [31m.../test1.sv:17[39m
+                [32mlsbp:[39m
+                  [32mSEL[39m [32m""[39m [32m.../test1.sv:17[39m
+                   [32mfromp:[39m
+                     [32mADD[39m [32m""[39m [32m.../test1.sv:17[39m
+                      [32mlhsp:[39m
+                        [32mCONST[39m [32m"?32?sh18"[39m [32m.../test1.sv:16[39m
+                      [32mrhsp:[39m
+                        [32mCONST[39m [32m"?32?sh1"[39m [32m.../test1.sv:17[39m
+                   [32mlsbp:[39m
+                     [32mCONST[39m [32m"32'h0"[39m [32m.../test1.sv:17[39m
+                   [32mwidthp:[39m
+                     [32mCONST[39m [32m"32'h6"[39m [32m.../test1.sv:17[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+      BEGIN "genblk1[25]" .../test1.sv:17 generate:True
+       stmtsp:
+         CELL "fa" .../test1.sv:17 origName:fa
+          pinsp:
+            PIN "__pinNumber1" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh19"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h19"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber2" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh19"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h19"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber3" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[32:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh19"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"6'h19"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber4" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh19"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h19"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber5" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[32:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mADD[39m [31m""[39m [31m.../test1.sv:17[39m
+                   [31mlhsp:[39m
+                     [31mCONST[39m [31m"?32?sh19"[39m [31m.../test1.sv:16[39m
+                   [31mrhsp:[39m
+                     [31mCONST[39m [31m"?32?sh1"[39m [31m.../test1.sv:17[39m
+                [32mlsbp:[39m
+                  [32mSEL[39m [32m""[39m [32m.../test1.sv:17[39m
+                   [32mfromp:[39m
+                     [32mADD[39m [32m""[39m [32m.../test1.sv:17[39m
+                      [32mlhsp:[39m
+                        [32mCONST[39m [32m"?32?sh19"[39m [32m.../test1.sv:16[39m
+                      [32mrhsp:[39m
+                        [32mCONST[39m [32m"?32?sh1"[39m [32m.../test1.sv:17[39m
+                   [32mlsbp:[39m
+                     [32mCONST[39m [32m"32'h0"[39m [32m.../test1.sv:17[39m
+                   [32mwidthp:[39m
+                     [32mCONST[39m [32m"32'h6"[39m [32m.../test1.sv:17[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+      BEGIN "genblk1[26]" .../test1.sv:17 generate:True
+       stmtsp:
+         CELL "fa" .../test1.sv:17 origName:fa
+          pinsp:
+            PIN "__pinNumber1" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh1a"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h1a"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber2" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh1a"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h1a"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber3" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[32:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh1a"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"6'h1a"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber4" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh1a"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h1a"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber5" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[32:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mADD[39m [31m""[39m [31m.../test1.sv:17[39m
+                   [31mlhsp:[39m
+                     [31mCONST[39m [31m"?32?sh1a"[39m [31m.../test1.sv:16[39m
+                   [31mrhsp:[39m
+                     [31mCONST[39m [31m"?32?sh1"[39m [31m.../test1.sv:17[39m
+                [32mlsbp:[39m
+                  [32mSEL[39m [32m""[39m [32m.../test1.sv:17[39m
+                   [32mfromp:[39m
+                     [32mADD[39m [32m""[39m [32m.../test1.sv:17[39m
+                      [32mlhsp:[39m
+                        [32mCONST[39m [32m"?32?sh1a"[39m [32m.../test1.sv:16[39m
+                      [32mrhsp:[39m
+                        [32mCONST[39m [32m"?32?sh1"[39m [32m.../test1.sv:17[39m
+                   [32mlsbp:[39m
+                     [32mCONST[39m [32m"32'h0"[39m [32m.../test1.sv:17[39m
+                   [32mwidthp:[39m
+                     [32mCONST[39m [32m"32'h6"[39m [32m.../test1.sv:17[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+      BEGIN "genblk1[27]" .../test1.sv:17 generate:True
+       stmtsp:
+         CELL "fa" .../test1.sv:17 origName:fa
+          pinsp:
+            PIN "__pinNumber1" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh1b"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h1b"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber2" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh1b"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h1b"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber3" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[32:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh1b"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"6'h1b"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber4" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh1b"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h1b"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber5" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[32:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mADD[39m [31m""[39m [31m.../test1.sv:17[39m
+                   [31mlhsp:[39m
+                     [31mCONST[39m [31m"?32?sh1b"[39m [31m.../test1.sv:16[39m
+                   [31mrhsp:[39m
+                     [31mCONST[39m [31m"?32?sh1"[39m [31m.../test1.sv:17[39m
+                [32mlsbp:[39m
+                  [32mSEL[39m [32m""[39m [32m.../test1.sv:17[39m
+                   [32mfromp:[39m
+                     [32mADD[39m [32m""[39m [32m.../test1.sv:17[39m
+                      [32mlhsp:[39m
+                        [32mCONST[39m [32m"?32?sh1b"[39m [32m.../test1.sv:16[39m
+                      [32mrhsp:[39m
+                        [32mCONST[39m [32m"?32?sh1"[39m [32m.../test1.sv:17[39m
+                   [32mlsbp:[39m
+                     [32mCONST[39m [32m"32'h0"[39m [32m.../test1.sv:17[39m
+                   [32mwidthp:[39m
+                     [32mCONST[39m [32m"32'h6"[39m [32m.../test1.sv:17[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+      BEGIN "genblk1[28]" .../test1.sv:17 generate:True
+       stmtsp:
+         CELL "fa" .../test1.sv:17 origName:fa
+          pinsp:
+            PIN "__pinNumber1" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh1c"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h1c"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber2" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh1c"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h1c"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber3" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[32:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh1c"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"6'h1c"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber4" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh1c"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h1c"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber5" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[32:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mADD[39m [31m""[39m [31m.../test1.sv:17[39m
+                   [31mlhsp:[39m
+                     [31mCONST[39m [31m"?32?sh1c"[39m [31m.../test1.sv:16[39m
+                   [31mrhsp:[39m
+                     [31mCONST[39m [31m"?32?sh1"[39m [31m.../test1.sv:17[39m
+                [32mlsbp:[39m
+                  [32mSEL[39m [32m""[39m [32m.../test1.sv:17[39m
+                   [32mfromp:[39m
+                     [32mADD[39m [32m""[39m [32m.../test1.sv:17[39m
+                      [32mlhsp:[39m
+                        [32mCONST[39m [32m"?32?sh1c"[39m [32m.../test1.sv:16[39m
+                      [32mrhsp:[39m
+                        [32mCONST[39m [32m"?32?sh1"[39m [32m.../test1.sv:17[39m
+                   [32mlsbp:[39m
+                     [32mCONST[39m [32m"32'h0"[39m [32m.../test1.sv:17[39m
+                   [32mwidthp:[39m
+                     [32mCONST[39m [32m"32'h6"[39m [32m.../test1.sv:17[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+      BEGIN "genblk1[29]" .../test1.sv:17 generate:True
+       stmtsp:
+         CELL "fa" .../test1.sv:17 origName:fa
+          pinsp:
+            PIN "__pinNumber1" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh1d"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h1d"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber2" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh1d"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h1d"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber3" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[32:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh1d"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"6'h1d"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber4" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh1d"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h1d"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber5" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[32:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mADD[39m [31m""[39m [31m.../test1.sv:17[39m
+                   [31mlhsp:[39m
+                     [31mCONST[39m [31m"?32?sh1d"[39m [31m.../test1.sv:16[39m
+                   [31mrhsp:[39m
+                     [31mCONST[39m [31m"?32?sh1"[39m [31m.../test1.sv:17[39m
+                [32mlsbp:[39m
+                  [32mSEL[39m [32m""[39m [32m.../test1.sv:17[39m
+                   [32mfromp:[39m
+                     [32mADD[39m [32m""[39m [32m.../test1.sv:17[39m
+                      [32mlhsp:[39m
+                        [32mCONST[39m [32m"?32?sh1d"[39m [32m.../test1.sv:16[39m
+                      [32mrhsp:[39m
+                        [32mCONST[39m [32m"?32?sh1"[39m [32m.../test1.sv:17[39m
+                   [32mlsbp:[39m
+                     [32mCONST[39m [32m"32'h0"[39m [32m.../test1.sv:17[39m
+                   [32mwidthp:[39m
+                     [32mCONST[39m [32m"32'h6"[39m [32m.../test1.sv:17[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+      BEGIN "genblk1[30]" .../test1.sv:17 generate:True
+       stmtsp:
+         CELL "fa" .../test1.sv:17 origName:fa
+          pinsp:
+            PIN "__pinNumber1" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh1e"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h1e"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber2" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh1e"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h1e"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber3" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[32:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh1e"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"6'h1e"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber4" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh1e"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h1e"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber5" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[32:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mADD[39m [31m""[39m [31m.../test1.sv:17[39m
+                   [31mlhsp:[39m
+                     [31mCONST[39m [31m"?32?sh1e"[39m [31m.../test1.sv:16[39m
+                   [31mrhsp:[39m
+                     [31mCONST[39m [31m"?32?sh1"[39m [31m.../test1.sv:17[39m
+                [32mlsbp:[39m
+                  [32mSEL[39m [32m""[39m [32m.../test1.sv:17[39m
+                   [32mfromp:[39m
+                     [32mADD[39m [32m""[39m [32m.../test1.sv:17[39m
+                      [32mlhsp:[39m
+                        [32mCONST[39m [32m"?32?sh1e"[39m [32m.../test1.sv:16[39m
+                      [32mrhsp:[39m
+                        [32mCONST[39m [32m"?32?sh1"[39m [32m.../test1.sv:17[39m
+                   [32mlsbp:[39m
+                     [32mCONST[39m [32m"32'h0"[39m [32m.../test1.sv:17[39m
+                   [32mwidthp:[39m
+                     [32mCONST[39m [32m"32'h6"[39m [32m.../test1.sv:17[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+      BEGIN "genblk1[31]" .../test1.sv:17 generate:True
+       stmtsp:
+         CELL "fa" .../test1.sv:17 origName:fa
+          pinsp:
+            PIN "__pinNumber1" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh1f"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h1f"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber2" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh1f"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h1f"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber3" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[32:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh1f"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"6'h1f"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber4" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[31:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mCONST[39m [31m"?32?sh1f"[39m [31m.../test1.sv:16[39m
+                [32mlsbp:[39m
+                  [32mCONST[39m [32m"5'h1f"[39m [32m.../test1.sv:16[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+            PIN "__pinNumber5" .../test1.sv:17
+             exprp:
+               [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:17 [32mdeclElWidth:1[39m, [32mdeclRange:[32:0][39m
+                fromp:
+                 ... * 1
+                [31mbitp:[39m
+                  [31mADD[39m [31m""[39m [31m.../test1.sv:17[39m
+                   [31mlhsp:[39m
+                     [31mCONST[39m [31m"?32?sh1f"[39m [31m.../test1.sv:16[39m
+                   [31mrhsp:[39m
+                     [31mCONST[39m [31m"?32?sh1"[39m [31m.../test1.sv:17[39m
+                [32mlsbp:[39m
+                  [32mSEL[39m [32m""[39m [32m.../test1.sv:17[39m
+                   [32mfromp:[39m
+                     [32mADD[39m [32m""[39m [32m.../test1.sv:17[39m
+                      [32mlhsp:[39m
+                        [32mCONST[39m [32m"?32?sh1f"[39m [32m.../test1.sv:16[39m
+                      [32mrhsp:[39m
+                        [32mCONST[39m [32m"?32?sh1"[39m [32m.../test1.sv:17[39m
+                   [32mlsbp:[39m
+                     [32mCONST[39m [32m"32'h0"[39m [32m.../test1.sv:17[39m
+                   [32mwidthp:[39m
+                     [32mCONST[39m [32m"32'h6"[39m [32m.../test1.sv:17[39m
+                [32mwidthp:[39m
+                  [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:17[39m
+      ASSIGNW "" .../test1.sv:20
+       rhsp:
+        ... * 1
+       lhsp:
+         [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:20 [32mdeclElWidth:1[39m, [32mdeclRange:[32:0][39m
+          fromp:
+           ... * 1
+          [31mbitp:[39m
+            [31mCONST[39m [31m"?32?sh0"[39m [31m.../test1.sv:20[39m
+          [32mlsbp:[39m
+            [32mCONST[39m [32m"6'h0"[39m [32m.../test1.sv:20[39m
+          [32mwidthp:[39m
+            [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:20[39m
+      ASSIGNW "" .../test1.sv:21
+       rhsp:
+         [31mSELBIT[39m->[32mSEL[39m "" .../test1.sv:21 [32mdeclElWidth:1[39m, [32mdeclRange:[32:0][39m
+          fromp:
+           ... * 1
+          [31mbitp:[39m
+            [31mSUB[39m [31m""[39m [31m.../test1.sv:21[39m
+             [31mlhsp:[39m
+               [31mVARREF[39m [31m"WIDTH"[39m [31m.../test1.sv:21[39m [31maccess:RD[39m
+             [31mrhsp:[39m
+               [31mCONST[39m [31m"?32?sh1"[39m [31m.../test1.sv:21[39m
+          [32mlsbp:[39m
+            [32mSEL[39m [32m""[39m [32m.../test1.sv:21[39m
+             [32mfromp:[39m
+               [32mSUB[39m [32m""[39m [32m.../test1.sv:21[39m
+                [32mlhsp:[39m
+                  [32mVARREF[39m [32m"WIDTH"[39m [32m.../test1.sv:21[39m [32maccess:RD[39m
+                [32mrhsp:[39m
+                  [32mCONST[39m [32m"?32?sh1"[39m [32m.../test1.sv:21[39m
+             [32mlsbp:[39m
+               [32mCONST[39m [32m"32'h0"[39m [32m.../test1.sv:21[39m
+             [32mwidthp:[39m
+               [32mCONST[39m [32m"32'h6"[39m [32m.../test1.sv:21[39m
+          [32mwidthp:[39m
+            [32mCONST[39m [32m"?32?h1"[39m [32m.../test1.sv:21[39m
+       lhsp:
+        ... * 1
+   MODULE "full_adder" .../test1_submodule/full_adder.sv:1 level:3, origName:full_adder, timeunit:1ps
+    stmtsp:
+      VAR "a" .../test1_submodule/full_adder.sv:2 attrClocker:UNKNOWN, direction:INPUT, [32mdtypeName:logic[39m, lifetime:NONE, origName:a, varType:PORT
+       [31mchildDTypep:[39m
+         [31mBASICDTYPE[39m [31m"LOGIC_IMPLICIT"[39m [31m.../test1_submodule/full_adder.sv:2[39m [31mkeyword:LOGIC_IMPLICIT[39m
+      VAR "b" .../test1_submodule/full_adder.sv:3 attrClocker:UNKNOWN, direction:INPUT, [32mdtypeName:logic[39m, lifetime:NONE, origName:b, varType:PORT
+       [31mchildDTypep:[39m
+         [31mBASICDTYPE[39m [31m"LOGIC_IMPLICIT"[39m [31m.../test1_submodule/full_adder.sv:3[39m [31mkeyword:LOGIC_IMPLICIT[39m
+      VAR "cin" .../test1_submodule/full_adder.sv:4 attrClocker:UNKNOWN, direction:INPUT, [32mdtypeName:logic[39m, lifetime:NONE, origName:cin, varType:PORT
+       [31mchildDTypep:[39m
+         [31mBASICDTYPE[39m [31m"LOGIC_IMPLICIT"[39m [31m.../test1_submodule/full_adder.sv:4[39m [31mkeyword:LOGIC_IMPLICIT[39m
+      VAR "s" .../test1_submodule/full_adder.sv:5 attrClocker:UNKNOWN, direction:OUTPUT, [32mdtypeName:logic[39m, lifetime:NONE, origName:s, varType:PORT
+       [31mchildDTypep:[39m
+         [31mBASICDTYPE[39m [31m"LOGIC_IMPLICIT"[39m [31m.../test1_submodule/full_adder.sv:5[39m [31mkeyword:LOGIC_IMPLICIT[39m
+      VAR "cout" .../test1_submodule/full_adder.sv:6 attrClocker:UNKNOWN, direction:OUTPUT, [32mdtypeName:logic[39m, lifetime:NONE, origName:cout, varType:PORT
+       [31mchildDTypep:[39m
+         [31mBASICDTYPE[39m [31m"LOGIC_IMPLICIT"[39m [31m.../test1_submodule/full_adder.sv:6[39m [31mkeyword:LOGIC_IMPLICIT[39m
+      ... * 2
+ miscsp:
+   TYPETABLE "" <built-in>:0
+    typesp:
+      ... * 10
+      BASICDTYPE "LOGIC_IMPLICIT" .../test1.sv:7 generic:[31mFalse[39m->[32mTrue[39m, keyword:LOGIC_IMPLICIT
+      ... * 5
+      [32mBASICDTYPE[39m [32m"LOGIC_IMPLICIT"[39m [32m.../test1_submodule/full_adder.sv:2[39m [32mkeyword:LOGIC_IMPLICIT[39m
+      [32mBASICDTYPE[39m [32m"LOGIC_IMPLICIT"[39m [32m.../test1_submodule/full_adder.sv:3[39m [32mkeyword:LOGIC_IMPLICIT[39m
+      [32mBASICDTYPE[39m [32m"LOGIC_IMPLICIT"[39m [32m.../test1_submodule/full_adder.sv:4[39m [32mkeyword:LOGIC_IMPLICIT[39m
+      [32mBASICDTYPE[39m [32m"LOGIC_IMPLICIT"[39m [32m.../test1_submodule/full_adder.sv:5[39m [32mkeyword:LOGIC_IMPLICIT[39m
+      [32mBASICDTYPE[39m [32m"LOGIC_IMPLICIT"[39m [32m.../test1_submodule/full_adder.sv:6[39m [32mkeyword:LOGIC_IMPLICIT[39m
+      [32mBASICDTYPE[39m [32m"logic"[39m [32m.../test1.sv:8[39m [32mkeyword:logic[39m, [32mrange:31:0[39m
+      [32mBASICDTYPE[39m [32m"logic"[39m [32m.../test1.sv:9[39m [32mkeyword:logic[39m, [32mrange:31:0[39m
+      [32mBASICDTYPE[39m [32m"LOGIC_IMPLICIT"[39m [32m.../test1.sv:10[39m [32mkeyword:LOGIC_IMPLICIT[39m
+      [32mBASICDTYPE[39m [32m"logic"[39m [32m.../test1.sv:11[39m [32mkeyword:logic[39m, [32mrange:31:0[39m
+      [32mBASICDTYPE[39m [32m"LOGIC_IMPLICIT"[39m [32m.../test1.sv:12[39m [32mkeyword:LOGIC_IMPLICIT[39m
+      [32mBASICDTYPE[39m [32m"logic"[39m [32m.../test1.sv:14[39m [32mkeyword:logic[39m, [32mrange:32:0[39m
+      [32mBASICDTYPE[39m [32m"logic"[39m [32m.../test1.sv:17[39m [32mgeneric:True[39m, [32mkeyword:logic[39m, [32mrange:4:0[39m
+      [32mBASICDTYPE[39m [32m"logic"[39m [32m.../test1.sv:16[39m [32mgeneric:True[39m, [32mkeyword:logic[39m, [32mrange:4:0[39m
+      [32mBASICDTYPE[39m [32m"logic"[39m [32m.../test1.sv:17[39m [32mgeneric:True[39m, [32mkeyword:logic[39m, [32mrange:5:0[39m
+      [32mBASICDTYPE[39m [32m"logic"[39m [32m.../test1.sv:16[39m [32mgeneric:True[39m, [32mkeyword:logic[39m, [32mrange:5:0[39m
+   ... * 1

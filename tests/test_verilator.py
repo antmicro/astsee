@@ -35,9 +35,13 @@ def test_tree_diff_filter(request):
     run(request, f'{IN_DIR}/test1_a.tree.json {IN_DIR}/test1_b.tree.json -d ".editNum"')
 
 
+def test_tree_diff_filter2(request):
+    run(request, f'{IN_DIR}/test1_a.tree.json {IN_DIR}/test1_b.tree.json -d ".editNum" --del-ptrs')
+
+
 def test_tree_diff_filter_no_meta(request):
     # empty meta arg disables guessing of meta file path
-    run(request, f'{IN_DIR}/test1_a.tree.json {IN_DIR}/test1_b.tree.json -d "ptrs" --meta ""')
+    run(request, f'{IN_DIR}/test1_a.tree.json {IN_DIR}/test1_b.tree.json --del-ptrs --meta ""')
 
 
 def test_tree_diff_skip_nodes(request):
@@ -58,7 +62,7 @@ def test_tree_diff_html_light(request):
 
 def test_tree_diff_html_filter_no_meta(request):
     # empty meta arg disables guessing of meta file path
-    run(request, f'{IN_DIR}/test1_a.tree.json {IN_DIR}/test1_b.tree.json --html -d "ptrs" --meta ""')
+    run(request, f'{IN_DIR}/test1_a.tree.json {IN_DIR}/test1_b.tree.json --html --del-ptrs --meta ""')
 
 
 def test_pprint_dict_with_one_scalar(request):
