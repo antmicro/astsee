@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # pylint: disable=line-too-long,invalid-name,multiple-statements,missing-function-docstring,missing-class-docstring,missing-module-docstring,no-else-return,too-few-public-methods
 import argparse
+import filecmp
 import glob
 import html
 import json
@@ -11,7 +12,9 @@ import sys
 import webbrowser
 from functools import partial
 from tempfile import NamedTemporaryFile
+from itertools import chain, zip_longest
 
+import multiprocess
 import pygments
 import pygments.formatters
 import pygments.lexers
@@ -92,6 +95,24 @@ parser.add_argument(
     default=None,
     dest="meta",
 )
+timeline_args = parser.add_argument_group(
+    title="--timeline-(diff|pprint|full)",
+    description='Produce html that includes "timeline" of consecutive stages.\n'
+    "`file` param should point to .tree.meta.json, that is expected to be inside obj_dir alongside stage-numbered .tree.json files.\n"
+    "Stages that didn't introduce any change are skipped from timeline. By default implies --html but you can still specify --htmlb",
+)
+timeline_args.add_argument(
+    "--timeline-diff", help="Include diffs of consecutive stages", action="store_true", dest="timeline_diff"
+)
+timeline_args.add_argument(
+    "--timeline-pprint", help="Pretty print each stage", action="store_true", dest="timeline_pprint"
+)
+timeline_args.add_argument(
+    "--timeline-full",
+    help="Combination of --timeline-diff --timeline-pprint",
+    action="store_true",
+    dest="timeline_full",
+)
 parser.add_argument("file", help=".tree.json file to pretty print (or diff)")
 parser.add_argument("newfile", nargs="?", help="optional new version of .tree.json file (enables diff)", default=None)
 parser.add_argument(
@@ -139,7 +160,8 @@ class HtmlHighlighter(pygments.formatters.HtmlFormatter):  # pylint: disable=may
                 line_id = f"{html.escape(self.fname)}-{i}"
                 span = f'<span class="linenos" style="width:{idx_width}ch;">{i}</span>'
                 if i in self.backref_lines:
-                    line_prefix = f'<a id="{line_id}" class="backref" href="#back-{line_id}">{span}</a>'
+                    onclick = f"return gotoClassInAst('back-{line_id}')"
+                    line_prefix = f'<a id="{line_id}" class="backref" href="#" onclick="{onclick}">{span}</a>'
                 else:
                     line_prefix = f'<a id="{line_id}">{span}</a>'
                 line = f"{line_prefix}{line}"
@@ -160,7 +182,7 @@ class AstDiffToHtml:
         val_handlers = {
             'editNum': (lambda v: html.escape(f'<e{html.escape(str(v))}>')),
             'name': (lambda v: "<b>" + html.escape(f'"{stringify(v, quote_empty=0)}"') + "</b>"),
-            "addr": (lambda v: f'<span id="{html.escape(v)}">{html.escape(v)}</span>'),
+            "addr": (lambda v: f'<span class="{html.escape(v)}">{html.escape(v)}</span>'),
             'loc': self.loc_handler,
         }  # yapf: disable
         val_handlers.update({k: self.format_ptr_link for k in meta["ptrFieldNames"] if k != "addr"})
@@ -174,14 +196,14 @@ class AstDiffToHtml:
         extern_css = DictDiffToHtml.CSS + HtmlHighlighter(dark).get_style_defs(".code-block")
         with open(f"{os.path.dirname(__file__)}/rich_view.js", encoding="utf-8") as f:
             js = f.read()
-        globals_ = {"make_tab": self.make_tab, "extern_css": extern_css, "js": js, "dark": dark}
-        self.template = self.diff_to_str_generic.make_html_tmpl("rich_view.html.jinja", globals_)
+        self.template_globals = {"make_tab": self.make_tab, "extern_css": extern_css, "js": js, "dark": dark}
 
     def format_ptr_link(self, ptr):
         if ptr == "UNLINKED":
             return "UNLINKED"
         else:
-            return f'<a href="#{html.escape(ptr)}">{html.escape(ptr)}</a>'
+            onclick = f"return gotoClassInAst('{html.escape(ptr)}')"
+            return f'<a href="#{html.escape(ptr)}" onclick="{onclick}">{html.escape(ptr)}</a>'
 
     def loc_handler(self, loc):
         """print location field as link to relevant line and save filename in self.srcfiles for later processing"""
@@ -199,16 +221,76 @@ class AstDiffToHtml:
             return display_loc
         else:
             self.referenced_lines.setdefault(realpath, set())
+            self.referenced_lines[realpath].add(int(begin_row))
             onclick = f"return selectFileFragment('{html.escape(realpath)}',{int(begin_row)},{int(begin_col)},{int(end_row)},{int(end_col)})"
-            if begin_row not in self.referenced_lines[realpath]:
-                self.referenced_lines[realpath].add(int(begin_row))
-                return f'<a id="back-{link_loc}" href="#{link_loc}" onclick="{onclick}">{display_loc}</a>'
-            return f'<a href="#{link_loc}" onclick="{onclick}">{display_loc}</a>'
+            return f'<a class="back-{link_loc}" href="#{link_loc}" onclick="{onclick}">{display_loc}</a>'
+
+    def timeline(self, load_jsons_, outfile, do_diff, do_pprint):  # pylint: disable=too-many-locals
+        """
+        generate timeline from `meta["timelineFiles"]` (have to be populated beforehand by `gather_timeline_files()`)
+
+        `load_jsons_()` should be a function that takes array of filenames, and returns parsed jsons
+
+        `do_diff` and `do_pprint` are configuration bools. If both are true, then diffs and pprints are interleaved
+        """
+
+        def do_partial_diff(old_path, new_path):
+            referenced_lines, diff = self.diff_to_string_partial(make_diff(*load_jsons_([old_path, new_path])))
+            return f"{old_path} -> {new_path}", referenced_lines, diff
+
+        def do_partial_pprint(path):
+            self.diff_to_str_generic.omit_intact = False  # omitting unmodified chunks does not make sense without diff
+            # NOTE: since this method runs in child process we can modify fields without "global" consequences
+            referenced_lines, diff = self.diff_to_string_partial(IntactNode(*load_jsons_([path])))
+            return path, referenced_lines, diff
+
+        def merge(dest, src):
+            """merge referenced lines (dicts of sets)"""
+            for k, v in src.items():
+                if k not in dest:
+                    dest[k] = v
+                else:
+                    dest[k].update(v)
+
+        with multiprocess.Pool() as pool:  # pylint: disable=maybe-no-member
+            # SIDENOTE: For some reason `multiprocess` and `multiprocessing` insist on serializing and passing
+            # everything used in child processes (code and input) through IPC. I get that it might make sense
+            # in case of windows that does not have fork(), but it seems like unnecessary work
+            diffs = {}
+            pprints = {}
+            if do_diff:
+                for name, referenced_lines, ast in pool.starmap(do_partial_diff, pairwise(self.meta["timelineFiles"])):
+                    merge(self.referenced_lines, referenced_lines)
+                    diffs[name] = ast
+            if do_pprint:
+                for name, referenced_lines, ast in pool.map(do_partial_pprint, self.meta["timelineFiles"]):
+                    merge(self.referenced_lines, referenced_lines)
+                    pprints[name] = ast
+
+        # interleave diffs and pprints
+        asts = [x for x in chain.from_iterable(zip_longest(pprints.items(), diffs.items())) if x is not None]
+
+        template = self.diff_to_str_generic.make_html_tmpl("rich_view.html.jinja", self.template_globals)
+        template.stream({"asts": asts, "srcfiles": sorted(self.referenced_lines)}).dump(outfile)
 
     def diff_to_string(self, tree):
         self.referenced_lines.clear()
         diff = self.diff_to_str_generic.diff_to_string(tree)
-        return self.template.render({"diff": diff, "srcfiles": sorted(self.referenced_lines)})
+        template = self.diff_to_str_generic.make_html_tmpl("rich_view.html.jinja", self.template_globals)
+        return template.render({"asts": [("placeholder_name", diff)], "srcfiles": sorted(self.referenced_lines)})
+
+    def diff_to_file(self, tree, outfile):
+        self.referenced_lines.clear()
+        diff = self.diff_to_str_generic.diff_to_string(tree)
+        template = self.diff_to_str_generic.make_html_tmpl("rich_view.html.jinja", self.template_globals)
+        template.stream({"asts": [("placeholder_name", diff)], "srcfiles": sorted(self.referenced_lines)}).dump(outfile)
+
+    def diff_to_string_partial(self, tree):
+        """stringize AST, but instead of feeeding it directly into template,
+        return it alongside list of referenced files/lines"""
+        self.referenced_lines.clear()
+        diff = self.diff_to_str_generic.diff_to_string(tree)
+        return self.referenced_lines, diff
 
     def make_tab(self, fname):
         """load file into line-numbered tab"""
@@ -223,6 +305,16 @@ class AstDiffToHtml:
         except FileNotFoundError:
             log.warning("file '%s' not found, skipping", fname)
             return ""
+
+
+def pairwise(iterable):
+    # polyfill for itertools.pairwise() (avaible since 3.10)
+    # pairwise('ABCDEFG') → AB BC CD DE EF FG
+    iterator = iter(iterable)
+    a = next(iterator, None)
+    for b in iterator:
+        yield a, b
+        a = b
 
 
 def truncate_path(path, abs_prefix, rel_prefix):
@@ -284,11 +376,13 @@ def preprocess_paths(meta):
         file["truncated"], file["truncated_html"] = truncate_path(file["realpath"], abs_path_prefix, rel_path_prefix)
 
 
-def load_meta(path):
+def load_meta(path, timeline=False):
     try:
         with open(path, encoding="utf-8") as file:
             meta = json.load(file)
             preprocess_paths(meta)
+            if timeline:
+                meta["timelineFiles"] = gather_timeline_files(os.path.dirname(path))
             return meta
 
     except FileNotFoundError:
@@ -333,15 +427,56 @@ def plaintext_loc_handler(loc, meta):
         return f"{id_}:{line}"
 
 
-def main(args=None):
-    # pylint: disable=too-many-branches
-    if args is None:
-        args = parser.parse_args()
+def preprocess_args(args):
     log.basicConfig(level=args.loglevel.upper())
-    if args.meta is None:
+
+    if args.timeline_full:
+        args.timeline_pprint = True
+        args.timeline_diff = True
+
+    if args.timeline_pprint or args.timeline_diff:
+        args.html = True
+        args.meta = args.file
+        if args.meta is None:
+            log.critical("meta file must be provided for timeline to work")
+            sys.exit(1)
+    elif args.meta is None:
         guess_meta_path(args)
 
-    meta = load_meta(args.meta)
+    if args.jq_query and (args.skip_nodes or args.del_list):
+        log.critical("--jq is incompatible with --del-fields and --skip-nodes")
+        sys.exit(1)
+    elif args.skip_nodes and args.del_list:
+        args.jq_query = f"ast_walk(select({args.skip_nodes} | not) | del({args.del_list}))"
+    elif args.skip_nodes:
+        args.jq_query = f"ast_walk(select({args.skip_nodes} | not))"
+    elif args.del_list:
+        args.jq_query = f"ast_walk(del({args.del_list}))"
+
+
+def gather_timeline_files(obj_dir):
+    """Go through numbered .tree.json files in obj_dir, and return them in alphanumeric order"""
+    paths = []
+    predecessor_path = None
+    # requiring occurence of three consecutive digits is used as heuristic to skip non-stage dumps
+    # (e.g. output of --json-only) that would mess dump ordering
+    pattern = os.path.join(glob.escape(obj_dir), "*[0-9][0-9][0-9]*.tree.json")
+    for path in sorted(glob.glob(pattern)):
+        path = os.path.relpath(path)
+        if predecessor_path and filecmp.cmp(predecessor_path, path, shallow=False):
+            log.info("skipping dump with unchanged content: %s", path)
+        else:
+            paths.append(path)
+            predecessor_path = path
+    return paths
+
+
+def main(args=None):
+    if args is None:
+        args = parser.parse_args()
+    preprocess_args(args)
+    meta = load_meta(args.meta, args.timeline_diff or args.timeline_pprint)
+
     # allow for supplying an alternative implementation like gojq
     jq_bin = os.environ.get("VERILATOR_JQ", "jq")
 
@@ -359,16 +494,7 @@ def main(args=None):
         f|map_values(w);
     """
 
-    if not args.jq_query:
-        if args.skip_nodes and args.del_list:
-            args.jq_query = f"ast_walk(select({args.skip_nodes} | not) | del({args.del_list}))"
-        elif args.skip_nodes:
-            args.jq_query = f"ast_walk(select({args.skip_nodes} | not))"
-        elif args.del_list:
-            args.jq_query = f"ast_walk(del({args.del_list}))"
-    elif args.skip_nodes or args.del_list:
-        log.critical("--jq is incompatible with --del-fields and --skip-nodes")
-        sys.exit(1)
+    load_jsons_ = partial(load_jsons, jq_bin=jq_bin, jq_funcs=jq_funcs, jq_query=args.jq_query)
 
     if args.del_ptrs:
 
@@ -387,7 +513,9 @@ def main(args=None):
     )
 
     split_fields = partial(split_ast_fields, omit_false_flags=args.omit)
-    omit_intact = args.omit and args.newfile  # omitting unmodified chunks does not make sense without diff
+    omit_intact = args.omit and (
+        args.newfile or args.timeline_diff or args.timeline_full
+    )  # omitting unmodified chunks does not make sense without diff
 
     if args.html or args.html_browser:
         diff_to_str = AstDiffToHtml(omit_intact=omit_intact, split_fields=split_fields, meta=meta, dark=not args.light)
@@ -400,18 +528,22 @@ def main(args=None):
         }
         diff_to_str = DictDiffToTerm(omit_intact=omit_intact, val_handlers=val_handlers, split_fields=split_fields)
 
-    if not args.newfile:  # don't diff, just pretty print
-        # passing tree marked as unchanged to colorizer can be abused to just pretty print it
-        tree = IntactNode(*load_jsons_([args.file]))
-    else:  # both files supplied, diff
-        tree = make_diff(*load_jsons_([args.file, args.newfile]))
+    def diff_to_file(outfile):
+        if args.timeline_diff or args.timeline_pprint:
+            diff_to_str.timeline(load_jsons_, outfile, args.timeline_diff, args.timeline_pprint)
+        elif not args.newfile:  # don't diff, just pretty print
+            # passing tree marked as unchanged to colorizer can be abused to just pretty print it
+            diff_to_str.diff_to_file(IntactNode(*load_jsons_([args.file])), outfile)
+        else:  # both files supplied, diff
+            diff_to_str.diff_to_file(make_diff(*load_jsons_([args.file, args.newfile])), outfile)
 
     if args.html_browser:
-        with NamedTemporaryFile("w", delete=False, suffix=".html") as out:
-            out.write(diff_to_str.diff_to_string(tree))
-            webbrowser.open(f"file://{out.name}")
+        with NamedTemporaryFile("w", delete=False, suffix=".html") as outfile:
+            diff_to_file(outfile)
+            if args.html_browser:
+                webbrowser.open(f"file://{outfile.name}")
     else:
-        print(diff_to_str.diff_to_string(tree), end="")
+        diff_to_file(sys.stdout)
 
 
 if __name__ == "__main__":

@@ -9,7 +9,7 @@ authors = [{ name="Antmicro", email="contact@antmicro.com" }]
 license = { file = "Apache-2.0" }
 description = "Suite of tools for pretty printing, diffing, and exploring trees"
 readme = "README.md"
-dependencies = ["Jinja2 >= 3.1.3", "pygments >= 2.17.0"]
+dependencies = ["Jinja2 >= 3.1.3", "pygments >= 2.17.0", "multiprocess >= 0.70.16"]
 requires-python = ">=3.8"
 
 

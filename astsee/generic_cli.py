@@ -1,4 +1,5 @@
 import argparse
+import sys
 from functools import partial
 
 from astsee import BasicDiffToTerm, DictDiffToHtml, DictDiffToTerm, IntactNode, load_jsons, make_diff
@@ -52,7 +53,7 @@ def main(args=None):
     else:  # both files supplied, diff
         tree = make_diff(*load_jsons_([args.file, args.newfile]))
 
-    print(diff_to_str.diff_to_string(tree), end="")
+    diff_to_str.diff_to_file(tree, sys.stdout)
 
 
 if __name__ == "__main__":

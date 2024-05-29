@@ -217,6 +217,9 @@ class BasicDiffToTerm:
         else:
             return f"{self._diff_to_string(diff)}{COLOR_RESET}"
 
+    def diff_to_file(self, diff, outfile):
+        outfile.write(self.diff_to_string(diff))
+
     def _diff_to_string(self, diff, indent="", key_prefix=""):
         """Return pretty representation of JSON diff."""
         if isinstance(diff, ReplaceDiffNode):
@@ -290,6 +293,9 @@ class DictDiff:
 
     def diff_to_string(self, diff):
         return self._diff_to_string(diff, "")
+
+    def diff_to_file(self, diff, outfile):
+        outfile.write(self.diff_to_string(diff))
 
     def _diff_to_string(self, diff, indent):
         if isinstance(diff, OmittedNode):
@@ -400,8 +406,7 @@ class DictDiffToHtml(DictDiff):
             self.colors = {COLOR_RED: "red", COLOR_GREEN: "green"}
         else:
             self.colors = colors
-        globals_ = {"embeddable": embeddable, "CSS": self.CSS, "CHUNK_SIZE": self.CHUNK_SIZE}
-        self.template = self.make_html_tmpl("basic_view.html.jinja", globals_)
+        self.template_globals = {"embeddable": embeddable, "CSS": self.CSS, "CHUNK_SIZE": self.CHUNK_SIZE}
 
     def _colorize(self, color, text):
         if color == COLOR_RESET:
@@ -417,7 +422,12 @@ class DictDiffToHtml(DictDiff):
         return self.val_handlers.get(key, default_handler)(val.content)
 
     def diff_to_string(self, diff):
-        return self.template.render({"diff": self._diff_to_string(diff, "").splitlines()})
+        template = self.make_html_tmpl("basic_view.html.jinja", self.template_globals)
+        return template.render({"diff": self._diff_to_string(diff, "").splitlines()})
+
+    def diff_to_file(self, diff, outfile):
+        template = self.make_html_tmpl("basic_view.html.jinja", self.template_globals)
+        template.stream({"diff": self._diff_to_string(diff, "").splitlines()}).dump(outfile)
 
     def make_html_tmpl(self, name, globals_=None):
         """Load jinja template from astsee dir, enable autoescape and set globals_"""
