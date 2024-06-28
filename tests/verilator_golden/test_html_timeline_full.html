@@ -4,18 +4,16 @@
 <meta charset="UTF-8"/>
 <style>
 /* Shared CSS */
-.code-block {
-    .linenos {
-        padding: 0 5px 0 5px;
-    }
-    .chunk {
-      content-visibility: auto;
-    }
-    pre {
-        margin: 0 0;
-        white-space: pre-wrap;
-        overflow-wrap: break-word;
-    }
+.code-block .linenos {
+    padding: 0 5px 0 5px;
+}
+.code-block .chunk {
+  content-visibility: auto;
+}
+.code-block pre {
+    margin: 0 0;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
 }
 pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -131,24 +129,24 @@ body {
     height: 100vh;
     border: solid 2px black;
     box-sizing: border-box;
-    .tabs {
-        height: 100%;
-        position: relative;
-    }
-    .tab {
-        display: none; /* while we use z-index for hiding/showing tabs, making them display:none by default makes it snappier */
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        top: 0;
-        left: 0;
-        background: #332d37;
+}
+.pane .tabs {
+    height: 100%;
+    position: relative;
+}
+.pane .tab {
+    display: none; /* while we use z-index for hiding/showing tabs, making them display:none by default makes it snappier */
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: #332d37;
 
-    }
-    .tab:first-child {
-        z-index: 1;
-        display: block !important;
-    }
+}
+.pane .tab:first-child {
+    z-index: 1;
+    display: block !important;
 }
 .ast-pane {
     resize: horizontal;

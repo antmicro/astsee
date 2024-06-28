@@ -379,18 +379,16 @@ class DictDiffToHtml(DictDiff):
 
     CSS = textwrap.dedent(
         """\
-    .code-block {
-        .linenos {
-            padding: 0 %s 0 %s;
-        }
-        .chunk {
-          content-visibility: auto;
-        }
-        pre {
-            margin: 0 0;
-            white-space: pre-wrap;
-            overflow-wrap: break-word;
-        }
+    .code-block .linenos {
+        padding: 0 %s 0 %s;
+    }
+    .code-block .chunk {
+      content-visibility: auto;
+    }
+    .code-block pre {
+        margin: 0 0;
+        white-space: pre-wrap;
+        overflow-wrap: break-word;
     }
     """
         % (LINENOS_SIDE_PADDING, LINENOS_SIDE_PADDING)
