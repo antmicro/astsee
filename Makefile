@@ -37,7 +37,7 @@ autofix-js:
 	./node_modules/.bin/eslint astsee/*.js --fix
 
 .PHONY: test
-test: pytest readme-test
+test: pytest readme-test deepnest-test
 
 .PHONY: pytest
 pytest:
@@ -82,3 +82,9 @@ install-pipx-test: clean
 
 .PHONY: install-test
 install-test: install-pipx-test install-venv-test
+
+.PHONY: deepnest-test
+deepnest-test:
+	# generated with:
+	# awk -vNEST=3000 'BEGIN{print f()} function f() { NEST--; if(NEST==0) return "[]"; else return "[\"0123456789ABCDEFGHIJKLMNOPRSTUW\",\n" f()"]"}' > tests/deepnest.json
+	astsee verilator tests/deepnest.json >/dev/null
