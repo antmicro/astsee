@@ -23,6 +23,11 @@ test-and-lint:
     - python3 -m venv venv/ && source venv/bin/activate && pip install --upgrade pip
     - pip install '.[dev]'
     - make
+  artifacts:
+    name: $CI_COMMIT_REF_SLUG
+    when: always
+    paths:
+        - "tests/*out"
 
 install-test:
   image: "d2s://external/docker/ubuntu:20.04"
