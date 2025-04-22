@@ -422,7 +422,7 @@ def plaintext_loc_handler(loc, meta):
     id_, begin, _ = loc.split(",")
     line = begin.split(":")[0]
     if id_ in meta["files"]:
-        return f'{meta["files"][id_]["truncated"]}:{line}'
+        return f"{meta['files'][id_]['truncated']}:{line}"
     else:
         return f"{id_}:{line}"
 
