@@ -1,4 +1,4 @@
-# `astsee`
+# astsee
 
 Copyright (c) 2023-2024 [Antmicro](https://www.antmicro.com)
 
