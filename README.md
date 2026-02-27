@@ -1,6 +1,6 @@
 # astsee
 
-Copyright (c) 2023-2024 [Antmicro](https://www.antmicro.com)
+Copyright (c) 2023-2026 [Antmicro](https://www.antmicro.com)
 
 A suite of tools for pretty printing, diffing, and exploring abstract syntax
 trees. You can use the `astsee json` tool that accepts mostly arbitrary
