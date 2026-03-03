@@ -6,7 +6,7 @@ variables:
   GIT_DEPTH: 1
 
 test-and-lint:
-  image: "d2s://external/docker/ubuntu:20.04"
+  image: debian
   tags: ['ace-x86_64']
   variables:
     SCALENODE_CPU: 1
@@ -30,7 +30,7 @@ test-and-lint:
         - "tests/*out"
 
 install-test:
-  image: "d2s://external/docker/ubuntu:20.04"
+  image: debian
   tags: ['ace-x86_64']
   variables:
     SCALENODE_CPU: 1
@@ -41,5 +41,5 @@ install-test:
     CLICOLOR_FORCE: 1
   script:
     - apt-get -qqy update && apt-get -qqy --no-install-recommends install jq python3 python3-venv pipx git make
-    - pipx install tuttest --spec git+https://github.com/antmicro/tuttest
+    - pipx install 'tuttest@git+https://github.com/antmicro/tuttest'
     - PATH="$HOME/.local/bin:$PATH" make install-test
