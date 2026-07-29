@@ -35,7 +35,7 @@ testpaths = ["tests/"]
 line-length = 120
 
 [tool.ruff.lint]
-ignore = ["E701"]
+ignore = ["E701", "RUF010"]
 
 [tool.yapf]
 COLUMN_LIMIT = 120
