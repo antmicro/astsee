@@ -5,7 +5,7 @@ import filecmp
 import glob
 import html
 import json
-import logging as log
+import logging
 import os
 import re
 import sys
@@ -31,6 +31,8 @@ from astsee import (
     make_diff,
     stringify,
 )
+
+log = logging.getLogger(__name__)
 
 
 def split_ast_fields(ast, omit_false_flags):
@@ -428,7 +430,7 @@ def plaintext_loc_handler(loc, meta):
 
 
 def preprocess_args(args):
-    log.basicConfig(level=args.loglevel.upper())
+    log.setLevel(args.loglevel.upper())
 
     if args.timeline_full:
         args.timeline_pprint = True
