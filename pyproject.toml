@@ -10,7 +10,7 @@ license = { file = "Apache-2.0" }
 description = "Suite of tools for pretty printing, diffing, and exploring trees"
 readme = "README.md"
 dependencies = ["Jinja2 == 3.1.6", "pygments == 2.19.1", "multiprocess == 0.70.18"]
-requires-python = ">=3.8"
+requires-python = ">=3.10"
 
 
 [project.optional-dependencies]
