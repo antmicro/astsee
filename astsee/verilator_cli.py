@@ -11,8 +11,8 @@ import re
 import sys
 import webbrowser
 from functools import partial
-from tempfile import NamedTemporaryFile
 from itertools import chain, zip_longest
+from tempfile import NamedTemporaryFile
 
 import multiprocess
 import pygments
@@ -21,6 +21,8 @@ import pygments.lexers
 import pygments.styles
 
 from astsee import (
+    COLOR_GREEN,
+    COLOR_RED,
     DictDiffToHtml,
     DictDiffToTerm,
     IntactNode,
@@ -28,8 +30,6 @@ from astsee import (
     load_jsons,
     make_diff,
     stringify,
-    COLOR_GREEN,
-    COLOR_RED,
 )
 
 
