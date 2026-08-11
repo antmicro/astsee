@@ -9,12 +9,12 @@ authors = [{ name="Antmicro", email="contact@antmicro.com" }]
 license = { file = "Apache-2.0" }
 description = "Suite of tools for pretty printing, diffing, and exploring trees"
 readme = "README.md"
-dependencies = ["Jinja2 == 3.1.6", "pygments == 2.19.1", "multiprocess == 0.70.18"]
-requires-python = ">=3.8"
+dependencies = ["Jinja2 == 3.1.6", "pygments == 2.20.0", "multiprocess == 0.70.19"]
+requires-python = ">=3.10"
 
 
 [project.optional-dependencies]
-dev = ["pytest", "tuttest @ git+https://github.com/antmicro/tuttest#egg=tuttest", "ruff==0.11.6", "isort==5.13.2", "pylint==3.2.7"]
+dev = ["pytest", "tuttest @ git+https://github.com/antmicro/tuttest#egg=tuttest", "ruff==0.16.0", "isort==8.0.1", "pylint==4.0.6"]
 
 [project.scripts]
 astsee = "astsee.global_cli:main"
@@ -35,7 +35,7 @@ testpaths = ["tests/"]
 line-length = 120
 
 [tool.ruff.lint]
-ignore = ["E701"]
+ignore = ["E701", "RUF010"]
 
 [tool.yapf]
 COLUMN_LIMIT = 120

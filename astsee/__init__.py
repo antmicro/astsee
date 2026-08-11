@@ -378,20 +378,19 @@ class DictDiffToHtml(DictDiff):
     LINENOS_SIDE_PADDING = "5px"
 
     CSS = textwrap.dedent(
-        """\
-    .code-block .linenos {
-        padding: 0 %s 0 %s;
-    }
-    .code-block .chunk {
+        f"""\
+    .code-block .linenos {{
+        padding: 0 {LINENOS_SIDE_PADDING} 0 {LINENOS_SIDE_PADDING};
+    }}
+    .code-block .chunk {{
       content-visibility: auto;
-    }
-    .code-block pre {
+    }}
+    .code-block pre {{
         margin: 0 0;
         white-space: pre-wrap;
         overflow-wrap: break-word;
-    }
+    }}
     """
-        % (LINENOS_SIDE_PADDING, LINENOS_SIDE_PADDING)
     )
 
     CHUNK_SIZE = 1000

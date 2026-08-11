@@ -1,5 +1,6 @@
-from os.path import basename
 import sys
+from os.path import basename
+
 from astsee import generic_cli, verilator_cli
 
 
